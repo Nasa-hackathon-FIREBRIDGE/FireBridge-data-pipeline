@@ -83,3 +83,22 @@ def test_failed_activation_recovers_previous_code_and_schedules(tmp_path,monkeyp
     assert (tmp_path/'current').resolve()==previous
     assert any(path==previous and args[0]=='up' for path,args in calls)
     assert restored==[['firebridge_analytics']]
+
+
+def test_same_revision_failed_rebuild_restores_original_image(tmp_path,monkeypatch):
+    shared=tmp_path/'shared';(shared/'deployments').mkdir(parents=True)
+    (shared/'.env').write_text('fixture');(tmp_path/'inbox').mkdir()
+    (shared/'deployment.json').write_text(json.dumps({'image_id':'sha256:old-working-image'}))
+    release=tmp_path/REV;release.mkdir();(tmp_path/'current').symlink_to(release,target_is_directory=True)
+    monkeypatch.setattr(cd,'ROOT',tmp_path);monkeypatch.setattr(cd,'SHARED',shared);monkeypatch.setattr(cd,'RESERVE',0)
+    monkeypatch.setattr(cd,'prepare_release',lambda r:release)
+    monkeypatch.setattr(cd,'pause_and_drain',lambda r:[])
+    calls=[]
+    def stack(path,*args,**kw):
+        if args[:2]==('run','--rm'):raise RuntimeError('fixture failure')
+    monkeypatch.setattr(cd,'stack',stack)
+    monkeypatch.setattr(cd,'run',lambda args,**kw:calls.append(args))
+    monkeypatch.setattr(cd,'restore_schedules',lambda r:None)
+    with pytest.raises(RuntimeError,match='previous code'):cd.activate(REV)
+    assert ['docker','image','tag','sha256:old-working-image',f'firebridge-airflow:{REV}'] in calls
+    assert json.loads((tmp_path/'inbox'/f'{REV}-image.json').read_text())['image_id']=='sha256:old-working-image'

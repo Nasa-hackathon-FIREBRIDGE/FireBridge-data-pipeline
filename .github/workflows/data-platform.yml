@@ -9,15 +9,14 @@ on:
 permissions:
   contents: read
 
-concurrency:
-  group: ci-${{ github.ref }}
-  cancel-in-progress: false
-
 jobs:
   validate:
     name: Validate data platform
     runs-on: ubuntu-24.04
     timeout-minutes: 60
+    concurrency:
+      group: validate-${{ github.ref }}
+      cancel-in-progress: true
     permissions:
       contents: read
       packages: write

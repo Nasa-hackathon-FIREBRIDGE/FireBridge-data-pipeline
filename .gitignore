@@ -28,3 +28,4 @@ deploy/release-image
 .tools/
 .chart-data-*/
 data/
+node_modules

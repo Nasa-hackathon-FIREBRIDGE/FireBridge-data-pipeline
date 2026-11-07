@@ -175,7 +175,9 @@ def prepare_release(revision):
 def activate(revision):
     release=prepare_release(revision)
     previous=(ROOT/'current').resolve() if (ROOT/'current').exists() else None
-    if previous==release:return {'state':'already_current','revision':revision}
+    previous_image=None
+    if previous and (SHARED/'deployment.json').exists():
+        previous_image=json.loads((SHARED/'deployment.json').read_text()).get('image_id')
     enabled=[];paused=False;stopped=False
     log_path=SHARED/'deployments'/f'{revision}.log'
     with log_path.open('a') as log:
@@ -203,12 +205,18 @@ def activate(revision):
             link=ROOT/'current.next';link.unlink(missing_ok=True);link.symlink_to(release,target_is_directory=True);link.replace(ROOT/'current')
             result={'state':'healthy','revision':revision,'previous_revision':previous.name if previous else None,
                 'deployed_at':datetime.now(timezone.utc).isoformat(),'new_provider_subscriptions_enabled':False,
-                'restored_schedules':enabled,'image':f'firebridge-airflow:{revision}'}
+                'restored_schedules':enabled,'image':f'firebridge-airflow:{revision}',
+                'image_id':json.loads(run(['docker','image','inspect',f'firebridge-airflow:{revision}']))[0]['Id']}
             atomic_json(SHARED/'deployment.json',result)
             return result
         except Exception:
             if previous:
                 try:
+                    # A rerun may rebuild the same commit with a new image ID.
+                    # Recover the actually deployed image, even if its tag moved.
+                    if previous==release and previous_image:
+                        run(['docker','image','tag',previous_image,f'firebridge-airflow:{revision}'],log=log)
+                        atomic_json(ROOT/'inbox'/f'{revision}-image.json',{'image_id':previous_image,'revision':revision})
                     if stopped:stack(previous,'up','-d','--wait','--no-build',*SERVICES,log=log)
                     if paused:restore_schedules(enabled)
                 except Exception:
