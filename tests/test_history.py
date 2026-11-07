@@ -156,6 +156,35 @@ def test_rate_wait_then_success_and_malformed_body_stays_unpublished(tmp_path,mo
     assert json.loads((root/'progress.json').read_text())['completed_windows']==0
 
 
+@pytest.mark.parametrize('budget,expected',[(60,20),(10,10)])
+def test_quota_waits_do_not_exhaust_history_retries_or_mark_failed_windows(tmp_path,monkeypatch,budget,expected):
+    root=tmp_path/'history'
+    initialize(root)
+    with ledger(root) as conn:
+        conn.execute('''INSERT INTO requests(id,feed,start,end_exclusive,priority,status)
+            VALUES (:id,:feed,:start,:end_exclusive,0,'pending')''',request())
+        conn.commit()
+    (root/'plan.json').write_text(json.dumps({'provider_gaps':[]}))
+    calls=[]
+    def fetch(settings,*args,**kwargs):
+        assert settings.firms_budget==expected
+        calls.append(1)
+        if len(calls)<=4:raise FetchError('provider_cooldown',retry_seconds=600,http_status=400)
+        return BODY,{}
+    monkeypatch.setattr('firebridge.history.get',fetch)
+    waits=[]
+    def wait(seconds):
+        waits.append(seconds)
+        status=json.loads((root/'progress.json').read_text())
+        assert status['state']=='waiting_for_provider' and status['failed_windows']==0
+        with ledger(root) as conn:
+            assert conn.execute('SELECT status FROM requests').fetchone()[0]=='pending'
+    result=run(Settings('unused',tmp_path,firms_key='fixture-secret',firms_budget=budget),
+        root=root,reserve_bytes=0,sleep=wait)
+    assert result['state']=='complete' and result['completed_windows']==1
+    assert len(calls)==5 and waits==[600]*4
+
+
 def test_first_execution_freezes_availability_plan_before_fetching_data(tmp_path,monkeypatch):
     lines=['data_id,min_date,max_date']+[
         ','.join(row[k] for k in ('data_id','min_date','max_date')) for row in available()]

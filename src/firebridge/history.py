@@ -5,6 +5,7 @@ snapshot defines non-overlapping requests. Only complete, validated responses
 become visible in the history catalog; raw CSV bytes are retained as gzip.
 """
 from collections import Counter
+from dataclasses import replace
 from datetime import date, datetime, timedelta, timezone
 import csv
 import fcntl
@@ -29,6 +30,7 @@ from .lake import atomic_json, platforms, quote, sha256, working_directory
 from .normalize import BASE
 
 GIB = 1024**3
+GLOBAL_REQUESTS_PER_10_MIN = 20
 FAMILIES = ('MODIS', 'VIIRS_SNPP', 'VIIRS_NOAA20', 'VIIRS_NOAA21', 'LANDSAT')
 FIELDS = ('latitude longitude brightness bright_ti4 scan track acq_date acq_time '
           'satellite instrument confidence version bright_t31 bright_ti5 frp daynight type path row').split()
@@ -257,6 +259,9 @@ def verify_completed(root, conn):
 
 def run(settings, *, root=None, max_windows=None, reserve_bytes=8*GIB, client=None, sleep=time.sleep):
     """Explicit execution only. Shared PostgreSQL budget also covers live fetches."""
+    # World requests cost multiple NASA transactions. Keep headroom under the
+    # provider quota, while respecting any smaller operator-supplied budget.
+    settings = replace(settings, firms_budget=min(settings.firms_budget, GLOBAL_REQUESTS_PER_10_MIN))
     root = Path(root or settings.data_dir/'lake'/'history').resolve()
     initialize(root)
     with (root/'.download.lock').open('w') as lock:
@@ -304,9 +309,10 @@ def run(settings, *, root=None, max_windows=None, reserve_bytes=8*GIB, client=No
                             break
                         except FetchError as exc:
                             code = exc.code
-                            if code not in ('local_rate_budget', 'provider_cooldown', 'http_429'):
+                            waiting = code in ('local_rate_budget', 'provider_cooldown', 'http_429')
+                            if not waiting:
                                 failures += 1
-                            conn.execute("UPDATE requests SET status='failed',error_code=? WHERE id=?", (code,row['id']))
+                            conn.execute("UPDATE requests SET status=?,error_code=? WHERE id=?", ('pending' if waiting else 'failed',code,row['id']))
                             conn.commit()
                             if exc.blocked or failures >= 3:
                                 raise

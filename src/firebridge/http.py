@@ -40,10 +40,17 @@ def get(settings, url, *, params=None, headers=None, client=None, firms=False):
                 except ValueError:
                     try: retry=max(1,int((parsedate_to_datetime(value)-now()).total_seconds()))
                     except (ValueError,TypeError): pass
-                if firms and response.status_code==429:
+                # FIRMS also returns HTTP 400 for a depleted transaction quota.
+                # Inspect only a bounded prefix; never persist its credential-bearing URL/body.
+                quota = firms and response.status_code==429
+                if firms and response.status_code==400:
+                    prefix=next(response.iter_bytes(chunk_size=4096),b'').lower()
+                    quota=b'exceeding allowed transaction limit' in prefix
+                if quota:
                     retry=max(600,retry)
                     with connect(settings) as conn:
-                        conn.execute("UPDATE provider_budgets SET blocked_until=%s WHERE id='firms'",(now()+timedelta(seconds=retry),))
+                        conn.execute("UPDATE provider_budgets SET blocked_until=GREATEST(blocked_until,%s) WHERE id='firms'",(now()+timedelta(seconds=retry),))
+                    raise FetchError('provider_cooldown',retry_seconds=retry,http_status=response.status_code)
                 raise FetchError(f"http_{response.status_code}",retry_seconds=retry,
                                  blocked=response.status_code in (401,403),http_status=response.status_code)
             if int(response.headers.get('content-length','0'))>settings.max_bytes: raise FetchError('payload_too_large',blocked=True)
