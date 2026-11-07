@@ -1,0 +1,30 @@
+# Explicitly isolated smoke environment. Never use this override on the live stack.
+services:
+  db:
+    ports: !override ['127.0.0.1:55433:5432']
+  airflow-scheduler:
+    volumes: !override
+      - ./data/platform-validation:/data
+      - ./data/imports-validation:/imports:ro
+      - airflow_logs:/opt/airflow/logs
+  airflow-dag-processor:
+    volumes: !override
+      - ./data/platform-validation:/data
+      - ./data/imports-validation:/imports:ro
+      - airflow_logs:/opt/airflow/logs
+  airflow-api:
+    ports: !override ['127.0.0.1:8081:8080']
+    volumes: !override
+      - ./data/platform-validation:/data
+      - ./data/imports-validation:/imports:ro
+      - airflow_logs:/opt/airflow/logs
+  airflow-init:
+    volumes: !override
+      - ./data/platform-validation:/data
+      - ./data/imports-validation:/imports:ro
+      - airflow_logs:/opt/airflow/logs
+  airflow-permissions:
+    volumes: !override
+      - ./data/platform-validation:/data
+      - ./data/imports-validation:/imports
+      - airflow_logs:/opt/airflow/logs

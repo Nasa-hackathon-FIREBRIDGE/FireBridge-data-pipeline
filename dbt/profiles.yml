@@ -1,0 +1,15 @@
+firebridge:
+  target: runtime
+  outputs:
+    runtime:
+      type: postgres
+      host: "{{ env_var('DBT_HOST') }}"
+      port: "{{ env_var('DBT_PORT', '5432') | int }}"
+      user: "{{ env_var('DBT_USER') }}"
+      password: "{{ env_var('DBT_PASSWORD') }}"
+      dbname: "{{ env_var('DBT_DATABASE') }}"
+      schema: "{{ env_var('DBT_BUILD_SCHEMA') }}"
+      threads: "{{ env_var('DBT_THREADS', '2') | int }}"
+      connect_timeout: 10
+      sslmode: "{{ env_var('DBT_SSLMODE', 'prefer') }}"
+      retries: 1

@@ -1,0 +1,136 @@
+x-airflow-env: &airflow-env
+  AIRFLOW__CORE__EXECUTOR: LocalExecutor
+  AIRFLOW__CORE__AUTH_MANAGER: airflow.providers.fab.auth_manager.fab_auth_manager.FabAuthManager
+  AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:${AIRFLOW_DB_PASSWORD:?Run scripts/init_server.py}@airflow-db:5432/airflow
+  AIRFLOW__CORE__FERNET_KEY: ${AIRFLOW_FERNET_KEY:?Run scripts/init_server.py}
+  AIRFLOW__API_AUTH__JWT_SECRET: ${AIRFLOW_JWT_SECRET:?Run scripts/init_server.py}
+  AIRFLOW__API__SECRET_KEY: ${AIRFLOW_API_SECRET:?Run scripts/init_server.py}
+  AIRFLOW__CORE__EXECUTION_API_SERVER_URL: http://airflow-api:8080/execution/
+  AIRFLOW__CORE__LOAD_EXAMPLES: 'false'
+  AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION: 'true'
+  AIRFLOW__CORE__PARALLELISM: '4'
+  AIRFLOW__CORE__MAX_ACTIVE_TASKS_PER_DAG: '4'
+  AIRFLOW__SCHEDULER__ENABLE_HEALTH_CHECK: 'true'
+  AIRFLOW__LOGGING__WORKER_LOG_SERVER_PORT: '8793'
+  AIRFLOW__CORE__DEFAULT_TIMEZONE: utc
+  DATABASE_URL: postgresql://firebridge:${FIREBRIDGE_DB_PASSWORD}@db:5432/firebridge
+  FIREBRIDGE_DATA_DIR: /data
+  FIREBRIDGE_DBT_PROJECT: /opt/firebridge/dbt
+  FIREBRIDGE_DBT_BIN: /opt/dbt-env/bin/dbt
+  FIREBRIDGE_DBT_PASSWORD: ${FIREBRIDGE_DBT_PASSWORD:?Run scripts/init_server.py}
+  FIREBRIDGE_READER_PASSWORD: ${FIREBRIDGE_READER_PASSWORD}
+  FIRMS_MAP_KEY: ${FIRMS_MAP_KEY:-}
+  EARTHDATA_TOKEN: ${EARTHDATA_TOKEN:-}
+  FIREBRIDGE_FIRMS_REQUESTS_PER_10_MIN: ${FIREBRIDGE_FIRMS_REQUESTS_PER_10_MIN:-60}
+  FIREBRIDGE_NEWS_ALLOWED_HOSTS: ${FIREBRIDGE_NEWS_ALLOWED_HOSTS:-}
+  AIRFLOW_ADMIN_USER: ${AIRFLOW_ADMIN_USER:-admin}
+  AIRFLOW_ADMIN_PASSWORD: ${AIRFLOW_ADMIN_PASSWORD:?Run scripts/init_server.py}
+
+x-airflow-common: &airflow-common
+  image: firebridge-airflow:3.3.2-v1
+  build:
+    context: .
+    dockerfile: deploy/Dockerfile.airflow
+  user: ${AIRFLOW_UID:-50000}:0
+  environment: *airflow-env
+  volumes:
+    - ./data/platform:/data
+    - ./data/imports:/imports:ro
+    - airflow_logs:/opt/airflow/logs
+  restart: unless-stopped
+  logging:
+    driver: json-file
+    options: {max-size: '20m', max-file: '3'}
+
+services:
+  db:
+    mem_limit: 6g
+    cpus: 4
+    shm_size: 1g
+    logging:
+      driver: json-file
+      options: {max-size: '20m', max-file: '3'}
+  airflow-db:
+    image: postgres:16.13
+    environment:
+      POSTGRES_DB: airflow
+      POSTGRES_USER: airflow
+      POSTGRES_PASSWORD: ${AIRFLOW_DB_PASSWORD}
+    volumes:
+      - airflow_pg:/var/lib/postgresql/data
+    healthcheck:
+      test: ['CMD-SHELL','pg_isready -U airflow -d airflow']
+      interval: 5s
+      timeout: 5s
+      retries: 20
+    restart: unless-stopped
+    mem_limit: 2g
+    cpus: 2
+    logging:
+      driver: json-file
+      options: {max-size: '20m', max-file: '3'}
+  airflow-permissions:
+    <<: *airflow-common
+    profiles: [setup]
+    user: '0:0'
+    restart: 'no'
+    entrypoint: [python, /opt/firebridge/deploy/permissions.py]
+    environment:
+      <<: *airflow-env
+      AIRFLOW_UID: ${AIRFLOW_UID:-50000}
+    volumes:
+      - ./data/platform:/data
+      - ./data/imports:/imports
+      - airflow_logs:/opt/airflow/logs
+  airflow-init:
+    <<: *airflow-common
+    profiles: [setup]
+    restart: 'no'
+    command: [python, /opt/firebridge/deploy/init_airflow.py]
+    depends_on:
+      db: {condition: service_healthy}
+      airflow-db: {condition: service_healthy}
+  airflow-api:
+    <<: *airflow-common
+    hostname: airflow-api
+    command: [api-server]
+    ports: ['127.0.0.1:${AIRFLOW_UI_PORT:-8080}:8080']
+    healthcheck:
+      test: ['CMD','curl','--fail','http://localhost:8080/api/v2/monitor/health']
+      interval: 15s
+      timeout: 10s
+      retries: 20
+    depends_on:
+      airflow-db: {condition: service_healthy}
+    mem_limit: 3g
+    cpus: 2
+  airflow-scheduler:
+    <<: *airflow-common
+    hostname: airflow-scheduler
+    command: [scheduler]
+    healthcheck:
+      test: ['CMD','curl','--fail','http://localhost:8974/health']
+      interval: 30s
+      timeout: 10s
+      retries: 5
+    depends_on:
+      airflow-api: {condition: service_healthy}
+      db: {condition: service_healthy}
+    mem_limit: 10g
+    cpus: 6
+  airflow-dag-processor:
+    <<: *airflow-common
+    hostname: airflow-dag-processor
+    command: [dag-processor]
+    healthcheck:
+      test: ['CMD-SHELL','airflow jobs check --job-type DagProcessorJob --hostname "$${HOSTNAME}"']
+      interval: 30s
+      timeout: 20s
+      retries: 5
+    depends_on:
+      airflow-api: {condition: service_healthy}
+    mem_limit: 2g
+    cpus: 2
+volumes:
+  airflow_pg:
+  airflow_logs:

@@ -1,0 +1,26 @@
+version: 2
+models:
+  - name: daily_detections
+    description: Native detections by registered scope, UTC date and source. Counts are not distinct fires. FRP statistics are per native observation.
+    columns:
+      - name: satellite_release_id
+        description: Immutable input release pinned for this build.
+        data_tests: [not_null]
+      - name: source_id
+        data_tests: [not_null]
+      - name: date_utc
+        data_tests: [not_null]
+  - name: query_coverage
+    description: Query-return status across the pinned satellite release's minimum-to-maximum dates. Never a clear-sky observation-coverage product. Sensors absent from the entire release are not invented.
+    columns:
+      - name: query_status
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: [missing, complete_empty, complete_with_detections]
+  - name: daily_weather
+    description: Point-sampled context. Precipitation grouped by interval start. Daily values require 24 valid hourly samples; wind direction is omitted.
+  - name: daily_reports
+    description: Dated article metadata grouped by publication date, not incident date or confirmed-fire count. Rejected reports excluded; undated reports remain in native serving view.
+  - name: area_daily_context
+    description: Independent arrays of source statistics, query coverage, weather points and reports. Empty arrays mean context unavailable. Input IDs are retained for backend citations.

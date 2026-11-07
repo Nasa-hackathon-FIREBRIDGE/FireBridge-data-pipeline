@@ -1,0 +1,11 @@
+{
+  "input_rows": 148475929,
+  "archives": 10,
+  "pilot_raw_rows": 2925,
+  "pilot_deduplicated_valid_rows": 2923,
+  "regional_exact_duplicate_excess": 16,
+  "regional_raw_rows": 34760,
+  "regional_clean_rows": 34744,
+  "global_hash_duplicate_excess": 304,
+  "all_zip_crc_verified": true
+}

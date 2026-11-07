@@ -1,0 +1,10 @@
+# CI builds the image. Production must load that exact image before activation.
+x-release: &release
+  image: ${FIREBRIDGE_RELEASE_IMAGE:?Missing verified release image}
+  build: !reset null
+services:
+  airflow-init: *release
+  airflow-permissions: *release
+  airflow-api: *release
+  airflow-scheduler: *release
+  airflow-dag-processor: *release

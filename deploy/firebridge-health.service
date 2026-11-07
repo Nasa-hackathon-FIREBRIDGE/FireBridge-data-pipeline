@@ -1,0 +1,8 @@
+[Unit]
+Description=FIREBRIDGE independent service and data health check
+After=docker.service
+
+[Service]
+Type=oneshot
+WorkingDirectory=/opt/firebridge
+ExecStart=/bin/sh /opt/firebridge/scripts/check_server.sh

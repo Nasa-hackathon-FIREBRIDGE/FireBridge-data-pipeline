@@ -1,0 +1,153 @@
+name: FIREBRIDGE CI/CD
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  validate:
+    name: Validate data platform
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    permissions:
+      contents: read
+      packages: write
+    outputs:
+      image: ${{ steps.publish.outputs.image }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: |
+            requirements-data.lock
+            deploy/requirements-dbt.lock
+      - name: Prepare isolated test configuration
+        run: |
+          python3 scripts/init_server.py
+          python3 scripts/ci_mask_secrets.py
+          python3 -m venv .venv
+          .venv/bin/pip install -r requirements-data.lock
+          .venv/bin/pip install -e '.[test]'
+          python3 -m venv .venv-dbt
+          .venv-dbt/bin/pip install -r deploy/requirements-dbt.lock
+      - name: Python, PostgreSQL and real dbt tests
+        run: |
+          docker compose up -d --wait db
+          FIREBRIDGE_TEST_DB=1 FIREBRIDGE_DBT_BIN="$PWD/.venv-dbt/bin/dbt" .venv/bin/pytest -q --tb=short
+          docker compose stop db
+      - name: Build the release image once
+        env:
+          REVISION: ${{ github.sha }}
+          REPOSITORY: ${{ github.repository }}
+        run: |
+          docker build --file deploy/Dockerfile.airflow \
+            --label "org.opencontainers.image.source=https://github.com/$REPOSITORY" \
+            --label "org.opencontainers.image.revision=$REVISION" \
+            --tag "firebridge-airflow:$REVISION" --tag firebridge-airflow:3.3.2-v1 .
+      - name: Validate the actual Airflow image and synthetic workflows
+        env:
+          FIREBRIDGE_STACK: validation
+          FIREBRIDGE_SKIP_BUILD: '1'
+        run: |
+          sh scripts/deploy_server.sh
+          sh scripts/stack.sh exec -T airflow-scheduler python /opt/firebridge/deploy/check_dags.py
+          sh scripts/stack.sh run --rm --no-deps -e FIREBRIDGE_VALIDATION=isolated-firebridge-validation airflow-init python /opt/firebridge/deploy/seed_validation.py
+          .venv/bin/python scripts/smoke_airflow.py
+      - name: Back up and rehearse restoration of synthetic data
+        env:
+          FIREBRIDGE_STACK: validation
+          FIREBRIDGE_BACKUP_DIR: /tmp/firebridge-ci-backup
+        run: |
+          sh scripts/backup_stack.sh
+          python3 scripts/restore_rehearsal.py --backup-root /tmp/firebridge-ci-backup
+      - name: Package the verified source release
+        run: |
+          bundle=$(python3 scripts/package_release.py)
+          mv "$bundle" dist/firebridge-source.tar.gz
+      - name: Publish the tested image to GHCR
+        id: publish
+        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_ACTOR: ${{ github.actor }}
+          REPOSITORY: ${{ github.repository }}
+          REVISION: ${{ github.sha }}
+        run: |
+          image="ghcr.io/${REPOSITORY,,}"
+          printf '%s' "$GH_TOKEN" | docker login ghcr.io -u "$GH_ACTOR" --password-stdin
+          docker tag "firebridge-airflow:$REVISION" "$image:$REVISION"
+          docker push "$image:$REVISION"
+          digest=$(docker image inspect "$image:$REVISION" --format '{{index .RepoDigests 0}}')
+          echo "image=$digest" >> "$GITHUB_OUTPUT"
+          docker logout ghcr.io
+      - name: Save the source release
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: firebridge-source-${{ github.sha }}
+          path: dist/firebridge-source.tar.gz
+          retention-days: 14
+      - name: Save validation evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: firebridge-validation-${{ github.sha }}
+          path: docs/data/airflow-smoke-verification.json
+          retention-days: 14
+      - name: Stop disposable services
+        if: always()
+        run: |
+          FIREBRIDGE_STACK=validation sh scripts/stack.sh stop || true
+          docker compose stop || true
+
+  deploy:
+    name: Deploy to Contabo
+    needs: validate
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request' && vars.DEPLOY_ENABLED == 'true'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    environment: production
+    concurrency:
+      group: contabo-production
+      cancel-in-progress: false
+    permissions:
+      contents: read
+      packages: read
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+        with:
+          persist-credentials: false
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
+        with:
+          name: firebridge-source-${{ github.sha }}
+          path: dist
+      - name: Authenticate for this job's image pull
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_ACTOR: ${{ github.actor }}
+        run: printf '%s' "$GH_TOKEN" | docker login ghcr.io -u "$GH_ACTOR" --password-stdin
+      - name: Transfer and activate the verified release
+        env:
+          DEPLOY_HOST: ${{ vars.DEPLOY_HOST }}
+          DEPLOY_USER: firebridge-deploy
+          DEPLOY_SSH_KEY: ${{ secrets.DEPLOY_SSH_KEY }}
+          DEPLOY_KNOWN_HOSTS: ${{ secrets.DEPLOY_KNOWN_HOSTS }}
+          RELEASE_REVISION: ${{ github.sha }}
+          RELEASE_IMAGE: ${{ needs.validate.outputs.image }}
+          SOURCE_BUNDLE: dist/firebridge-source.tar.gz
+        run: bash deploy/send_release.sh
+      - name: Remove runner registry credentials
+        if: always()
+        run: docker logout ghcr.io || true

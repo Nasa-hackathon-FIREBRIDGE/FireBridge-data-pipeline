@@ -1,0 +1,328 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/3yhsdq",
+    "id": "3yhsdq",
+    "slide": 7,
+    "layoutId": "efade4a4-4e61-45ad-aa91-dec01e88fa1b",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "9a17e23c-9ac4-4ed6-9b5e-28c487e072fe",
+    "masterLayoutName": "Master",
+    "backgroundColor": "#F9FAF7",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "bg1": "#FFFFFF",
+      "bg2": "#000000",
+      "tx1": "#1F1F1F",
+      "tx2": "#FFFFFF",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "typefaces": [
+      "Nimbus Sans"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "efade4a4-4e61-45ad-aa91-dec01e88fa1b",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "9a17e23c-9ac4-4ed6-9b5e-28c487e072fe",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "9a17e23c-9ac4-4ed6-9b5e-28c487e072fe",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/gfix8fy1",
+      "id": "1",
+      "bbox": [
+        70,
+        44,
+        1140,
+        85
+      ],
+      "geometry": "rect",
+      "text": "Northern and southern patterns differ",
+      "textPreview": "Northern and southern patterns differ",
+      "resolvedFontSize": 44,
+      "resolvedTextStyle": {
+        "fontSize": 44,
+        "typeface": "Nimbus Sans",
+        "color": "#17332F",
+        "bold": true,
+        "alignment": "left",
+        "autoFit": "none",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Northern and southern patterns differ"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Northern and southern patterns differ",
+          "resolvedTextStyle": {
+            "fontSize": 44,
+            "typeface": "Nimbus Sans",
+            "color": "#17332F",
+            "bold": true
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Northern and southern patterns differ",
+              "fontSize": 44,
+              "typeface": "Nimbus Sans",
+              "color": "#17332F",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/fe9wfahw",
+      "id": "2",
+      "bbox": [
+        70,
+        128,
+        1140,
+        52
+      ],
+      "geometry": "rect",
+      "text": "Both platforms combined, all detections per included calendar day",
+      "textPreview": "Both platforms combined, all detections per included calendar day",
+      "resolvedFontSize": 23,
+      "resolvedTextStyle": {
+        "fontSize": 23,
+        "typeface": "Nimbus Sans",
+        "color": "#536864",
+        "alignment": "left",
+        "autoFit": "none",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Both platforms combined, all detections per included calendar day"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Both platforms combined, all detections per included calendar day",
+          "resolvedTextStyle": {
+            "fontSize": 23,
+            "typeface": "Nimbus Sans",
+            "color": "#536864"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Both platforms combined, all detections per included calendar day",
+              "fontSize": 23,
+              "typeface": "Nimbus Sans",
+              "color": "#536864"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/edgf65gb",
+      "id": "3",
+      "bbox": [
+        1140,
+        666,
+        70,
+        30
+      ],
+      "geometry": "rect",
+      "text": "7",
+      "textPreview": "7",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "fontSize": 16,
+        "typeface": "Nimbus Sans",
+        "color": "#536864",
+        "alignment": "right",
+        "autoFit": "none",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "7"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "7",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "typeface": "Nimbus Sans",
+            "color": "#536864",
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "7",
+              "fontSize": 16,
+              "typeface": "Nimbus Sans",
+              "color": "#536864",
+              "alignment": "right"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 4,
+      "kind": "chart",
+      "scope": "slide",
+      "aid": "ch/ps361sne",
+      "id": "4",
+      "bbox": [
+        70,
+        190,
+        1140,
+        410
+      ],
+      "chartType": "line"
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/sbyx4vy5",
+      "id": "5",
+      "bbox": [
+        70,
+        614,
+        1140,
+        48
+      ],
+      "geometry": "rect",
+      "text": "Global totals combine regional calendars. The report includes spatial bins for closer inspection.",
+      "textPreview": "Global totals combine regional calendars. The report includes spatial bins for closer inspection.",
+      "resolvedFontSize": 23,
+      "resolvedTextStyle": {
+        "fontSize": 23,
+        "typeface": "Nimbus Sans",
+        "color": "#536864",
+        "alignment": "left",
+        "autoFit": "none",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Global totals combine regional calendars. The report includes spatial bins for closer inspection."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Global totals combine regional calendars. The report includes spatial bins for closer inspection.",
+          "resolvedTextStyle": {
+            "fontSize": 23,
+            "typeface": "Nimbus Sans",
+            "color": "#536864"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Global totals combine regional calendars. The report includes spatial bins for closer inspection.",
+              "fontSize": 23,
+              "typeface": "Nimbus Sans",
+              "color": "#536864"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    }
+  ],
+  "composeRuns": []
+}

@@ -1,0 +1,2405 @@
+[
+  {
+    "archive": "DL_FIRE_J1V-C2_42006.zip",
+    "path": "/home/da-rog/Downloads/nasa hackathon data/DL_FIRE_J1V-C2_42006.zip",
+    "signature": {
+      "bytes": 384170041,
+      "mtime_ns": 1788273983534772195
+    },
+    "sha256": "1865023c5ec6a5c38a21d81b7470a9b5cb6daa918c143f566604fa29d810514d",
+    "rows": 21424849,
+    "missing": {
+      "latitude": 0,
+      "longitude": 0,
+      "brightness": 0,
+      "scan": 0,
+      "track": 0,
+      "acq_date": 0,
+      "acq_time": 0,
+      "satellite": 0,
+      "instrument": 0,
+      "confidence": 0,
+      "version": 0,
+      "bright_t31": 0,
+      "frp": 0,
+      "daynight": 0,
+      "type": 0
+    },
+    "categories": {
+      "satellite": {
+        "N20": 21424849
+      },
+      "instrument": {
+        "VIIRS": 21424849
+      },
+      "confidence": {
+        "n": 17863291,
+        "l": 2459973,
+        "h": 1101585
+      },
+      "version": {
+        "2": 21424849
+      },
+      "daynight": {
+        "D": 15435539,
+        "N": 5989310
+      },
+      "type": {
+        "0": 19985085,
+        "2": 1261208,
+        "3": 158425,
+        "1": 20131
+      }
+    },
+    "numeric": {
+      "latitude": {
+        "n": 21424849,
+        "sum": 158710061.01271006,
+        "min": -88.59105,
+        "max": 79.51211,
+        "zero": 0,
+        "negative": 10098783,
+        "mean": 7.407756339972807,
+        "sample_quantiles": {
+          "0.01": -31.9048222,
+          "0.25": -12.732955,
+          "0.5": 4.752034999999999,
+          "0.75": 20.79327,
+          "0.95": 59.385471,
+          "0.99": 64.91543309999999
+        }
+      },
+      "longitude": {
+        "n": 21424849,
+        "sum": 421639331.84558004,
+        "min": -179.87791,
+        "max": 179.99338,
+        "zero": 0,
+        "negative": 6190345,
+        "mean": 19.679920817438667,
+        "sample_quantiles": {
+          "0.01": -125.1339402,
+          "0.25": -12.464255,
+          "0.5": 24.272055,
+          "0.75": 52.195382499999994,
+          "0.95": 133.86931099999998,
+          "0.99": 148.27972459999998
+        }
+      },
+      "brightness": {
+        "n": 21424849,
+        "sum": 7157011113.980005,
+        "min": 207.93,
+        "max": 367.0,
+        "zero": 0,
+        "negative": 0,
+        "mean": 334.05188125153205,
+        "sample_quantiles": {
+          "0.01": 296.24,
+          "0.25": 327.8875,
+          "0.5": 336.78,
+          "0.75": 344.72,
+          "0.95": 367.0,
+          "0.99": 367.0
+        }
+      },
+      "bright_t31": {
+        "n": 21424849,
+        "sum": 6401409034.779998,
+        "min": 192.61,
+        "max": 380.7,
+        "zero": 0,
+        "negative": 0,
+        "mean": 298.78432444401346,
+        "sample_quantiles": {
+          "0.01": 269.61990000000003,
+          "0.25": 291.3075,
+          "0.5": 299.61,
+          "0.75": 306.22,
+          "0.95": 315.02,
+          "0.99": 325.4101
+        }
+      },
+      "frp": {
+        "n": 21424849,
+        "sum": 215786025.78,
+        "min": 0.0,
+        "max": 3051.91,
+        "zero": 5416,
+        "negative": 0,
+        "mean": 10.071764136120633,
+        "sample_quantiles": {
+          "0.01": 0.49,
+          "0.25": 2.59,
+          "0.5": 5.03,
+          "0.75": 9.54,
+          "0.95": 32.5,
+          "0.99": 92.69149999999976
+        }
+      },
+      "scan": {
+        "n": 21424849,
+        "sum": 9866460.9,
+        "min": 0.32,
+        "max": 0.8,
+        "zero": 0,
+        "negative": 0,
+        "mean": 0.4605148395678308,
+        "sample_quantiles": {
+          "0.01": 0.32,
+          "0.25": 0.39,
+          "0.5": 0.44,
+          "0.75": 0.51,
+          "0.95": 0.63,
+          "0.99": 0.75
+        }
+      },
+      "track": {
+        "n": 21424849,
+        "sum": 10336325.340000002,
+        "min": 0.36,
+        "max": 0.78,
+        "zero": 0,
+        "negative": 0,
+        "mean": 0.48244565644313303,
+        "sample_quantiles": {
+          "0.01": 0.36,
+          "0.25": 0.38,
+          "0.5": 0.45,
+          "0.75": 0.57,
+          "0.95": 0.71,
+          "0.99": 0.77
+        }
+      }
+    },
+    "invalid": {
+      "latitude_non_numeric": 0,
+      "latitude_non_finite": 0,
+      "longitude_non_numeric": 0,
+      "longitude_non_finite": 0,
+      "brightness_non_numeric": 0,
+      "brightness_non_finite": 0,
+      "bright_t31_non_numeric": 0,
+      "bright_t31_non_finite": 0,
+      "frp_non_numeric": 0,
+      "frp_non_finite": 0,
+      "scan_non_numeric": 0,
+      "scan_non_finite": 0,
+      "track_non_numeric": 0,
+      "track_non_finite": 0,
+      "coordinates": 0,
+      "dates": 0,
+      "times": 0,
+      "daynight": 0
+    },
+    "regions": {
+      "pilot": 646,
+      "morocco_context_rectangle": 3722,
+      "southern_spain_rectangle": 1801
+    },
+    "region_bounds": {
+      "pilot": [
+        -6.4,
+        34.5,
+        -4.5,
+        35.9
+      ],
+      "morocco_context_rectangle": [
+        -13.5,
+        27,
+        -0.9,
+        36.1
+      ],
+      "southern_spain_rectangle": [
+        -7.5,
+        36,
+        -1,
+        38.5
+      ]
+    },
+    "member": "fire_archive_J1V-C2_42006.csv",
+    "uncompressed_bytes": 1734297116,
+    "crc32": "9ee23f96",
+    "stream": "standard",
+    "date_min": "2023-01-01",
+    "date_max": "2024-01-01",
+    "zip_crc_verified": true,
+    "duplicate_row_hash_excess": 0,
+    "quantile_sample_rows": 20000,
+    "schema": [
+      "latitude",
+      "longitude",
+      "brightness",
+      "scan",
+      "track",
+      "acq_date",
+      "acq_time",
+      "satellite",
+      "instrument",
+      "confidence",
+      "version",
+      "bright_t31",
+      "frp",
+      "daynight",
+      "type"
+    ],
+    "days_with_any_global_detection": 361,
+    "elapsed_seconds": 101.38
+  },
+  {
+    "archive": "DL_FIRE_J1V-C2_42011.zip",
+    "path": "/home/da-rog/Downloads/nasa hackathon data/DL_FIRE_J1V-C2_42011.zip",
+    "signature": {
+      "bytes": 406201276,
+      "mtime_ns": 1788274115865426926
+    },
+    "sha256": "ded0040dd10ddfb7d5a2f101c74be5d2950dc3a975b801b4babff2a098022470",
+    "rows": 22663860,
+    "missing": {
+      "latitude": 0,
+      "longitude": 0,
+      "brightness": 0,
+      "scan": 0,
+      "track": 0,
+      "acq_date": 0,
+      "acq_time": 0,
+      "satellite": 0,
+      "instrument": 0,
+      "confidence": 0,
+      "version": 0,
+      "bright_t31": 0,
+      "frp": 0,
+      "daynight": 0,
+      "type": 0
+    },
+    "categories": {
+      "satellite": {
+        "N20": 22663860
+      },
+      "instrument": {
+        "VIIRS": 22663860
+      },
+      "confidence": {
+        "n": 18939894,
+        "l": 2585453,
+        "h": 1138513
+      },
+      "version": {
+        "2": 22663860
+      },
+      "daynight": {
+        "D": 16353800,
+        "N": 6310060
+      },
+      "type": {
+        "0": 21237211,
+        "2": 1265088,
+        "3": 145089,
+        "1": 16472
+      }
+    },
+    "numeric": {
+      "latitude": {
+        "n": 22663860,
+        "sum": 136636206.82573003,
+        "min": -85.85243,
+        "max": 78.0547,
+        "zero": 0,
+        "negative": 11167811,
+        "mean": 6.028814457278241,
+        "sample_quantiles": {
+          "0.01": -30.6810175,
+          "0.25": -12.5711475,
+          "0.5": 0.68589,
+          "0.75": 17.030292499999998,
+          "0.95": 57.429401,
+          "0.99": 64.9187993
+        }
+      },
+      "longitude": {
+        "n": 22663860,
+        "sum": 360557402.0464201,
+        "min": -179.84271,
+        "max": 179.96082,
+        "zero": 2,
+        "negative": 7001291,
+        "mean": 15.90891410582399,
+        "sample_quantiles": {
+          "0.01": -121.7486128,
+          "0.25": -42.700379999999996,
+          "0.5": 22.756144999999997,
+          "0.75": 39.4055625,
+          "0.95": 129.9015035,
+          "0.99": 146.10459029999998
+        }
+      },
+      "brightness": {
+        "n": 22663860,
+        "sum": 7573191420.099998,
+        "min": 207.93,
+        "max": 367.0,
+        "zero": 0,
+        "negative": 0,
+        "mean": 334.15276215525506,
+        "sample_quantiles": {
+          "0.01": 296.65990000000005,
+          "0.25": 327.5275,
+          "0.5": 336.73,
+          "0.75": 344.71,
+          "0.95": 367.0,
+          "0.99": 367.0
+        }
+      },
+      "bright_t31": {
+        "n": 22663860,
+        "sum": 6783296614.119997,
+        "min": 0.0,
+        "max": 381.17,
+        "zero": 79,
+        "negative": 0,
+        "mean": 299.3001463175292,
+        "sample_quantiles": {
+          "0.01": 271.34990000000005,
+          "0.25": 292.14,
+          "0.5": 299.96,
+          "0.75": 306.34,
+          "0.95": 314.8905,
+          "0.99": 324.1817999999997
+        }
+      },
+      "frp": {
+        "n": 22663860,
+        "sum": 220180186.22999996,
+        "min": 0.0,
+        "max": 3276.55,
+        "zero": 4246,
+        "negative": 0,
+        "mean": 9.715034695325508,
+        "sample_quantiles": {
+          "0.01": 0.5,
+          "0.25": 2.57,
+          "0.5": 4.94,
+          "0.75": 9.43,
+          "0.95": 31.57149999999998,
+          "0.99": 91.68399999999937
+        }
+      },
+      "scan": {
+        "n": 22663860,
+        "sum": 10428736.48,
+        "min": 0.32,
+        "max": 0.8,
+        "zero": 0,
+        "negative": 0,
+        "mean": 0.4601482924797453,
+        "sample_quantiles": {
+          "0.01": 0.32,
+          "0.25": 0.39,
+          "0.5": 0.44,
+          "0.75": 0.51,
+          "0.95": 0.63,
+          "0.99": 0.75
+        }
+      },
+      "track": {
+        "n": 22663860,
+        "sum": 10906622.05,
+        "min": 0.36,
+        "max": 0.78,
+        "zero": 0,
+        "negative": 0,
+        "mean": 0.4812340903094178,
+        "sample_quantiles": {
+          "0.01": 0.36,
+          "0.25": 0.38,
+          "0.5": 0.45,
+          "0.75": 0.57,
+          "0.95": 0.71,
+          "0.99": 0.77
+        }
+      }
+    },
+    "invalid": {
+      "latitude_non_numeric": 0,
+      "latitude_non_finite": 0,
+      "longitude_non_numeric": 0,
+      "longitude_non_finite": 0,
+      "brightness_non_numeric": 0,
+      "brightness_non_finite": 0,
+      "bright_t31_non_numeric": 0,
+      "bright_t31_non_finite": 0,
+      "frp_non_numeric": 0,
+      "frp_non_finite": 0,
+      "scan_non_numeric": 0,
+      "scan_non_finite": 0,
+      "track_non_numeric": 0,
+      "track_non_finite": 0,
+      "coordinates": 0,
+      "dates": 0,
+      "times": 0,
+      "daynight": 0
+    },
+    "regions": {
+      "pilot": 332,
+      "morocco_context_rectangle": 2597,
+      "southern_spain_rectangle": 2226
+    },
+    "region_bounds": {
+      "pilot": [
+        -6.4,
+        34.5,
+        -4.5,
+        35.9
+      ],
+      "morocco_context_rectangle": [
+        -13.5,
+        27,
+        -0.9,
+        36.1
+      ],
+      "southern_spain_rectangle": [
+        -7.5,
+        36,
+        -1,
+        38.5
+      ]
+    },
+    "member": "fire_archive_J1V-C2_42011.csv",
+    "uncompressed_bytes": 1833242288,
+    "crc32": "d46fd653",
+    "stream": "standard",
+    "date_min": "2024-01-01",
+    "date_max": "2025-01-01",
+    "zip_crc_verified": true,
+    "duplicate_row_hash_excess": 0,
+    "quantile_sample_rows": 20000,
+    "schema": [
+      "latitude",
+      "longitude",
+      "brightness",
+      "scan",
+      "track",
+      "acq_date",
+      "acq_time",
+      "satellite",
+      "instrument",
+      "confidence",
+      "version",
+      "bright_t31",
+      "frp",
+      "daynight",
+      "type"
+    ],
+    "days_with_any_global_detection": 366,
+    "elapsed_seconds": 110.16
+  },
+  {
+    "archive": "DL_FIRE_J1V-C2_42016.zip",
+    "path": "/home/da-rog/Downloads/nasa hackathon data/DL_FIRE_J1V-C2_42016.zip",
+    "signature": {
+      "bytes": 334326979,
+      "mtime_ns": 1788273337462190605
+    },
+    "sha256": "45258045425f536dc537f01e96a7f5408e2565dc0a1573dec6532839e0249698",
+    "rows": 18503973,
+    "missing": {
+      "latitude": 0,
+      "longitude": 0,
+      "brightness": 0,
+      "scan": 0,
+      "track": 0,
+      "acq_date": 0,
+      "acq_time": 0,
+      "satellite": 0,
+      "instrument": 0,
+      "confidence": 0,
+      "version": 0,
+      "bright_t31": 0,
+      "frp": 0,
+      "daynight": 0,
+      "type": 0
+    },
+    "categories": {
+      "satellite": {
+        "N20": 18503973
+      },
+      "instrument": {
+        "VIIRS": 18503973
+      },
+      "confidence": {
+        "n": 15349931,
+        "l": 2225104,
+        "h": 928938
+      },
+      "version": {
+        "2": 18503973
+      },
+      "daynight": {
+        "D": 13739244,
+        "N": 4764729
+      },
+      "type": {
+        "0": 17019134,
+        "2": 1294794,
+        "3": 151929,
+        "1": 38116
+      }
+    },
+    "numeric": {
+      "latitude": {
+        "n": 18503973,
+        "sum": 128508705.83982006,
+        "min": -89.14716,
+        "max": 80.36205,
+        "zero": 0,
+        "negative": 8457195,
+        "mean": 6.944925062299867,
+        "sample_quantiles": {
+          "0.01": -31.709251899999998,
+          "0.25": -11.7110875,
+          "0.5": 5.0724800000000005,
+          "0.75": 20.0050875,
+          "0.95": 54.5409925,
+          "0.99": 62.226848999999994
+        }
+      },
+      "longitude": {
+        "n": 18503973,
+        "sum": 414888073.83649987,
+        "min": -179.95454,
+        "max": 179.99673,
+        "zero": 0,
+        "negative": 4404714,
+        "mean": 22.421567186490158,
+        "sample_quantiles": {
+          "0.01": -121.83334830000001,
+          "0.25": 5.3701275,
+          "0.5": 25.55006,
+          "0.75": 45.930144999999996,
+          "0.95": 130.548274,
+          "0.99": 147.33685079999998
+        }
+      },
+      "brightness": {
+        "n": 18503973,
+        "sum": 6190055619.02,
+        "min": 207.93,
+        "max": 367.0,
+        "zero": 0,
+        "negative": 0,
+        "mean": 334.52575936097617,
+        "sample_quantiles": {
+          "0.01": 296.3799,
+          "0.25": 329.93,
+          "0.5": 337.16,
+          "0.75": 344.81,
+          "0.95": 367.0,
+          "0.99": 367.0
+        }
+      },
+      "bright_t31": {
+        "n": 18503973,
+        "sum": 5533897827.160003,
+        "min": 192.87,
+        "max": 381.45,
+        "zero": 0,
+        "negative": 0,
+        "mean": 299.06538596657066,
+        "sample_quantiles": {
+          "0.01": 270.0498,
+          "0.25": 291.69,
+          "0.5": 300.23,
+          "0.75": 306.93,
+          "0.95": 315.7,
+          "0.99": 326.21039999999994
+        }
+      },
+      "frp": {
+        "n": 18503973,
+        "sum": 179145799.62,
+        "min": 0.0,
+        "max": 3907.87,
+        "zero": 4612,
+        "negative": 0,
+        "mean": 9.68147757349192,
+        "sample_quantiles": {
+          "0.01": 0.47,
+          "0.25": 2.65,
+          "0.5": 5.01,
+          "0.75": 9.34,
+          "0.95": 30.52,
+          "0.99": 87.30029999999995
+        }
+      },
+      "scan": {
+        "n": 18503973,
+        "sum": 8528874.850000003,
+        "min": 0.32,
+        "max": 0.8,
+        "zero": 0,
+        "negative": 0,
+        "mean": 0.46092127620376466,
+        "sample_quantiles": {
+          "0.01": 0.32,
+          "0.25": 0.4,
+          "0.5": 0.44,
+          "0.75": 0.51,
+          "0.95": 0.63,
+          "0.99": 0.75
+        }
+      },
+      "track": {
+        "n": 18503973,
+        "sum": 8960107.149999997,
+        "min": 0.36,
+        "max": 0.78,
+        "zero": 0,
+        "negative": 0,
+        "mean": 0.4842261253839917,
+        "sample_quantiles": {
+          "0.01": 0.36,
+          "0.25": 0.38,
+          "0.5": 0.45,
+          "0.75": 0.57,
+          "0.95": 0.71,
+          "0.99": 0.77
+        }
+      }
+    },
+    "invalid": {
+      "latitude_non_numeric": 0,
+      "latitude_non_finite": 0,
+      "longitude_non_numeric": 0,
+      "longitude_non_finite": 0,
+      "brightness_non_numeric": 0,
+      "brightness_non_finite": 0,
+      "bright_t31_non_numeric": 0,
+      "bright_t31_non_finite": 0,
+      "frp_non_numeric": 0,
+      "frp_non_finite": 0,
+      "scan_non_numeric": 0,
+      "scan_non_finite": 0,
+      "track_non_numeric": 0,
+      "track_non_finite": 0,
+      "coordinates": 0,
+      "dates": 0,
+      "times": 0,
+      "daynight": 0
+    },
+    "regions": {
+      "pilot": 418,
+      "morocco_context_rectangle": 2644,
+      "southern_spain_rectangle": 2596
+    },
+    "region_bounds": {
+      "pilot": [
+        -6.4,
+        34.5,
+        -4.5,
+        35.9
+      ],
+      "morocco_context_rectangle": [
+        -13.5,
+        27,
+        -0.9,
+        36.1
+      ],
+      "southern_spain_rectangle": [
+        -7.5,
+        36,
+        -1,
+        38.5
+      ]
+    },
+    "member": "fire_archive_J1V-C2_42016.csv",
+    "uncompressed_bytes": 1494912910,
+    "crc32": "e8858507",
+    "stream": "standard",
+    "date_min": "2025-01-01",
+    "date_max": "2026-01-01",
+    "zip_crc_verified": true,
+    "duplicate_row_hash_excess": 0,
+    "quantile_sample_rows": 20000,
+    "schema": [
+      "latitude",
+      "longitude",
+      "brightness",
+      "scan",
+      "track",
+      "acq_date",
+      "acq_time",
+      "satellite",
+      "instrument",
+      "confidence",
+      "version",
+      "bright_t31",
+      "frp",
+      "daynight",
+      "type"
+    ],
+    "days_with_any_global_detection": 366,
+    "elapsed_seconds": 89.29
+  },
+  {
+    "archive": "DL_FIRE_J2V-C2_42012.zip",
+    "path": "/home/da-rog/Downloads/nasa hackathon data/DL_FIRE_J2V-C2_42012.zip",
+    "signature": {
+      "bytes": 386434003,
+      "mtime_ns": 1788274040677483954
+    },
+    "sha256": "03198e436617c28ad3c15aba8564ee027e1a85a1dc0b0413a7c6533815b030e2",
+    "rows": 21564042,
+    "missing": {
+      "latitude": 0,
+      "longitude": 0,
+      "brightness": 0,
+      "scan": 0,
+      "track": 0,
+      "acq_date": 0,
+      "acq_time": 0,
+      "satellite": 0,
+      "instrument": 0,
+      "confidence": 0,
+      "version": 0,
+      "bright_t31": 0,
+      "frp": 0,
+      "daynight": 0
+    },
+    "categories": {
+      "satellite": {
+        "N21": 21564042
+      },
+      "instrument": {
+        "VIIRS": 21564042
+      },
+      "confidence": {
+        "n": 17703778,
+        "l": 2510636,
+        "h": 1349628
+      },
+      "version": {
+        "2.0NRT": 21564042
+      },
+      "daynight": {
+        "D": 15512571,
+        "N": 6051471
+      }
+    },
+    "numeric": {
+      "latitude": {
+        "n": 21564042,
+        "sum": 128327678.37177002,
+        "min": -88.61739,
+        "max": 79.60203,
+        "zero": 0,
+        "negative": 10766242,
+        "mean": 5.951002987833636,
+        "sample_quantiles": {
+          "0.01": -30.013756,
+          "0.25": -12.6472525,
+          "0.5": 1.76478,
+          "0.75": 17.856322499999997,
+          "0.95": 58.2558925,
+          "0.99": 64.96002569999999
+        }
+      },
+      "longitude": {
+        "n": 21564042,
+        "sum": 335231589.85266995,
+        "min": -179.47739,
+        "max": 179.9606,
+        "zero": 1,
+        "negative": 6736267,
+        "mean": 15.545860551220867,
+        "sample_quantiles": {
+          "0.01": -122.1112348,
+          "0.25": -46.2852225,
+          "0.5": 22.27648,
+          "0.75": 38.61625,
+          "0.95": 130.111855,
+          "0.99": 145.08217389999996
+        }
+      },
+      "brightness": {
+        "n": 21564042,
+        "sum": 7205304293.369998,
+        "min": 207.38,
+        "max": 367.0,
+        "zero": 0,
+        "negative": 0,
+        "mean": 334.13514467139316,
+        "sample_quantiles": {
+          "0.01": 296.29990000000004,
+          "0.25": 326.86,
+          "0.5": 336.605,
+          "0.75": 344.69,
+          "0.95": 367.0,
+          "0.99": 367.0
+        }
+      },
+      "bright_t31": {
+        "n": 21564042,
+        "sum": 6459974728.790003,
+        "min": 150.17,
+        "max": 375.08,
+        "zero": 0,
+        "negative": 0,
+        "mean": 299.57160762300515,
+        "sample_quantiles": {
+          "0.01": 271.4495,
+          "0.25": 292.35,
+          "0.5": 300.24,
+          "0.75": 306.69,
+          "0.95": 315.27,
+          "0.99": 326.80019999999996
+        }
+      },
+      "frp": {
+        "n": 21564042,
+        "sum": 247307531.2399999,
+        "min": -2.6,
+        "max": 5065.34,
+        "zero": 6479,
+        "negative": 41,
+        "mean": 11.468514633759288,
+        "sample_quantiles": {
+          "0.01": 0.59,
+          "0.25": 3.05,
+          "0.5": 5.98,
+          "0.75": 11.12,
+          "0.95": 35.640999999999984,
+          "0.99": 115.13029999999995
+        }
+      },
+      "scan": {
+        "n": 21564042,
+        "sum": 9928631.459999999,
+        "min": 0.32,
+        "max": 0.8,
+        "zero": 0,
+        "negative": 0,
+        "mean": 0.460425344191038,
+        "sample_quantiles": {
+          "0.01": 0.32,
+          "0.25": 0.39,
+          "0.5": 0.44,
+          "0.75": 0.51,
+          "0.95": 0.63,
+          "0.99": 0.75
+        }
+      },
+      "track": {
+        "n": 21564042,
+        "sum": 10415050.31,
+        "min": 0.36,
+        "max": 0.78,
+        "zero": 0,
+        "negative": 0,
+        "mean": 0.48298228643776525,
+        "sample_quantiles": {
+          "0.01": 0.36,
+          "0.25": 0.38,
+          "0.5": 0.45,
+          "0.75": 0.57,
+          "0.95": 0.71,
+          "0.99": 0.77
+        }
+      }
+    },
+    "invalid": {
+      "latitude_non_numeric": 0,
+      "latitude_non_finite": 0,
+      "longitude_non_numeric": 0,
+      "longitude_non_finite": 0,
+      "brightness_non_numeric": 0,
+      "brightness_non_finite": 0,
+      "bright_t31_non_numeric": 0,
+      "bright_t31_non_finite": 0,
+      "frp_non_numeric": 0,
+      "frp_non_finite": 0,
+      "scan_non_numeric": 0,
+      "scan_non_finite": 0,
+      "track_non_numeric": 0,
+      "track_non_finite": 0,
+      "coordinates": 0,
+      "dates": 0,
+      "times": 0,
+      "daynight": 0
+    },
+    "regions": {
+      "pilot": 322,
+      "morocco_context_rectangle": 2386,
+      "southern_spain_rectangle": 2212
+    },
+    "region_bounds": {
+      "pilot": [
+        -6.4,
+        34.5,
+        -4.5,
+        35.9
+      ],
+      "morocco_context_rectangle": [
+        -13.5,
+        27,
+        -0.9,
+        36.1
+      ],
+      "southern_spain_rectangle": [
+        -7.5,
+        36,
+        -1,
+        38.5
+      ]
+    },
+    "member": "fire_nrt_J2V-C2_42012.csv",
+    "uncompressed_bytes": 1809655231,
+    "crc32": "800a0480",
+    "stream": "NRT",
+    "date_min": "2024-01-01",
+    "date_max": "2025-01-01",
+    "zip_crc_verified": true,
+    "duplicate_row_hash_excess": 0,
+    "quantile_sample_rows": 20000,
+    "schema": [
+      "latitude",
+      "longitude",
+      "brightness",
+      "scan",
+      "track",
+      "acq_date",
+      "acq_time",
+      "satellite",
+      "instrument",
+      "confidence",
+      "version",
+      "bright_t31",
+      "frp",
+      "daynight"
+    ],
+    "days_with_any_global_detection": 358,
+    "elapsed_seconds": 105.67
+  },
+  {
+    "archive": "DL_FIRE_J2V-C2_42017.zip",
+    "path": "/home/da-rog/Downloads/nasa hackathon data/DL_FIRE_J2V-C2_42017.zip",
+    "signature": {
+      "bytes": 319585747,
+      "mtime_ns": 1788273228103701015
+    },
+    "sha256": "4024c7479a1681d291338d377b19e6f08e4c18a55bffcc3e32d52db2b2a01651",
+    "rows": 17701888,
+    "missing": {
+      "latitude": 0,
+      "longitude": 0,
+      "brightness": 0,
+      "scan": 0,
+      "track": 0,
+      "acq_date": 0,
+      "acq_time": 0,
+      "satellite": 0,
+      "instrument": 0,
+      "confidence": 0,
+      "version": 0,
+      "bright_t31": 0,
+      "frp": 0,
+      "daynight": 0
+    },
+    "categories": {
+      "satellite": {
+        "N21": 17701888
+      },
+      "instrument": {
+        "VIIRS": 17701888
+      },
+      "confidence": {
+        "n": 14404094,
+        "l": 2201236,
+        "h": 1096558
+      },
+      "version": {
+        "2.0NRT": 17701888
+      },
+      "daynight": {
+        "D": 13114221,
+        "N": 4587667
+      }
+    },
+    "numeric": {
+      "latitude": {
+        "n": 17701888,
+        "sum": 124521069.29458001,
+        "min": -85.8149,
+        "max": 82.3563,
+        "zero": 0,
+        "negative": 8059226,
+        "mean": 7.034338331288731,
+        "sample_quantiles": {
+          "0.01": -31.5303906,
+          "0.25": -11.56643,
+          "0.5": 5.310915,
+          "0.75": 20.2070625,
+          "0.95": 54.742451499999994,
+          "0.99": 62.34336699999999
+        }
+      },
+      "longitude": {
+        "n": 17701888,
+        "sum": 393687996.8450901,
+        "min": -179.84746,
+        "max": 179.99449,
+        "zero": 0,
+        "negative": 4271481,
+        "mean": 22.23988745410038,
+        "sample_quantiles": {
+          "0.01": -120.9864449,
+          "0.25": 4.4475625,
+          "0.5": 25.691564999999997,
+          "0.75": 46.474419999999995,
+          "0.95": 131.18151699999999,
+          "0.99": 146.90253759999993
+        }
+      },
+      "brightness": {
+        "n": 17701888,
+        "sum": 5920854815.870001,
+        "min": 207.38,
+        "max": 367.0,
+        "zero": 0,
+        "negative": 0,
+        "mean": 334.47589408937625,
+        "sample_quantiles": {
+          "0.01": 296.40970000000004,
+          "0.25": 328.91,
+          "0.5": 336.87,
+          "0.75": 344.54,
+          "0.95": 367.0,
+          "0.99": 367.0
+        }
+      },
+      "bright_t31": {
+        "n": 17701888,
+        "sum": 5299099921.530001,
+        "min": 184.6,
+        "max": 378.2,
+        "zero": 0,
+        "negative": 0,
+        "mean": 299.3522454514457,
+        "sample_quantiles": {
+          "0.01": 269.57,
+          "0.25": 291.76,
+          "0.5": 300.24,
+          "0.75": 306.8925,
+          "0.95": 315.74,
+          "0.99": 326.2401
+        }
+      },
+      "frp": {
+        "n": 17701888,
+        "sum": -1.0178973999999999e+30,
+        "min": -1.0178973999999999e+30,
+        "max": 3617.03,
+        "zero": 6253,
+        "negative": 5,
+        "mean": -5.750219411624341e+22,
+        "sample_quantiles": {
+          "0.01": 0.55,
+          "0.25": 3.11,
+          "0.5": 6.09,
+          "0.75": 11.28,
+          "0.95": 34.3105,
+          "0.99": 110.49099999999983
+        }
+      },
+      "scan": {
+        "n": 17701888,
+        "sum": 8151505.610000001,
+        "min": 0.32,
+        "max": 0.8,
+        "zero": 0,
+        "negative": 0,
+        "mean": 0.4604879214013783,
+        "sample_quantiles": {
+          "0.01": 0.32,
+          "0.25": 0.39,
+          "0.5": 0.44,
+          "0.75": 0.51,
+          "0.95": 0.63,
+          "0.99": 0.74
+        }
+      },
+      "track": {
+        "n": 17701888,
+        "sum": 8563560.529999997,
+        "min": 0.36,
+        "max": 0.78,
+        "zero": 0,
+        "negative": 0,
+        "mean": 0.48376537745578313,
+        "sample_quantiles": {
+          "0.01": 0.36,
+          "0.25": 0.38,
+          "0.5": 0.45,
+          "0.75": 0.57,
+          "0.95": 0.71,
+          "0.99": 0.76
+        }
+      }
+    },
+    "invalid": {
+      "latitude_non_numeric": 0,
+      "latitude_non_finite": 0,
+      "longitude_non_numeric": 0,
+      "longitude_non_finite": 0,
+      "brightness_non_numeric": 0,
+      "brightness_non_finite": 0,
+      "bright_t31_non_numeric": 0,
+      "bright_t31_non_finite": 0,
+      "frp_non_numeric": 0,
+      "frp_non_finite": 0,
+      "scan_non_numeric": 0,
+      "scan_non_finite": 0,
+      "track_non_numeric": 0,
+      "track_non_finite": 0,
+      "coordinates": 0,
+      "dates": 0,
+      "times": 0,
+      "daynight": 0
+    },
+    "regions": {
+      "pilot": 387,
+      "morocco_context_rectangle": 2475,
+      "southern_spain_rectangle": 2540
+    },
+    "region_bounds": {
+      "pilot": [
+        -6.4,
+        34.5,
+        -4.5,
+        35.9
+      ],
+      "morocco_context_rectangle": [
+        -13.5,
+        27,
+        -0.9,
+        36.1
+      ],
+      "southern_spain_rectangle": [
+        -7.5,
+        36,
+        -1,
+        38.5
+      ]
+    },
+    "member": "fire_nrt_J2V-C2_42017.csv",
+    "uncompressed_bytes": 1483713170,
+    "crc32": "4c0f1c85",
+    "stream": "NRT",
+    "date_min": "2025-01-01",
+    "date_max": "2026-01-01",
+    "zip_crc_verified": true,
+    "duplicate_row_hash_excess": 0,
+    "quantile_sample_rows": 20000,
+    "schema": [
+      "latitude",
+      "longitude",
+      "brightness",
+      "scan",
+      "track",
+      "acq_date",
+      "acq_time",
+      "satellite",
+      "instrument",
+      "confidence",
+      "version",
+      "bright_t31",
+      "frp",
+      "daynight"
+    ],
+    "days_with_any_global_detection": 366,
+    "elapsed_seconds": 85.18
+  },
+  {
+    "archive": "DL_FIRE_LS_42010.zip",
+    "path": "/home/da-rog/Downloads/nasa hackathon data/DL_FIRE_LS_42010.zip",
+    "signature": {
+      "bytes": 16699042,
+      "mtime_ns": 1788275282751996849
+    },
+    "sha256": "f1b65a1c3935e53a83b9ea9ce5ea2e1afaa8acef2ef633cc33beac82d76807bf",
+    "rows": 1581063,
+    "missing": {
+      "latitude": 0,
+      "longitude": 0,
+      "scan": 0,
+      "track": 0,
+      "acq_date": 0,
+      "acq_time": 0,
+      "satellite": 0,
+      "instrument": 0,
+      "confidence": 0,
+      "daynight": 0
+    },
+    "categories": {
+      "satellite": {
+        "L9": 835038,
+        "L8": 746025
+      },
+      "instrument": {
+        "OLI-2": 835038,
+        "OLI": 746025
+      },
+      "confidence": {
+        "H": 1169491,
+        "M": 218111,
+        "L": 193461
+      },
+      "daynight": {
+        "D": 1581063
+      }
+    },
+    "numeric": {
+      "latitude": {
+        "n": 1581063,
+        "sum": 68468516.15525301,
+        "min": 20.667903,
+        "max": 64.480898,
+        "zero": 0,
+        "negative": 0,
+        "mean": 43.30536870147047,
+        "sample_quantiles": {
+          "0.01": 25.09155707,
+          "0.25": 34.058440749999995,
+          "0.5": 41.732468,
+          "0.75": 55.154143749999996,
+          "0.95": 60.971129000000005,
+          "0.99": 61.84871674
+        }
+      },
+      "longitude": {
+        "n": 1581063,
+        "sum": -160255529.971347,
+        "min": -124.530353,
+        "max": -63.828918,
+        "zero": 0,
+        "negative": 1581063,
+        "mean": -101.35935757863349,
+        "sample_quantiles": {
+          "0.01": -122.27609674,
+          "0.25": -113.7866115,
+          "0.5": -103.1919645,
+          "0.75": -90.13909050000001,
+          "0.95": -79.99705120000002,
+          "0.99": -74.52243897000004
+        }
+      },
+      "scan": {
+        "n": 1581063,
+        "sum": 6419864427.0,
+        "min": 15.0,
+        "max": 7974.0,
+        "zero": 0,
+        "negative": 0,
+        "mean": 4060.4735086457654,
+        "sample_quantiles": {
+          "0.01": 467.0,
+          "0.25": 2465.0,
+          "0.5": 4185.0,
+          "0.75": 5663.25,
+          "0.95": 6862.0,
+          "0.99": 7369.0
+        }
+      },
+      "track": {
+        "n": 1581063,
+        "sum": 6461939628.0,
+        "min": 14.0,
+        "max": 8122.0,
+        "zero": 0,
+        "negative": 0,
+        "mean": 4087.0854785672677,
+        "sample_quantiles": {
+          "0.01": 552.98,
+          "0.25": 2586.0,
+          "0.5": 4127.0,
+          "0.75": 5464.25,
+          "0.95": 6984.0,
+          "0.99": 7649.009999999998
+        }
+      }
+    },
+    "invalid": {
+      "latitude_non_numeric": 0,
+      "latitude_non_finite": 0,
+      "longitude_non_numeric": 0,
+      "longitude_non_finite": 0,
+      "scan_non_numeric": 0,
+      "scan_non_finite": 0,
+      "track_non_numeric": 0,
+      "track_non_finite": 0,
+      "coordinates": 0,
+      "dates": 0,
+      "times": 0,
+      "daynight": 0
+    },
+    "regions": {
+      "pilot": 0,
+      "morocco_context_rectangle": 0,
+      "southern_spain_rectangle": 0
+    },
+    "region_bounds": {
+      "pilot": [
+        -6.4,
+        34.5,
+        -4.5,
+        35.9
+      ],
+      "morocco_context_rectangle": [
+        -13.5,
+        27,
+        -0.9,
+        36.1
+      ],
+      "southern_spain_rectangle": [
+        -7.5,
+        36,
+        -1,
+        38.5
+      ]
+    },
+    "member": "fire_nrt_LS_42010.csv",
+    "uncompressed_bytes": 93756892,
+    "crc32": "1faa11ba",
+    "stream": "NRT",
+    "date_min": "2024-01-01",
+    "date_max": "2025-01-01",
+    "zip_crc_verified": true,
+    "duplicate_row_hash_excess": 304,
+    "quantile_sample_rows": 20000,
+    "schema": [
+      "latitude",
+      "longitude",
+      "scan",
+      "track",
+      "acq_date",
+      "acq_time",
+      "satellite",
+      "instrument",
+      "confidence",
+      "daynight"
+    ],
+    "days_with_any_global_detection": 363,
+    "elapsed_seconds": 5.83
+  },
+  {
+    "archive": "DL_FIRE_LS_42015.zip",
+    "path": "/home/da-rog/Downloads/nasa hackathon data/DL_FIRE_LS_42015.zip",
+    "signature": {
+      "bytes": 16752245,
+      "mtime_ns": 1788273717164557933
+    },
+    "sha256": "d0301ac505b7a818a7ddcf6e942d68d0c4f67ac4e9a70ff1c5e6c0f3bead74a2",
+    "rows": 1654208,
+    "missing": {
+      "latitude": 0,
+      "longitude": 0,
+      "scan": 0,
+      "track": 0,
+      "acq_date": 0,
+      "acq_time": 0,
+      "satellite": 0,
+      "instrument": 0,
+      "confidence": 0,
+      "daynight": 0
+    },
+    "categories": {
+      "satellite": {
+        "L9": 917948,
+        "L8": 736260
+      },
+      "instrument": {
+        "OLI-2": 917948,
+        "OLI": 736260
+      },
+      "confidence": {
+        "H": 1248831,
+        "M": 216821,
+        "L": 188556
+      },
+      "daynight": {
+        "D": 1654208
+      }
+    },
+    "numeric": {
+      "latitude": {
+        "n": 1654208,
+        "sum": 73972629.659923,
+        "min": 20.703717,
+        "max": 63.315247,
+        "zero": 0,
+        "negative": 0,
+        "mean": 44.7178526883699,
+        "sample_quantiles": {
+          "0.01": 25.34108186,
+          "0.25": 35.04458675,
+          "0.5": 45.0433485,
+          "0.75": 54.9457515,
+          "0.95": 56.704088999999996,
+          "0.99": 58.652852870000004
+        }
+      },
+      "longitude": {
+        "n": 1654208,
+        "sum": -165181429.648812,
+        "min": -124.518386,
+        "max": -63.889899,
+        "zero": 0,
+        "negative": 1654208,
+        "mean": -99.85529609868408,
+        "sample_quantiles": {
+          "0.01": -122.23763033,
+          "0.25": -106.12444275,
+          "0.5": -101.897176,
+          "0.75": -92.45606475000001,
+          "0.95": -80.9022864,
+          "0.99": -75.06437060000003
+        }
+      },
+      "scan": {
+        "n": 1654208,
+        "sum": 6552818663.0,
+        "min": 15.0,
+        "max": 8208.0,
+        "zero": 0,
+        "negative": 0,
+        "mean": 3961.3027279519865,
+        "sample_quantiles": {
+          "0.01": 392.98,
+          "0.25": 2438.75,
+          "0.5": 4101.0,
+          "0.75": 5494.25,
+          "0.95": 6950.049999999999,
+          "0.99": 7393.019999999997
+        }
+      },
+      "track": {
+        "n": 1654208,
+        "sum": 6667542230.0,
+        "min": 10.0,
+        "max": 8171.0,
+        "zero": 0,
+        "negative": 0,
+        "mean": 4030.655292442063,
+        "sample_quantiles": {
+          "0.01": 476.99,
+          "0.25": 2403.0,
+          "0.5": 4054.0,
+          "0.75": 5743.0,
+          "0.95": 6845.0,
+          "0.99": 7411.0
+        }
+      }
+    },
+    "invalid": {
+      "latitude_non_numeric": 0,
+      "latitude_non_finite": 0,
+      "longitude_non_numeric": 0,
+      "longitude_non_finite": 0,
+      "scan_non_numeric": 0,
+      "scan_non_finite": 0,
+      "track_non_numeric": 0,
+      "track_non_finite": 0,
+      "coordinates": 0,
+      "dates": 0,
+      "times": 0,
+      "daynight": 0
+    },
+    "regions": {
+      "pilot": 0,
+      "morocco_context_rectangle": 0,
+      "southern_spain_rectangle": 0
+    },
+    "region_bounds": {
+      "pilot": [
+        -6.4,
+        34.5,
+        -4.5,
+        35.9
+      ],
+      "morocco_context_rectangle": [
+        -13.5,
+        27,
+        -0.9,
+        36.1
+      ],
+      "southern_spain_rectangle": [
+        -7.5,
+        36,
+        -1,
+        38.5
+      ]
+    },
+    "member": "fire_nrt_LS_42015.csv",
+    "uncompressed_bytes": 98159221,
+    "crc32": "fb74cdf0",
+    "stream": "NRT",
+    "date_min": "2025-01-01",
+    "date_max": "2026-01-01",
+    "zip_crc_verified": true,
+    "duplicate_row_hash_excess": 0,
+    "quantile_sample_rows": 20000,
+    "schema": [
+      "latitude",
+      "longitude",
+      "scan",
+      "track",
+      "acq_date",
+      "acq_time",
+      "satellite",
+      "instrument",
+      "confidence",
+      "daynight"
+    ],
+    "days_with_any_global_detection": 336,
+    "elapsed_seconds": 5.88
+  },
+  {
+    "archive": "DL_FIRE_M-C61_42014.zip",
+    "path": "/home/da-rog/Downloads/nasa hackathon data/DL_FIRE_M-C61_42014.zip",
+    "signature": {
+      "bytes": 66225141,
+      "mtime_ns": 1788273714978542153
+    },
+    "sha256": "7a4d09836aabf8c7ee7391a75d175af8bc8fbe29cd7c1e7727e9960258b5d18f",
+    "rows": 3715075,
+    "missing": {
+      "latitude": 0,
+      "longitude": 0,
+      "brightness": 0,
+      "scan": 0,
+      "track": 0,
+      "acq_date": 0,
+      "acq_time": 0,
+      "satellite": 0,
+      "instrument": 0,
+      "confidence": 0,
+      "version": 0,
+      "bright_t31": 0,
+      "frp": 0,
+      "daynight": 0,
+      "type": 0
+    },
+    "categories": {
+      "satellite": {
+        "Aqua": 2637424,
+        "Terra": 1077651
+      },
+      "instrument": {
+        "MODIS": 3715075
+      },
+      "confidence": {
+        "100": 236162,
+        "68": 77834,
+        "67": 77413,
+        "65": 76515,
+        "69": 78071,
+        "70": 77397,
+        "66": 77066,
+        "64": 74681,
+        "63": 73147,
+        "71": 76698,
+        "72": 75478,
+        "62": 71139,
+        "73": 74525,
+        "60": 66698,
+        "74": 73104,
+        "75": 73601,
+        "61": 69176,
+        "59": 64631,
+        "76": 69275,
+        "58": 62055,
+        "77": 66718,
+        "78": 64837,
+        "57": 59530,
+        "56": 56619,
+        "79": 62420,
+        "80": 59693,
+        "55": 53730,
+        "54": 51306,
+        "81": 57499,
+        "82": 54983,
+        "53": 49192,
+        "83": 52021,
+        "52": 46360,
+        "84": 50391,
+        "51": 44588,
+        "85": 48875,
+        "86": 46357,
+        "50": 42264,
+        "87": 47839,
+        "49": 40609,
+        "48": 38353,
+        "47": 37038,
+        "88": 41475,
+        "46": 35250,
+        "89": 39095,
+        "45": 33806,
+        "44": 31963,
+        "43": 30941,
+        "90": 36801,
+        "42": 29346,
+        "91": 34388,
+        "92": 32236,
+        "41": 27776,
+        "40": 26653,
+        "93": 29733,
+        "39": 25209,
+        "94": 34604,
+        "38": 23820,
+        "37": 22602,
+        "95": 25563,
+        "36": 21862,
+        "35": 20542,
+        "96": 23540,
+        "34": 19445,
+        "97": 21861,
+        "32": 17348,
+        "33": 18451,
+        "98": 20019,
+        "30": 15472,
+        "31": 16370,
+        "99": 18845,
+        "29": 14326,
+        "28": 13386,
+        "27": 12607,
+        "0": 33886,
+        "26": 11686,
+        "25": 10917,
+        "24": 10160,
+        "23": 9058,
+        "22": 8449,
+        "21": 7651,
+        "20": 6994,
+        "19": 6338,
+        "17": 4994,
+        "16": 4588,
+        "18": 5598,
+        "15": 3970,
+        "14": 3436,
+        "12": 2572,
+        "13": 2981,
+        "11": 2238,
+        "10": 2007,
+        "9": 1507,
+        "7": 1010,
+        "8": 1286,
+        "5": 640,
+        "6": 812,
+        "4": 443,
+        "3": 331,
+        "2": 203,
+        "1": 97
+      },
+      "version": {
+        "61.03": 3715075
+      },
+      "daynight": {
+        "D": 3130544,
+        "N": 584531
+      },
+      "type": {
+        "0": 3508984,
+        "2": 182342,
+        "3": 15645,
+        "1": 8104
+      }
+    },
+    "numeric": {
+      "latitude": {
+        "n": 3715075,
+        "sum": 21443400.969500005,
+        "min": -63.5941,
+        "max": 81.7458,
+        "zero": 0,
+        "negative": 1822788,
+        "mean": 5.771996788624726,
+        "sample_quantiles": {
+          "0.01": -32.695478,
+          "0.25": -11.66865,
+          "0.5": 3.3861,
+          "0.75": 18.501825,
+          "0.95": 54.349055,
+          "0.99": 62.976209
+        }
+      },
+      "longitude": {
+        "n": 3715075,
+        "sum": 73657551.11129999,
+        "min": -179.5557,
+        "max": 179.7542,
+        "zero": 1,
+        "negative": 981108,
+        "mean": 19.826665978829496,
+        "sample_quantiles": {
+          "0.01": -122.52534299999999,
+          "0.25": -7.285325,
+          "0.5": 24.711199999999998,
+          "0.75": 40.870025,
+          "0.95": 130.39918,
+          "0.99": 146.99871199999987
+        }
+      },
+      "brightness": {
+        "n": 3715075,
+        "sum": 1204927959.0,
+        "min": 300.0,
+        "max": 510.0,
+        "zero": 0,
+        "negative": 0,
+        "mean": 324.33476013270257,
+        "sample_quantiles": {
+          "0.01": 301.0,
+          "0.25": 314.1,
+          "0.5": 321.2,
+          "0.75": 330.125,
+          "0.95": 356.7,
+          "0.99": 394.40199999999965
+        }
+      },
+      "bright_t31": {
+        "n": 3715075,
+        "sum": 1112885742.8999999,
+        "min": 263.5,
+        "max": 400.1,
+        "zero": 0,
+        "negative": 0,
+        "mean": 299.55942824842026,
+        "sample_quantiles": {
+          "0.01": 275.899,
+          "0.25": 294.4,
+          "0.5": 300.1,
+          "0.75": 305.1,
+          "0.95": 312.3,
+          "0.99": 318.8
+        }
+      },
+      "frp": {
+        "n": 3715075,
+        "sum": 153038222.29999995,
+        "min": -5.9,
+        "max": 11247.1,
+        "zero": 2746,
+        "negative": 1,
+        "mean": 41.19384461955679,
+        "sample_quantiles": {
+          "0.01": 4.3,
+          "0.25": 10.1,
+          "0.5": 18.1,
+          "0.75": 37.4,
+          "0.95": 129.5,
+          "0.99": 385.72199999999646
+        }
+      },
+      "scan": {
+        "n": 3715075,
+        "sum": 5783163.799999999,
+        "min": 1.0,
+        "max": 4.8,
+        "zero": 0,
+        "negative": 0,
+        "mean": 1.5566748450569636,
+        "sample_quantiles": {
+          "0.01": 1.0,
+          "0.25": 1.1,
+          "0.5": 1.2,
+          "0.75": 1.7,
+          "0.95": 3.3,
+          "0.99": 4.4
+        }
+      },
+      "track": {
+        "n": 3715075,
+        "sum": 4439958.100000001,
+        "min": 1.0,
+        "max": 2.0,
+        "zero": 0,
+        "negative": 0,
+        "mean": 1.1951193717488882,
+        "sample_quantiles": {
+          "0.01": 1.0,
+          "0.25": 1.0,
+          "0.5": 1.1,
+          "0.75": 1.3,
+          "0.95": 1.7,
+          "0.99": 1.9
+        }
+      }
+    },
+    "invalid": {
+      "latitude_non_numeric": 0,
+      "latitude_non_finite": 0,
+      "longitude_non_numeric": 0,
+      "longitude_non_finite": 0,
+      "brightness_non_numeric": 0,
+      "brightness_non_finite": 0,
+      "bright_t31_non_numeric": 0,
+      "bright_t31_non_finite": 0,
+      "frp_non_numeric": 0,
+      "frp_non_finite": 0,
+      "scan_non_numeric": 0,
+      "scan_non_finite": 0,
+      "track_non_numeric": 0,
+      "track_non_finite": 0,
+      "coordinates": 0,
+      "dates": 0,
+      "times": 0,
+      "daynight": 0
+    },
+    "regions": {
+      "pilot": 110,
+      "morocco_context_rectangle": 262,
+      "southern_spain_rectangle": 615
+    },
+    "region_bounds": {
+      "pilot": [
+        -6.4,
+        34.5,
+        -4.5,
+        35.9
+      ],
+      "morocco_context_rectangle": [
+        -13.5,
+        27,
+        -0.9,
+        36.1
+      ],
+      "southern_spain_rectangle": [
+        -7.5,
+        36,
+        -1,
+        38.5
+      ]
+    },
+    "member": "fire_archive_M-C61_42014.csv",
+    "uncompressed_bytes": 295723960,
+    "crc32": "44b0ffa5",
+    "stream": "standard",
+    "date_min": "2025-01-01",
+    "date_max": "2026-01-01",
+    "zip_crc_verified": true,
+    "duplicate_row_hash_excess": 0,
+    "quantile_sample_rows": 20000,
+    "schema": [
+      "latitude",
+      "longitude",
+      "brightness",
+      "scan",
+      "track",
+      "acq_date",
+      "acq_time",
+      "satellite",
+      "instrument",
+      "confidence",
+      "version",
+      "bright_t31",
+      "frp",
+      "daynight",
+      "type"
+    ],
+    "days_with_any_global_detection": 366,
+    "elapsed_seconds": 17.36
+  },
+  {
+    "archive": "DL_FIRE_SV-C2_42013.zip",
+    "path": "/home/da-rog/Downloads/nasa hackathon data/DL_FIRE_SV-C2_42013.zip",
+    "signature": {
+      "bytes": 377448465,
+      "mtime_ns": 1788274127006426412
+    },
+    "sha256": "c0f119b08e9ab476ed552a7d0549ad18604c7a61e83c642478ae2bf21e4b253b",
+    "rows": 21122764,
+    "missing": {
+      "latitude": 0,
+      "longitude": 0,
+      "brightness": 0,
+      "scan": 0,
+      "track": 0,
+      "acq_date": 0,
+      "acq_time": 0,
+      "satellite": 0,
+      "instrument": 0,
+      "confidence": 0,
+      "version": 0,
+      "bright_t31": 0,
+      "frp": 0,
+      "daynight": 0,
+      "type": 0
+    },
+    "categories": {
+      "satellite": {
+        "SNPP": 21122764
+      },
+      "instrument": {
+        "SNPP": 21122764
+      },
+      "confidence": {
+        "n": 17578641,
+        "l": 2333362,
+        "h": 1210761
+      },
+      "version": {
+        "2": 21122764
+      },
+      "daynight": {
+        "D": 15325002,
+        "N": 5797762
+      },
+      "type": {
+        "0": 19774481,
+        "2": 1195326,
+        "3": 137444,
+        "1": 15513
+      }
+    },
+    "numeric": {
+      "latitude": {
+        "n": 21122764,
+        "sum": 122245467.29260994,
+        "min": -87.84043,
+        "max": 78.73554,
+        "zero": 0,
+        "negative": 10148003,
+        "mean": 5.787380254431189,
+        "sample_quantiles": {
+          "0.01": -30.153705199999997,
+          "0.25": -12.336852499999999,
+          "0.5": 3.4795249999999998,
+          "0.75": 15.79191,
+          "0.95": 56.17239899999999,
+          "0.99": 64.80450819999999
+        }
+      },
+      "longitude": {
+        "n": 21122764,
+        "sum": 307666592.00786996,
+        "min": -179.92526,
+        "max": 179.96014,
+        "zero": 0,
+        "negative": 6754695,
+        "mean": 14.565640747009716,
+        "sample_quantiles": {
+          "0.01": -121.5703904,
+          "0.25": -46.51456,
+          "0.5": 21.92248,
+          "0.75": 38.389395,
+          "0.95": 129.96064699999997,
+          "0.99": 146.59049670000002
+        }
+      },
+      "brightness": {
+        "n": 21122764,
+        "sum": 7066786538.1900015,
+        "min": 208.0,
+        "max": 367.0,
+        "zero": 0,
+        "negative": 0,
+        "mean": 334.5578513394365,
+        "sample_quantiles": {
+          "0.01": 296.3299,
+          "0.25": 327.7775,
+          "0.5": 337.0,
+          "0.75": 345.42,
+          "0.95": 367.0,
+          "0.99": 367.0
+        }
+      },
+      "bright_t31": {
+        "n": 21122764,
+        "sum": 6322131544.71,
+        "min": 0.0,
+        "max": 423.34,
+        "zero": 24,
+        "negative": 0,
+        "mean": 299.3041793540845,
+        "sample_quantiles": {
+          "0.01": 272.2,
+          "0.25": 292.08,
+          "0.5": 299.9,
+          "0.75": 306.34,
+          "0.95": 315.1,
+          "0.99": 324.8102999999999
+        }
+      },
+      "frp": {
+        "n": 21122764,
+        "sum": 202966932.14000013,
+        "min": 0.0,
+        "max": 2824.71,
+        "zero": 3485,
+        "negative": 0,
+        "mean": 9.608919180273952,
+        "sample_quantiles": {
+          "0.01": 0.49,
+          "0.25": 2.54,
+          "0.5": 4.98,
+          "0.75": 9.4,
+          "0.95": 31.32,
+          "0.99": 83.22159999999974
+        }
+      },
+      "scan": {
+        "n": 21122764,
+        "sum": 9711642.600000001,
+        "min": 0.32,
+        "max": 0.8,
+        "zero": 0,
+        "negative": 0,
+        "mean": 0.45977139166067477,
+        "sample_quantiles": {
+          "0.01": 0.32,
+          "0.25": 0.39,
+          "0.5": 0.44,
+          "0.75": 0.51,
+          "0.95": 0.62,
+          "0.99": 0.74
+        }
+      },
+      "track": {
+        "n": 21122764,
+        "sum": 10142837.110000005,
+        "min": 0.36,
+        "max": 0.78,
+        "zero": 0,
+        "negative": 0,
+        "mean": 0.48018512681389636,
+        "sample_quantiles": {
+          "0.01": 0.36,
+          "0.25": 0.38,
+          "0.5": 0.44,
+          "0.75": 0.56,
+          "0.95": 0.71,
+          "0.99": 0.76
+        }
+      }
+    },
+    "invalid": {
+      "latitude_non_numeric": 0,
+      "latitude_non_finite": 0,
+      "longitude_non_numeric": 0,
+      "longitude_non_finite": 0,
+      "brightness_non_numeric": 0,
+      "brightness_non_finite": 0,
+      "bright_t31_non_numeric": 0,
+      "bright_t31_non_finite": 0,
+      "frp_non_numeric": 0,
+      "frp_non_finite": 0,
+      "scan_non_numeric": 0,
+      "scan_non_finite": 0,
+      "track_non_numeric": 0,
+      "track_non_finite": 0,
+      "coordinates": 0,
+      "dates": 0,
+      "times": 0,
+      "daynight": 0
+    },
+    "regions": {
+      "pilot": 305,
+      "morocco_context_rectangle": 2166,
+      "southern_spain_rectangle": 1763
+    },
+    "region_bounds": {
+      "pilot": [
+        -6.4,
+        34.5,
+        -4.5,
+        35.9
+      ],
+      "morocco_context_rectangle": [
+        -13.5,
+        27,
+        -0.9,
+        36.1
+      ],
+      "southern_spain_rectangle": [
+        -7.5,
+        36,
+        -1,
+        38.5
+      ]
+    },
+    "member": "fire_archive_SV-C2_42013.csv",
+    "uncompressed_bytes": 1707548051,
+    "crc32": "89d6e003",
+    "stream": "standard",
+    "date_min": "2024-01-01",
+    "date_max": "2025-01-01",
+    "zip_crc_verified": true,
+    "duplicate_row_hash_excess": 0,
+    "quantile_sample_rows": 20000,
+    "schema": [
+      "latitude",
+      "longitude",
+      "brightness",
+      "scan",
+      "track",
+      "acq_date",
+      "acq_time",
+      "satellite",
+      "instrument",
+      "confidence",
+      "version",
+      "bright_t31",
+      "frp",
+      "daynight",
+      "type"
+    ],
+    "days_with_any_global_detection": 348,
+    "elapsed_seconds": 100.64
+  },
+  {
+    "archive": "DL_FIRE_SV-C2_42018.zip",
+    "path": "/home/da-rog/Downloads/nasa hackathon data/DL_FIRE_SV-C2_42018.zip",
+    "signature": {
+      "bytes": 333679008,
+      "mtime_ns": 1788273152893435111
+    },
+    "sha256": "abc26dc984d364eafa16ccb88aec5379ebea67c21db1dc1f5eb747ad5fcc4bba",
+    "rows": 18544207,
+    "missing": {
+      "latitude": 0,
+      "longitude": 0,
+      "brightness": 0,
+      "scan": 0,
+      "track": 0,
+      "acq_date": 0,
+      "acq_time": 0,
+      "satellite": 0,
+      "instrument": 0,
+      "confidence": 0,
+      "version": 0,
+      "bright_t31": 0,
+      "frp": 0,
+      "daynight": 0,
+      "type": 0
+    },
+    "categories": {
+      "satellite": {
+        "SNPP": 18544207
+      },
+      "instrument": {
+        "SNPP": 18544207
+      },
+      "confidence": {
+        "n": 15320539,
+        "l": 2167358,
+        "h": 1056310
+      },
+      "version": {
+        "2": 18544207
+      },
+      "daynight": {
+        "D": 13866492,
+        "N": 4677715
+      },
+      "type": {
+        "0": 17061922,
+        "2": 1294573,
+        "3": 151782,
+        "1": 35930
+      }
+    },
+    "numeric": {
+      "latitude": {
+        "n": 18544207,
+        "sum": 126668301.41691993,
+        "min": -84.72155,
+        "max": 83.47752,
+        "zero": 0,
+        "negative": 8494755,
+        "mean": 6.830613000432962,
+        "sample_quantiles": {
+          "0.01": -32.4398471,
+          "0.25": -11.54144,
+          "0.5": 5.069789999999999,
+          "0.75": 19.8023625,
+          "0.95": 54.78032449999999,
+          "0.99": 62.25494129999999
+        }
+      },
+      "longitude": {
+        "n": 18544207,
+        "sum": 416780708.23793,
+        "min": -179.95911,
+        "max": 179.9958,
+        "zero": 0,
+        "negative": 4408435,
+        "mean": 22.474981445037255,
+        "sample_quantiles": {
+          "0.01": -120.8990296,
+          "0.25": 3.2306875,
+          "0.5": 25.392125,
+          "0.75": 45.09173,
+          "0.95": 130.51039699999998,
+          "0.99": 147.33273279999992
+        }
+      },
+      "brightness": {
+        "n": 18544207,
+        "sum": 6212870754.239997,
+        "min": 0.0,
+        "max": 367.0,
+        "zero": 8,
+        "negative": 0,
+        "mean": 335.0302741033896,
+        "sample_quantiles": {
+          "0.01": 296.5299,
+          "0.25": 330.02,
+          "0.5": 337.43,
+          "0.75": 345.57,
+          "0.95": 367.0,
+          "0.99": 367.0
+        }
+      },
+      "bright_t31": {
+        "n": 18544207,
+        "sum": 5547873487.549999,
+        "min": 0.0,
+        "max": 387.66,
+        "zero": 4,
+        "negative": 0,
+        "mean": 299.170166055092,
+        "sample_quantiles": {
+          "0.01": 270.1195,
+          "0.25": 291.55,
+          "0.5": 300.075,
+          "0.75": 306.76,
+          "0.95": 315.4,
+          "0.99": 325.7802999999999
+        }
+      },
+      "frp": {
+        "n": 18544207,
+        "sum": 179061169.04999998,
+        "min": 0.0,
+        "max": 2274.06,
+        "zero": 3883,
+        "negative": 0,
+        "mean": 9.655908664630415,
+        "sample_quantiles": {
+          "0.01": 0.47990000000000005,
+          "0.25": 2.61,
+          "0.5": 5.1,
+          "0.75": 9.46,
+          "0.95": 29.93049999999999,
+          "0.99": 82.64139999999978
+        }
+      },
+      "scan": {
+        "n": 18544207,
+        "sum": 8530951.270000001,
+        "min": 0.32,
+        "max": 0.8,
+        "zero": 0,
+        "negative": 0,
+        "mean": 0.4600332206170909,
+        "sample_quantiles": {
+          "0.01": 0.32,
+          "0.25": 0.39,
+          "0.5": 0.44,
+          "0.75": 0.51,
+          "0.95": 0.63,
+          "0.99": 0.75
+        }
+      },
+      "track": {
+        "n": 18544207,
+        "sum": 8923040.940000003,
+        "min": 0.36,
+        "max": 0.78,
+        "zero": 0,
+        "negative": 0,
+        "mean": 0.48117673298189584,
+        "sample_quantiles": {
+          "0.01": 0.36,
+          "0.25": 0.38,
+          "0.5": 0.45,
+          "0.75": 0.56,
+          "0.95": 0.71,
+          "0.99": 0.77
+        }
+      }
+    },
+    "invalid": {
+      "latitude_non_numeric": 0,
+      "latitude_non_finite": 0,
+      "longitude_non_numeric": 0,
+      "longitude_non_finite": 0,
+      "brightness_non_numeric": 0,
+      "brightness_non_finite": 0,
+      "bright_t31_non_numeric": 0,
+      "bright_t31_non_finite": 0,
+      "frp_non_numeric": 0,
+      "frp_non_finite": 0,
+      "scan_non_numeric": 0,
+      "scan_non_finite": 0,
+      "track_non_numeric": 0,
+      "track_non_finite": 0,
+      "coordinates": 0,
+      "dates": 0,
+      "times": 0,
+      "daynight": 0
+    },
+    "regions": {
+      "pilot": 405,
+      "morocco_context_rectangle": 2419,
+      "southern_spain_rectangle": 2464
+    },
+    "region_bounds": {
+      "pilot": [
+        -6.4,
+        34.5,
+        -4.5,
+        35.9
+      ],
+      "morocco_context_rectangle": [
+        -13.5,
+        27,
+        -0.9,
+        36.1
+      ],
+      "southern_spain_rectangle": [
+        -7.5,
+        36,
+        -1,
+        38.5
+      ]
+    },
+    "member": "fire_archive_SV-C2_42018.csv",
+    "uncompressed_bytes": 1497774689,
+    "crc32": "48818ce4",
+    "stream": "standard",
+    "date_min": "2025-01-01",
+    "date_max": "2026-01-01",
+    "zip_crc_verified": true,
+    "duplicate_row_hash_excess": 0,
+    "quantile_sample_rows": 20000,
+    "schema": [
+      "latitude",
+      "longitude",
+      "brightness",
+      "scan",
+      "track",
+      "acq_date",
+      "acq_time",
+      "satellite",
+      "instrument",
+      "confidence",
+      "version",
+      "bright_t31",
+      "frp",
+      "daynight",
+      "type"
+    ],
+    "days_with_any_global_detection": 366,
+    "elapsed_seconds": 93.64
+  }
+]

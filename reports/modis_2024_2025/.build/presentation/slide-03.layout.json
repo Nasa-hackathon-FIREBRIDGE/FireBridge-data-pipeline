@@ -1,0 +1,879 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/jdbkgn",
+    "id": "jdbkgn",
+    "slide": 3,
+    "layoutId": "efade4a4-4e61-45ad-aa91-dec01e88fa1b",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "9a17e23c-9ac4-4ed6-9b5e-28c487e072fe",
+    "masterLayoutName": "Master",
+    "backgroundColor": "#F9FAF7",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "bg1": "#FFFFFF",
+      "bg2": "#000000",
+      "tx1": "#1F1F1F",
+      "tx2": "#FFFFFF",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "typefaces": [
+      "Nimbus Sans"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "efade4a4-4e61-45ad-aa91-dec01e88fa1b",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "9a17e23c-9ac4-4ed6-9b5e-28c487e072fe",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "9a17e23c-9ac4-4ed6-9b5e-28c487e072fe",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/idcr2h4f",
+      "id": "1",
+      "bbox": [
+        70,
+        44,
+        1140,
+        85
+      ],
+      "geometry": "rect",
+      "text": "One row is one thermal detection",
+      "textPreview": "One row is one thermal detection",
+      "resolvedFontSize": 44,
+      "resolvedTextStyle": {
+        "fontSize": 44,
+        "typeface": "Nimbus Sans",
+        "color": "#17332F",
+        "bold": true,
+        "alignment": "left",
+        "autoFit": "none",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "One row is one thermal detection"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "One row is one thermal detection",
+          "resolvedTextStyle": {
+            "fontSize": 44,
+            "typeface": "Nimbus Sans",
+            "color": "#17332F",
+            "bold": true
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "One row is one thermal detection",
+              "fontSize": 44,
+              "typeface": "Nimbus Sans",
+              "color": "#17332F",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/503qdwnq",
+      "id": "2",
+      "bbox": [
+        70,
+        128,
+        1140,
+        52
+      ],
+      "geometry": "rect",
+      "text": "A real Aqua example inside the northern Morocco study rectangle",
+      "textPreview": "A real Aqua example inside the northern Morocco study rectangle",
+      "resolvedFontSize": 23,
+      "resolvedTextStyle": {
+        "fontSize": 23,
+        "typeface": "Nimbus Sans",
+        "color": "#536864",
+        "alignment": "left",
+        "autoFit": "none",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "A real Aqua example inside the northern Morocco study rectangle"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "A real Aqua example inside the northern Morocco study rectangle",
+          "resolvedTextStyle": {
+            "fontSize": 23,
+            "typeface": "Nimbus Sans",
+            "color": "#536864"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "A real Aqua example inside the northern Morocco study rectangle",
+              "fontSize": 23,
+              "typeface": "Nimbus Sans",
+              "color": "#536864"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/4fu94rm5",
+      "id": "3",
+      "bbox": [
+        1140,
+        666,
+        70,
+        30
+      ],
+      "geometry": "rect",
+      "text": "3",
+      "textPreview": "3",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "fontSize": 16,
+        "typeface": "Nimbus Sans",
+        "color": "#536864",
+        "alignment": "right",
+        "autoFit": "none",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "3"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "3",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "typeface": "Nimbus Sans",
+            "color": "#536864",
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "3",
+              "fontSize": 16,
+              "typeface": "Nimbus Sans",
+              "color": "#536864",
+              "alignment": "right"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 4,
+      "kind": "table",
+      "scope": "slide",
+      "aid": "tb/6lcje10r",
+      "id": "4",
+      "bbox": [
+        70,
+        194,
+        1140,
+        410
+      ],
+      "text": "Field group | Example | Meaning\nAcquisition | 2024-02-21 14:04 UTC | The satellite observation time\nPlatform | Aqua | MODIS on the Aqua satellite\nPixel center | 35.5003, -5.5547 | Latitude and longitude in degrees\nBrightness | 307.6 K / 297.1 K | Thermal band temperatures\nFRP | 5.5 MW | Radiative power inside the pixel\nQuality and class | 58 confidence, D, type 0 | Native algorithm fields",
+      "textPreview": "Field group | Example | Meaning | Acquisition | 2024-02-21 14:04 UTC | The satellite observation time | Platform | Aqua | MODIS on the Aq...",
+      "rows": 7,
+      "cols": 3,
+      "cells": [
+        {
+          "index": 1,
+          "row": 1,
+          "column": 1,
+          "bbox": [
+            70,
+            194,
+            220,
+            58.57
+          ],
+          "text": "Field group",
+          "textPreview": "Field group",
+          "fillColor": "#17332F",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "Field group",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Field group"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 2,
+          "row": 1,
+          "column": 2,
+          "bbox": [
+            290,
+            194,
+            470,
+            58.57
+          ],
+          "text": "Example",
+          "textPreview": "Example",
+          "fillColor": "#17332F",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "Example",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Example"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 3,
+          "row": 1,
+          "column": 3,
+          "bbox": [
+            760,
+            194,
+            450,
+            58.57
+          ],
+          "text": "Meaning",
+          "textPreview": "Meaning",
+          "fillColor": "#17332F",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "Meaning",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Meaning"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 4,
+          "row": 2,
+          "column": 1,
+          "bbox": [
+            70,
+            252.57,
+            220,
+            58.57
+          ],
+          "text": "Acquisition",
+          "textPreview": "Acquisition",
+          "fillColor": "#F9FAF7",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "Acquisition",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Acquisition"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 5,
+          "row": 2,
+          "column": 2,
+          "bbox": [
+            290,
+            252.57,
+            470,
+            58.57
+          ],
+          "text": "2024-02-21 14:04 UTC",
+          "textPreview": "2024-02-21 14:04 UTC",
+          "fillColor": "#F9FAF7",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "2024-02-21 14:04 UTC",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "2024-02-21 14:04 UTC"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 6,
+          "row": 2,
+          "column": 3,
+          "bbox": [
+            760,
+            252.57,
+            450,
+            58.57
+          ],
+          "text": "The satellite observation time",
+          "textPreview": "The satellite observation time",
+          "fillColor": "#F9FAF7",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "The satellite observation time",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "The satellite observation time"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 7,
+          "row": 3,
+          "column": 1,
+          "bbox": [
+            70,
+            311.14,
+            220,
+            58.57
+          ],
+          "text": "Platform",
+          "textPreview": "Platform",
+          "fillColor": "#F9FAF7",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "Platform",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Platform"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 8,
+          "row": 3,
+          "column": 2,
+          "bbox": [
+            290,
+            311.14,
+            470,
+            58.57
+          ],
+          "text": "Aqua",
+          "textPreview": "Aqua",
+          "fillColor": "#F9FAF7",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "Aqua",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Aqua"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 9,
+          "row": 3,
+          "column": 3,
+          "bbox": [
+            760,
+            311.14,
+            450,
+            58.57
+          ],
+          "text": "MODIS on the Aqua satellite",
+          "textPreview": "MODIS on the Aqua satellite",
+          "fillColor": "#F9FAF7",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "MODIS on the Aqua satellite",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "MODIS on the Aqua satellite"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 10,
+          "row": 4,
+          "column": 1,
+          "bbox": [
+            70,
+            369.71,
+            220,
+            58.57
+          ],
+          "text": "Pixel center",
+          "textPreview": "Pixel center",
+          "fillColor": "#F9FAF7",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "Pixel center",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Pixel center"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 11,
+          "row": 4,
+          "column": 2,
+          "bbox": [
+            290,
+            369.71,
+            470,
+            58.57
+          ],
+          "text": "35.5003, -5.5547",
+          "textPreview": "35.5003, -5.5547",
+          "fillColor": "#F9FAF7",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "35.5003, -5.5547",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "35.5003, -5.5547"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 12,
+          "row": 4,
+          "column": 3,
+          "bbox": [
+            760,
+            369.71,
+            450,
+            58.57
+          ],
+          "text": "Latitude and longitude in degrees",
+          "textPreview": "Latitude and longitude in degrees",
+          "fillColor": "#F9FAF7",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "Latitude and longitude in degrees",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Latitude and longitude in degrees"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 13,
+          "row": 5,
+          "column": 1,
+          "bbox": [
+            70,
+            428.29,
+            220,
+            58.57
+          ],
+          "text": "Brightness",
+          "textPreview": "Brightness",
+          "fillColor": "#F9FAF7",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "Brightness",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Brightness"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 14,
+          "row": 5,
+          "column": 2,
+          "bbox": [
+            290,
+            428.29,
+            470,
+            58.57
+          ],
+          "text": "307.6 K / 297.1 K",
+          "textPreview": "307.6 K / 297.1 K",
+          "fillColor": "#F9FAF7",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "307.6 K / 297.1 K",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "307.6 K / 297.1 K"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 15,
+          "row": 5,
+          "column": 3,
+          "bbox": [
+            760,
+            428.29,
+            450,
+            58.57
+          ],
+          "text": "Thermal band temperatures",
+          "textPreview": "Thermal band temperatures",
+          "fillColor": "#F9FAF7",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "Thermal band temperatures",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Thermal band temperatures"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 16,
+          "row": 6,
+          "column": 1,
+          "bbox": [
+            70,
+            486.86,
+            220,
+            58.57
+          ],
+          "text": "FRP",
+          "textPreview": "FRP",
+          "fillColor": "#F9FAF7",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "FRP",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "FRP"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 17,
+          "row": 6,
+          "column": 2,
+          "bbox": [
+            290,
+            486.86,
+            470,
+            58.57
+          ],
+          "text": "5.5 MW",
+          "textPreview": "5.5 MW",
+          "fillColor": "#F9FAF7",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "5.5 MW",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "5.5 MW"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 18,
+          "row": 6,
+          "column": 3,
+          "bbox": [
+            760,
+            486.86,
+            450,
+            58.57
+          ],
+          "text": "Radiative power inside the pixel",
+          "textPreview": "Radiative power inside the pixel",
+          "fillColor": "#F9FAF7",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "Radiative power inside the pixel",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Radiative power inside the pixel"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 19,
+          "row": 7,
+          "column": 1,
+          "bbox": [
+            70,
+            545.43,
+            220,
+            58.57
+          ],
+          "text": "Quality and class",
+          "textPreview": "Quality and class",
+          "fillColor": "#F9FAF7",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "Quality and class",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Quality and class"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 20,
+          "row": 7,
+          "column": 2,
+          "bbox": [
+            290,
+            545.43,
+            470,
+            58.57
+          ],
+          "text": "58 confidence, D, type 0",
+          "textPreview": "58 confidence, D, type 0",
+          "fillColor": "#F9FAF7",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "58 confidence, D, type 0",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "58 confidence, D, type 0"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 21,
+          "row": 7,
+          "column": 3,
+          "bbox": [
+            760,
+            545.43,
+            450,
+            58.57
+          ],
+          "text": "Native algorithm fields",
+          "textPreview": "Native algorithm fields",
+          "fillColor": "#F9FAF7",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "Native algorithm fields",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Native algorithm fields"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/61cr614b",
+      "id": "5",
+      "bbox": [
+        70,
+        614,
+        1140,
+        48
+      ],
+      "geometry": "rect",
+      "text": "One ongoing fire can produce many rows. A row does not define a fire perimeter.",
+      "textPreview": "One ongoing fire can produce many rows. A row does not define a fire perimeter.",
+      "resolvedFontSize": 23,
+      "resolvedTextStyle": {
+        "fontSize": 23,
+        "typeface": "Nimbus Sans",
+        "color": "#536864",
+        "alignment": "left",
+        "autoFit": "none",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "One ongoing fire can produce many rows. A row does not define a fire perimeter."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "One ongoing fire can produce many rows. A row does not define a fire perimeter.",
+          "resolvedTextStyle": {
+            "fontSize": 23,
+            "typeface": "Nimbus Sans",
+            "color": "#536864"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "One ongoing fire can produce many rows. A row does not define a fire perimeter.",
+              "fontSize": 23,
+              "typeface": "Nimbus Sans",
+              "color": "#536864"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    }
+  ],
+  "composeRuns": []
+}

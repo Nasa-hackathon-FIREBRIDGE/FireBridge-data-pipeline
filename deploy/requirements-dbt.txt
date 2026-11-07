@@ -1,0 +1,3 @@
+# Separate venv from Airflow prevents conflicting Jinja/protobuf/SQLAlchemy dependencies.
+dbt-core==1.12.6
+dbt-postgres==1.11.0

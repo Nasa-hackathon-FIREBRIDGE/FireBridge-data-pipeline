@@ -1,0 +1,8 @@
+{
+  "date_window_and_inclusive_day_count": "pass",
+  "platform_month_daily_spatial_totals": "pass",
+  "native_exact_duplicate_rule": "pass",
+  "negative_frp_not_used_in_frp_quantiles": "pass",
+  "export_zeros_not_valid_negative_labels": "pass",
+  "january_independent_native_field_match_fraction": 1.0
+}

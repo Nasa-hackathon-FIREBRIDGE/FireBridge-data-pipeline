@@ -1,0 +1,14 @@
+name: firebridge
+version: '1.0.0'
+config-version: 2
+profile: firebridge
+model-paths: [models]
+test-paths: [tests]
+macro-paths: [macros]
+models:
+  firebridge:
+    +materialized: table
+    staging:
+      +materialized: view
+flags:
+  send_anonymous_usage_stats: false

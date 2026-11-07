@@ -1,0 +1,15 @@
+FROM apache/airflow:3.3.2-python3.12@sha256:9df9c8be4096b9cc626bd7cb1f2b8c712eef66c59c615f8c7e6200871ca10bd1
+USER root
+RUN mkdir -p /opt/dbt-env /opt/firebridge && chown -R airflow:root /opt/dbt-env /opt/firebridge
+USER airflow
+COPY --chown=airflow:root requirements-data.lock /opt/firebridge/requirements-data.lock
+RUN pip install --no-cache-dir apache-airflow==3.3.2 -r /opt/firebridge/requirements-data.lock
+COPY --chown=airflow:root deploy/requirements-dbt.lock /opt/firebridge/requirements-dbt.lock
+RUN python -m venv /opt/dbt-env && /opt/dbt-env/bin/pip install --no-cache-dir -r /opt/firebridge/requirements-dbt.lock
+COPY --chown=airflow:root pyproject.toml /opt/firebridge/
+COPY --chown=airflow:root src /opt/firebridge/src
+RUN pip install --no-cache-dir --no-deps /opt/firebridge
+COPY --chown=airflow:root dbt /opt/firebridge/dbt
+COPY --chown=airflow:root dags /opt/airflow/dags
+COPY --chown=airflow:root deploy /opt/firebridge/deploy
+ENV FIREBRIDGE_DBT_PROJECT=/opt/firebridge/dbt FIREBRIDGE_DBT_BIN=/opt/dbt-env/bin/dbt PYTHONUNBUFFERED=1

@@ -1,0 +1,7 @@
+{
+  "landsat_2024_independent_rawline_rows": 1581063,
+  "landsat_2024_exact_rawline_duplicate_excess": 304,
+  "modis_independent_csv_rows": 3715075,
+  "modis_independent_pilot_rows": 110,
+  "independent_checks_passed": true
+}

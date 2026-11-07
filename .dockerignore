@@ -1,0 +1,15 @@
+*
+!Dockerfile
+!pyproject.toml
+!requirements-data.lock
+!src/
+!src/**
+!deploy/
+!deploy/**
+!dbt/
+!dbt/**
+!dags/
+!dags/**
+**/__pycache__
+**/target/
+**/logs/

@@ -1,0 +1,11 @@
+[
+  {
+    "path": "/home/da-rog/Downloads/nasa hackathon data/DL_FIRE_LS_42015/fire_nrt_LS_42015.csv",
+    "bytes": 98159221,
+    "crc32": "fb74cdf0",
+    "matching_archives": [
+      "DL_FIRE_LS_42015.zip"
+    ],
+    "ingested": false
+  }
+]

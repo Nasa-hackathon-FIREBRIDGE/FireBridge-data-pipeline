@@ -1,0 +1,25 @@
+{
+  "firms_archive": "/home/da-rog/Downloads/nasa hackathon data/DL_FIRE_M-C61_42014.zip",
+  "firms_sha256": "7a4d09836aabf8c7ee7391a75d175af8bc8fbe29cd7c1e7727e9960258b5d18f",
+  "archive_rows_scanned": 3715075,
+  "umd_january_rows": 202406,
+  "firms_january_rows": 202406,
+  "matched_rows_all_shared_native_fields": 202406,
+  "umd_unmatched_rows": 0,
+  "firms_unmatched_rows": 0,
+  "comparison_fields": [
+    "acq_date",
+    "acq_time",
+    "satellite",
+    "latitude",
+    "longitude",
+    "brightness",
+    "bright_t31",
+    "frp",
+    "confidence",
+    "type",
+    "daynight"
+  ],
+  "zip_crc_verified": true,
+  "footprint_scope": "FIRMS January 1-17 2025 overlap only; MCD14ML has sample, not scan/track"
+}

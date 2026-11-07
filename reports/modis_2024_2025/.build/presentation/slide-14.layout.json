@@ -1,0 +1,497 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/3cgvwi",
+    "id": "3cgvwi",
+    "slide": 14,
+    "layoutId": "efade4a4-4e61-45ad-aa91-dec01e88fa1b",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "9a17e23c-9ac4-4ed6-9b5e-28c487e072fe",
+    "masterLayoutName": "Master",
+    "backgroundColor": "#F9FAF7",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "bg1": "#FFFFFF",
+      "bg2": "#000000",
+      "tx1": "#1F1F1F",
+      "tx2": "#FFFFFF",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "typefaces": [
+      "Nimbus Sans"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "efade4a4-4e61-45ad-aa91-dec01e88fa1b",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "9a17e23c-9ac4-4ed6-9b5e-28c487e072fe",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "9a17e23c-9ac4-4ed6-9b5e-28c487e072fe",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/f2d0je9k",
+      "id": "1",
+      "bbox": [
+        70,
+        44,
+        1140,
+        85
+      ],
+      "geometry": "rect",
+      "text": "The FIREBRIDGE response",
+      "textPreview": "The FIREBRIDGE response",
+      "resolvedFontSize": 44,
+      "resolvedTextStyle": {
+        "fontSize": 44,
+        "typeface": "Nimbus Sans",
+        "color": "#17332F",
+        "bold": true,
+        "alignment": "left",
+        "autoFit": "none",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "The FIREBRIDGE response"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "The FIREBRIDGE response",
+          "resolvedTextStyle": {
+            "fontSize": 44,
+            "typeface": "Nimbus Sans",
+            "color": "#17332F",
+            "bold": true
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "The FIREBRIDGE response",
+              "fontSize": 44,
+              "typeface": "Nimbus Sans",
+              "color": "#17332F",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/0361sjq5",
+      "id": "2",
+      "bbox": [
+        70,
+        128,
+        1140,
+        52
+      ],
+      "geometry": "rect",
+      "text": "A supported Aqua-equivalent detection indicator in a 5 km cell",
+      "textPreview": "A supported Aqua-equivalent detection indicator in a 5 km cell",
+      "resolvedFontSize": 23,
+      "resolvedTextStyle": {
+        "fontSize": 23,
+        "typeface": "Nimbus Sans",
+        "color": "#536864",
+        "alignment": "left",
+        "autoFit": "none",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "A supported Aqua-equivalent detection indicator in a 5 km cell"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "A supported Aqua-equivalent detection indicator in a 5 km cell",
+          "resolvedTextStyle": {
+            "fontSize": 23,
+            "typeface": "Nimbus Sans",
+            "color": "#536864"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "A supported Aqua-equivalent detection indicator in a 5 km cell",
+              "fontSize": 23,
+              "typeface": "Nimbus Sans",
+              "color": "#536864"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/14fil4rq",
+      "id": "3",
+      "bbox": [
+        1140,
+        666,
+        70,
+        30
+      ],
+      "geometry": "rect",
+      "text": "14",
+      "textPreview": "14",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "fontSize": 16,
+        "typeface": "Nimbus Sans",
+        "color": "#536864",
+        "alignment": "right",
+        "autoFit": "none",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "14"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "14",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "typeface": "Nimbus Sans",
+            "color": "#536864",
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "14",
+              "fontSize": 16,
+              "typeface": "Nimbus Sans",
+              "color": "#536864",
+              "alignment": "right"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/qd4zmp83",
+      "id": "4",
+      "bbox": [
+        70,
+        204,
+        1130,
+        88
+      ],
+      "geometry": "rect",
+      "text": "Reference: at least one retained Aqua detection in a supported cell and pass.",
+      "textPreview": "Reference: at least one retained Aqua detection in a supported cell and pass.",
+      "resolvedFontSize": 29,
+      "resolvedTextStyle": {
+        "fontSize": 29,
+        "typeface": "Nimbus Sans",
+        "color": "#17332F",
+        "alignment": "left",
+        "autoFit": "none",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Reference: at least one retained Aqua detection in a supported cell and pass."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Reference: at least one retained Aqua detection in a supported cell and pass.",
+          "resolvedTextStyle": {
+            "fontSize": 29,
+            "typeface": "Nimbus Sans",
+            "color": "#17332F"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Reference: at least one retained Aqua detection in a supported cell and pass.",
+              "fontSize": 29,
+              "typeface": "Nimbus Sans",
+              "color": "#17332F"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/red0fu9o",
+      "id": "5",
+      "bbox": [
+        70,
+        307,
+        1130,
+        88
+      ],
+      "geometry": "rect",
+      "text": "VIIRS provides the prediction features for a withheld-Aqua experiment.",
+      "textPreview": "VIIRS provides the prediction features for a withheld-Aqua experiment.",
+      "resolvedFontSize": 29,
+      "resolvedTextStyle": {
+        "fontSize": 29,
+        "typeface": "Nimbus Sans",
+        "color": "#17332F",
+        "alignment": "left",
+        "autoFit": "none",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "VIIRS provides the prediction features for a withheld-Aqua experiment."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "VIIRS provides the prediction features for a withheld-Aqua experiment.",
+          "resolvedTextStyle": {
+            "fontSize": 29,
+            "typeface": "Nimbus Sans",
+            "color": "#17332F"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "VIIRS provides the prediction features for a withheld-Aqua experiment.",
+              "fontSize": 29,
+              "typeface": "Nimbus Sans",
+              "color": "#17332F"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/sfmhozq9",
+      "id": "6",
+      "bbox": [
+        70,
+        410,
+        1130,
+        88
+      ],
+      "geometry": "rect",
+      "text": "Terra keeps a separate adapter because its observation regime differs.",
+      "textPreview": "Terra keeps a separate adapter because its observation regime differs.",
+      "resolvedFontSize": 29,
+      "resolvedTextStyle": {
+        "fontSize": 29,
+        "typeface": "Nimbus Sans",
+        "color": "#17332F",
+        "alignment": "left",
+        "autoFit": "none",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Terra keeps a separate adapter because its observation regime differs."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Terra keeps a separate adapter because its observation regime differs.",
+          "resolvedTextStyle": {
+            "fontSize": 29,
+            "typeface": "Nimbus Sans",
+            "color": "#17332F"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Terra keeps a separate adapter because its observation regime differs.",
+              "fontSize": 29,
+              "typeface": "Nimbus Sans",
+              "color": "#17332F"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/dgvih4re",
+      "id": "7",
+      "bbox": [
+        70,
+        513,
+        1130,
+        88
+      ],
+      "geometry": "rect",
+      "text": "The EDA prepares the native record. Observation support defines the labels.",
+      "textPreview": "The EDA prepares the native record. Observation support defines the labels.",
+      "resolvedFontSize": 29,
+      "resolvedTextStyle": {
+        "fontSize": 29,
+        "typeface": "Nimbus Sans",
+        "color": "#17332F",
+        "alignment": "left",
+        "autoFit": "none",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "The EDA prepares the native record. Observation support defines the labels."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "The EDA prepares the native record. Observation support defines the labels.",
+          "resolvedTextStyle": {
+            "fontSize": 29,
+            "typeface": "Nimbus Sans",
+            "color": "#17332F"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "The EDA prepares the native record. Observation support defines the labels.",
+              "fontSize": 29,
+              "typeface": "Nimbus Sans",
+              "color": "#17332F"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    }
+  ],
+  "composeRuns": []
+}

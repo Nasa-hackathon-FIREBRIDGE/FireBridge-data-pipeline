@@ -1,0 +1,697 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/7bx9tm",
+    "id": "7bx9tm",
+    "slide": 5,
+    "layoutId": "efade4a4-4e61-45ad-aa91-dec01e88fa1b",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "9a17e23c-9ac4-4ed6-9b5e-28c487e072fe",
+    "masterLayoutName": "Master",
+    "backgroundColor": "#F9FAF7",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "bg1": "#FFFFFF",
+      "bg2": "#000000",
+      "tx1": "#1F1F1F",
+      "tx2": "#FFFFFF",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "typefaces": [
+      "Nimbus Sans"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "efade4a4-4e61-45ad-aa91-dec01e88fa1b",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "9a17e23c-9ac4-4ed6-9b5e-28c487e072fe",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "9a17e23c-9ac4-4ed6-9b5e-28c487e072fe",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/147q9k3e",
+      "id": "1",
+      "bbox": [
+        70,
+        44,
+        1140,
+        85
+      ],
+      "geometry": "rect",
+      "text": "Data validity and observation coverage",
+      "textPreview": "Data validity and observation coverage",
+      "resolvedFontSize": 44,
+      "resolvedTextStyle": {
+        "fontSize": 44,
+        "typeface": "Nimbus Sans",
+        "color": "#17332F",
+        "bold": true,
+        "alignment": "left",
+        "autoFit": "none",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Data validity and observation coverage"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Data validity and observation coverage",
+          "resolvedTextStyle": {
+            "fontSize": 44,
+            "typeface": "Nimbus Sans",
+            "color": "#17332F",
+            "bold": true
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Data validity and observation coverage",
+              "fontSize": 44,
+              "typeface": "Nimbus Sans",
+              "color": "#17332F",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ehwryp4n",
+      "id": "2",
+      "bbox": [
+        70,
+        128,
+        1140,
+        52
+      ],
+      "geometry": "rect",
+      "text": "The table checks answer whether fields and records are usable",
+      "textPreview": "The table checks answer whether fields and records are usable",
+      "resolvedFontSize": 23,
+      "resolvedTextStyle": {
+        "fontSize": 23,
+        "typeface": "Nimbus Sans",
+        "color": "#536864",
+        "alignment": "left",
+        "autoFit": "none",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "The table checks answer whether fields and records are usable"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "The table checks answer whether fields and records are usable",
+          "resolvedTextStyle": {
+            "fontSize": 23,
+            "typeface": "Nimbus Sans",
+            "color": "#536864"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "The table checks answer whether fields and records are usable",
+              "fontSize": 23,
+              "typeface": "Nimbus Sans",
+              "color": "#536864"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/fip87ul8",
+      "id": "3",
+      "bbox": [
+        1140,
+        666,
+        70,
+        30
+      ],
+      "geometry": "rect",
+      "text": "5",
+      "textPreview": "5",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "fontSize": 16,
+        "typeface": "Nimbus Sans",
+        "color": "#536864",
+        "alignment": "right",
+        "autoFit": "none",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "5"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "5",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "typeface": "Nimbus Sans",
+            "color": "#536864",
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "5",
+              "fontSize": 16,
+              "typeface": "Nimbus Sans",
+              "color": "#536864",
+              "alignment": "right"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 4,
+      "kind": "table",
+      "scope": "slide",
+      "aid": "tb/9wjmp8ji",
+      "id": "4",
+      "bbox": [
+        70,
+        194,
+        1140,
+        405
+      ],
+      "text": "Check | Rows\nExact duplicate excess | 0\nRows quarantined by validation | 0\nInvalid UTC acquisition | 0\nInvalid coordinates | 0\nNegative FRP values | 0\nZero FRP values | 2,425",
+      "textPreview": "Check | Rows | Exact duplicate excess | 0 | Rows quarantined by validation | 0 | Invalid UTC acquisition | 0 | Invalid coordinates | 0 | ...",
+      "rows": 7,
+      "cols": 2,
+      "cells": [
+        {
+          "index": 1,
+          "row": 1,
+          "column": 1,
+          "bbox": [
+            70,
+            194,
+            840,
+            57.86
+          ],
+          "text": "Check",
+          "textPreview": "Check",
+          "fillColor": "#17332F",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "Check",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Check"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 2,
+          "row": 1,
+          "column": 2,
+          "bbox": [
+            910,
+            194,
+            300,
+            57.86
+          ],
+          "text": "Rows",
+          "textPreview": "Rows",
+          "fillColor": "#17332F",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "Rows",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Rows"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 3,
+          "row": 2,
+          "column": 1,
+          "bbox": [
+            70,
+            251.86,
+            840,
+            57.86
+          ],
+          "text": "Exact duplicate excess",
+          "textPreview": "Exact duplicate excess",
+          "fillColor": "#F9FAF7",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "Exact duplicate excess",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Exact duplicate excess"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 4,
+          "row": 2,
+          "column": 2,
+          "bbox": [
+            910,
+            251.86,
+            300,
+            57.86
+          ],
+          "text": "0",
+          "textPreview": "0",
+          "fillColor": "#F9FAF7",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "0",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "0"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 5,
+          "row": 3,
+          "column": 1,
+          "bbox": [
+            70,
+            309.71,
+            840,
+            57.86
+          ],
+          "text": "Rows quarantined by validation",
+          "textPreview": "Rows quarantined by validation",
+          "fillColor": "#F9FAF7",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "Rows quarantined by validation",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Rows quarantined by validation"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 6,
+          "row": 3,
+          "column": 2,
+          "bbox": [
+            910,
+            309.71,
+            300,
+            57.86
+          ],
+          "text": "0",
+          "textPreview": "0",
+          "fillColor": "#F9FAF7",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "0",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "0"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 7,
+          "row": 4,
+          "column": 1,
+          "bbox": [
+            70,
+            367.57,
+            840,
+            57.86
+          ],
+          "text": "Invalid UTC acquisition",
+          "textPreview": "Invalid UTC acquisition",
+          "fillColor": "#F9FAF7",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "Invalid UTC acquisition",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Invalid UTC acquisition"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 8,
+          "row": 4,
+          "column": 2,
+          "bbox": [
+            910,
+            367.57,
+            300,
+            57.86
+          ],
+          "text": "0",
+          "textPreview": "0",
+          "fillColor": "#F9FAF7",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "0",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "0"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 9,
+          "row": 5,
+          "column": 1,
+          "bbox": [
+            70,
+            425.43,
+            840,
+            57.86
+          ],
+          "text": "Invalid coordinates",
+          "textPreview": "Invalid coordinates",
+          "fillColor": "#F9FAF7",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "Invalid coordinates",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Invalid coordinates"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 10,
+          "row": 5,
+          "column": 2,
+          "bbox": [
+            910,
+            425.43,
+            300,
+            57.86
+          ],
+          "text": "0",
+          "textPreview": "0",
+          "fillColor": "#F9FAF7",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "0",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "0"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 11,
+          "row": 6,
+          "column": 1,
+          "bbox": [
+            70,
+            483.29,
+            840,
+            57.86
+          ],
+          "text": "Negative FRP values",
+          "textPreview": "Negative FRP values",
+          "fillColor": "#F9FAF7",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "Negative FRP values",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Negative FRP values"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 12,
+          "row": 6,
+          "column": 2,
+          "bbox": [
+            910,
+            483.29,
+            300,
+            57.86
+          ],
+          "text": "0",
+          "textPreview": "0",
+          "fillColor": "#F9FAF7",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "0",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "0"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 13,
+          "row": 7,
+          "column": 1,
+          "bbox": [
+            70,
+            541.14,
+            840,
+            57.86
+          ],
+          "text": "Zero FRP values",
+          "textPreview": "Zero FRP values",
+          "fillColor": "#F9FAF7",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "Zero FRP values",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Zero FRP values"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 14,
+          "row": 7,
+          "column": 2,
+          "bbox": [
+            910,
+            541.14,
+            300,
+            57.86
+          ],
+          "text": "2,425",
+          "textPreview": "2,425",
+          "fillColor": "#F9FAF7",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "2,425",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "2,425"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/p87qd43a",
+      "id": "5",
+      "bbox": [
+        70,
+        614,
+        1140,
+        48
+      ],
+      "geometry": "rect",
+      "text": "January audit: 100.0% of UMD rows match all shared fields.",
+      "textPreview": "January audit: 100.0% of UMD rows match all shared fields.",
+      "resolvedFontSize": 23,
+      "resolvedTextStyle": {
+        "fontSize": 23,
+        "typeface": "Nimbus Sans",
+        "color": "#536864",
+        "alignment": "left",
+        "autoFit": "none",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "January audit: 100.0% of UMD rows match all shared fields."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "January audit: 100.0% of UMD rows match all shared fields.",
+          "resolvedTextStyle": {
+            "fontSize": 23,
+            "typeface": "Nimbus Sans",
+            "color": "#536864"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "January audit: 100.0% of UMD rows match all shared fields.",
+              "fontSize": 23,
+              "typeface": "Nimbus Sans",
+              "color": "#536864"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    }
+  ],
+  "composeRuns": []
+}

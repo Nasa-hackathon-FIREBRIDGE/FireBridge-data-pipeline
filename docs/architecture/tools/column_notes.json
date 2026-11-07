@@ -1,0 +1,761 @@
+{
+  "sources": {
+    "grain": "One exact product / platform / collection / processing stream. A satellite with multiple products has multiple source rows.",
+    "columns": {
+      "id": "Unique row identifier.",
+      "name": "Human-readable name.",
+      "provider": "Organization/service that supplies the data or model.",
+      "kind": "Data family: hotspots, masks, geolocation, land cover, imagery, weather or reports.",
+      "platform": "Terra, Aqua, S-NPP, NOAA-20, NOAA-21, Landsat mission, or null for non-satellite sources.",
+      "instrument": "MODIS, VIIRS, Landsat instrument, or null when not applicable.",
+      "product": "Provider product identifier.",
+      "collection": "Exact product collection/version; use an explicit documented not-applicable value if needed.",
+      "processing_stream": "Standard, NRT, reanalysis, forecast, or another explicitly named source stream.",
+      "documentation_url": "Official product or provider documentation link.",
+      "citation": "Attribution/citation text to show in evidence and exports.",
+      "license_info": "Applicable access/reuse terms and attribution requirements.",
+      "native_resolution_m": "Documented nominal/native spatial scale in metres; does not guarantee event-location accuracy.",
+      "schema_version": "Version of the data contract used to interpret this record.",
+      "metadata": "Versioned source-specific metadata, including units and derivation where relevant."
+    }
+  },
+  "assets": {
+    "grain": "One immutable input file or API response revision. Store the bytes in file/object storage and their identity here.",
+    "columns": {
+      "id": "Unique row identifier.",
+      "source_id": "FK to the exact product specification in sources.",
+      "native_key": "Provider granule/filename/request identity, excluding secrets.",
+      "revision": "Provider or locally assigned immutable content revision.",
+      "source_url": "Original retrieval address; credentials must never be embedded.",
+      "storage_uri": "Internal file/object address of preserved bytes.",
+      "sha256": "SHA-256 digest of the immutable artifact or content named in this row.",
+      "byte_size": "Byte count of preserved content.",
+      "time_start": "UTC beginning of source observation coverage.",
+      "time_end": "UTC end of source observation coverage.",
+      "footprint": "Actual spatial support when known; not an invented precise location.",
+      "retrieved_at": "UTC timestamp when the source was fetched.",
+      "validation_status": "Pending check, accepted input, or quarantined failure.",
+      "metadata": "Versioned source-specific metadata, including units and derivation where relevant."
+    }
+  },
+  "data_releases": {
+    "grain": "One frozen, publishable combination of inputs, code and scientific configuration.",
+    "columns": {
+      "id": "Unique row identifier.",
+      "name": "Human-readable name.",
+      "status": "Explicit lifecycle/result state; permitted values appear in the constraints below.",
+      "stream": "Retrospective, provisional, or experiment; avoids silently mixing standard and NRT.",
+      "code_version": "Reproducible code identifier: commit hash or saved source-bundle digest.",
+      "config": "Versioned machine-readable processing configuration.",
+      "config_sha256": "Digest of canonicalized configuration.",
+      "manifest_uri": "Location of the immutable input/output inventory.",
+      "created_at": "UTC timestamp when this record was created.",
+      "published_at": "UTC time of release publication, not a news publication time.",
+      "parent_release_id": "Previous snapshot from which unchanged partitions can be reused.",
+      "dataset_kind": "Satellite, weather or report snapshot; components are pinned separately.",
+      "scope_key": "Registered served geography/data scope, not an arbitrary user polygon.",
+      "observation_cutoff": "Declared event-time cutoff for this snapshot; not proof of complete local observation coverage. Weather forecasts retain their own later valid times.",
+      "validation_report_uri": "Publication gate results and inventory completeness evidence."
+    }
+  },
+  "release_assets": {
+    "grain": "One input asset included in one release with a declared role.",
+    "columns": {
+      "release_id": "FK to the frozen dataset/configuration in data_releases.",
+      "asset_id": "FK to the immutable input file/API response in assets.",
+      "role": "Purpose of the linked asset in this context."
+    }
+  },
+  "pipeline_runs": {
+    "grain": "One execution of a processing stage; supports retries and reproducibility.",
+    "columns": {
+      "id": "Unique row identifier.",
+      "release_id": "Optional output release; early acquisition can run before a release exists.",
+      "stage": "Named pipeline operation, such as decode_masks or build_calendar.",
+      "idempotency_key": "Deterministic identity preventing duplicate processing requests.",
+      "status": "Explicit lifecycle/result state; permitted values appear in the constraints below.",
+      "code_version": "Reproducible code identifier: commit hash or saved source-bundle digest.",
+      "config": "Versioned machine-readable processing configuration.",
+      "input_manifest_uri": "Manifest of exact input records/assets and their versions.",
+      "output_manifest_uri": "Manifest of the outputs written by this processing run.",
+      "started_at": "UTC processing start time.",
+      "finished_at": "UTC processing finish time.",
+      "error_code": "Machine-readable failure code; detailed redacted logs live separately.",
+      "log_uri": "Location of redacted execution logs."
+    }
+  },
+  "areas": {
+    "grain": "One immutable geographic selection or named AOI revision.",
+    "columns": {
+      "id": "Unique row identifier.",
+      "name": "Human-readable name.",
+      "version": "Immutable version identifier.",
+      "geom": "WGS84 geometry used for location/intersection queries; metric areas are calculated separately.",
+      "geometry_sha256": "Digest of normalized geometry used for cache/version identity.",
+      "display_timezone": "IANA civil display zone, e.g. Africa/Casablanca; not the raw data time basis.",
+      "provenance": "Drawn polygon, reviewed boundary source, or other geometry provenance.",
+      "created_at": "UTC timestamp when this record was created."
+    }
+  },
+  "grids": {
+    "grain": "One fully specified analysis grid and land-mask version.",
+    "columns": {
+      "id": "Unique row identifier.",
+      "version": "Immutable version identifier.",
+      "projection_srid": "Equal-area projection identifier; initial Morocco proposal is EPSG:6933.",
+      "cell_size_m": "Proposed 5000 m initially; other grid sizes require separate versions.",
+      "origin_x_m": "Fixed grid origin easting in the projected CRS.",
+      "origin_y_m": "Fixed grid origin northing in the projected CRS.",
+      "supported_extent": "Documented geographic extent within which this grid/product is supported.",
+      "land_mask_asset_id": "FK to the reviewed land mask input asset.",
+      "construction_spec": "Axis convention, rasterization, land-mask rules, CRS and nodata specification."
+    }
+  },
+  "grid_cells": {
+    "grain": "One cell of an analysis grid. Area is calculated in its equal-area projection.",
+    "columns": {
+      "id": "Unique row identifier. Generated identity value.",
+      "grid_id": "FK to the grid definition in grids.",
+      "grid_x": "Integer column index under the fixed grid origin.",
+      "grid_y": "Integer row index under the fixed grid origin.",
+      "geom": "WGS84 geometry used for location/intersection queries; metric areas are calculated separately.",
+      "area_m2": "Total geometric cell area in square metres.",
+      "land_area_m2": "Land portion of the cell in square metres."
+    }
+  },
+  "area_cells": {
+    "grain": "One AOI/cell intersection under a weighting method; contains land-only overlap.",
+    "columns": {
+      "area_id": "FK to the immutable AOI revision in areas.",
+      "cell_id": "FK to the analysis grid cell in grid_cells.",
+      "overlap_land_area_m2": "Square metres of land shared by this AOI and cell; aggregation weight.",
+      "weighting_version": "Version of clipping/land-area computation."
+    }
+  },
+  "detections": {
+    "grain": "One native hotspot record in a canonical input asset. It is not a unique fire incident.",
+    "columns": {
+      "id": "Unique row identifier. Generated identity value.",
+      "asset_id": "First canonical input asset for this record; later sightings remain in fetch/input manifests.",
+      "source_id": "Exact normalized platform/product source. A combined MODIS asset can contain both Terra and Aqua sources.",
+      "native_record_key": "Stable row/pixel identity within the preserved asset.",
+      "acquired_at": "Actual UTC acquisition timestamp.",
+      "geom": "WGS84 geometry used for location/intersection queries; metric areas are calculated separately.",
+      "confidence_raw": "Unchanged native numeric/category confidence stored as text.",
+      "confidence_scheme": "Product-specific confidence definition; not a universal probability.",
+      "type_raw": "Native thermal-source classification, null when unavailable.",
+      "day_night": "Native day/night flag mapped to a documented enum.",
+      "frp_mw": "Fire radiative power in megawatts; zero may be valid and flagged.",
+      "brightness_bands": "Array/object recording exact band, brightness-temperature value and unit; no cross-band equivalence assumed.",
+      "scan_km": "Footprint width only where documented in km; null for incompatible native fields.",
+      "track_km": "Footprint length only where documented in km.",
+      "cross_track_sample": "Native sample index where supplied; do not substitute it for kilometres.",
+      "native_fields": "Remaining original fields and record locator, retained for auditing.",
+      "record_sha256": "Hash of canonical native record content plus source/identity rules; deduplicates repeated unchanged API rows across files.",
+      "identity_key": "Stable native pixel/granule identity if available; null if a defensible identity is unavailable.",
+      "identity_method": "Exact version of native-key or canonical-row hashing; never rounded-location fuzzy deduplication.",
+      "processing_level": "Standard, NRT, RT, URT or unknown from the actual record; feed name alone is insufficient."
+    }
+  },
+  "observations": {
+    "grain": "One analysis cell × source product × satellite pass × QA policy in a data release.",
+    "columns": {
+      "id": "Unique row identifier.",
+      "release_id": "FK to the frozen dataset/configuration in data_releases.",
+      "cell_id": "FK to the analysis grid cell in grid_cells.",
+      "source_id": "FK to the exact product specification in sources.",
+      "pass_key": "Deterministic platform overpass identity after granule-overlap handling.",
+      "time_start": "UTC beginning of source observation coverage.",
+      "time_end": "UTC end of source observation coverage.",
+      "representative_time": "Documented representative actual acquisition time inside this cell/pass interval.",
+      "local_solar_date": "Cell-centre approximate local solar date under the release policy.",
+      "regime": "Declared observation regime, such as afternoon_day or morning_day.",
+      "land_area_m2": "Cell land support used by this QA computation.",
+      "usable_land_m2": "Usable observed land, square metres.",
+      "cloud_land_m2": "Cloud/obscured land under the product-specific decoder.",
+      "invalid_land_m2": "Observed but invalid/unprocessed land.",
+      "unobserved_land_m2": "Land outside the available observation support.",
+      "usable_support_uri": "Exact geolocated usable mask/geometry needed to intersect two observations.",
+      "detection_links_uri": "Versioned mapping from contributing raw record IDs to retained/excluded detections and reasons.",
+      "coverage_status": "Usable, insufficient, missing input or outside swath.",
+      "retained_detection_count": "Retained detections on usable support; may be null if not computable.",
+      "retained_any": "Defined cell/pass response; null when ineligible, false only for a valid negative.",
+      "eligible": "Whether this opportunity meets the declared QA rules.",
+      "exclusion_reasons": "Structured reason codes for rejected or incomplete opportunities.",
+      "qa_policy_version": "Decoder, confidence, geometry and eligibility policy version.",
+      "geometry_summary": "Source viewing/solar geometry summaries with units and methods."
+    }
+  },
+  "observation_assets": {
+    "grain": "One source-file link used to derive an observation, including non-detection support.",
+    "columns": {
+      "observation_id": "FK to the source cell/pass observation.",
+      "asset_id": "FK to the immutable input file/API response in assets.",
+      "role": "Purpose of the linked asset in this context."
+    }
+  },
+  "matched_pairs": {
+    "grain": "One source/reference observation pair on the same cell and shared usable land, under a pairing series.",
+    "columns": {
+      "id": "Unique row identifier.",
+      "release_id": "FK to the frozen dataset/configuration in data_releases.",
+      "cell_id": "FK to the analysis grid cell in grid_cells.",
+      "series_key": "Identity of source/reference products, regime and matching-policy version.",
+      "reference_observation_id": "FK to the reference cell/pass; initially Aqua.",
+      "source_observation_id": "FK to the paired source cell/pass; initially S-NPP.",
+      "time_delta_seconds": "Absolute time separation used for the pairing eligibility rule.",
+      "shared_usable_land_m2": "Area of intersection of both usable land masks.",
+      "shared_usable_fraction": "Shared usable land divided by declared cell land area, 0–1.",
+      "shared_support_uri": "Geometry/mask of the actual shared support, not merely its area.",
+      "eligible": "Whether the pair meets all frozen comparison gates.",
+      "reference_target": "Reference retained-any detection on shared support; null for excluded pairs.",
+      "source_any_on_shared_support": "Common-grid baseline response, calculated on the same shared support.",
+      "split_name": "Frozen train, development, calibration, temporal test, spatial test or excluded assignment.",
+      "block_id": "Spatial/temporal leakage-control block identifier.",
+      "episode_group_id": "Group tying neighboring observations of the same likely episode together.",
+      "exclusion_reasons": "Structured reason codes for rejected or incomplete opportunities."
+    }
+  },
+  "feature_sets": {
+    "grain": "One frozen feature dataset and split manifest. Actual feature rows live in Parquet.",
+    "columns": {
+      "id": "Unique row identifier.",
+      "release_id": "FK to the frozen dataset/configuration in data_releases.",
+      "version": "Immutable version identifier.",
+      "artifact_uri": "File/object-storage location of the immutable dataset or model.",
+      "sha256": "SHA-256 digest of the immutable artifact or content named in this row.",
+      "feature_contract": "Predictor names, units, derivations, missing-value policy and serving availability.",
+      "split_manifest_uri": "Immutable membership of temporal/geographic train/dev/calibration/test groups.",
+      "split_sha256": "Digest of the frozen split manifest.",
+      "row_count": "Number of feature rows in the artifact.",
+      "created_at": "UTC timestamp when this record was created."
+    }
+  },
+  "model_versions": {
+    "grain": "One fitted model version for a declared source-to-reference response and support domain.",
+    "columns": {
+      "id": "Unique row identifier.",
+      "name": "Human-readable name.",
+      "version": "Immutable version identifier.",
+      "feature_set_id": "FK to training features and frozen split definitions.",
+      "source_id": "FK to the exact product specification in sources.",
+      "reference_source_id": "FK to the exact target reference product.",
+      "algorithm": "Baseline/logistic/boosted-tree algorithm and implementation identity.",
+      "artifact_uri": "File/object-storage location of the immutable dataset or model.",
+      "sha256": "SHA-256 digest of the immutable artifact or content named in this row.",
+      "target_definition": "Precise response, regime, grid, confidence rule and shared-support definition.",
+      "support_domain": "Validated geography, seasons, streams, coverage and feature-domain limits.",
+      "calibration_manifest_uri": "Probability calibration procedure, artifact and disjoint calibration set.",
+      "status": "Explicit lifecycle/result state; permitted values appear in the constraints below.",
+      "created_at": "UTC timestamp when this record was created."
+    }
+  },
+  "evaluations": {
+    "grain": "One model × release × experiment × evaluation slice.",
+    "columns": {
+      "id": "Unique row identifier.",
+      "model_id": "FK to the fitted model version.",
+      "release_id": "FK to the frozen dataset/configuration in data_releases.",
+      "experiment": "Temporal holdout, geographic holdout, withheld-Aqua replay, sensitivity, etc.",
+      "slice_key": "Evaluation subset, e.g. land cover/region/platform.",
+      "split_manifest_uri": "Immutable membership of temporal/geographic train/dev/calibration/test groups.",
+      "sample_count": "Eligible evaluated opportunities.",
+      "positive_count": "Positive reference responses among those opportunities.",
+      "independent_block_count": "Independent blocks/episodes supporting the reported score.",
+      "metrics": "Defined metrics with units, null handling and uncertainty where computed.",
+      "baseline_metrics": "Metrics for an appropriate baseline on exactly the same evaluated support.",
+      "uncertainty_method": "Block bootstrap, empirical error range, or explicitly not estimated.",
+      "report_uri": "Location of the reproducible evaluation report."
+    }
+  },
+  "predictions": {
+    "grain": "One model result for one source observation; unsupported results have null probability.",
+    "columns": {
+      "id": "Unique row identifier.",
+      "release_id": "FK to the frozen dataset/configuration in data_releases.",
+      "cell_id": "FK to the analysis grid cell in grid_cells.",
+      "observation_id": "FK to the source cell/pass observation.",
+      "model_id": "FK to the fitted model version.",
+      "response_probability": "Estimated reference retained-detection response, 0–1; not probability of a real fire.",
+      "status": "Explicit lifecycle/result state; permitted values appear in the constraints below.",
+      "support_reasons": "Domain checks and unsupported reasons.",
+      "features_uri": "Exact feature row used for this prediction.",
+      "uncertainty": "Documented empirical uncertainty information and method, or null when not estimated."
+    }
+  },
+  "daily_activity": {
+    "grain": "One cell/day/metric/policy in a release, including unsupported or missing cell-days.",
+    "columns": {
+      "release_id": "FK to the frozen dataset/configuration in data_releases.",
+      "cell_id": "FK to the analysis grid cell in grid_cells.",
+      "reporting_date": "Cell reporting day under the declared time basis.",
+      "time_basis": "Versioned UTC/solar/civil-day policy; initial comparable product uses local solar day.",
+      "metric_key": "Versioned response definition, e.g. aqua_equivalent_active_cell_v1.",
+      "selection_policy": "Fixed eligible-source/pass priority; does not maximize fire response.",
+      "observation_id": "FK to the source cell/pass observation.",
+      "prediction_id": "FK to the selected prediction for an inferred response; null for direct reference.",
+      "response_value": "Observed 0/1 or supported model probability; null for unavailable states.",
+      "status": "Explicit lifecycle/result state; permitted values appear in the constraints below.",
+      "candidate_count": "Number of opportunities considered before deterministic selection.",
+      "reasons": "Structured quality/support explanations for the result."
+    }
+  },
+  "analyses": {
+    "grain": "One immutable user selection and analysis configuration, with job/cache state.",
+    "columns": {
+      "id": "Unique row identifier.",
+      "area_id": "FK to the immutable AOI revision in areas.",
+      "release_id": "FK to the frozen dataset/configuration in data_releases.",
+      "start_date": "Inclusive selected reporting date.",
+      "end_date_exclusive": "Exclusive selected reporting date.",
+      "time_basis": "Reporting-day definition shared by relevant outputs.",
+      "metric_key": "Exact requested response definition.",
+      "grid_id": "Analysis grid for comparable metrics; null is allowed for a native-detection-only request.",
+      "selection_policy": "Daily pass/source selection policy version.",
+      "weighting_version": "AOI intersection-weight version to use.",
+      "baseline_spec": "Frozen baseline years/season/support rules, or null if unavailable.",
+      "weather_policy": "Selected source models, variables, dates, weighting and freshness policy.",
+      "news_policy": "Date-aware discovery, review and source-matching policy.",
+      "cache_key": "Hash of all immutable inputs/settings that determine the result.",
+      "status": "Explicit lifecycle/result state; permitted values appear in the constraints below.",
+      "error_code": "Machine-readable failure code; detailed redacted logs live separately.",
+      "created_at": "UTC timestamp when this record was created.",
+      "completed_at": "UTC timestamp when processing completed; null while pending.",
+      "request_spec": "Canonical request including source IDs, data mode, baseline/filter versions, authorization scope and component choices."
+    }
+  },
+  "calendar_periods": {
+    "grain": "One reporting period within a saved analysis; stores numerator and denominator explicitly.",
+    "columns": {
+      "analysis_id": "FK to the saved user selection in analyses.",
+      "period_start": "Inclusive beginning of the reporting period.",
+      "period_end_exclusive": "Exclusive end date of the period.",
+      "resolution": "Day, week, month or full selection.",
+      "response_numerator_m2_days": "Sum of eligible AOI land weights times daily response; not burned area.",
+      "eligible_land_m2_days": "Eligible AOI land-area-days; denominator of the comparable response.",
+      "possible_land_m2_days": "Total AOI land area times reporting days; coverage denominator.",
+      "response_value": "Generated numerator / eligible denominator; null at zero eligible support. Calculated by PostgreSQL.",
+      "coverage_fraction": "Generated eligible / possible area-days, 0–1. Calculated by PostgreSQL.",
+      "observed_weight_fraction": "Eligible weight contributed by directly observed reference, versus estimated source.",
+      "valid_cell_days": "Eligible cell-days contributing to the period.",
+      "baseline_year_count": "Number of supported comparable historical years; zero when no baseline.",
+      "seasonal_percentile": "Baseline percentile only after the minimum-baseline policy passes.",
+      "uncertainty": "Documented empirical uncertainty information and method, or null when not estimated.",
+      "status": "Explicit lifecycle/result state; permitted values appear in the constraints below.",
+      "reasons": "Structured quality/support explanations for the result."
+    }
+  },
+  "weather_locations": {
+    "grain": "One native weather grid cell, station or declared sampling point.",
+    "columns": {
+      "id": "Unique row identifier.",
+      "source_id": "FK to the exact product specification in sources.",
+      "native_location_key": "Stable source grid-cell or station identity; preserve returned coordinates.",
+      "support_kind": "Native grid cell, station, or explicitly sampled point.",
+      "geom": "WGS84 geometry used for location/intersection queries; metric areas are calculated separately.",
+      "footprint": "Actual spatial support when known; not an invented precise location.",
+      "elevation_m": "Provider/model elevation in metres, with metadata for any adjustment.",
+      "native_resolution_m": "Documented nominal/native spatial scale in metres; does not guarantee event-location accuracy.",
+      "metadata": "Versioned source-specific metadata, including units and derivation where relevant."
+    }
+  },
+  "weather_values": {
+    "grain": "One weather variable/location/interval from a particular input asset revision.",
+    "columns": {
+      "id": "Unique row identifier. Generated identity value.",
+      "location_id": "FK to the native weather location or sampling point.",
+      "source_id": "FK to the exact product specification in sources.",
+      "asset_id": "FK to the immutable input file/API response in assets.",
+      "variable": "Canonical variable name, including height/depth where relevant.",
+      "unit": "Explicit normalized unit for this variable/statistic.",
+      "valid_start": "UTC start of the measurement/aggregation interval.",
+      "valid_end": "UTC end; may equal start for instantaneous values.",
+      "issued_at": "Forecast model-run issue time; required for forecasts.",
+      "available_at": "When this value was actually available, if known; needed for historical real-time replay.",
+      "data_kind": "Reanalysis, forecast, model_current or station_observation. Model current values are not station measurements.",
+      "statistic": "How the value relates to its interval: instant, sum, mean, etc.",
+      "value": "Numeric value in the declared unit; null represents unavailable/invalid data.",
+      "quality_status": "Valid value, missing input, or rejected value.",
+      "derivation": "Native unit, conversion, de-accumulation, model and original record locator."
+    }
+  },
+  "weather_summaries": {
+    "grain": "One area/period/variable/source statistic within a saved analysis.",
+    "columns": {
+      "id": "Unique row identifier.",
+      "analysis_id": "FK to the saved user selection in analyses.",
+      "source_id": "FK to the exact product specification in sources.",
+      "variable": "Canonical variable name, including height/depth where relevant.",
+      "unit": "Explicit normalized unit for this variable/statistic.",
+      "period_start": "Inclusive beginning of the reporting period.",
+      "period_end": "Exclusive end of the reporting period.",
+      "statistic": "How the value relates to its interval: instant, sum, mean, etc.",
+      "value": "Numeric value in the declared unit; null represents unavailable/invalid data.",
+      "spatial_method": "Area-weighted native-grid statistic or explicitly labelled sample-point context.",
+      "spatial_weights_uri": "Versioned weights/locations used for the AOI, including coverage geometry.",
+      "input_manifest_uri": "Manifest of exact input records/assets and their versions.",
+      "temporal_coverage_fraction": "Fraction of required time support with valid values, 0–1.",
+      "spatial_coverage_fraction": "Fraction of required spatial support represented, 0–1.",
+      "status": "Explicit lifecycle/result state; permitted values appear in the constraints below.",
+      "reasons": "Structured quality/support explanations for the result."
+    }
+  },
+  "news_reports": {
+    "grain": "One retrieved document revision and extraction version, separate from events it describes.",
+    "columns": {
+      "id": "Unique row identifier.",
+      "asset_id": "FK to the immutable input file/API response in assets.",
+      "canonical_url": "Normalized publisher link, excluding tracking parameters.",
+      "title": "Document headline; untrusted source text, not an instruction.",
+      "publisher": "Originating publisher/agency.",
+      "language": "Language code, initially en/fr, optionally ar.",
+      "published_at": "UTC publication timestamp if known; preserve its precision.",
+      "publication_precision": "Precision of publication time; preserve day-only or unknown timestamps.",
+      "retrieved_at": "UTC timestamp when the source was fetched.",
+      "content_sha256": "Digest identifying the retrieved document version.",
+      "summary": "Short permitted synopsis, not a copied full article.",
+      "original_reporting_url": "Original reporting link when this article is a republication.",
+      "syndication_group": "Shared reporting lineage used to avoid counting copies as independent evidence.",
+      "source_lineage": "Whether the report is field-based, official, satellite-derived, mixed or unknown.",
+      "extraction_version": "Version of extraction code/prompt.",
+      "review_status": "Whether a human checked the extraction or rejected it."
+    }
+  },
+  "reported_events": {
+    "grain": "One event claim extracted from a report. Different reports may describe the same event.",
+    "columns": {
+      "id": "Unique row identifier.",
+      "report_id": "FK to the exact document/extraction revision.",
+      "claim_index": "Stable event-claim position within that report.",
+      "event_start": "Earliest supported event date, not the publication date.",
+      "event_end_exclusive": "Exclusive end of the supported event-date interval.",
+      "date_precision": "Precision of the reported event date: day, interval, month, unknown, etc.",
+      "place_text": "Original place description in the report.",
+      "location": "Point or region representing the report’s actual geographic precision.",
+      "location_precision": "Exact location, town, province, country, unknown, etc.",
+      "location_uncertainty_m": "Documented geocoding uncertainty where measurable.",
+      "geocoding_method": "Geocoder/source/version or reviewed manual assignment.",
+      "event_cluster_key": "Optional reviewed grouping of reports about the same event; not a satellite incident count.",
+      "reported_event_type": "Type claimed by the report, not inferred from a MODIS type code.",
+      "reported_burned_area_ha": "Area as reported by the source; never calculated from hotspot count.",
+      "reported_cause": "Attributed cause claimed by the report, preserved as a claim.",
+      "claim_summary": "Plain synopsis of the extracted event claim.",
+      "review_status": "Whether a human checked the extraction or rejected it.",
+      "reviewed_by": "Reviewer identifier, not an inferred credibility score.",
+      "reviewed_at": "UTC timestamp of that review."
+    }
+  },
+  "analysis_event_links": {
+    "grain": "One assessed link between an analysis and a reported event under a matching method.",
+    "columns": {
+      "analysis_id": "FK to the saved user selection in analyses.",
+      "event_id": "FK to the extracted report event.",
+      "relation": "Candidate, consistent, conflicting, unresolved or rejected match.",
+      "match_method_version": "Version of date/location matching rules.",
+      "temporal_match": "Matched intervals, tolerances and temporal uncertainty.",
+      "spatial_match": "Intersection/distance evidence with geometry precision.",
+      "independence": "Whether this source adds independent evidence or reuses satellite data.",
+      "evidence_note": "Reason for the assessed relationship; no automatic universal confirmation.",
+      "reviewed_by": "Reviewer identifier, not an inferred credibility score.",
+      "reviewed_at": "UTC timestamp of that review."
+    }
+  },
+  "evidence_snapshots": {
+    "grain": "One immutable, bounded bundle of facts, statuses and source citations for an analysis.",
+    "columns": {
+      "id": "Unique row identifier.",
+      "analysis_id": "FK to the saved user selection in analyses.",
+      "schema_version": "Version of the data contract used to interpret this record.",
+      "evidence_json": "Bounded facts with IDs, values, units, statuses, source links and exact versions.",
+      "sha256": "SHA-256 digest of the immutable artifact or content named in this row.",
+      "created_at": "UTC timestamp when this record was created."
+    }
+  },
+  "ai_explanations": {
+    "grain": "One explanation attempt for a snapshot, question, model, prompt version and language.",
+    "columns": {
+      "id": "Unique row identifier.",
+      "snapshot_id": "FK to the immutable facts supplied to the model.",
+      "language": "Language code, initially en/fr, optionally ar.",
+      "question": "User question for this selection; sanitized for display and treated as user input.",
+      "provider": "Organization/service that supplies the data or model.",
+      "model_id": "Actual language-model identifier used, separate from scientific model_versions.",
+      "prompt_version": "Version of the explanation instructions.",
+      "tool_contract_version": "Version of allowed read-only tools and schemas.",
+      "output_json": "Structured answer, per-claim evidence IDs, limitations and suggested checks.",
+      "status": "Explicit lifecycle/result state; permitted values appear in the constraints below.",
+      "validation_report": "Results of fact, citation, scope, unit and limitation checks.",
+      "tool_trace_uri": "Redacted tool inputs/outputs used for reproducibility, not private model reasoning.",
+      "input_tokens": "Recorded provider input usage if available.",
+      "output_tokens": "Recorded provider output usage if available.",
+      "cache_key": "Hash of all immutable inputs/settings that determine the result.",
+      "created_at": "UTC timestamp when this record was created.",
+      "completed_at": "UTC timestamp when processing completed; null while pending."
+    }
+  },
+  "metric_definitions": {
+    "grain": "One versioned measurement contract; raw detections and comparable responses use distinct units.",
+    "columns": {
+      "id": "Stable version-qualified metric identifier referenced by analyses/daily_activity.",
+      "version": "Measurement contract version.",
+      "unit": "detections, dimensionless_reference_response, or another explicit unit.",
+      "family": "Native detections, source response or harmonized response.",
+      "description": "Plain-language meaning shown to users.",
+      "definition": "Formula, eligible support, aggregation/time rules, uncertainty and allowed data streams.",
+      "requires_masks": "Whether local QA/geolocation is needed to calculate this metric.",
+      "requires_model": "Whether calibrated source inference is part of this metric."
+    }
+  },
+  "ingestion_feeds": {
+    "grain": "One external transport adapter; MODIS_NRT is one feed that yields Terra and Aqua records.",
+    "columns": {
+      "id": "Stable feed identifier.",
+      "provider": "Provider organization/service.",
+      "adapter": "Adapter implementation name, e.g. firms_area_csv.",
+      "adapter_version": "Decoder/request-contract version.",
+      "endpoint_template": "Redacted URL template with placeholders; never store actual MAP_KEY in a URL.",
+      "credential_ref": "Secret manager/environment variable name, never the secret value.",
+      "rate_limit_group": "Shared quota bucket, e.g. the same FIRMS account across all sources.",
+      "capability_spec": "Verified maximum window, pagination, coverage, latency class and source documentation.",
+      "state": "Active, paused, retired or not yet verified.",
+      "verified_at": "Last capability verification time, UTC."
+    }
+  },
+  "feed_sources": {
+    "grain": "One exact source emitted by a feed, with the predicate that selects its rows.",
+    "columns": {
+      "feed_id": "FK to ingestion_feeds.",
+      "source_id": "FK to sources; output product can differ from a combined transport asset source.",
+      "selector": "Platform/product discriminators and mappings; MODIS Terra and Aqua are separated here."
+    }
+  },
+  "source_availability": {
+    "grain": "One dated provider availability observation for a feed/source; records retained for audit.",
+    "columns": {
+      "feed_id": "FK component to feed_sources.",
+      "source_id": "FK component to feed_sources.",
+      "checked_at": "UTC time availability was checked.",
+      "available_start": "Earliest reported event/valid time; may be unknown.",
+      "available_end_exclusive": "End of reported available interval, exclusive; not a local cloud-coverage claim.",
+      "status": "Available, partial, unavailable, unknown or retired.",
+      "evidence_asset_id": "Optional immutable response proving this availability result.",
+      "detail": "Gaps, endpoint response, documented retirement and product version notes."
+    }
+  },
+  "ingestion_subscriptions": {
+    "grain": "One configured feed × registered scope × acquisition mode; public map clicks do not create it.",
+    "columns": {
+      "id": "Unique subscription identifier.",
+      "feed_id": "FK to the transport adapter.",
+      "area_id": "FK to the acquisition polygon used for bounding-box tiles and later clipping.",
+      "scope_key": "Stable registered scope/shard name.",
+      "mode": "Backfill, incremental or standard/revision reconciliation.",
+      "interval_seconds": "Proposed polling frequency; not provider observation frequency.",
+      "overlap_seconds": "Time deliberately re-requested to catch late data.",
+      "history_start": "Earliest event/update time this subscription manages.",
+      "fixed_end_exclusive": "Optional bounded end for historical imports.",
+      "request_config": "Sources, variables, collection IDs, chunking, backoff and endpoint-specific settings.",
+      "config_sha256": "Hash of canonical subscription configuration.",
+      "enabled": "False until credentials, inventory and scope have passed readiness checks.",
+      "next_due_at": "Earliest scheduled next poll in UTC.",
+      "lease_owner": "Worker identity holding a temporary lock.",
+      "lease_expires_at": "When another worker may recover an abandoned subscription."
+    }
+  },
+  "fetch_runs": {
+    "grain": "One bounded external query attempt; complete means retrieval succeeded, not that nature was fully observed.",
+    "columns": {
+      "id": "Unique attempt identifier.",
+      "subscription_id": "FK to the acquisition subscription.",
+      "pipeline_run_id": "Optional parent processing execution.",
+      "request_key": "Hash of feed, scope, window, request parameters and scheduled poll generation; retry keeps it stable.",
+      "attempt": "Attempt number within that request key, beginning at one.",
+      "query_start": "Inclusive lower bound in the declared query basis.",
+      "query_end_exclusive": "Exclusive upper bound in the declared query basis.",
+      "query_basis": "Observation time, provider revision time, publication time or model initialization time.",
+      "sanitized_request": "Exact request and pagination parameters with credentials redacted.",
+      "status": "Queued, running, complete, partial, failed or validated not-modified.",
+      "enumeration_complete": "All required pages/chunks resolved; empty data alone does not establish completeness.",
+      "page_count": "Number of validated pages/payloads.",
+      "record_count": "Parsed returned count; zero is a valid successful empty payload.",
+      "started_at": "UTC start time of this attempt.",
+      "completed_at": "UTC finish time of this attempt.",
+      "max_observation_at": "Latest event time actually present; null for an empty response.",
+      "http_status": "Last HTTP response status, if applicable.",
+      "retry_after": "Next allowed retry after provider limit/backoff.",
+      "error_code": "Redacted structured error classification."
+    }
+  },
+  "fetch_assets": {
+    "grain": "One immutable response/file associated with a fetch attempt and page; includes successful empty responses.",
+    "columns": {
+      "fetch_run_id": "FK to fetch_runs.",
+      "asset_id": "FK to preserved bytes or a validated previously cached asset.",
+      "role": "Catalog page, payload, empty result, availability or cached payload.",
+      "page_key": "Stable page/chunk/granule locator for replay."
+    }
+  },
+  "ingestion_checkpoints": {
+    "grain": "One committed progress marker per subscription/stage; does not infer progress from the last detection.",
+    "columns": {
+      "subscription_id": "FK to ingestion_subscriptions.",
+      "stage": "Discovery, fetch, normalization or publication checkpoint.",
+      "cursor_basis": "Exact meaning of committed_until, such as successfully queried UTC end.",
+      "committed_until": "Contiguous committed boundary; do not advance over unresolved gaps.",
+      "cursor_json": "Provider cursor state scoped to a fixed request; long-lived revision watermark is explicit.",
+      "last_success_run_id": "Fetch evidence for the committed boundary.",
+      "updated_at": "UTC checkpoint update time.",
+      "generation": "Optimistic concurrency version used for compare-and-swap updates."
+    }
+  },
+  "ingestion_gaps": {
+    "grain": "One unresolved or resolved interval of ingestion availability; distinct from clouds/no-detection.",
+    "columns": {
+      "id": "Unique gap identifier.",
+      "subscription_id": "FK to subscription/scope.",
+      "gap_start": "Inclusive start of the unavailable/query-failed interval.",
+      "gap_end_exclusive": "Exclusive end of the interval.",
+      "kind": "Transport/catalog/companion/provider/retirement or unknown problem.",
+      "status": "Open, retrying, resolved or explicitly accepted unavailable.",
+      "discovered_at": "UTC first detection of this gap.",
+      "last_attempt_at": "Most recent repair attempt time.",
+      "retry_after": "Next eligible bounded repair time.",
+      "resolved_by_run_id": "Fetch run that supplied missing evidence, when resolved.",
+      "evidence": "Failure response IDs, missing granule keys and resolution explanation."
+    }
+  },
+  "quality_issues": {
+    "grain": "One rule violation produced by a pipeline execution; blocking issues prevent publication.",
+    "columns": {
+      "id": "Unique issue identifier.",
+      "pipeline_run_id": "FK to the execution that found the issue.",
+      "asset_id": "Optional FK to affected raw input.",
+      "rule_id": "Versioned quality-check identifier.",
+      "severity": "Informational, warning or publication-blocking.",
+      "status": "Open, resolved or reviewed/accepted with explanation.",
+      "affected_count": "Count of affected records or objects.",
+      "sample_locator": "Bounded sample of row/granule locators without copying large data.",
+      "explanation": "Human-readable problem.",
+      "resolution_note": "Recorded fix or accepted limitation.",
+      "created_at": "UTC issue creation time."
+    }
+  },
+  "data_partitions": {
+    "grain": "One immutable complete snapshot of one series/partition key; empty snapshots are allowed.",
+    "columns": {
+      "id": "Unique partition revision identifier.",
+      "pipeline_run_id": "FK to the run producing this partition.",
+      "kind": "Detection, observation, feature, daily product, weather, report or tile output.",
+      "series_key": "Product/stream or method series; publication resolves overlap explicitly.",
+      "partition_key": "Deterministic date/spatial shard key within a series.",
+      "support_spec": "Exact half-open time/spatial bounds, input completeness, stream and selection rules.",
+      "storage_uri": "Immutable Parquet/mask/tile/manifest artifact location.",
+      "sha256": "SHA-256 digest of the artifact.",
+      "input_manifest_uri": "Exact raw input assets/rows and processing policies.",
+      "schema_version": "Version of the partition row schema.",
+      "row_count": "Canonical output records, zero for an authoritative empty snapshot.",
+      "serving_complete": "True only when all rows required by the bounded serving contract are in database tables; false requires lake-backed queries.",
+      "validation_status": "Pending, validated or quarantined.",
+      "created_at": "UTC time the partition revision was produced."
+    }
+  },
+  "partition_detections": {
+    "grain": "One canonical detection included in a served detection partition.",
+    "columns": {
+      "partition_id": "FK to a complete detection partition revision.",
+      "detection_id": "FK to the immutable normalized detection record."
+    }
+  },
+  "release_partitions": {
+    "grain": "One selected revision per series/partition key in a release; unchanged partitions can be shared.",
+    "columns": {
+      "release_id": "FK to immutable release snapshot.",
+      "series_key": "Series being published; part of unique selection key.",
+      "partition_key": "Time/spatial partition selection key.",
+      "partition_id": "FK to the selected matching series/key partition revision."
+    }
+  },
+  "partition_dependencies": {
+    "grain": "One derived partition dependency used to find downstream rebuild work.",
+    "columns": {
+      "partition_id": "FK to the derived output partition.",
+      "input_partition_id": "FK to one upstream partition.",
+      "role": "Input role, such as detections, mask, weather or geolocation."
+    }
+  },
+  "release_aliases": {
+    "grain": "One mutable pointer to a published release for a named scope; readers pin its resolved UUID.",
+    "columns": {
+      "alias": "latest_standard, latest_recent, latest_weather_history, latest_weather_recent or latest_reports.",
+      "scope_key": "Registered product/geographic scope.",
+      "release_id": "FK to the published snapshot currently selected.",
+      "generation": "Compare-and-swap generation preventing concurrent publishers overwriting each other.",
+      "updated_at": "UTC atomic pointer update time."
+    }
+  },
+  "release_changes": {
+    "grain": "One documented scoped change between two published snapshots.",
+    "columns": {
+      "id": "Unique change identifier.",
+      "from_release_id": "FK to prior snapshot.",
+      "to_release_id": "FK to replacement/new snapshot.",
+      "series_key": "Affected source or method series.",
+      "affected_start": "Inclusive event/valid-time lower bound.",
+      "affected_end_exclusive": "Exclusive event/valid-time upper bound.",
+      "affected_area": "Affected geography if known; null means scope-wide/unknown.",
+      "reason": "New, late, revised, standard replacement, retraction, method/weather/report change.",
+      "diff_manifest_uri": "Counts, changed partition IDs and canonical added/removed/changed record evidence.",
+      "created_at": "UTC change-record time."
+    }
+  },
+  "analysis_components": {
+    "grain": "One pinned satellite/weather/reports snapshot or explicit missing component per analysis.",
+    "columns": {
+      "analysis_id": "FK to the immutable user request.",
+      "component": "Satellite, historical weather, recent weather or reports.",
+      "release_id": "Exact context release, nullable when that component is unavailable/not requested.",
+      "status": "Ready, partial, missing, unsupported, failed or not requested.",
+      "reasons": "Scope, missingness and context-availability explanations."
+    }
+  },
+  "api_jobs": {
+    "grain": "One durable asynchronous API job with request identity and export lifecycle.",
+    "columns": {
+      "id": "Unique job identifier returned to the client.",
+      "kind": "Analysis, explanation, export, backfill or explicit refresh.",
+      "analysis_id": "Optional FK to selected analysis.",
+      "explanation_id": "Optional FK to AI attempt.",
+      "requested_by": "Authenticated principal/session scope used for authorization and idempotency.",
+      "request_hash": "Canonical request digest; same idempotency key with different hash returns conflict.",
+      "idempotency_key": "Client-supplied or server-generated key unique within requester scope.",
+      "request_spec": "Validated bounded job configuration, with secrets excluded.",
+      "status": "Queued, running, succeeded, partial, failed or cancelled.",
+      "attempt": "Worker attempt count; jobs are retried idempotently.",
+      "lease_expires_at": "When an abandoned running job can be reclaimed.",
+      "progress": "Completed/total work units, stage and warnings; no fabricated ETA.",
+      "result_manifest_uri": "Prepared export/result manifest after completion.",
+      "result_sha256": "Digest of the export/result artifact.",
+      "result_byte_size": "Artifact byte count.",
+      "expires_at": "Export retention/download expiry, distinct from scientific data retention.",
+      "error_code": "Redacted structured failure.",
+      "created_at": "UTC submission time.",
+      "completed_at": "UTC terminal-state time."
+    }
+  },
+  "outbox_events": {
+    "grain": "One durable work/publication event committed in the same database transaction as its state change.",
+    "columns": {
+      "id": "Unique event identifier.",
+      "event_type": "Versioned event name, e.g. release.published or analysis.requested.",
+      "aggregate_id": "Related job/release/analysis ID; validated by event type.",
+      "dedupe_key": "Stable event identity for at-least-once delivery.",
+      "payload": "Minimal typed job IDs/config references, no credentials.",
+      "status": "Pending, leased for dispatch, or delivered.",
+      "attempts": "Dispatch attempt count.",
+      "available_at": "Earliest permitted dispatch time.",
+      "lease_expires_at": "Recovery time if dispatcher dies.",
+      "delivered_at": "Broker-confirmed dispatch time, not job completion.",
+      "created_at": "UTC creation time."
+    }
+  }
+}

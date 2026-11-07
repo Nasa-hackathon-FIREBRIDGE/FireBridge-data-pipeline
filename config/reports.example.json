@@ -1,0 +1,25 @@
+[
+  {
+    "canonical_url": "https://example.com/synthetic-template-do-not-import",
+    "title": "SYNTHETIC TEMPLATE — replace with a real dated source",
+    "publisher": "REPLACE WITH ORIGINAL PUBLISHER",
+    "language": "en",
+    "published_at": "2024-07-20T10:00:00Z",
+    "publication_precision": "timestamp",
+    "summary": "Your short factual summary, with claims attributed to this report.",
+    "source_lineage": "unknown",
+    "review_status": "unreviewed",
+    "events": [
+      {
+        "event_start": "2024-07-19",
+        "event_end_exclusive": "2024-07-20",
+        "date_precision": "day",
+        "place_text": "Replace with reported place",
+        "location": null,
+        "location_precision": "unknown",
+        "reported_event_type": "reported_fire",
+        "claim_summary": "Replace with an attributed claim from the source."
+      }
+    ]
+  }
+]

@@ -1,0 +1,8 @@
+[
+  {"file":"DL_FIRE_SV-C2_42013.zip","feed":"VIIRS_SNPP_SP","coverage_start":"2024-01-01","coverage_end":"2025-01-02","start":"2024-01-17","end":"2025-01-01"},
+  {"file":"DL_FIRE_SV-C2_42018.zip","feed":"VIIRS_SNPP_SP","coverage_start":"2025-01-01","coverage_end":"2026-01-02","start":"2025-01-01","end":"2025-01-18"},
+  {"file":"DL_FIRE_J1V-C2_42011.zip","feed":"VIIRS_NOAA20_SP","coverage_start":"2024-01-01","coverage_end":"2025-01-02","start":"2024-01-17","end":"2025-01-01"},
+  {"file":"DL_FIRE_J1V-C2_42016.zip","feed":"VIIRS_NOAA20_SP","coverage_start":"2025-01-01","coverage_end":"2026-01-02","start":"2025-01-01","end":"2025-01-18"},
+  {"file":"DL_FIRE_J2V-C2_42012.zip","feed":"VIIRS_NOAA21_NRT","coverage_start":"2024-01-01","coverage_end":"2025-01-02","start":"2024-01-17","end":"2025-01-01"},
+  {"file":"DL_FIRE_J2V-C2_42017.zip","feed":"VIIRS_NOAA21_NRT","coverage_start":"2025-01-01","coverage_end":"2026-01-02","start":"2025-01-01","end":"2025-01-18"}
+]

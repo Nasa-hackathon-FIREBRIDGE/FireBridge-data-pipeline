@@ -1,0 +1,328 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/7lvw65",
+    "id": "7lvw65",
+    "slide": 10,
+    "layoutId": "efade4a4-4e61-45ad-aa91-dec01e88fa1b",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "9a17e23c-9ac4-4ed6-9b5e-28c487e072fe",
+    "masterLayoutName": "Master",
+    "backgroundColor": "#F9FAF7",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "bg1": "#FFFFFF",
+      "bg2": "#000000",
+      "tx1": "#1F1F1F",
+      "tx2": "#FFFFFF",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "typefaces": [
+      "Nimbus Sans"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "efade4a4-4e61-45ad-aa91-dec01e88fa1b",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "9a17e23c-9ac4-4ed6-9b5e-28c487e072fe",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "9a17e23c-9ac4-4ed6-9b5e-28c487e072fe",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/10vqtcnu",
+      "id": "1",
+      "bbox": [
+        70,
+        44,
+        1140,
+        85
+      ],
+      "geometry": "rect",
+      "text": "Daytime detection times show separate regimes",
+      "textPreview": "Daytime detection times show separate regimes",
+      "resolvedFontSize": 44,
+      "resolvedTextStyle": {
+        "fontSize": 44,
+        "typeface": "Nimbus Sans",
+        "color": "#17332F",
+        "bold": true,
+        "alignment": "left",
+        "autoFit": "none",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Daytime detection times show separate regimes"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Daytime detection times show separate regimes",
+          "resolvedTextStyle": {
+            "fontSize": 44,
+            "typeface": "Nimbus Sans",
+            "color": "#17332F",
+            "bold": true
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Daytime detection times show separate regimes",
+              "fontSize": 44,
+              "typeface": "Nimbus Sans",
+              "color": "#17332F",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ex4ryx4j",
+      "id": "2",
+      "bbox": [
+        70,
+        128,
+        1140,
+        52
+      ],
+      "geometry": "rect",
+      "text": "Approximate local solar hour, conditional on a recorded daytime detection",
+      "textPreview": "Approximate local solar hour, conditional on a recorded daytime detection",
+      "resolvedFontSize": 23,
+      "resolvedTextStyle": {
+        "fontSize": 23,
+        "typeface": "Nimbus Sans",
+        "color": "#536864",
+        "alignment": "left",
+        "autoFit": "none",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Approximate local solar hour, conditional on a recorded daytime detection"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Approximate local solar hour, conditional on a recorded daytime detection",
+          "resolvedTextStyle": {
+            "fontSize": 23,
+            "typeface": "Nimbus Sans",
+            "color": "#536864"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Approximate local solar hour, conditional on a recorded daytime detection",
+              "fontSize": 23,
+              "typeface": "Nimbus Sans",
+              "color": "#536864"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/fyd8r254",
+      "id": "3",
+      "bbox": [
+        1140,
+        666,
+        70,
+        30
+      ],
+      "geometry": "rect",
+      "text": "10",
+      "textPreview": "10",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "fontSize": 16,
+        "typeface": "Nimbus Sans",
+        "color": "#536864",
+        "alignment": "right",
+        "autoFit": "none",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "10"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "10",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "typeface": "Nimbus Sans",
+            "color": "#536864",
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "10",
+              "fontSize": 16,
+              "typeface": "Nimbus Sans",
+              "color": "#536864",
+              "alignment": "right"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 4,
+      "kind": "chart",
+      "scope": "slide",
+      "aid": "ch/kvihs7yt",
+      "id": "4",
+      "bbox": [
+        70,
+        190,
+        1140,
+        410
+      ],
+      "chartType": "line"
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/pofaxcn6",
+      "id": "5",
+      "bbox": [
+        70,
+        614,
+        1140,
+        48
+      ],
+      "geometry": "rect",
+      "text": "Solar hour ≈ UTC hour + longitude / 15. It differs from civil time and orbit crossing time.",
+      "textPreview": "Solar hour ≈ UTC hour + longitude / 15. It differs from civil time and orbit crossing time.",
+      "resolvedFontSize": 23,
+      "resolvedTextStyle": {
+        "fontSize": 23,
+        "typeface": "Nimbus Sans",
+        "color": "#536864",
+        "alignment": "left",
+        "autoFit": "none",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Solar hour ≈ UTC hour + longitude / 15. It differs from civil time and orbit crossing time."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Solar hour ≈ UTC hour + longitude / 15. It differs from civil time and orbit crossing time.",
+          "resolvedTextStyle": {
+            "fontSize": 23,
+            "typeface": "Nimbus Sans",
+            "color": "#536864"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Solar hour ≈ UTC hour + longitude / 15. It differs from civil time and orbit crossing time.",
+              "fontSize": 23,
+              "typeface": "Nimbus Sans",
+              "color": "#536864"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    }
+  ],
+  "composeRuns": []
+}

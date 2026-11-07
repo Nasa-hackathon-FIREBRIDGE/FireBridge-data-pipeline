@@ -1,0 +1,95 @@
+[
+  {
+    "file": "01_monthly_rates.png",
+    "title": "Monthly recorded detection rates",
+    "caption": "Exact counts divided by dates in the requested window; January endpoints are partial. These are exported detections per calendar day, not incidents or coverage-corrected occurrence rates.",
+    "tables": [
+      "monthly.csv"
+    ]
+  },
+  {
+    "file": "02_global_map.png",
+    "title": "Global detection geography",
+    "caption": "All 4,876,343 detections aggregated exactly. Degree bins have unequal physical areas; color measures recorded counts, not fire risk or burned area. Natural Earth outlines provide coarse context only.",
+    "tables": [
+      "global_1degree_bins.csv"
+    ]
+  },
+  {
+    "file": "03_confidence.png",
+    "title": "Native confidence classes",
+    "caption": "Low <30; nominal 30\u201379; high \u226580. Native confidence is not a calibrated probability of wildfire. All classes remain in the raw and EDA dataset.",
+    "tables": [
+      "confidence.csv"
+    ]
+  },
+  {
+    "file": "04_frp_distribution.png",
+    "title": "FRP distribution",
+    "caption": "Exact histogram over positive FRP; 2,425 zero-FRP rows are flagged separately and retained. FRP is instantaneous radiative power per detected pixel, not burned hectares or total energy.",
+    "tables": [
+      "platform_summary.csv",
+      "exact_quantiles.csv"
+    ]
+  },
+  {
+    "file": "05_solar_time.png",
+    "title": "Observed hotspot timing",
+    "caption": "UTC + longitude/15 modulo 24, without equation-of-time correction. Distribution is conditional on exported hotspots; it is not a full orbit coverage schedule.",
+    "tables": [
+      "solar_hour_bins.csv",
+      "platform_daynight_summary.csv"
+    ]
+  },
+  {
+    "file": "06_hemisphere_seasons.png",
+    "title": "Hemisphere contributions",
+    "caption": "Both platforms combined, split at latitude 0\u00b0. These broad descriptive groups do not isolate climate, land use, observation coverage or causal drivers.",
+    "tables": [
+      "hemisphere_monthly.csv",
+      "monthly.csv"
+    ]
+  },
+  {
+    "file": "07_pilot_calendar.png",
+    "title": "Pilot monthly point calendar",
+    "caption": "Blueprint rectangle: west \u22126.4\u00b0, south 34.5\u00b0, east \u22124.5\u00b0, north 35.9\u00b0. A zero means no exported retained point, not an eligible negative observation. Only 49 candidate detections remain after type/confidence filtering.",
+    "tables": [
+      "pilot_detections.csv",
+      "regional_summary.csv"
+    ]
+  },
+  {
+    "file": "08_pilot_map.png",
+    "title": "Pilot point locations",
+    "caption": "57 detections in the entire requested period. The rectangle is a study window; it includes no reviewed land mask or administrative clip. Symbols are pixel centers, not fire boundaries.",
+    "tables": [
+      "pilot_detections.csv"
+    ]
+  },
+  {
+    "file": "09_footprint_january.png",
+    "title": "January footprint distributions",
+    "caption": "FIRMS overlap January 1\u201317, 2025 only, 202,406 rows. Full-year MCD14ML instead provides sample index 0\u20131353; explicit scan/track are absent. Pixel footprint is not burning/burned area.",
+    "tables": [
+      "january_footprint_summary.csv",
+      "january_overlap_differences.csv"
+    ]
+  },
+  {
+    "file": "10_confidence_sensitivity.png",
+    "title": "Confidence threshold sensitivity",
+    "caption": "Thresholds are analysis choices. A stricter filter removes many exported detections and does not turn the retained sample into verified wildfire ground truth.",
+    "tables": [
+      "confidence_sensitivity.csv"
+    ]
+  },
+  {
+    "file": "11_thermal_frp.png",
+    "title": "Thermal signal scatter",
+    "caption": "Uniform reproducible 40,000-row sample for visualization, seed 20241017. Correlation tables use the full type-0 population, split by native day/night; relationships are not causal evidence or flame temperatures.",
+    "tables": [
+      "type0_spearman.csv"
+    ]
+  }
+]

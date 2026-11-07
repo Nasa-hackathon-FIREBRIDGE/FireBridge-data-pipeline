@@ -1,0 +1,10 @@
+[Unit]
+Description=FIREBRIDGE database and immutable object backup
+Requires=docker.service
+After=docker.service
+
+[Service]
+Type=oneshot
+WorkingDirectory=/opt/firebridge
+ExecStart=/bin/sh /opt/firebridge/scripts/backup_stack.sh
+UMask=0077

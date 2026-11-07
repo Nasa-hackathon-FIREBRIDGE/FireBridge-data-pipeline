@@ -1,0 +1,339 @@
+{
+  "375": {
+    "documentWidth": 375,
+    "bodyWidth": 375,
+    "tableScrolls": [
+      {
+        "scrollWidth": 480,
+        "clientWidth": 331,
+        "tabindex": "0"
+      },
+      {
+        "scrollWidth": 480,
+        "clientWidth": 331,
+        "tabindex": "0"
+      },
+      {
+        "scrollWidth": 480,
+        "clientWidth": 331,
+        "tabindex": "0"
+      },
+      {
+        "scrollWidth": 480,
+        "clientWidth": 331,
+        "tabindex": "0"
+      },
+      {
+        "scrollWidth": 480,
+        "clientWidth": 331,
+        "tabindex": "0"
+      },
+      {
+        "scrollWidth": 480,
+        "clientWidth": 331,
+        "tabindex": "0"
+      },
+      {
+        "scrollWidth": 480,
+        "clientWidth": 331,
+        "tabindex": "0"
+      },
+      {
+        "scrollWidth": 480,
+        "clientWidth": 331,
+        "tabindex": "0"
+      },
+      {
+        "scrollWidth": 480,
+        "clientWidth": 331,
+        "tabindex": "0"
+      },
+      {
+        "scrollWidth": 480,
+        "clientWidth": 331,
+        "tabindex": "0"
+      },
+      {
+        "scrollWidth": 480,
+        "clientWidth": 331,
+        "tabindex": "0"
+      }
+    ]
+  },
+  "768": {
+    "documentWidth": 768,
+    "bodyWidth": 768,
+    "tableScrolls": [
+      {
+        "scrollWidth": 493,
+        "clientWidth": 493,
+        "tabindex": "0"
+      },
+      {
+        "scrollWidth": 493,
+        "clientWidth": 493,
+        "tabindex": "0"
+      },
+      {
+        "scrollWidth": 493,
+        "clientWidth": 493,
+        "tabindex": "0"
+      },
+      {
+        "scrollWidth": 493,
+        "clientWidth": 493,
+        "tabindex": "0"
+      },
+      {
+        "scrollWidth": 493,
+        "clientWidth": 493,
+        "tabindex": "0"
+      },
+      {
+        "scrollWidth": 493,
+        "clientWidth": 493,
+        "tabindex": "0"
+      },
+      {
+        "scrollWidth": 493,
+        "clientWidth": 493,
+        "tabindex": "0"
+      },
+      {
+        "scrollWidth": 493,
+        "clientWidth": 493,
+        "tabindex": "0"
+      },
+      {
+        "scrollWidth": 493,
+        "clientWidth": 493,
+        "tabindex": "0"
+      },
+      {
+        "scrollWidth": 493,
+        "clientWidth": 493,
+        "tabindex": "0"
+      },
+      {
+        "scrollWidth": 493,
+        "clientWidth": 493,
+        "tabindex": "0"
+      }
+    ]
+  },
+  "1440": {
+    "documentWidth": 1440,
+    "bodyWidth": 1440,
+    "tableScrolls": [
+      {
+        "scrollWidth": 880,
+        "clientWidth": 880,
+        "tabindex": "0"
+      },
+      {
+        "scrollWidth": 880,
+        "clientWidth": 880,
+        "tabindex": "0"
+      },
+      {
+        "scrollWidth": 880,
+        "clientWidth": 880,
+        "tabindex": "0"
+      },
+      {
+        "scrollWidth": 880,
+        "clientWidth": 880,
+        "tabindex": "0"
+      },
+      {
+        "scrollWidth": 880,
+        "clientWidth": 880,
+        "tabindex": "0"
+      },
+      {
+        "scrollWidth": 880,
+        "clientWidth": 880,
+        "tabindex": "0"
+      },
+      {
+        "scrollWidth": 880,
+        "clientWidth": 880,
+        "tabindex": "0"
+      },
+      {
+        "scrollWidth": 880,
+        "clientWidth": 880,
+        "tabindex": "0"
+      },
+      {
+        "scrollWidth": 880,
+        "clientWidth": 880,
+        "tabindex": "0"
+      },
+      {
+        "scrollWidth": 880,
+        "clientWidth": 880,
+        "tabindex": "0"
+      },
+      {
+        "scrollWidth": 880,
+        "clientWidth": 880,
+        "tabindex": "0"
+      }
+    ]
+  },
+  "detailsClickToggles": true,
+  "navScrollsToTarget": true,
+  "localLinkFiles": [
+    {
+      "href": "MODIS_EDA.md",
+      "exists": true
+    },
+    {
+      "href": "tables/input_inventory.csv",
+      "exists": true
+    },
+    {
+      "href": "../../data/external/modis_2024_2025/acquisition_manifest.json",
+      "exists": true
+    },
+    {
+      "href": "summary.json",
+      "exists": true
+    },
+    {
+      "href": "validation.json",
+      "exists": true
+    },
+    {
+      "href": "../../data/external/modis_2024_2025/README.md",
+      "exists": true
+    },
+    {
+      "href": "SCIENCE_NOTES.md",
+      "exists": true
+    },
+    {
+      "href": "tables/quality_checks.csv",
+      "exists": true
+    },
+    {
+      "href": "tables/exact_duplicates.csv",
+      "exists": true
+    },
+    {
+      "href": "tables/quarantine.csv",
+      "exists": true
+    },
+    {
+      "href": "january_overlap_audit.json",
+      "exists": true
+    },
+    {
+      "href": "tables/location_time_key_review.csv",
+      "exists": true
+    },
+    {
+      "href": "tables/monthly.csv",
+      "exists": true
+    },
+    {
+      "href": "tables/daily.csv",
+      "exists": true
+    },
+    {
+      "href": "tables/hemisphere_monthly.csv",
+      "exists": true
+    },
+    {
+      "href": "tables/confidence_sensitivity.csv",
+      "exists": true
+    },
+    {
+      "href": "tables/exact_quantiles.csv",
+      "exists": true
+    },
+    {
+      "href": "tables/frp_extremes.csv",
+      "exists": true
+    },
+    {
+      "href": "tables/type0_spearman.csv",
+      "exists": true
+    },
+    {
+      "href": "tables/solar_hour_bins.csv",
+      "exists": true
+    },
+    {
+      "href": "tables/monthly_solar_timing.csv",
+      "exists": true
+    },
+    {
+      "href": "tables/january_footprint_summary.csv",
+      "exists": true
+    },
+    {
+      "href": "tables/regional_grid_sensitivity.csv",
+      "exists": true
+    },
+    {
+      "href": "tables/pilot_5km_recurrence.csv",
+      "exists": true
+    },
+    {
+      "href": "tables/pilot_monthly.csv",
+      "exists": true
+    },
+    {
+      "href": "tables/pilot_detections.csv",
+      "exists": true
+    },
+    {
+      "href": "tables/regional_summary.csv",
+      "exists": true
+    },
+    {
+      "href": "../../FIREBRIDGE_Blueprint.md",
+      "exists": true
+    },
+    {
+      "href": "SCIENCE_NOTES.md",
+      "exists": true
+    },
+    {
+      "href": "../../data/external/modis_2024_2025/README.md",
+      "exists": true
+    },
+    {
+      "href": "summary.json",
+      "exists": true
+    },
+    {
+      "href": "validation.json",
+      "exists": true
+    },
+    {
+      "href": "MODIS_EDA.md",
+      "exists": true
+    },
+    {
+      "href": "summary.json",
+      "exists": true
+    },
+    {
+      "href": "SCIENCE_NOTES.md",
+      "exists": true
+    }
+  ],
+  "focusVisible": {
+    "outlineStyle": "none",
+    "outlineWidth": "0px"
+  },
+  "keyboardTableScroll": 31,
+  "focusAfterKeyboard": {
+    "focusVisible": true,
+    "outlineStyle": "solid",
+    "outlineWidth": "3px"
+  }
+}

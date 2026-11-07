@@ -1,0 +1,9 @@
+{"kind":"deck","id":"pr/et3az7","name":"Deck"}
+{"kind":"layout","layoutId":"ef0cd2b2-d33c-4847-920a-d3087bd59d79","name":"Master","type":"master"}
+{"kind":"layout","layoutId":"5d904d34-2c19-41fb-954a-2d9313569a99","name":"Title Slide","type":"title"}
+{"kind":"slide","id":"sl/6b39jk","slide":1,"title":"MODIS data fields","textShapes":3}
+{"kind":"textbox","id":"sh/vud0r6xs","slide":1,"text":"MODIS data fields","textPreview":"MODIS data fields","textChars":17,"textLines":1,"bbox":[70,44,1140,85]}
+{"kind":"textbox","id":"sh/wvmhkbed","slide":1,"text":"Private API check","textPreview":"Private API check","textChars":17,"textLines":1,"bbox":[70,128,1140,52]}
+{"kind":"textbox","id":"sh/hwvitgfy","slide":1,"text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[1180,669,30,22]}
+{"kind":"table","id":"tb/n29o3u5s","slide":1,"name":"","rows":3,"cols":2,"preview":"Field | Meaning","bbox":[70,194,1140,390]}
+{"kind":"notes","id":"nt/6b39jk","slide":1,"text":""}

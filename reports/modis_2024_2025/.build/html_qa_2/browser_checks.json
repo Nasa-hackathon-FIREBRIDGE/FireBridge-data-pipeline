@@ -1,0 +1,1381 @@
+{
+  "375": {
+    "viewportWidth": 375,
+    "documentWidth": 360,
+    "bodyWidth": 360,
+    "documentHeight": 20784,
+    "sections": [
+      {
+        "id": "header",
+        "x": 22,
+        "y": 73.75,
+        "width": 316,
+        "height": 698.9375
+      },
+      {
+        "id": "dataset",
+        "x": 22,
+        "y": 863.078125,
+        "width": 316,
+        "height": 1644.3125
+      },
+      {
+        "id": "one-row",
+        "x": 22,
+        "y": 2507.390625,
+        "width": 316,
+        "height": 1808.9375
+      },
+      {
+        "id": "platforms",
+        "x": 22,
+        "y": 4316.328125,
+        "width": 316,
+        "height": 1205.84375
+      },
+      {
+        "id": "quality",
+        "x": 22,
+        "y": 5522.171875,
+        "width": 316,
+        "height": 1744.421875
+      },
+      {
+        "id": "seasonality",
+        "x": 22,
+        "y": 7266.59375,
+        "width": 316,
+        "height": 1483.984375
+      },
+      {
+        "id": "signal",
+        "x": 22,
+        "y": 8750.578125,
+        "width": 316,
+        "height": 2994.75
+      },
+      {
+        "id": "timing",
+        "x": 22,
+        "y": 11745.328125,
+        "width": 316,
+        "height": 1749.59375
+      },
+      {
+        "id": "pilot",
+        "x": 22,
+        "y": 13494.921875,
+        "width": 316,
+        "height": 2068.921875
+      },
+      {
+        "id": "use",
+        "x": 22,
+        "y": 15563.84375,
+        "width": 316,
+        "height": 1793.328125
+      },
+      {
+        "id": "next",
+        "x": 22,
+        "y": 17357.171875,
+        "width": 316,
+        "height": 3060.1875
+      },
+      {
+        "id": "footer",
+        "x": 22,
+        "y": 20417.359375,
+        "width": 316,
+        "height": 285.84375
+      }
+    ],
+    "images": [
+      {
+        "alt": "Global map of recorded MODIS Terra and Aqua detections combined in one-degree bins.",
+        "loaded": true,
+        "x": 22,
+        "y": 2010.0625,
+        "width": 316,
+        "height": 172.546875
+      },
+      {
+        "alt": "Monthly recorded detections per requested calendar day for Terra and Aqua, identifying partial January periods.",
+        "loaded": true,
+        "x": 22,
+        "y": 7669.140625,
+        "width": 316,
+        "height": 154.5625
+      },
+      {
+        "alt": "MODIS detections separated by Northern and Southern Hemisphere over the selected months.",
+        "loaded": true,
+        "x": 22,
+        "y": 8147.484375,
+        "width": 316,
+        "height": 147.125
+      },
+      {
+        "alt": "Distribution of native MODIS confidence classes separately for Terra and Aqua.",
+        "loaded": true,
+        "x": 22,
+        "y": 9492.234375,
+        "width": 316,
+        "height": 196.65625
+      },
+      {
+        "alt": "Positive-FRP distributions separately for Terra and Aqua, on a logarithmic horizontal scale.",
+        "loaded": true,
+        "x": 22,
+        "y": 10307.84375,
+        "width": 316,
+        "height": 168.59375
+      },
+      {
+        "alt": "Share of all-type detections retained at confidence thresholds 0, 30, 50, 80 and 90.",
+        "loaded": true,
+        "x": 22,
+        "y": 11630.546875,
+        "width": 316,
+        "height": 198.90625
+      },
+      {
+        "alt": "Thermal brightness temperature and FRP scatter for a reproducible 40,000-row visualization sample.",
+        "loaded": true,
+        "x": 22,
+        "y": 11744.328125,
+        "width": 316,
+        "height": 156.71875
+      },
+      {
+        "alt": "Approximate local mean solar-time distribution of recorded Terra and Aqua detections by day/night.",
+        "loaded": true,
+        "x": 22,
+        "y": 12358.375,
+        "width": 316,
+        "height": 150.015625
+      },
+      {
+        "alt": "Scan and track pixel-size histograms for Terra and Aqua in January 1–17, 2025 only.",
+        "loaded": true,
+        "x": 22,
+        "y": 13406.53125,
+        "width": 316,
+        "height": 156.328125
+      },
+      {
+        "alt": "Recorded MODIS detections inside the northern Morocco pilot rectangle, by satellite.",
+        "loaded": true,
+        "x": 22,
+        "y": 14642.328125,
+        "width": 316,
+        "height": 283.015625
+      },
+      {
+        "alt": "Northern Morocco monthly type-0 detections with confidence at least 30, separately for Terra and Aqua.",
+        "loaded": true,
+        "x": 22,
+        "y": 15090.953125,
+        "width": 316,
+        "height": 152.109375
+      }
+    ],
+    "localLinks": [
+      {
+        "text": "Skip to the walkthrough",
+        "href": "#main"
+      },
+      {
+        "text": "01Start with the dataset",
+        "href": "#dataset"
+      },
+      {
+        "text": "02Understand one real observation",
+        "href": "#one-row"
+      },
+      {
+        "text": "03Compare the two sampling schedules",
+        "href": "#platforms"
+      },
+      {
+        "text": "04Check whether the record is usable",
+        "href": "#quality"
+      },
+      {
+        "text": "05Follow the year, with the right denominator",
+        "href": "#seasonality"
+      },
+      {
+        "text": "06Read confidence and radiative power",
+        "href": "#signal"
+      },
+      {
+        "text": "07Use the acquisition times actually observed",
+        "href": "#timing"
+      },
+      {
+        "text": "08Zoom into the northern Morocco study window",
+        "href": "#pilot"
+      },
+      {
+        "text": "09Turn this EDA into FIREBRIDGE inputs",
+        "href": "#use"
+      },
+      {
+        "text": "10What the team should do next",
+        "href": "#next"
+      },
+      {
+        "text": "Detailed Markdown report",
+        "href": "MODIS_EDA.md"
+      },
+      {
+        "text": "Presentation (PPTX)",
+        "href": "MODIS_Terra_Aqua_2024_2025_Presentation.pptx"
+      },
+      {
+        "text": "Slides (PDF)",
+        "href": "MODIS_Terra_Aqua_2024_2025_Presentation.pdf"
+      },
+      {
+        "text": "Speaker notes",
+        "href": "PRESENTATION_SPEAKER_NOTES.md"
+      },
+      {
+        "text": "Executed notebook",
+        "href": "../../notebooks/MODIS_Terra_Aqua_2024_2025.ipynb"
+      },
+      {
+        "text": "01Start with the dataset",
+        "href": "#dataset"
+      },
+      {
+        "text": "02Understand one real observation",
+        "href": "#one-row"
+      },
+      {
+        "text": "03Compare the two sampling schedules",
+        "href": "#platforms"
+      },
+      {
+        "text": "04Check whether the record is usable",
+        "href": "#quality"
+      },
+      {
+        "text": "05Follow the year, with the right denominator",
+        "href": "#seasonality"
+      },
+      {
+        "text": "06Read confidence and radiative power",
+        "href": "#signal"
+      },
+      {
+        "text": "07Use the acquisition times actually observed",
+        "href": "#timing"
+      },
+      {
+        "text": "08Zoom into the northern Morocco study window",
+        "href": "#pilot"
+      },
+      {
+        "text": "09Turn this EDA into FIREBRIDGE inputs",
+        "href": "#use"
+      },
+      {
+        "text": "10What the team should do next",
+        "href": "#next"
+      },
+      {
+        "text": "input inventory",
+        "href": "tables/input_inventory.csv"
+      },
+      {
+        "text": "download manifest",
+        "href": "../../data/external/modis_2024_2025/acquisition_manifest.json"
+      },
+      {
+        "text": "full machine-readable summary",
+        "href": "summary.json"
+      },
+      {
+        "text": "validation results",
+        "href": "validation.json"
+      },
+      {
+        "text": "raw-schema guide",
+        "href": "../../data/external/modis_2024_2025/README.md"
+      },
+      {
+        "text": "scientific interpretation notes",
+        "href": "SCIENCE_NOTES.md"
+      },
+      {
+        "text": "complete quality table",
+        "href": "tables/quality_checks.csv"
+      },
+      {
+        "text": "exact duplicates",
+        "href": "tables/exact_duplicates.csv"
+      },
+      {
+        "text": "quarantine",
+        "href": "tables/quarantine.csv"
+      },
+      {
+        "text": "January overlap audit",
+        "href": "january_overlap_audit.json"
+      },
+      {
+        "text": "Repeated location/time keys",
+        "href": "tables/location_time_key_review.csv"
+      },
+      {
+        "text": "monthly table",
+        "href": "tables/monthly.csv"
+      },
+      {
+        "text": "daily table",
+        "href": "tables/daily.csv"
+      },
+      {
+        "text": "hemisphere table",
+        "href": "tables/hemisphere_monthly.csv"
+      },
+      {
+        "text": "thresholds 0, 30, 50, 80 and 90",
+        "href": "tables/confidence_sensitivity.csv"
+      },
+      {
+        "text": "exact quantiles",
+        "href": "tables/exact_quantiles.csv"
+      },
+      {
+        "text": "largest FRP rows",
+        "href": "tables/frp_extremes.csv"
+      },
+      {
+        "text": "Spearman correlations",
+        "href": "tables/type0_spearman.csv"
+      },
+      {
+        "text": "solar-hour bins",
+        "href": "tables/solar_hour_bins.csv"
+      },
+      {
+        "text": "monthly solar timing",
+        "href": "tables/monthly_solar_timing.csv"
+      },
+      {
+        "text": "January footprint summary",
+        "href": "tables/january_footprint_summary.csv"
+      },
+      {
+        "text": "grid sensitivity",
+        "href": "tables/regional_grid_sensitivity.csv"
+      },
+      {
+        "text": "5 km recurrence",
+        "href": "tables/pilot_5km_recurrence.csv"
+      },
+      {
+        "text": "monthly pilot observations",
+        "href": "tables/pilot_monthly.csv"
+      },
+      {
+        "text": "every pilot detection",
+        "href": "tables/pilot_detections.csv"
+      },
+      {
+        "text": "regional summary",
+        "href": "tables/regional_summary.csv"
+      },
+      {
+        "text": "FIREBRIDGE blueprint",
+        "href": "../../FIREBRIDGE_Blueprint.md"
+      },
+      {
+        "text": "source notes",
+        "href": "SCIENCE_NOTES.md"
+      },
+      {
+        "text": "raw-data README",
+        "href": "../../data/external/modis_2024_2025/README.md"
+      },
+      {
+        "text": "summary",
+        "href": "summary.json"
+      },
+      {
+        "text": "validation",
+        "href": "validation.json"
+      },
+      {
+        "text": "Presentation (PPTX)",
+        "href": "MODIS_Terra_Aqua_2024_2025_Presentation.pptx"
+      },
+      {
+        "text": "Slides (PDF)",
+        "href": "MODIS_Terra_Aqua_2024_2025_Presentation.pdf"
+      },
+      {
+        "text": "Speaker notes",
+        "href": "PRESENTATION_SPEAKER_NOTES.md"
+      },
+      {
+        "text": "Executed notebook",
+        "href": "../../notebooks/MODIS_Terra_Aqua_2024_2025.ipynb"
+      },
+      {
+        "text": "Markdown report",
+        "href": "MODIS_EDA.md"
+      },
+      {
+        "text": "Exact results",
+        "href": "summary.json"
+      },
+      {
+        "text": "Scientific source notes",
+        "href": "SCIENCE_NOTES.md"
+      }
+    ],
+    "bodyFont": "17px"
+  },
+  "768": {
+    "viewportWidth": 768,
+    "documentWidth": 753,
+    "bodyWidth": 753,
+    "documentHeight": 18790,
+    "sections": [
+      {
+        "id": "header",
+        "x": 245,
+        "y": 40,
+        "width": 478,
+        "height": 585.46875
+      },
+      {
+        "id": "dataset",
+        "x": 245,
+        "y": 625.46875,
+        "width": 478,
+        "height": 1531.78125
+      },
+      {
+        "id": "one-row",
+        "x": 245,
+        "y": 2157.25,
+        "width": 478,
+        "height": 1715.25
+      },
+      {
+        "id": "platforms",
+        "x": 245,
+        "y": 3872.5,
+        "width": 478,
+        "height": 1045.859375
+      },
+      {
+        "id": "quality",
+        "x": 245,
+        "y": 4918.359375,
+        "width": 478,
+        "height": 1591.3125
+      },
+      {
+        "id": "seasonality",
+        "x": 245,
+        "y": 6509.671875,
+        "width": 478,
+        "height": 1397.09375
+      },
+      {
+        "id": "signal",
+        "x": 245,
+        "y": 7906.765625,
+        "width": 478,
+        "height": 2816.125
+      },
+      {
+        "id": "timing",
+        "x": 245,
+        "y": 10722.890625,
+        "width": 478,
+        "height": 1668.4375
+      },
+      {
+        "id": "pilot",
+        "x": 245,
+        "y": 12391.328125,
+        "width": 478,
+        "height": 2052.0625
+      },
+      {
+        "id": "use",
+        "x": 245,
+        "y": 14443.390625,
+        "width": 478,
+        "height": 1757.453125
+      },
+      {
+        "id": "next",
+        "x": 245,
+        "y": 16200.84375,
+        "width": 478,
+        "height": 2334.703125
+      },
+      {
+        "id": "footer",
+        "x": 245,
+        "y": 18535.546875,
+        "width": 478,
+        "height": 193.46875
+      }
+    ],
+    "images": [
+      {
+        "alt": "Global map of recorded MODIS Terra and Aqua detections combined in one-degree bins.",
+        "loaded": true,
+        "x": 245,
+        "y": 1613.640625,
+        "width": 478,
+        "height": 260.53125
+      },
+      {
+        "alt": "Monthly recorded detections per requested calendar day for Terra and Aqua, identifying partial January periods.",
+        "loaded": true,
+        "x": 245,
+        "y": 6880.453125,
+        "width": 478,
+        "height": 233.28125
+      },
+      {
+        "alt": "MODIS detections separated by Northern and Southern Hemisphere over the selected months.",
+        "loaded": true,
+        "x": 245,
+        "y": 7395.8125,
+        "width": 478,
+        "height": 222
+      },
+      {
+        "alt": "Distribution of native MODIS confidence classes separately for Terra and Aqua.",
+        "loaded": true,
+        "x": 245,
+        "y": 8565.09375,
+        "width": 478,
+        "height": 297.078125
+      },
+      {
+        "alt": "Positive-FRP distributions separately for Terra and Aqua, on a logarithmic horizontal scale.",
+        "loaded": true,
+        "x": 245,
+        "y": 9384.921875,
+        "width": 478,
+        "height": 254.546875
+      },
+      {
+        "alt": "Share of all-type detections retained at confidence thresholds 0, 30, 50, 80 and 90.",
+        "loaded": true,
+        "x": 245,
+        "y": 10634.5,
+        "width": 478,
+        "height": 300.484375
+      },
+      {
+        "alt": "Thermal brightness temperature and FRP scatter for a reproducible 40,000-row visualization sample.",
+        "loaded": true,
+        "x": 245,
+        "y": 10721.890625,
+        "width": 478,
+        "height": 236.546875
+      },
+      {
+        "alt": "Approximate local mean solar-time distribution of recorded Terra and Aqua detections by day/night.",
+        "loaded": true,
+        "x": 245,
+        "y": 11296.671875,
+        "width": 478,
+        "height": 226.375
+      },
+      {
+        "alt": "Scan and track pixel-size histograms for Terra and Aqua in January 1–17, 2025 only.",
+        "loaded": true,
+        "x": 245,
+        "y": 12302.9375,
+        "width": 478,
+        "height": 235.953125
+      },
+      {
+        "alt": "Recorded MODIS detections inside the northern Morocco pilot rectangle, by satellite.",
+        "loaded": true,
+        "x": 245,
+        "y": 13354.078125,
+        "width": 478,
+        "height": 428
+      },
+      {
+        "alt": "Northern Morocco monthly type-0 detections with confidence at least 30, separately for Terra and Aqua.",
+        "loaded": true,
+        "x": 245,
+        "y": 13930.765625,
+        "width": 478,
+        "height": 229.546875
+      }
+    ],
+    "localLinks": [
+      {
+        "text": "Skip to the walkthrough",
+        "href": "#main"
+      },
+      {
+        "text": "01Start with the dataset",
+        "href": "#dataset"
+      },
+      {
+        "text": "02Understand one real observation",
+        "href": "#one-row"
+      },
+      {
+        "text": "03Compare the two sampling schedules",
+        "href": "#platforms"
+      },
+      {
+        "text": "04Check whether the record is usable",
+        "href": "#quality"
+      },
+      {
+        "text": "05Follow the year, with the right denominator",
+        "href": "#seasonality"
+      },
+      {
+        "text": "06Read confidence and radiative power",
+        "href": "#signal"
+      },
+      {
+        "text": "07Use the acquisition times actually observed",
+        "href": "#timing"
+      },
+      {
+        "text": "08Zoom into the northern Morocco study window",
+        "href": "#pilot"
+      },
+      {
+        "text": "09Turn this EDA into FIREBRIDGE inputs",
+        "href": "#use"
+      },
+      {
+        "text": "10What the team should do next",
+        "href": "#next"
+      },
+      {
+        "text": "Detailed Markdown report",
+        "href": "MODIS_EDA.md"
+      },
+      {
+        "text": "Presentation (PPTX)",
+        "href": "MODIS_Terra_Aqua_2024_2025_Presentation.pptx"
+      },
+      {
+        "text": "Slides (PDF)",
+        "href": "MODIS_Terra_Aqua_2024_2025_Presentation.pdf"
+      },
+      {
+        "text": "Speaker notes",
+        "href": "PRESENTATION_SPEAKER_NOTES.md"
+      },
+      {
+        "text": "Executed notebook",
+        "href": "../../notebooks/MODIS_Terra_Aqua_2024_2025.ipynb"
+      },
+      {
+        "text": "01Start with the dataset",
+        "href": "#dataset"
+      },
+      {
+        "text": "02Understand one real observation",
+        "href": "#one-row"
+      },
+      {
+        "text": "03Compare the two sampling schedules",
+        "href": "#platforms"
+      },
+      {
+        "text": "04Check whether the record is usable",
+        "href": "#quality"
+      },
+      {
+        "text": "05Follow the year, with the right denominator",
+        "href": "#seasonality"
+      },
+      {
+        "text": "06Read confidence and radiative power",
+        "href": "#signal"
+      },
+      {
+        "text": "07Use the acquisition times actually observed",
+        "href": "#timing"
+      },
+      {
+        "text": "08Zoom into the northern Morocco study window",
+        "href": "#pilot"
+      },
+      {
+        "text": "09Turn this EDA into FIREBRIDGE inputs",
+        "href": "#use"
+      },
+      {
+        "text": "10What the team should do next",
+        "href": "#next"
+      },
+      {
+        "text": "input inventory",
+        "href": "tables/input_inventory.csv"
+      },
+      {
+        "text": "download manifest",
+        "href": "../../data/external/modis_2024_2025/acquisition_manifest.json"
+      },
+      {
+        "text": "full machine-readable summary",
+        "href": "summary.json"
+      },
+      {
+        "text": "validation results",
+        "href": "validation.json"
+      },
+      {
+        "text": "raw-schema guide",
+        "href": "../../data/external/modis_2024_2025/README.md"
+      },
+      {
+        "text": "scientific interpretation notes",
+        "href": "SCIENCE_NOTES.md"
+      },
+      {
+        "text": "complete quality table",
+        "href": "tables/quality_checks.csv"
+      },
+      {
+        "text": "exact duplicates",
+        "href": "tables/exact_duplicates.csv"
+      },
+      {
+        "text": "quarantine",
+        "href": "tables/quarantine.csv"
+      },
+      {
+        "text": "January overlap audit",
+        "href": "january_overlap_audit.json"
+      },
+      {
+        "text": "Repeated location/time keys",
+        "href": "tables/location_time_key_review.csv"
+      },
+      {
+        "text": "monthly table",
+        "href": "tables/monthly.csv"
+      },
+      {
+        "text": "daily table",
+        "href": "tables/daily.csv"
+      },
+      {
+        "text": "hemisphere table",
+        "href": "tables/hemisphere_monthly.csv"
+      },
+      {
+        "text": "thresholds 0, 30, 50, 80 and 90",
+        "href": "tables/confidence_sensitivity.csv"
+      },
+      {
+        "text": "exact quantiles",
+        "href": "tables/exact_quantiles.csv"
+      },
+      {
+        "text": "largest FRP rows",
+        "href": "tables/frp_extremes.csv"
+      },
+      {
+        "text": "Spearman correlations",
+        "href": "tables/type0_spearman.csv"
+      },
+      {
+        "text": "solar-hour bins",
+        "href": "tables/solar_hour_bins.csv"
+      },
+      {
+        "text": "monthly solar timing",
+        "href": "tables/monthly_solar_timing.csv"
+      },
+      {
+        "text": "January footprint summary",
+        "href": "tables/january_footprint_summary.csv"
+      },
+      {
+        "text": "grid sensitivity",
+        "href": "tables/regional_grid_sensitivity.csv"
+      },
+      {
+        "text": "5 km recurrence",
+        "href": "tables/pilot_5km_recurrence.csv"
+      },
+      {
+        "text": "monthly pilot observations",
+        "href": "tables/pilot_monthly.csv"
+      },
+      {
+        "text": "every pilot detection",
+        "href": "tables/pilot_detections.csv"
+      },
+      {
+        "text": "regional summary",
+        "href": "tables/regional_summary.csv"
+      },
+      {
+        "text": "FIREBRIDGE blueprint",
+        "href": "../../FIREBRIDGE_Blueprint.md"
+      },
+      {
+        "text": "source notes",
+        "href": "SCIENCE_NOTES.md"
+      },
+      {
+        "text": "raw-data README",
+        "href": "../../data/external/modis_2024_2025/README.md"
+      },
+      {
+        "text": "summary",
+        "href": "summary.json"
+      },
+      {
+        "text": "validation",
+        "href": "validation.json"
+      },
+      {
+        "text": "Presentation (PPTX)",
+        "href": "MODIS_Terra_Aqua_2024_2025_Presentation.pptx"
+      },
+      {
+        "text": "Slides (PDF)",
+        "href": "MODIS_Terra_Aqua_2024_2025_Presentation.pdf"
+      },
+      {
+        "text": "Speaker notes",
+        "href": "PRESENTATION_SPEAKER_NOTES.md"
+      },
+      {
+        "text": "Executed notebook",
+        "href": "../../notebooks/MODIS_Terra_Aqua_2024_2025.ipynb"
+      },
+      {
+        "text": "Markdown report",
+        "href": "MODIS_EDA.md"
+      },
+      {
+        "text": "Exact results",
+        "href": "summary.json"
+      },
+      {
+        "text": "Scientific source notes",
+        "href": "SCIENCE_NOTES.md"
+      }
+    ],
+    "bodyFont": "18px"
+  },
+  "1440": {
+    "viewportWidth": 1440,
+    "documentWidth": 1425,
+    "bodyWidth": 1425,
+    "documentHeight": 16497,
+    "sections": [
+      {
+        "id": "header",
+        "x": 414.5,
+        "y": 55,
+        "width": 880,
+        "height": 555.765625
+      },
+      {
+        "id": "dataset",
+        "x": 414.5,
+        "y": 610.765625,
+        "width": 880,
+        "height": 1504
+      },
+      {
+        "id": "one-row",
+        "x": 414.5,
+        "y": 2114.765625,
+        "width": 880,
+        "height": 1289.734375
+      },
+      {
+        "id": "platforms",
+        "x": 414.5,
+        "y": 3404.5,
+        "width": 880,
+        "height": 788.34375
+      },
+      {
+        "id": "quality",
+        "x": 414.5,
+        "y": 4192.84375,
+        "width": 880,
+        "height": 1189.796875
+      },
+      {
+        "id": "seasonality",
+        "x": 414.5,
+        "y": 5382.640625,
+        "width": 880,
+        "height": 1338.421875
+      },
+      {
+        "id": "signal",
+        "x": 414.5,
+        "y": 6721.0625,
+        "width": 880,
+        "height": 2964.390625
+      },
+      {
+        "id": "timing",
+        "x": 414.5,
+        "y": 9685.453125,
+        "width": 880,
+        "height": 1585.640625
+      },
+      {
+        "id": "pilot",
+        "x": 414.5,
+        "y": 11271.09375,
+        "width": 880,
+        "height": 2302.046875
+      },
+      {
+        "id": "use",
+        "x": 414.5,
+        "y": 13573.140625,
+        "width": 880,
+        "height": 1136.03125
+      },
+      {
+        "id": "next",
+        "x": 414.5,
+        "y": 14709.171875,
+        "width": 880,
+        "height": 1506.4375
+      },
+      {
+        "id": "footer",
+        "x": 414.5,
+        "y": 16215.609375,
+        "width": 880,
+        "height": 170.375
+      }
+    ],
+    "images": [
+      {
+        "alt": "Global map of recorded MODIS Terra and Aqua detections combined in one-degree bins.",
+        "loaded": true,
+        "x": 414.5,
+        "y": 1400.796875,
+        "width": 880,
+        "height": 478.890625
+      },
+      {
+        "alt": "Monthly recorded detections per requested calendar day for Terra and Aqua, identifying partial January periods.",
+        "loaded": true,
+        "x": 414.5,
+        "y": 5666.171875,
+        "width": 880,
+        "height": 428.609375
+      },
+      {
+        "alt": "MODIS detections separated by Northern and Southern Hemisphere over the selected months.",
+        "loaded": true,
+        "x": 414.5,
+        "y": 6328.859375,
+        "width": 880,
+        "height": 407.796875
+      },
+      {
+        "alt": "Distribution of native MODIS confidence classes separately for Terra and Aqua.",
+        "loaded": true,
+        "x": 414.5,
+        "y": 7285.59375,
+        "width": 880,
+        "height": 546.296875
+      },
+      {
+        "alt": "Positive-FRP distributions separately for Terra and Aqua, on a logarithmic horizontal scale.",
+        "loaded": true,
+        "x": 414.5,
+        "y": 8300.953125,
+        "width": 880,
+        "height": 467.828125
+      },
+      {
+        "alt": "Share of all-type detections retained at confidence thresholds 0, 30, 50, 80 and 90.",
+        "loaded": true,
+        "x": 414.5,
+        "y": 9597.0625,
+        "width": 880,
+        "height": 552.578125
+      },
+      {
+        "alt": "Thermal brightness temperature and FRP scatter for a reproducible 40,000-row visualization sample.",
+        "loaded": true,
+        "x": 414.5,
+        "y": 9684.453125,
+        "width": 880,
+        "height": 434.625
+      },
+      {
+        "alt": "Approximate local mean solar-time distribution of recorded Terra and Aqua detections by day/night.",
+        "loaded": true,
+        "x": 414.5,
+        "y": 10147.984375,
+        "width": 880,
+        "height": 415.890625
+      },
+      {
+        "alt": "Scan and track pixel-size histograms for Terra and Aqua in January 1–17, 2025 only.",
+        "loaded": true,
+        "x": 414.5,
+        "y": 11182.703125,
+        "width": 880,
+        "height": 433.546875
+      },
+      {
+        "alt": "Recorded MODIS detections inside the northern Morocco pilot rectangle, by satellite.",
+        "loaded": true,
+        "x": 414.5,
+        "y": 12003.84375,
+        "width": 880,
+        "height": 787.796875
+      },
+      {
+        "alt": "Northern Morocco monthly type-0 detections with confidence at least 30, separately for Terra and Aqua.",
+        "loaded": true,
+        "x": 414.5,
+        "y": 12916.328125,
+        "width": 880,
+        "height": 421.734375
+      }
+    ],
+    "localLinks": [
+      {
+        "text": "Skip to the walkthrough",
+        "href": "#main"
+      },
+      {
+        "text": "01Start with the dataset",
+        "href": "#dataset"
+      },
+      {
+        "text": "02Understand one real observation",
+        "href": "#one-row"
+      },
+      {
+        "text": "03Compare the two sampling schedules",
+        "href": "#platforms"
+      },
+      {
+        "text": "04Check whether the record is usable",
+        "href": "#quality"
+      },
+      {
+        "text": "05Follow the year, with the right denominator",
+        "href": "#seasonality"
+      },
+      {
+        "text": "06Read confidence and radiative power",
+        "href": "#signal"
+      },
+      {
+        "text": "07Use the acquisition times actually observed",
+        "href": "#timing"
+      },
+      {
+        "text": "08Zoom into the northern Morocco study window",
+        "href": "#pilot"
+      },
+      {
+        "text": "09Turn this EDA into FIREBRIDGE inputs",
+        "href": "#use"
+      },
+      {
+        "text": "10What the team should do next",
+        "href": "#next"
+      },
+      {
+        "text": "Detailed Markdown report",
+        "href": "MODIS_EDA.md"
+      },
+      {
+        "text": "Presentation (PPTX)",
+        "href": "MODIS_Terra_Aqua_2024_2025_Presentation.pptx"
+      },
+      {
+        "text": "Slides (PDF)",
+        "href": "MODIS_Terra_Aqua_2024_2025_Presentation.pdf"
+      },
+      {
+        "text": "Speaker notes",
+        "href": "PRESENTATION_SPEAKER_NOTES.md"
+      },
+      {
+        "text": "Executed notebook",
+        "href": "../../notebooks/MODIS_Terra_Aqua_2024_2025.ipynb"
+      },
+      {
+        "text": "01Start with the dataset",
+        "href": "#dataset"
+      },
+      {
+        "text": "02Understand one real observation",
+        "href": "#one-row"
+      },
+      {
+        "text": "03Compare the two sampling schedules",
+        "href": "#platforms"
+      },
+      {
+        "text": "04Check whether the record is usable",
+        "href": "#quality"
+      },
+      {
+        "text": "05Follow the year, with the right denominator",
+        "href": "#seasonality"
+      },
+      {
+        "text": "06Read confidence and radiative power",
+        "href": "#signal"
+      },
+      {
+        "text": "07Use the acquisition times actually observed",
+        "href": "#timing"
+      },
+      {
+        "text": "08Zoom into the northern Morocco study window",
+        "href": "#pilot"
+      },
+      {
+        "text": "09Turn this EDA into FIREBRIDGE inputs",
+        "href": "#use"
+      },
+      {
+        "text": "10What the team should do next",
+        "href": "#next"
+      },
+      {
+        "text": "input inventory",
+        "href": "tables/input_inventory.csv"
+      },
+      {
+        "text": "download manifest",
+        "href": "../../data/external/modis_2024_2025/acquisition_manifest.json"
+      },
+      {
+        "text": "full machine-readable summary",
+        "href": "summary.json"
+      },
+      {
+        "text": "validation results",
+        "href": "validation.json"
+      },
+      {
+        "text": "raw-schema guide",
+        "href": "../../data/external/modis_2024_2025/README.md"
+      },
+      {
+        "text": "scientific interpretation notes",
+        "href": "SCIENCE_NOTES.md"
+      },
+      {
+        "text": "complete quality table",
+        "href": "tables/quality_checks.csv"
+      },
+      {
+        "text": "exact duplicates",
+        "href": "tables/exact_duplicates.csv"
+      },
+      {
+        "text": "quarantine",
+        "href": "tables/quarantine.csv"
+      },
+      {
+        "text": "January overlap audit",
+        "href": "january_overlap_audit.json"
+      },
+      {
+        "text": "Repeated location/time keys",
+        "href": "tables/location_time_key_review.csv"
+      },
+      {
+        "text": "monthly table",
+        "href": "tables/monthly.csv"
+      },
+      {
+        "text": "daily table",
+        "href": "tables/daily.csv"
+      },
+      {
+        "text": "hemisphere table",
+        "href": "tables/hemisphere_monthly.csv"
+      },
+      {
+        "text": "thresholds 0, 30, 50, 80 and 90",
+        "href": "tables/confidence_sensitivity.csv"
+      },
+      {
+        "text": "exact quantiles",
+        "href": "tables/exact_quantiles.csv"
+      },
+      {
+        "text": "largest FRP rows",
+        "href": "tables/frp_extremes.csv"
+      },
+      {
+        "text": "Spearman correlations",
+        "href": "tables/type0_spearman.csv"
+      },
+      {
+        "text": "solar-hour bins",
+        "href": "tables/solar_hour_bins.csv"
+      },
+      {
+        "text": "monthly solar timing",
+        "href": "tables/monthly_solar_timing.csv"
+      },
+      {
+        "text": "January footprint summary",
+        "href": "tables/january_footprint_summary.csv"
+      },
+      {
+        "text": "grid sensitivity",
+        "href": "tables/regional_grid_sensitivity.csv"
+      },
+      {
+        "text": "5 km recurrence",
+        "href": "tables/pilot_5km_recurrence.csv"
+      },
+      {
+        "text": "monthly pilot observations",
+        "href": "tables/pilot_monthly.csv"
+      },
+      {
+        "text": "every pilot detection",
+        "href": "tables/pilot_detections.csv"
+      },
+      {
+        "text": "regional summary",
+        "href": "tables/regional_summary.csv"
+      },
+      {
+        "text": "FIREBRIDGE blueprint",
+        "href": "../../FIREBRIDGE_Blueprint.md"
+      },
+      {
+        "text": "source notes",
+        "href": "SCIENCE_NOTES.md"
+      },
+      {
+        "text": "raw-data README",
+        "href": "../../data/external/modis_2024_2025/README.md"
+      },
+      {
+        "text": "summary",
+        "href": "summary.json"
+      },
+      {
+        "text": "validation",
+        "href": "validation.json"
+      },
+      {
+        "text": "Presentation (PPTX)",
+        "href": "MODIS_Terra_Aqua_2024_2025_Presentation.pptx"
+      },
+      {
+        "text": "Slides (PDF)",
+        "href": "MODIS_Terra_Aqua_2024_2025_Presentation.pdf"
+      },
+      {
+        "text": "Speaker notes",
+        "href": "PRESENTATION_SPEAKER_NOTES.md"
+      },
+      {
+        "text": "Executed notebook",
+        "href": "../../notebooks/MODIS_Terra_Aqua_2024_2025.ipynb"
+      },
+      {
+        "text": "Markdown report",
+        "href": "MODIS_EDA.md"
+      },
+      {
+        "text": "Exact results",
+        "href": "summary.json"
+      },
+      {
+        "text": "Scientific source notes",
+        "href": "SCIENCE_NOTES.md"
+      }
+    ],
+    "bodyFont": "18px"
+  },
+  "details": [
+    {
+      "title": "Jump to a section · 10 chapters",
+      "open": true
+    },
+    {
+      "title": "Source files, processing and reproducibility",
+      "open": true
+    },
+    {
+      "title": "Data dictionary and units",
+      "open": true
+    },
+    {
+      "title": "Inspect the audit evidence",
+      "open": true
+    },
+    {
+      "title": "Explore how the two hemispheres contribute",
+      "open": true
+    },
+    {
+      "title": "Exact seasonal tables",
+      "open": true
+    },
+    {
+      "title": "Sensitivity and thermal relationships",
+      "open": true
+    },
+    {
+      "title": "Explore how confidence thresholds change the record",
+      "open": true
+    },
+    {
+      "title": "Explore thermal signal and FRP together",
+      "open": true
+    },
+    {
+      "title": "Explore the January-only pixel-size distributions",
+      "open": true
+    },
+    {
+      "title": "Timing and geometry evidence",
+      "open": true
+    },
+    {
+      "title": "Grid sensitivity and recurrence",
+      "open": true
+    },
+    {
+      "title": "Primary references and project evidence",
+      "open": true
+    }
+  ],
+  "internalAnchorsValid": true,
+  "errors": []
+}

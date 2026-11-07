@@ -1,0 +1,246 @@
+{
+  "375": {
+    "mobileContents": {
+      "visible": true,
+      "open": false,
+      "afterHero": true
+    },
+    "tableCuesVisible": true,
+    "contentsToggle": true,
+    "contentsAnchor": true,
+    "dialog": {
+      "open": true,
+      "focusedClose": true,
+      "insideViewport": true,
+      "viewportWidth": 300,
+      "imageWidth": 1622,
+      "naturalWidth": 1622,
+      "scrollWidth": 1622,
+      "docWidth": 360
+    },
+    "dialogFocusTrap": true,
+    "figureScroll": {
+      "x": 300,
+      "y": 120
+    },
+    "escape": {
+      "closed": true,
+      "focusRestored": true,
+      "cleared": true
+    },
+    "close": {
+      "closed": true,
+      "focusRestored": true
+    },
+    "documentWidth": 360,
+    "allFigureButtons": 11
+  },
+  "1440": {
+    "mobileContents": {
+      "visible": false,
+      "open": false,
+      "afterHero": false
+    },
+    "tableCuesVisible": false,
+    "dialog": {
+      "open": true,
+      "focusedClose": true,
+      "insideViewport": true,
+      "viewportWidth": 1325,
+      "imageWidth": 1622,
+      "naturalWidth": 1622,
+      "scrollWidth": 1622,
+      "docWidth": 1425
+    },
+    "dialogFocusTrap": true,
+    "figureScroll": {
+      "x": 297,
+      "y": 120
+    },
+    "escape": {
+      "closed": true,
+      "focusRestored": true,
+      "cleared": true
+    },
+    "close": {
+      "closed": true,
+      "focusRestored": true
+    },
+    "documentWidth": 1425,
+    "allFigureButtons": 11
+  },
+  "localLinks": [
+    {
+      "href": "MODIS_EDA.md",
+      "exists": true
+    },
+    {
+      "href": "MODIS_Terra_Aqua_2024_2025_Presentation.pptx",
+      "exists": true
+    },
+    {
+      "href": "MODIS_Terra_Aqua_2024_2025_Presentation.pdf",
+      "exists": true
+    },
+    {
+      "href": "PRESENTATION_SPEAKER_NOTES.md",
+      "exists": true
+    },
+    {
+      "href": "../../notebooks/MODIS_Terra_Aqua_2024_2025.ipynb",
+      "exists": true
+    },
+    {
+      "href": "tables/input_inventory.csv",
+      "exists": true
+    },
+    {
+      "href": "../../data/external/modis_2024_2025/acquisition_manifest.json",
+      "exists": true
+    },
+    {
+      "href": "summary.json",
+      "exists": true
+    },
+    {
+      "href": "validation.json",
+      "exists": true
+    },
+    {
+      "href": "../../data/external/modis_2024_2025/README.md",
+      "exists": true
+    },
+    {
+      "href": "SCIENCE_NOTES.md",
+      "exists": true
+    },
+    {
+      "href": "tables/quality_checks.csv",
+      "exists": true
+    },
+    {
+      "href": "tables/exact_duplicates.csv",
+      "exists": true
+    },
+    {
+      "href": "tables/quarantine.csv",
+      "exists": true
+    },
+    {
+      "href": "january_overlap_audit.json",
+      "exists": true
+    },
+    {
+      "href": "tables/location_time_key_review.csv",
+      "exists": true
+    },
+    {
+      "href": "tables/monthly.csv",
+      "exists": true
+    },
+    {
+      "href": "tables/daily.csv",
+      "exists": true
+    },
+    {
+      "href": "tables/hemisphere_monthly.csv",
+      "exists": true
+    },
+    {
+      "href": "tables/confidence_sensitivity.csv",
+      "exists": true
+    },
+    {
+      "href": "tables/exact_quantiles.csv",
+      "exists": true
+    },
+    {
+      "href": "tables/frp_extremes.csv",
+      "exists": true
+    },
+    {
+      "href": "tables/type0_spearman.csv",
+      "exists": true
+    },
+    {
+      "href": "tables/solar_hour_bins.csv",
+      "exists": true
+    },
+    {
+      "href": "tables/monthly_solar_timing.csv",
+      "exists": true
+    },
+    {
+      "href": "tables/january_footprint_summary.csv",
+      "exists": true
+    },
+    {
+      "href": "tables/regional_grid_sensitivity.csv",
+      "exists": true
+    },
+    {
+      "href": "tables/pilot_5km_recurrence.csv",
+      "exists": true
+    },
+    {
+      "href": "tables/pilot_monthly.csv",
+      "exists": true
+    },
+    {
+      "href": "tables/pilot_detections.csv",
+      "exists": true
+    },
+    {
+      "href": "tables/regional_summary.csv",
+      "exists": true
+    },
+    {
+      "href": "../../FIREBRIDGE_Blueprint.md",
+      "exists": true
+    },
+    {
+      "href": "SCIENCE_NOTES.md",
+      "exists": true
+    },
+    {
+      "href": "../../data/external/modis_2024_2025/README.md",
+      "exists": true
+    },
+    {
+      "href": "summary.json",
+      "exists": true
+    },
+    {
+      "href": "validation.json",
+      "exists": true
+    },
+    {
+      "href": "MODIS_Terra_Aqua_2024_2025_Presentation.pptx",
+      "exists": true
+    },
+    {
+      "href": "MODIS_Terra_Aqua_2024_2025_Presentation.pdf",
+      "exists": true
+    },
+    {
+      "href": "PRESENTATION_SPEAKER_NOTES.md",
+      "exists": true
+    },
+    {
+      "href": "../../notebooks/MODIS_Terra_Aqua_2024_2025.ipynb",
+      "exists": true
+    },
+    {
+      "href": "MODIS_EDA.md",
+      "exists": true
+    },
+    {
+      "href": "summary.json",
+      "exists": true
+    },
+    {
+      "href": "SCIENCE_NOTES.md",
+      "exists": true
+    }
+  ]
+}

@@ -1,0 +1,645 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/zpbzjo",
+    "id": "zpbzjo",
+    "slide": 15,
+    "layoutId": "efade4a4-4e61-45ad-aa91-dec01e88fa1b",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "9a17e23c-9ac4-4ed6-9b5e-28c487e072fe",
+    "masterLayoutName": "Master",
+    "backgroundColor": "#F9FAF7",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "bg1": "#FFFFFF",
+      "bg2": "#000000",
+      "tx1": "#1F1F1F",
+      "tx2": "#FFFFFF",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "typefaces": [
+      "Nimbus Sans"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "efade4a4-4e61-45ad-aa91-dec01e88fa1b",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "9a17e23c-9ac4-4ed6-9b5e-28c487e072fe",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "9a17e23c-9ac4-4ed6-9b5e-28c487e072fe",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/lobm5gbu",
+      "id": "1",
+      "bbox": [
+        70,
+        44,
+        1140,
+        85
+      ],
+      "geometry": "rect",
+      "text": "Observation masks make absence labels possible",
+      "textPreview": "Observation masks make absence labels possible",
+      "resolvedFontSize": 44,
+      "resolvedTextStyle": {
+        "fontSize": 44,
+        "typeface": "Nimbus Sans",
+        "color": "#17332F",
+        "bold": true,
+        "alignment": "left",
+        "autoFit": "none",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Observation masks make absence labels possible"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Observation masks make absence labels possible",
+          "resolvedTextStyle": {
+            "fontSize": 44,
+            "typeface": "Nimbus Sans",
+            "color": "#17332F",
+            "bold": true
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Observation masks make absence labels possible",
+              "fontSize": 44,
+              "typeface": "Nimbus Sans",
+              "color": "#17332F",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/y1k3a1s3",
+      "id": "2",
+      "bbox": [
+        70,
+        128,
+        1140,
+        52
+      ],
+      "geometry": "rect",
+      "text": "A point table only describes detected thermal anomalies",
+      "textPreview": "A point table only describes detected thermal anomalies",
+      "resolvedFontSize": 23,
+      "resolvedTextStyle": {
+        "fontSize": 23,
+        "typeface": "Nimbus Sans",
+        "color": "#536864",
+        "alignment": "left",
+        "autoFit": "none",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "A point table only describes detected thermal anomalies"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "A point table only describes detected thermal anomalies",
+          "resolvedTextStyle": {
+            "fontSize": 23,
+            "typeface": "Nimbus Sans",
+            "color": "#536864"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "A point table only describes detected thermal anomalies",
+              "fontSize": 23,
+              "typeface": "Nimbus Sans",
+              "color": "#536864"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/j2t436to",
+      "id": "3",
+      "bbox": [
+        1140,
+        666,
+        70,
+        30
+      ],
+      "geometry": "rect",
+      "text": "15",
+      "textPreview": "15",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "fontSize": 16,
+        "typeface": "Nimbus Sans",
+        "color": "#536864",
+        "alignment": "right",
+        "autoFit": "none",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "15"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "15",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "typeface": "Nimbus Sans",
+            "color": "#536864",
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "15",
+              "fontSize": 16,
+              "typeface": "Nimbus Sans",
+              "color": "#536864",
+              "alignment": "right"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 4,
+      "kind": "table",
+      "scope": "slide",
+      "aid": "tb/94ryd4za",
+      "id": "4",
+      "bbox": [
+        70,
+        194,
+        1140,
+        405
+      ],
+      "text": "Cell/pass state | Evidence needed\nRetained detection | Point detection plus the defined inclusion rule\nUsable observation with no retained detection | Full fire mask, QA and geolocation\nCloud, invalid or missing observation | Full mask and an explicit exclusion reason\nAqua science files | MYD14 plus collection-compatible MYD03\nTerra science files | MOD14 plus collection-compatible MOD03",
+      "textPreview": "Cell/pass state | Evidence needed | Retained detection | Point detection plus the defined inclusion rule | Usable observation with no ret...",
+      "rows": 6,
+      "cols": 2,
+      "cells": [
+        {
+          "index": 1,
+          "row": 1,
+          "column": 1,
+          "bbox": [
+            70,
+            194,
+            495,
+            67.5
+          ],
+          "text": "Cell/pass state",
+          "textPreview": "Cell/pass state",
+          "fillColor": "#17332F",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "Cell/pass state",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Cell/pass state"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 2,
+          "row": 1,
+          "column": 2,
+          "bbox": [
+            565,
+            194,
+            645,
+            67.5
+          ],
+          "text": "Evidence needed",
+          "textPreview": "Evidence needed",
+          "fillColor": "#17332F",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "Evidence needed",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Evidence needed"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 3,
+          "row": 2,
+          "column": 1,
+          "bbox": [
+            70,
+            261.5,
+            495,
+            67.5
+          ],
+          "text": "Retained detection",
+          "textPreview": "Retained detection",
+          "fillColor": "#F9FAF7",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "Retained detection",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Retained detection"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 4,
+          "row": 2,
+          "column": 2,
+          "bbox": [
+            565,
+            261.5,
+            645,
+            67.5
+          ],
+          "text": "Point detection plus the defined inclusion rule",
+          "textPreview": "Point detection plus the defined inclusion rule",
+          "fillColor": "#F9FAF7",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "Point detection plus the defined inclusion rule",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Point detection plus the defined inclusion rule"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 5,
+          "row": 3,
+          "column": 1,
+          "bbox": [
+            70,
+            329,
+            495,
+            67.5
+          ],
+          "text": "Usable observation with no retained detection",
+          "textPreview": "Usable observation with no retained detection",
+          "fillColor": "#F9FAF7",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "Usable observation with no retained detection",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Usable observation with no retained detection"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 6,
+          "row": 3,
+          "column": 2,
+          "bbox": [
+            565,
+            329,
+            645,
+            67.5
+          ],
+          "text": "Full fire mask, QA and geolocation",
+          "textPreview": "Full fire mask, QA and geolocation",
+          "fillColor": "#F9FAF7",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "Full fire mask, QA and geolocation",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Full fire mask, QA and geolocation"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 7,
+          "row": 4,
+          "column": 1,
+          "bbox": [
+            70,
+            396.5,
+            495,
+            67.5
+          ],
+          "text": "Cloud, invalid or missing observation",
+          "textPreview": "Cloud, invalid or missing observation",
+          "fillColor": "#F9FAF7",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "Cloud, invalid or missing observation",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Cloud, invalid or missing observation"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 8,
+          "row": 4,
+          "column": 2,
+          "bbox": [
+            565,
+            396.5,
+            645,
+            67.5
+          ],
+          "text": "Full mask and an explicit exclusion reason",
+          "textPreview": "Full mask and an explicit exclusion reason",
+          "fillColor": "#F9FAF7",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "Full mask and an explicit exclusion reason",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Full mask and an explicit exclusion reason"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 9,
+          "row": 5,
+          "column": 1,
+          "bbox": [
+            70,
+            464,
+            495,
+            67.5
+          ],
+          "text": "Aqua science files",
+          "textPreview": "Aqua science files",
+          "fillColor": "#F9FAF7",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "Aqua science files",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Aqua science files"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 10,
+          "row": 5,
+          "column": 2,
+          "bbox": [
+            565,
+            464,
+            645,
+            67.5
+          ],
+          "text": "MYD14 plus collection-compatible MYD03",
+          "textPreview": "MYD14 plus collection-compatible MYD03",
+          "fillColor": "#F9FAF7",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "MYD14 plus collection-compatible MYD03",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "MYD14 plus collection-compatible MYD03"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 11,
+          "row": 6,
+          "column": 1,
+          "bbox": [
+            70,
+            531.5,
+            495,
+            67.5
+          ],
+          "text": "Terra science files",
+          "textPreview": "Terra science files",
+          "fillColor": "#F9FAF7",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "Terra science files",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Terra science files"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 12,
+          "row": 6,
+          "column": 2,
+          "bbox": [
+            565,
+            531.5,
+            645,
+            67.5
+          ],
+          "text": "MOD14 plus collection-compatible MOD03",
+          "textPreview": "MOD14 plus collection-compatible MOD03",
+          "fillColor": "#F9FAF7",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "MOD14 plus collection-compatible MOD03",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "MOD14 plus collection-compatible MOD03"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/x0bm1wby",
+      "id": "5",
+      "bbox": [
+        70,
+        614,
+        1140,
+        48
+      ],
+      "geometry": "rect",
+      "text": "An archive with rows on every date does not prove that every cell had a usable observation.",
+      "textPreview": "An archive with rows on every date does not prove that every cell had a usable observation.",
+      "resolvedFontSize": 23,
+      "resolvedTextStyle": {
+        "fontSize": 23,
+        "typeface": "Nimbus Sans",
+        "color": "#536864",
+        "alignment": "left",
+        "autoFit": "none",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "An archive with rows on every date does not prove that every cell had a usable observation."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "An archive with rows on every date does not prove that every cell had a usable observation.",
+          "resolvedTextStyle": {
+            "fontSize": 23,
+            "typeface": "Nimbus Sans",
+            "color": "#536864"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "An archive with rows on every date does not prove that every cell had a usable observation.",
+              "fontSize": 23,
+              "typeface": "Nimbus Sans",
+              "color": "#536864"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    }
+  ],
+  "composeRuns": []
+}

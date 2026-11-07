@@ -1,0 +1,443 @@
+{
+  "sha256_MCD14ML.202401.061.03.txt.gz": {
+    "pass": true,
+    "detail": null
+  },
+  "raw_rows_MCD14ML.202401.061.03.txt.gz": {
+    "pass": true,
+    "detail": 372000
+  },
+  "target_rows_MCD14ML.202401.061.03.txt.gz": {
+    "pass": true,
+    "detail": 179733
+  },
+  "sha256_MCD14ML.202402.061.03.txt.gz": {
+    "pass": true,
+    "detail": null
+  },
+  "raw_rows_MCD14ML.202402.061.03.txt.gz": {
+    "pass": true,
+    "detail": 281661
+  },
+  "target_rows_MCD14ML.202402.061.03.txt.gz": {
+    "pass": true,
+    "detail": 281661
+  },
+  "sha256_MCD14ML.202403.061.03.txt.gz": {
+    "pass": true,
+    "detail": null
+  },
+  "raw_rows_MCD14ML.202403.061.03.txt.gz": {
+    "pass": true,
+    "detail": 270284
+  },
+  "target_rows_MCD14ML.202403.061.03.txt.gz": {
+    "pass": true,
+    "detail": 270284
+  },
+  "sha256_MCD14ML.202404.061.03.txt.gz": {
+    "pass": true,
+    "detail": null
+  },
+  "raw_rows_MCD14ML.202404.061.03.txt.gz": {
+    "pass": true,
+    "detail": 290956
+  },
+  "target_rows_MCD14ML.202404.061.03.txt.gz": {
+    "pass": true,
+    "detail": 290956
+  },
+  "sha256_MCD14ML.202405.061.03.txt.gz": {
+    "pass": true,
+    "detail": null
+  },
+  "raw_rows_MCD14ML.202405.061.03.txt.gz": {
+    "pass": true,
+    "detail": 310678
+  },
+  "target_rows_MCD14ML.202405.061.03.txt.gz": {
+    "pass": true,
+    "detail": 310678
+  },
+  "sha256_MCD14ML.202406.061.03.txt.gz": {
+    "pass": true,
+    "detail": null
+  },
+  "raw_rows_MCD14ML.202406.061.03.txt.gz": {
+    "pass": true,
+    "detail": 409177
+  },
+  "target_rows_MCD14ML.202406.061.03.txt.gz": {
+    "pass": true,
+    "detail": 409177
+  },
+  "sha256_MCD14ML.202407.061.03.txt.gz": {
+    "pass": true,
+    "detail": null
+  },
+  "raw_rows_MCD14ML.202407.061.03.txt.gz": {
+    "pass": true,
+    "detail": 676636
+  },
+  "target_rows_MCD14ML.202407.061.03.txt.gz": {
+    "pass": true,
+    "detail": 676636
+  },
+  "sha256_MCD14ML.202408.061.03.txt.gz": {
+    "pass": true,
+    "detail": null
+  },
+  "raw_rows_MCD14ML.202408.061.03.txt.gz": {
+    "pass": true,
+    "detail": 773697
+  },
+  "target_rows_MCD14ML.202408.061.03.txt.gz": {
+    "pass": true,
+    "detail": 773697
+  },
+  "sha256_MCD14ML.202409.061.03.txt.gz": {
+    "pass": true,
+    "detail": null
+  },
+  "raw_rows_MCD14ML.202409.061.03.txt.gz": {
+    "pass": true,
+    "detail": 592112
+  },
+  "target_rows_MCD14ML.202409.061.03.txt.gz": {
+    "pass": true,
+    "detail": 592112
+  },
+  "sha256_MCD14ML.202410.061.03.txt.gz": {
+    "pass": true,
+    "detail": null
+  },
+  "raw_rows_MCD14ML.202410.061.03.txt.gz": {
+    "pass": true,
+    "detail": 307782
+  },
+  "target_rows_MCD14ML.202410.061.03.txt.gz": {
+    "pass": true,
+    "detail": 307782
+  },
+  "sha256_MCD14ML.202411.061.03.txt.gz": {
+    "pass": true,
+    "detail": null
+  },
+  "raw_rows_MCD14ML.202411.061.03.txt.gz": {
+    "pass": true,
+    "detail": 264508
+  },
+  "target_rows_MCD14ML.202411.061.03.txt.gz": {
+    "pass": true,
+    "detail": 264508
+  },
+  "sha256_MCD14ML.202412.061.03.txt.gz": {
+    "pass": true,
+    "detail": null
+  },
+  "raw_rows_MCD14ML.202412.061.03.txt.gz": {
+    "pass": true,
+    "detail": 316713
+  },
+  "target_rows_MCD14ML.202412.061.03.txt.gz": {
+    "pass": true,
+    "detail": 316713
+  },
+  "sha256_MCD14ML.202501.061.03.txt.gz": {
+    "pass": true,
+    "detail": null
+  },
+  "raw_rows_MCD14ML.202501.061.03.txt.gz": {
+    "pass": true,
+    "detail": 351099
+  },
+  "target_rows_MCD14ML.202501.061.03.txt.gz": {
+    "pass": true,
+    "detail": 202406
+  },
+  "all_raw_native_flags_clear": {
+    "pass": true,
+    "detail": {
+      "invalid_time": 0,
+      "invalid_sample": 0,
+      "noninteger_sample": 0,
+      "bad_date_month": 0,
+      "bad_native_satellite": 0,
+      "bad_native_daynight": 0
+    }
+  },
+  "raw_daily_inventory_exact": {
+    "pass": true,
+    "detail": 4876343
+  },
+  "requested_inclusive_dates": {
+    "pass": true,
+    "detail": null
+  },
+  "global_platform_date_inventory": {
+    "pass": true,
+    "detail": null
+  },
+  "all_timestamp_bounds": {
+    "pass": true,
+    "detail": null
+  },
+  "all_numeric_finite": {
+    "pass": true,
+    "detail": null
+  },
+  "sample_native_zero_based_range": {
+    "pass": true,
+    "detail": [
+      0,
+      1353
+    ]
+  },
+  "no_exact_native_duplicates": {
+    "pass": true,
+    "detail": null
+  },
+  "no_location_time_key_duplicates": {
+    "pass": true,
+    "detail": null
+  },
+  "confidence_and_type_flags": {
+    "pass": true,
+    "detail": null
+  },
+  "summary_row_count": {
+    "pass": true,
+    "detail": null
+  },
+  "daily_row_total": {
+    "pass": true,
+    "detail": 4876343
+  },
+  "daily_Aqua_total": {
+    "pass": true,
+    "detail": 3347476
+  },
+  "daily_Terra_total": {
+    "pass": true,
+    "detail": 1528867
+  },
+  "monthly_row_total": {
+    "pass": true,
+    "detail": 4876343
+  },
+  "monthly_Aqua_total": {
+    "pass": true,
+    "detail": 3347476
+  },
+  "monthly_Terra_total": {
+    "pass": true,
+    "detail": 1528867
+  },
+  "platform_summary_row_total": {
+    "pass": true,
+    "detail": 4876343
+  },
+  "platform_summary_Aqua_total": {
+    "pass": true,
+    "detail": 3347476
+  },
+  "platform_summary_Terra_total": {
+    "pass": true,
+    "detail": 1528867
+  },
+  "daynight_row_total": {
+    "pass": true,
+    "detail": 4876343
+  },
+  "daynight_Aqua_total": {
+    "pass": true,
+    "detail": 3347476
+  },
+  "daynight_Terra_total": {
+    "pass": true,
+    "detail": 1528867
+  },
+  "confidence_row_total": {
+    "pass": true,
+    "detail": 4876343
+  },
+  "confidence_Aqua_total": {
+    "pass": true,
+    "detail": 3347476
+  },
+  "confidence_Terra_total": {
+    "pass": true,
+    "detail": 1528867
+  },
+  "type_row_total": {
+    "pass": true,
+    "detail": 4876343
+  },
+  "type_Aqua_total": {
+    "pass": true,
+    "detail": 3347476
+  },
+  "type_Terra_total": {
+    "pass": true,
+    "detail": 1528867
+  },
+  "hemisphere_monthly_row_total": {
+    "pass": true,
+    "detail": 4876343
+  },
+  "hemisphere_monthly_Aqua_total": {
+    "pass": true,
+    "detail": 3347476
+  },
+  "hemisphere_monthly_Terra_total": {
+    "pass": true,
+    "detail": 1528867
+  },
+  "global_1degree_bins_row_total": {
+    "pass": true,
+    "detail": 4876343
+  },
+  "global_1degree_bins_Aqua_total": {
+    "pass": true,
+    "detail": 3347476
+  },
+  "global_1degree_bins_Terra_total": {
+    "pass": true,
+    "detail": 1528867
+  },
+  "solar_hour_bins_row_total": {
+    "pass": true,
+    "detail": 4876343
+  },
+  "solar_hour_bins_Aqua_total": {
+    "pass": true,
+    "detail": 3347476
+  },
+  "solar_hour_bins_Terra_total": {
+    "pass": true,
+    "detail": 1528867
+  },
+  "monthly_calendar_denominators": {
+    "pass": true,
+    "detail": null
+  },
+  "monthly_partial_januaries": {
+    "pass": true,
+    "detail": null
+  },
+  "monthly_retained_total": {
+    "pass": true,
+    "detail": 4433643
+  },
+  "full_population_quantiles": {
+    "pass": true,
+    "detail": 3.552713678800501e-15
+  },
+  "pilot_Aqua_rectangle_count": {
+    "pass": true,
+    "detail": 35
+  },
+  "pilot_Terra_rectangle_count": {
+    "pass": true,
+    "detail": 22
+  },
+  "pilot_Aqua_2000_positive_counts": {
+    "pass": true,
+    "detail": null
+  },
+  "pilot_Terra_2000_positive_counts": {
+    "pass": true,
+    "detail": null
+  },
+  "pilot_Aqua_5000_positive_counts": {
+    "pass": true,
+    "detail": null
+  },
+  "pilot_Terra_5000_positive_counts": {
+    "pass": true,
+    "detail": null
+  },
+  "pilot_Aqua_10000_positive_counts": {
+    "pass": true,
+    "detail": null
+  },
+  "pilot_Terra_10000_positive_counts": {
+    "pass": true,
+    "detail": null
+  },
+  "morocco_context_rectangle_Aqua_rectangle_count": {
+    "pass": true,
+    "detail": 114
+  },
+  "morocco_context_rectangle_Terra_rectangle_count": {
+    "pass": true,
+    "detail": 92
+  },
+  "morocco_context_rectangle_Aqua_2000_positive_counts": {
+    "pass": true,
+    "detail": null
+  },
+  "morocco_context_rectangle_Terra_2000_positive_counts": {
+    "pass": true,
+    "detail": null
+  },
+  "morocco_context_rectangle_Aqua_5000_positive_counts": {
+    "pass": true,
+    "detail": null
+  },
+  "morocco_context_rectangle_Terra_5000_positive_counts": {
+    "pass": true,
+    "detail": null
+  },
+  "morocco_context_rectangle_Aqua_10000_positive_counts": {
+    "pass": true,
+    "detail": null
+  },
+  "morocco_context_rectangle_Terra_10000_positive_counts": {
+    "pass": true,
+    "detail": null
+  },
+  "southern_spain_rectangle_Aqua_rectangle_count": {
+    "pass": true,
+    "detail": 256
+  },
+  "southern_spain_rectangle_Terra_rectangle_count": {
+    "pass": true,
+    "detail": 238
+  },
+  "southern_spain_rectangle_Aqua_2000_positive_counts": {
+    "pass": true,
+    "detail": null
+  },
+  "southern_spain_rectangle_Terra_2000_positive_counts": {
+    "pass": true,
+    "detail": null
+  },
+  "southern_spain_rectangle_Aqua_5000_positive_counts": {
+    "pass": true,
+    "detail": null
+  },
+  "southern_spain_rectangle_Terra_5000_positive_counts": {
+    "pass": true,
+    "detail": null
+  },
+  "southern_spain_rectangle_Aqua_10000_positive_counts": {
+    "pass": true,
+    "detail": null
+  },
+  "southern_spain_rectangle_Terra_10000_positive_counts": {
+    "pass": true,
+    "detail": null
+  },
+  "unlabeled_region_grid_exports": {
+    "detail": []
+  },
+  "fresh_january_exact_multiset": {
+    "pass": true,
+    "detail": 202406
+  },
+  "january_difference_export_empty": {
+    "pass": true,
+    "detail": null
+  }
+}

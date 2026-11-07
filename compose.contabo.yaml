@@ -1,0 +1,35 @@
+# Conservative single-server profile: Contabo Cloud VPS Plus 6 (6 vCPU / 12 GB).
+# Selected by scripts/stack.sh after creating deploy/server-profile = contabo-plus-6.
+x-small-airflow-env: &small-airflow-env
+  AIRFLOW__CORE__PARALLELISM: '2'
+  AIRFLOW__CORE__MAX_ACTIVE_TASKS_PER_DAG: '2'
+  AIRFLOW__DAG_PROCESSOR__PARSING_PROCESSES: '1'
+  AIRFLOW__API__WORKERS: '1'
+  FIREBRIDGE_INGESTION_POOL_SLOTS: '1'
+  DBT_THREADS: '1'
+
+services:
+  db:
+    mem_limit: 3g
+    cpus: 2
+    shm_size: 512m
+    command: ['postgres', '-c', 'shared_buffers=512MB', '-c', 'effective_cache_size=2GB', '-c', 'work_mem=8MB', '-c', 'max_connections=80']
+  airflow-db:
+    mem_limit: 768m
+    cpus: 0.5
+  airflow-api:
+    environment: *small-airflow-env
+    mem_limit: 1536m
+    cpus: 1
+  airflow-scheduler:
+    environment: *small-airflow-env
+    mem_limit: 3584m
+    cpus: 2
+  airflow-dag-processor:
+    environment: *small-airflow-env
+    mem_limit: 768m
+    cpus: 0.5
+  airflow-init:
+    environment: *small-airflow-env
+    mem_limit: 1536m
+    cpus: 1

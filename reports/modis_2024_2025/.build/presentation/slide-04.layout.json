@@ -1,0 +1,801 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/lcjgd0",
+    "id": "lcjgd0",
+    "slide": 4,
+    "layoutId": "efade4a4-4e61-45ad-aa91-dec01e88fa1b",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "9a17e23c-9ac4-4ed6-9b5e-28c487e072fe",
+    "masterLayoutName": "Master",
+    "backgroundColor": "#F9FAF7",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "bg1": "#FFFFFF",
+      "bg2": "#000000",
+      "tx1": "#1F1F1F",
+      "tx2": "#FFFFFF",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "typefaces": [
+      "Nimbus Sans"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "efade4a4-4e61-45ad-aa91-dec01e88fa1b",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "9a17e23c-9ac4-4ed6-9b5e-28c487e072fe",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "9a17e23c-9ac4-4ed6-9b5e-28c487e072fe",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/krqtsni1",
+      "id": "1",
+      "bbox": [
+        70,
+        44,
+        1140,
+        85
+      ],
+      "geometry": "rect",
+      "text": "Terra and Aqua sample different times",
+      "textPreview": "Terra and Aqua sample different times",
+      "resolvedFontSize": 44,
+      "resolvedTextStyle": {
+        "fontSize": 44,
+        "typeface": "Nimbus Sans",
+        "color": "#17332F",
+        "bold": true,
+        "alignment": "left",
+        "autoFit": "none",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Terra and Aqua sample different times"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Terra and Aqua sample different times",
+          "resolvedTextStyle": {
+            "fontSize": 44,
+            "typeface": "Nimbus Sans",
+            "color": "#17332F",
+            "bold": true
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Terra and Aqua sample different times",
+              "fontSize": 44,
+              "typeface": "Nimbus Sans",
+              "color": "#17332F",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/jqhczi1g",
+      "id": "2",
+      "bbox": [
+        70,
+        128,
+        1140,
+        52
+      ],
+      "geometry": "rect",
+      "text": "Platform differences include fire evolution and observation conditions",
+      "textPreview": "Platform differences include fire evolution and observation conditions",
+      "resolvedFontSize": 23,
+      "resolvedTextStyle": {
+        "fontSize": 23,
+        "typeface": "Nimbus Sans",
+        "color": "#536864",
+        "alignment": "left",
+        "autoFit": "none",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Platform differences include fire evolution and observation conditions"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Platform differences include fire evolution and observation conditions",
+          "resolvedTextStyle": {
+            "fontSize": 23,
+            "typeface": "Nimbus Sans",
+            "color": "#536864"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Platform differences include fire evolution and observation conditions",
+              "fontSize": 23,
+              "typeface": "Nimbus Sans",
+              "color": "#536864"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/y58bqd0v",
+      "id": "3",
+      "bbox": [
+        1140,
+        666,
+        70,
+        30
+      ],
+      "geometry": "rect",
+      "text": "4",
+      "textPreview": "4",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "fontSize": 16,
+        "typeface": "Nimbus Sans",
+        "color": "#536864",
+        "alignment": "right",
+        "autoFit": "none",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "4"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "4",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "typeface": "Nimbus Sans",
+            "color": "#536864",
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "4",
+              "fontSize": 16,
+              "typeface": "Nimbus Sans",
+              "color": "#536864",
+              "alignment": "right"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 4,
+      "kind": "table",
+      "scope": "slide",
+      "aid": "tb/kvud87e9",
+      "id": "4",
+      "bbox": [
+        70,
+        194,
+        1140,
+        395
+      ],
+      "text": "Metric | Terra | Aqua\nAll detections | 1,528,867 | 3,347,476\nDaytime fraction | 59.8% | 92.8%\nType 0 and confidence ≥30 | 1,323,943 | 3,109,700\nMedian FRP | 16.3 MW | 20.6 MW\nDaytime median solar time | 9.91 h | 14.20 h",
+      "textPreview": "Metric | Terra | Aqua | All detections | 1,528,867 | 3,347,476 | Daytime fraction | 59.8% | 92.8% | Type 0 and confidence ≥30 | 1,323,943...",
+      "rows": 6,
+      "cols": 3,
+      "cells": [
+        {
+          "index": 1,
+          "row": 1,
+          "column": 1,
+          "bbox": [
+            70,
+            194,
+            480,
+            65.83
+          ],
+          "text": "Metric",
+          "textPreview": "Metric",
+          "fillColor": "#17332F",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "Metric",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Metric"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 2,
+          "row": 1,
+          "column": 2,
+          "bbox": [
+            550,
+            194,
+            330,
+            65.83
+          ],
+          "text": "Terra",
+          "textPreview": "Terra",
+          "fillColor": "#17332F",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "Terra",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Terra"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 3,
+          "row": 1,
+          "column": 3,
+          "bbox": [
+            880,
+            194,
+            330,
+            65.83
+          ],
+          "text": "Aqua",
+          "textPreview": "Aqua",
+          "fillColor": "#17332F",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "Aqua",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Aqua"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 4,
+          "row": 2,
+          "column": 1,
+          "bbox": [
+            70,
+            259.83,
+            480,
+            65.83
+          ],
+          "text": "All detections",
+          "textPreview": "All detections",
+          "fillColor": "#F9FAF7",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "All detections",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "All detections"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 5,
+          "row": 2,
+          "column": 2,
+          "bbox": [
+            550,
+            259.83,
+            330,
+            65.83
+          ],
+          "text": "1,528,867",
+          "textPreview": "1,528,867",
+          "fillColor": "#F9FAF7",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "1,528,867",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "1,528,867"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 6,
+          "row": 2,
+          "column": 3,
+          "bbox": [
+            880,
+            259.83,
+            330,
+            65.83
+          ],
+          "text": "3,347,476",
+          "textPreview": "3,347,476",
+          "fillColor": "#F9FAF7",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "3,347,476",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "3,347,476"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 7,
+          "row": 3,
+          "column": 1,
+          "bbox": [
+            70,
+            325.67,
+            480,
+            65.83
+          ],
+          "text": "Daytime fraction",
+          "textPreview": "Daytime fraction",
+          "fillColor": "#F9FAF7",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "Daytime fraction",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Daytime fraction"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 8,
+          "row": 3,
+          "column": 2,
+          "bbox": [
+            550,
+            325.67,
+            330,
+            65.83
+          ],
+          "text": "59.8%",
+          "textPreview": "59.8%",
+          "fillColor": "#F9FAF7",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "59.8%",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "59.8%"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 9,
+          "row": 3,
+          "column": 3,
+          "bbox": [
+            880,
+            325.67,
+            330,
+            65.83
+          ],
+          "text": "92.8%",
+          "textPreview": "92.8%",
+          "fillColor": "#F9FAF7",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "92.8%",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "92.8%"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 10,
+          "row": 4,
+          "column": 1,
+          "bbox": [
+            70,
+            391.5,
+            480,
+            65.83
+          ],
+          "text": "Type 0 and confidence ≥30",
+          "textPreview": "Type 0 and confidence ≥30",
+          "fillColor": "#F9FAF7",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "Type 0 and confidence ≥30",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Type 0 and confidence ≥30"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 11,
+          "row": 4,
+          "column": 2,
+          "bbox": [
+            550,
+            391.5,
+            330,
+            65.83
+          ],
+          "text": "1,323,943",
+          "textPreview": "1,323,943",
+          "fillColor": "#F9FAF7",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "1,323,943",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "1,323,943"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 12,
+          "row": 4,
+          "column": 3,
+          "bbox": [
+            880,
+            391.5,
+            330,
+            65.83
+          ],
+          "text": "3,109,700",
+          "textPreview": "3,109,700",
+          "fillColor": "#F9FAF7",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "3,109,700",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "3,109,700"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 13,
+          "row": 5,
+          "column": 1,
+          "bbox": [
+            70,
+            457.33,
+            480,
+            65.83
+          ],
+          "text": "Median FRP",
+          "textPreview": "Median FRP",
+          "fillColor": "#F9FAF7",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "Median FRP",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Median FRP"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 14,
+          "row": 5,
+          "column": 2,
+          "bbox": [
+            550,
+            457.33,
+            330,
+            65.83
+          ],
+          "text": "16.3 MW",
+          "textPreview": "16.3 MW",
+          "fillColor": "#F9FAF7",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "16.3 MW",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "16.3 MW"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 15,
+          "row": 5,
+          "column": 3,
+          "bbox": [
+            880,
+            457.33,
+            330,
+            65.83
+          ],
+          "text": "20.6 MW",
+          "textPreview": "20.6 MW",
+          "fillColor": "#F9FAF7",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "20.6 MW",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "20.6 MW"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 16,
+          "row": 6,
+          "column": 1,
+          "bbox": [
+            70,
+            523.17,
+            480,
+            65.83
+          ],
+          "text": "Daytime median solar time",
+          "textPreview": "Daytime median solar time",
+          "fillColor": "#F9FAF7",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "Daytime median solar time",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Daytime median solar time"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 17,
+          "row": 6,
+          "column": 2,
+          "bbox": [
+            550,
+            523.17,
+            330,
+            65.83
+          ],
+          "text": "9.91 h",
+          "textPreview": "9.91 h",
+          "fillColor": "#F9FAF7",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "9.91 h",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "9.91 h"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 18,
+          "row": 6,
+          "column": 3,
+          "bbox": [
+            880,
+            523.17,
+            330,
+            65.83
+          ],
+          "text": "14.20 h",
+          "textPreview": "14.20 h",
+          "fillColor": "#F9FAF7",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "14.20 h",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "14.20 h"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/w36tonip",
+      "id": "5",
+      "bbox": [
+        70,
+        614,
+        1140,
+        48
+      ],
+      "geometry": "rect",
+      "text": "Keep Terra and Aqua separate. FIREBRIDGE uses Aqua as its reference convention.",
+      "textPreview": "Keep Terra and Aqua separate. FIREBRIDGE uses Aqua as its reference convention.",
+      "resolvedFontSize": 23,
+      "resolvedTextStyle": {
+        "fontSize": 23,
+        "typeface": "Nimbus Sans",
+        "color": "#536864",
+        "alignment": "left",
+        "autoFit": "none",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Keep Terra and Aqua separate. FIREBRIDGE uses Aqua as its reference convention."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Keep Terra and Aqua separate. FIREBRIDGE uses Aqua as its reference convention.",
+          "resolvedTextStyle": {
+            "fontSize": 23,
+            "typeface": "Nimbus Sans",
+            "color": "#536864"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Keep Terra and Aqua separate. FIREBRIDGE uses Aqua as its reference convention.",
+              "fontSize": 23,
+              "typeface": "Nimbus Sans",
+              "color": "#536864"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    }
+  ],
+  "composeRuns": []
+}

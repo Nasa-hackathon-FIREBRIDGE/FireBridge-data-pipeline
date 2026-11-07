@@ -1,0 +1,251 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/443c7o",
+    "id": "443c7o",
+    "slide": 1,
+    "layoutId": "efade4a4-4e61-45ad-aa91-dec01e88fa1b",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "9a17e23c-9ac4-4ed6-9b5e-28c487e072fe",
+    "masterLayoutName": "Master",
+    "backgroundColor": "#17332F",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "bg1": "#FFFFFF",
+      "bg2": "#000000",
+      "tx1": "#1F1F1F",
+      "tx2": "#FFFFFF",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "typefaces": [
+      "Nimbus Sans"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "efade4a4-4e61-45ad-aa91-dec01e88fa1b",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "9a17e23c-9ac4-4ed6-9b5e-28c487e072fe",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "9a17e23c-9ac4-4ed6-9b5e-28c487e072fe",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/29o3alkb",
+      "id": "1",
+      "bbox": [
+        70,
+        210,
+        1120,
+        95
+      ],
+      "geometry": "rect",
+      "text": "MODIS Terra and Aqua",
+      "textPreview": "MODIS Terra and Aqua",
+      "resolvedFontSize": 68,
+      "resolvedTextStyle": {
+        "fontSize": 68,
+        "typeface": "Nimbus Sans",
+        "color": "#FFFFFF",
+        "bold": true,
+        "alignment": "left",
+        "autoFit": "none",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "MODIS Terra and Aqua"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "MODIS Terra and Aqua",
+          "resolvedTextStyle": {
+            "fontSize": 68,
+            "typeface": "Nimbus Sans",
+            "color": "#FFFFFF",
+            "bold": true
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "MODIS Terra and Aqua",
+              "fontSize": 68,
+              "typeface": "Nimbus Sans",
+              "color": "#FFFFFF",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/pcz25032",
+      "id": "2",
+      "bbox": [
+        70,
+        320,
+        1110,
+        60
+      ],
+      "geometry": "rect",
+      "text": "Understanding the data for FIREBRIDGE",
+      "textPreview": "Understanding the data for FIREBRIDGE",
+      "resolvedFontSize": 36,
+      "resolvedTextStyle": {
+        "fontSize": 36,
+        "typeface": "Nimbus Sans",
+        "color": "#FFFFFF",
+        "alignment": "left",
+        "autoFit": "none",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Understanding the data for FIREBRIDGE"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Understanding the data for FIREBRIDGE",
+          "resolvedTextStyle": {
+            "fontSize": 36,
+            "typeface": "Nimbus Sans",
+            "color": "#FFFFFF"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Understanding the data for FIREBRIDGE",
+              "fontSize": 36,
+              "typeface": "Nimbus Sans",
+              "color": "#FFFFFF"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/4bqlcv2h",
+      "id": "3",
+      "bbox": [
+        70,
+        425,
+        1080,
+        52
+      ],
+      "geometry": "rect",
+      "text": "17 January 2024 to 17 January 2025",
+      "textPreview": "17 January 2024 to 17 January 2025",
+      "resolvedFontSize": 29,
+      "resolvedTextStyle": {
+        "fontSize": 29,
+        "typeface": "Nimbus Sans",
+        "color": "#D8E3DD",
+        "alignment": "left",
+        "autoFit": "none",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "17 January 2024 to 17 January 2025"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "17 January 2024 to 17 January 2025",
+          "resolvedTextStyle": {
+            "fontSize": 29,
+            "typeface": "Nimbus Sans",
+            "color": "#D8E3DD"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "17 January 2024 to 17 January 2025",
+              "fontSize": 29,
+              "typeface": "Nimbus Sans",
+              "color": "#D8E3DD"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    }
+  ],
+  "composeRuns": []
+}

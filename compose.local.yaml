@@ -1,0 +1,43 @@
+services:
+  airflow-scheduler:
+    environment:
+      FIREBRIDGE_ARCHIVE_DIR: /archives
+      FIREBRIDGE_ARCHIVE_PROFILES: /archive-profiles
+      FIREBRIDGE_AUDITED_MODIS: /audited-modis/detections.parquet
+    volumes:
+      - ${FIREBRIDGE_ARCHIVE_DIR:?Set FIREBRIDGE_ARCHIVE_DIR in private .env}:/archives:ro
+      - ./data/processed/archive_profiles:/archive-profiles:ro
+      - ./data/processed/modis_2024_2025:/audited-modis:ro
+  postgres-browser:
+    image: sosedoff/pgweb:0.17.0@sha256:a5256d416e2e8b92d69a4459058e3eca33a9f075d8325491644411d0bc3bd70b
+    ports: ['127.0.0.1:8082:8081']
+    environment:
+      PGWEB_DATABASE_URL: postgres://firebridge_reader:${FIREBRIDGE_READER_PASSWORD}@db:5432/firebridge?sslmode=disable
+      PGWEB_LOCK_SESSION: '1'
+    command: ['--bind=0.0.0.0','--listen=8081','--readonly','--lock-session','--skip-open','--query-timeout=60']
+    depends_on:
+      db: {condition: service_healthy}
+    restart: unless-stopped
+    mem_limit: 256m
+    cpus: 1
+    logging:
+      driver: json-file
+      options: {max-size: '10m', max-file: '2'}
+  archive-browser:
+    image: firebridge-airflow:3.3.2-v1
+    user: ${AIRFLOW_UID:-50000}:0
+    entrypoint: [python, /opt/firebridge/deploy/archive_browser.py]
+    # DuckDB's embedded UI binds to localhost; host networking keeps it local-only.
+    network_mode: host
+    environment:
+      FIREBRIDGE_LAKE_DIR: /lake
+      FIREBRIDGE_UI_STATE: /local-ui
+    volumes:
+      - ./data/platform/lake:/lake:ro
+      - ./data/local-ui:/local-ui
+    restart: unless-stopped
+    mem_limit: 3g
+    cpus: 2
+    logging:
+      driver: json-file
+      options: {max-size: '10m', max-file: '2'}

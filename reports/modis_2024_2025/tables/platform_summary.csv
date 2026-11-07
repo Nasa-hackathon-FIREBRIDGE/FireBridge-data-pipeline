@@ -1,0 +1,3 @@
+satellite,rows,retained_conf30_rows,type0_conf30_rows,high_conf80_rows,days_with_exported_detections,day_rows,night_rows,median_frp_MW,mean_frp_MW,p95_frp_MW,p99_frp_MW,max_frp_MW,negative_frp_rows,zero_frp_rows,median_brightness_K,median_bright_t31_K,day_median_solar_hour,night_median_solar_hour
+Aqua,3347476,3197841,3109700,965184,367,3107414,240062,20.6,44.96229129051261,143.0,408.7,13490.3,0,953,324.2,302.7,14.201006666666668,2.278156666666667
+Terra,1528867,1431599,1323943,466859,367,914760,614107,16.3,36.5716019771504,115.7,337.5,12423.7,0,1472,317.1,296.5,9.909186666666667,21.6464

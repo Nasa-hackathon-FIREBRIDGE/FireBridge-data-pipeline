@@ -1,0 +1,645 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/brtsqq",
+    "id": "brtsqq",
+    "slide": 2,
+    "layoutId": "efade4a4-4e61-45ad-aa91-dec01e88fa1b",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "9a17e23c-9ac4-4ed6-9b5e-28c487e072fe",
+    "masterLayoutName": "Master",
+    "backgroundColor": "#F9FAF7",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "bg1": "#FFFFFF",
+      "bg2": "#000000",
+      "tx1": "#1F1F1F",
+      "tx2": "#FFFFFF",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "typefaces": [
+      "Nimbus Sans"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "efade4a4-4e61-45ad-aa91-dec01e88fa1b",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "9a17e23c-9ac4-4ed6-9b5e-28c487e072fe",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "9a17e23c-9ac4-4ed6-9b5e-28c487e072fe",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/re9gfi5w",
+      "id": "1",
+      "bbox": [
+        70,
+        44,
+        1140,
+        85
+      ],
+      "geometry": "rect",
+      "text": "The analysis covers 367 UTC dates",
+      "textPreview": "The analysis covers 367 UTC dates",
+      "resolvedFontSize": 44,
+      "resolvedTextStyle": {
+        "fontSize": 44,
+        "typeface": "Nimbus Sans",
+        "color": "#17332F",
+        "bold": true,
+        "alignment": "left",
+        "autoFit": "none",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "The analysis covers 367 UTC dates"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "The analysis covers 367 UTC dates",
+          "resolvedTextStyle": {
+            "fontSize": 44,
+            "typeface": "Nimbus Sans",
+            "color": "#17332F",
+            "bold": true
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "The analysis covers 367 UTC dates",
+              "fontSize": 44,
+              "typeface": "Nimbus Sans",
+              "color": "#17332F",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/cfixonmh",
+      "id": "2",
+      "bbox": [
+        70,
+        128,
+        1140,
+        52
+      ],
+      "geometry": "rect",
+      "text": "Worldwide points, with a northern Morocco study window",
+      "textPreview": "Worldwide points, with a northern Morocco study window",
+      "resolvedFontSize": 23,
+      "resolvedTextStyle": {
+        "fontSize": 23,
+        "typeface": "Nimbus Sans",
+        "color": "#536864",
+        "alignment": "left",
+        "autoFit": "none",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Worldwide points, with a northern Morocco study window"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Worldwide points, with a northern Morocco study window",
+          "resolvedTextStyle": {
+            "fontSize": 23,
+            "typeface": "Nimbus Sans",
+            "color": "#536864"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Worldwide points, with a northern Morocco study window",
+              "fontSize": 23,
+              "typeface": "Nimbus Sans",
+              "color": "#536864"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/dgryhsn2",
+      "id": "3",
+      "bbox": [
+        1140,
+        666,
+        70,
+        30
+      ],
+      "geometry": "rect",
+      "text": "2",
+      "textPreview": "2",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "fontSize": 16,
+        "typeface": "Nimbus Sans",
+        "color": "#536864",
+        "alignment": "right",
+        "autoFit": "none",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "2"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "2",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "typeface": "Nimbus Sans",
+            "color": "#536864",
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "2",
+              "fontSize": 16,
+              "typeface": "Nimbus Sans",
+              "color": "#536864",
+              "alignment": "right"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 4,
+      "kind": "table",
+      "scope": "slide",
+      "aid": "tb/z6dgfulk",
+      "id": "4",
+      "bbox": [
+        70,
+        194,
+        1140,
+        410
+      ],
+      "text": "Scope | Evidence\nRequested dates | 17 Jan 2024 through 17 Jan 2025, inclusive\nStandard archive | 13 monthly MCD14ML files, Collection 6.1\nAnalysis detections | 4,876,343\nDates with global detections | 367 of 367\nIndependent January audit | 202,406 shared-field matches",
+      "textPreview": "Scope | Evidence | Requested dates | 17 Jan 2024 through 17 Jan 2025, inclusive | Standard archive | 13 monthly MCD14ML files, Collection...",
+      "rows": 6,
+      "cols": 2,
+      "cells": [
+        {
+          "index": 1,
+          "row": 1,
+          "column": 1,
+          "bbox": [
+            70,
+            194,
+            340,
+            68.33
+          ],
+          "text": "Scope",
+          "textPreview": "Scope",
+          "fillColor": "#17332F",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "Scope",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Scope"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 2,
+          "row": 1,
+          "column": 2,
+          "bbox": [
+            410,
+            194,
+            800,
+            68.33
+          ],
+          "text": "Evidence",
+          "textPreview": "Evidence",
+          "fillColor": "#17332F",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "Evidence",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Evidence"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 3,
+          "row": 2,
+          "column": 1,
+          "bbox": [
+            70,
+            262.33,
+            340,
+            68.33
+          ],
+          "text": "Requested dates",
+          "textPreview": "Requested dates",
+          "fillColor": "#F9FAF7",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "Requested dates",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Requested dates"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 4,
+          "row": 2,
+          "column": 2,
+          "bbox": [
+            410,
+            262.33,
+            800,
+            68.33
+          ],
+          "text": "17 Jan 2024 through 17 Jan 2025, inclusive",
+          "textPreview": "17 Jan 2024 through 17 Jan 2025, inclusive",
+          "fillColor": "#F9FAF7",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "17 Jan 2024 through 17 Jan 2025, inclusive",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "17 Jan 2024 through 17 Jan 2025, inclusive"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 5,
+          "row": 3,
+          "column": 1,
+          "bbox": [
+            70,
+            330.67,
+            340,
+            68.33
+          ],
+          "text": "Standard archive",
+          "textPreview": "Standard archive",
+          "fillColor": "#F9FAF7",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "Standard archive",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Standard archive"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 6,
+          "row": 3,
+          "column": 2,
+          "bbox": [
+            410,
+            330.67,
+            800,
+            68.33
+          ],
+          "text": "13 monthly MCD14ML files, Collection 6.1",
+          "textPreview": "13 monthly MCD14ML files, Collection 6.1",
+          "fillColor": "#F9FAF7",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "13 monthly MCD14ML files, Collection 6.1",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "13 monthly MCD14ML files, Collection 6.1"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 7,
+          "row": 4,
+          "column": 1,
+          "bbox": [
+            70,
+            399,
+            340,
+            68.33
+          ],
+          "text": "Analysis detections",
+          "textPreview": "Analysis detections",
+          "fillColor": "#F9FAF7",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "Analysis detections",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Analysis detections"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 8,
+          "row": 4,
+          "column": 2,
+          "bbox": [
+            410,
+            399,
+            800,
+            68.33
+          ],
+          "text": "4,876,343",
+          "textPreview": "4,876,343",
+          "fillColor": "#F9FAF7",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "4,876,343",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "4,876,343"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 9,
+          "row": 5,
+          "column": 1,
+          "bbox": [
+            70,
+            467.33,
+            340,
+            68.33
+          ],
+          "text": "Dates with global detections",
+          "textPreview": "Dates with global detections",
+          "fillColor": "#F9FAF7",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "Dates with global detections",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Dates with global detections"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 10,
+          "row": 5,
+          "column": 2,
+          "bbox": [
+            410,
+            467.33,
+            800,
+            68.33
+          ],
+          "text": "367 of 367",
+          "textPreview": "367 of 367",
+          "fillColor": "#F9FAF7",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "367 of 367",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "367 of 367"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 11,
+          "row": 6,
+          "column": 1,
+          "bbox": [
+            70,
+            535.67,
+            340,
+            68.33
+          ],
+          "text": "Independent January audit",
+          "textPreview": "Independent January audit",
+          "fillColor": "#F9FAF7",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "Independent January audit",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "Independent January audit"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 12,
+          "row": 6,
+          "column": 2,
+          "bbox": [
+            410,
+            535.67,
+            800,
+            68.33
+          ],
+          "text": "202,406 shared-field matches",
+          "textPreview": "202,406 shared-field matches",
+          "fillColor": "#F9FAF7",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "202,406 shared-field matches",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "202,406 shared-field matches"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/3apwby50",
+      "id": "5",
+      "bbox": [
+        70,
+        614,
+        1140,
+        48
+      ],
+      "geometry": "rect",
+      "text": "January 2024 contains 15 included dates. January 2025 contains 17.",
+      "textPreview": "January 2024 contains 15 included dates. January 2025 contains 17.",
+      "resolvedFontSize": 23,
+      "resolvedTextStyle": {
+        "fontSize": 23,
+        "typeface": "Nimbus Sans",
+        "color": "#536864",
+        "alignment": "left",
+        "autoFit": "none",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "January 2024 contains 15 included dates. January 2025 contains 17."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "January 2024 contains 15 included dates. January 2025 contains 17.",
+          "resolvedTextStyle": {
+            "fontSize": 23,
+            "typeface": "Nimbus Sans",
+            "color": "#536864"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "January 2024 contains 15 included dates. January 2025 contains 17.",
+              "fontSize": 23,
+              "typeface": "Nimbus Sans",
+              "color": "#536864"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    }
+  ],
+  "composeRuns": []
+}

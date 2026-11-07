@@ -1,0 +1,304 @@
+[
+  {
+    "name": "cmr_VNP14IMG_collections.json",
+    "url": "https://cmr.earthdata.nasa.gov/search/collections.json?short_name=VNP14IMG&page_size=50",
+    "kind": "metadata",
+    "retrieved_utc": "2026-09-26T19:33:17.716633+00:00",
+    "cached": true,
+    "status": "downloaded",
+    "bytes": 7126,
+    "sha256": "5d652169f235b18b0b89011f703468501cf0e28dca96f01e2c1087a0abeb1295"
+  },
+  {
+    "name": "cmr_MYD14_collections.json",
+    "url": "https://cmr.earthdata.nasa.gov/search/collections.json?short_name=MYD14&page_size=50",
+    "kind": "metadata",
+    "retrieved_utc": "2026-09-26T19:33:17.716281+00:00",
+    "cached": true,
+    "status": "downloaded",
+    "bytes": 16185,
+    "sha256": "cbeea9018f36eb066661126dc5213b7314a8a432563475f2ec6b74422a631db0"
+  },
+  {
+    "name": "cmr_MYD03_collections.json",
+    "url": "https://cmr.earthdata.nasa.gov/search/collections.json?short_name=MYD03&page_size=50",
+    "kind": "metadata",
+    "retrieved_utc": "2026-09-26T19:33:17.716507+00:00",
+    "cached": true,
+    "status": "downloaded",
+    "bytes": 17138,
+    "sha256": "81c8b5e3fe7bc4e3ace0d938cf771052ab5f1dba1d9806b5495f519dba8e3c03"
+  },
+  {
+    "name": "cmr_MYD14_C2278858993-LPCLOUD_granules.json",
+    "url": "https://cmr.earthdata.nasa.gov/search/granules.json?collection_concept_id=C2278858993-LPCLOUD&bounding_box=-6.4%2C34.5%2C-4.5%2C35.9&temporal=2025-07-14T00%3A00%3A00Z%2C2025-07-20T23%3A59%3A59Z&page_size=2000&sort_key=start_date",
+    "kind": "metadata",
+    "retrieved_utc": "2026-09-26T19:33:17.718478+00:00",
+    "cached": true,
+    "status": "downloaded",
+    "bytes": 79618,
+    "sha256": "0fd21c99c7b5699484ab9584c7f426b5f24c183156435e05436c94e870a24f11"
+  },
+  {
+    "name": "cmr_VNP03IMG_collections.json",
+    "url": "https://cmr.earthdata.nasa.gov/search/collections.json?short_name=VNP03IMG&page_size=50",
+    "kind": "metadata",
+    "retrieved_utc": "2026-09-26T19:33:17.718995+00:00",
+    "cached": true,
+    "status": "downloaded",
+    "bytes": 3719,
+    "sha256": "846b0fa16ccb57aea23fea82f21dc2c0a4c9e90854122403cc13eccb28d3d9c3"
+  },
+  {
+    "name": "cmr_MYD03_C1379841358-LAADS_granules.json",
+    "url": "https://cmr.earthdata.nasa.gov/search/granules.json?collection_concept_id=C1379841358-LAADS&bounding_box=-6.4%2C34.5%2C-4.5%2C35.9&temporal=2025-07-14T00%3A00%3A00Z%2C2025-07-20T23%3A59%3A59Z&page_size=2000&sort_key=start_date",
+    "kind": "metadata",
+    "retrieved_utc": "2026-09-26T19:33:17.718862+00:00",
+    "cached": true,
+    "status": "downloaded",
+    "bytes": 43708,
+    "sha256": "81d82a942ce2b4df63c9c23671262c605fd16f5add51b663a5a63242a7257f2b"
+  },
+  {
+    "name": "cmr_VJ114IMG_collections.json",
+    "url": "https://cmr.earthdata.nasa.gov/search/collections.json?short_name=VJ114IMG&page_size=50",
+    "kind": "metadata",
+    "retrieved_utc": "2026-09-26T19:33:17.719445+00:00",
+    "cached": true,
+    "status": "downloaded",
+    "bytes": 6250,
+    "sha256": "781aa0627d496094849de1f11b62c6f34724a08e1b86a276a2dca68962ecb224"
+  },
+  {
+    "name": "cmr_VNP03IMG_C2105092163-LAADS_granules.json",
+    "url": "https://cmr.earthdata.nasa.gov/search/granules.json?collection_concept_id=C2105092163-LAADS&bounding_box=-6.4%2C34.5%2C-4.5%2C35.9&temporal=2025-07-14T00%3A00%3A00Z%2C2025-07-20T23%3A59%3A59Z&page_size=2000&sort_key=start_date",
+    "kind": "metadata",
+    "retrieved_utc": "2026-09-26T19:33:17.719352+00:00",
+    "cached": true,
+    "status": "downloaded",
+    "bytes": 57913,
+    "sha256": "dbacdfd6d13641d662ebc7d81f4e0a14d374b5a3454132a3b01927c23174d732"
+  },
+  {
+    "name": "cmr_VJ103IMG_collections.json",
+    "url": "https://cmr.earthdata.nasa.gov/search/collections.json?short_name=VJ103IMG&page_size=50",
+    "kind": "metadata",
+    "retrieved_utc": "2026-09-26T19:33:17.720061+00:00",
+    "cached": true,
+    "status": "downloaded",
+    "bytes": 3882,
+    "sha256": "6edbe49cf2711f67092fbaea2a70a25fc194af35d6ea75e2f214b479e15c0d63"
+  },
+  {
+    "name": "cmr_VJ103IMG_C2105086226-LAADS_granules.json",
+    "url": "https://cmr.earthdata.nasa.gov/search/granules.json?collection_concept_id=C2105086226-LAADS&bounding_box=-6.4%2C34.5%2C-4.5%2C35.9&temporal=2025-07-14T00%3A00%3A00Z%2C2025-07-20T23%3A59%3A59Z&page_size=2000&sort_key=start_date",
+    "kind": "metadata",
+    "retrieved_utc": "2026-09-26T19:33:17.720183+00:00",
+    "http_status": 200,
+    "status": "downloaded",
+    "bytes": 71553,
+    "sha256": "7322d7bcc6c3556a25d052c23469a847c36b6a29f6941d95873bfb5e86b7d618"
+  },
+  {
+    "name": "cmr_MOD14_collections.json",
+    "url": "https://cmr.earthdata.nasa.gov/search/collections.json?short_name=MOD14&page_size=50",
+    "kind": "metadata",
+    "retrieved_utc": "2026-09-26T19:33:19.042625+00:00",
+    "cached": true,
+    "status": "downloaded",
+    "bytes": 17336,
+    "sha256": "9b9efff66ef52d70e0e91d86b6a5aa3ed505165f58de844cf9bf33a23b05e7f8"
+  },
+  {
+    "name": "cmr_MOD14_C2271754179-LPCLOUD_granules.json",
+    "url": "https://cmr.earthdata.nasa.gov/search/granules.json?collection_concept_id=C2271754179-LPCLOUD&bounding_box=-6.4%2C34.5%2C-4.5%2C35.9&temporal=2025-07-14T00%3A00%3A00Z%2C2025-07-20T23%3A59%3A59Z&page_size=2000&sort_key=start_date",
+    "kind": "metadata",
+    "retrieved_utc": "2026-09-26T19:33:19.042968+00:00",
+    "cached": true,
+    "status": "downloaded",
+    "bytes": 75204,
+    "sha256": "65f9731670a7e3bfd29f8556d1c331a7069e9c979a85a26e77e0e293136d45d8"
+  },
+  {
+    "name": "cmr_MCD12Q1_collections.json",
+    "url": "https://cmr.earthdata.nasa.gov/search/collections.json?short_name=MCD12Q1&page_size=50",
+    "kind": "metadata",
+    "retrieved_utc": "2026-09-26T19:33:19.043171+00:00",
+    "cached": true,
+    "status": "downloaded",
+    "bytes": 135733,
+    "sha256": "841e11ce3fea7712baccc92481feaa5b08300b761dda0780783c614e634b8373"
+  },
+  {
+    "name": "cmr_MCD12Q1_C2484079608-LPCLOUD_granules.json",
+    "url": "https://cmr.earthdata.nasa.gov/search/granules.json?collection_concept_id=C2484079608-LPCLOUD&bounding_box=-6.4%2C34.5%2C-4.5%2C35.9&temporal=2024-01-01T00%3A00%3A00Z%2C2024-12-31T23%3A59%3A59Z&page_size=2000&sort_key=start_date",
+    "kind": "metadata",
+    "retrieved_utc": "2026-09-26T19:33:19.044698+00:00",
+    "cached": true,
+    "status": "downloaded",
+    "bytes": 5193,
+    "sha256": "21e77835e81de863882af4283e8ba54b155960eb93988fffae436e70e0b39dcd"
+  },
+  {
+    "name": "cmr_MCD64A1_collections.json",
+    "url": "https://cmr.earthdata.nasa.gov/search/collections.json?short_name=MCD64A1&page_size=50",
+    "kind": "metadata",
+    "retrieved_utc": "2026-09-26T19:33:19.044887+00:00",
+    "cached": true,
+    "status": "downloaded",
+    "bytes": 33317,
+    "sha256": "e78cfbcd1a94981f80775b5b2c8e98dea0abbd2eebd2405e661dc09fa9e87ac6"
+  },
+  {
+    "name": "cmr_MCD64A1_C2565786756-LPCLOUD_granules.json",
+    "url": "https://cmr.earthdata.nasa.gov/search/granules.json?collection_concept_id=C2565786756-LPCLOUD&bounding_box=-6.4%2C34.5%2C-4.5%2C35.9&temporal=2025-07-14T00%3A00%3A00Z%2C2025-07-20T23%3A59%3A59Z&page_size=2000&sort_key=start_date",
+    "kind": "metadata",
+    "retrieved_utc": "2026-09-26T19:33:19.045037+00:00",
+    "cached": true,
+    "status": "downloaded",
+    "bytes": 4950,
+    "sha256": "84f71b8fdfc6f0f22920c8078a574b3cdb98973da81e8a13e90821f71d59474a"
+  },
+  {
+    "name": "cmr_VNP14IMG_C2734202914-LPCLOUD_granules.json",
+    "url": "https://cmr.earthdata.nasa.gov/search/granules.json?collection_concept_id=C2734202914-LPCLOUD&bounding_box=-6.4%2C34.5%2C-4.5%2C35.9&temporal=2025-07-14T00%3A00%3A00Z%2C2025-07-20T23%3A59%3A59Z&page_size=2000&sort_key=start_date",
+    "kind": "metadata",
+    "retrieved_utc": "2026-09-26T19:33:17.717666+00:00",
+    "http_status": 200,
+    "status": "downloaded",
+    "bytes": 99204,
+    "sha256": "30fcae136fbd918ec1858415b7a7c49b0881ec33a68f8cdf660559b08f587429"
+  },
+  {
+    "name": "cmr_VJ114IMG_C2734197957-LPCLOUD_granules.json",
+    "url": "https://cmr.earthdata.nasa.gov/search/granules.json?collection_concept_id=C2734197957-LPCLOUD&bounding_box=-6.4%2C34.5%2C-4.5%2C35.9&temporal=2025-07-14T00%3A00%3A00Z%2C2025-07-20T23%3A59%3A59Z&page_size=2000&sort_key=start_date",
+    "kind": "metadata",
+    "retrieved_utc": "2026-09-26T19:33:17.719643+00:00",
+    "http_status": 200,
+    "status": "downloaded",
+    "bytes": 113371,
+    "sha256": "d60e057aa71a0d2b9e67e069f55a827979fed813073ce69b661e8fc0648d631c"
+  },
+  {
+    "name": "ornl_MCD12Q1_dates.json",
+    "url": "https://modis.ornl.gov/rst/api/v1/MCD12Q1/dates?latitude=35.2&longitude=-5.45",
+    "kind": "metadata",
+    "retrieved_utc": "2026-09-26T19:33:19.733741+00:00",
+    "status": "unavailable",
+    "error": "HTTP Error 500: INTERNAL SERVER ERROR"
+  },
+  {
+    "name": "ornl_MCD12Q1_bands.json",
+    "url": "https://modis.ornl.gov/rst/api/v1/MCD12Q1/bands",
+    "kind": "metadata",
+    "retrieved_utc": "2026-09-26T19:33:22.629747+00:00",
+    "status": "unavailable",
+    "error": "HTTP Error 500: INTERNAL SERVER ERROR"
+  },
+  {
+    "name": "ornl_MCD64A1_dates.json",
+    "url": "https://modis.ornl.gov/rst/api/v1/MCD64A1/dates?latitude=35.2&longitude=-5.45",
+    "kind": "metadata",
+    "retrieved_utc": "2026-09-26T19:33:23.455701+00:00",
+    "status": "unavailable",
+    "error": "HTTP Error 500: INTERNAL SERVER ERROR"
+  },
+  {
+    "name": "ornl_MCD64A1_bands.json",
+    "url": "https://modis.ornl.gov/rst/api/v1/MCD64A1/bands",
+    "kind": "metadata",
+    "retrieved_utc": "2026-09-26T19:33:26.549308+00:00",
+    "status": "unavailable",
+    "error": "HTTP Error 500: INTERNAL SERVER ERROR"
+  },
+  {
+    "name": "firms_readme.txt",
+    "url": "https://firms.modaps.eosdis.nasa.gov/download/Readme.txt",
+    "kind": "documentation",
+    "retrieved_utc": "2026-09-26T19:33:27.348522+00:00",
+    "cached": true,
+    "status": "downloaded",
+    "bytes": 6947,
+    "sha256": "c2158379a2caa460e0d17cabd91681a43521a7ff655194db964539360d76bc10"
+  },
+  {
+    "name": "firms_attributes.html",
+    "url": "https://www.earthdata.nasa.gov/data/tools/firms/active-fire-data-attributes-modis-viirs",
+    "kind": "documentation",
+    "retrieved_utc": "2026-09-26T19:33:27.348639+00:00",
+    "cached": true,
+    "status": "downloaded",
+    "bytes": 141292,
+    "sha256": "c9891d923b7c0189b78a4a4d712056d1e56f300a41874954fc7b499f4642f24e"
+  },
+  {
+    "name": "viirs_c2_guide.pdf",
+    "url": "https://www.earthdata.nasa.gov/s3fs-public/2025-06/VIIRS_C2_AF-375m_User_Guide_1.2.pdf",
+    "kind": "documentation",
+    "retrieved_utc": "2026-09-26T19:33:27.348935+00:00",
+    "cached": true,
+    "status": "downloaded",
+    "bytes": 1602644,
+    "sha256": "fb957afb6e465cb312fb8229a2b6e424c489344bb09e76a7baee80a248d1ccb7"
+  },
+  {
+    "name": "modis_c61_guide.pdf",
+    "url": "https://www.earthdata.nasa.gov/s3fs-public/2023-09/MODIS_C6_C6.1_Fire_User_Guide_1.0.pdf",
+    "kind": "documentation",
+    "retrieved_utc": "2026-09-26T19:33:27.350609+00:00",
+    "cached": true,
+    "status": "downloaded",
+    "bytes": 1459584,
+    "sha256": "2124ac650d19e229009bb8f7b1334d21ea95f81f329621ace7d7284a960e4520"
+  },
+  {
+    "name": "effis_data_services.html",
+    "url": "https://forest-fire.emergency.copernicus.eu/applications/data-and-services",
+    "kind": "documentation",
+    "retrieved_utc": "2026-09-26T19:33:27.351707+00:00",
+    "cached": true,
+    "status": "downloaded",
+    "bytes": 39671,
+    "sha256": "8a2647a948fee852b4a252a13010adefa09df0d62e7b147c20e75a9435171bbe"
+  },
+  {
+    "name": "cds_api_access.html",
+    "url": "https://cds.climate.copernicus.eu/how-to-api",
+    "kind": "documentation",
+    "retrieved_utc": "2026-09-26T19:33:27.351760+00:00",
+    "cached": true,
+    "status": "downloaded",
+    "bytes": 80853,
+    "sha256": "763a2e2662c486393e7b5571dc75fb983cf41b473d040b8ceef130c51548af16"
+  },
+  {
+    "name": "ornl_webservice.html",
+    "url": "https://modis.ornl.gov/data/modis_webservice.html",
+    "kind": "documentation",
+    "retrieved_utc": "2026-09-26T19:33:27.351824+00:00",
+    "cached": true,
+    "status": "downloaded",
+    "bytes": 41065,
+    "sha256": "1d260a43dda0d057e6952233c661610ef19cef9043de08343ec9ca97d0f51aa9"
+  },
+  {
+    "name": "landsat_faq.html",
+    "url": "https://forum.earthdata.nasa.gov/viewtopic.php?t=5197",
+    "kind": "documentation",
+    "retrieved_utc": "2026-09-26T19:33:27.351865+00:00",
+    "cached": true,
+    "status": "downloaded",
+    "bytes": 42479,
+    "sha256": "691d91af2739daa17ce43ab741c4b9805f04b241a0d7427fd3436d68de0214e4"
+  },
+  {
+    "name": "effis_country_totals_2024.xlsx",
+    "url": "https://forest-fire.emergency.copernicus.eu/effis/applications/data-and-services/report_2024.xlsx",
+    "kind": "documentation",
+    "retrieved_utc": "2026-09-26T19:33:27.351908+00:00",
+    "http_status": 200,
+    "status": "downloaded",
+    "bytes": 31175,
+    "sha256": "bbc05c239e5d471700c2d440800c9c41318aaf74eaae7db82445557ab6c05a06"
+  }
+]

@@ -1,0 +1,52 @@
+[
+  {
+    "path": "reports/figures/01_pilot_calendar.png",
+    "bytes": 268370,
+    "sha256": "54e4c0e6efdaa1e4c29e68216ea55b9eb749860c3ac3342ccd654c0a286be471"
+  },
+  {
+    "path": "reports/figures/02_global_distribution.png",
+    "bytes": 730578,
+    "sha256": "3cc7cdcacf16db6f22d6ff60db4d24c67555ee583077b5dd1c03f13463b194de"
+  },
+  {
+    "path": "reports/figures/03_pilot_positions.png",
+    "bytes": 349802,
+    "sha256": "6b8b97a2852426bd852440b0a05685c6d8dda874bb1162a130dbeb49f2c90b23"
+  },
+  {
+    "path": "reports/figures/04_detection_times.png",
+    "bytes": 91885,
+    "sha256": "5a36f0cb8832927695e4dfe74379103f34b98c6cfa884283007931c19d7aa0da"
+  },
+  {
+    "path": "reports/figures/05_frp_ecdf.png",
+    "bytes": 104551,
+    "sha256": "c800cf398755c0150ed054142cf428772781317c12bcbbbea77e5aadb6f2ede7"
+  },
+  {
+    "path": "reports/figures/06_confidence.png",
+    "bytes": 51493,
+    "sha256": "d2cb6358e46faa1a79e366fc701ef8554e5e65e08024266e242186b40e8048ab"
+  },
+  {
+    "path": "reports/figures/07_geometry_thermal.png",
+    "bytes": 204030,
+    "sha256": "9f458fe717f7fb0031e7c65dafc2a048fe1f55c23aa79882bad38b3db4b979e7"
+  },
+  {
+    "path": "reports/figures/08_pairing_feasibility.png",
+    "bytes": 77503,
+    "sha256": "8e062f3e39f891791cf22130fa86fc27be3b46a6166fec5b2623dd44272e6292"
+  },
+  {
+    "path": "reports/figures/09_recurrence.png",
+    "bytes": 97176,
+    "sha256": "2681865c0e6d552f297ccb87e03c6d66767046c110a39a716c6cd84e98fa06cf"
+  },
+  {
+    "path": "reports/figures/10_effis_context.png",
+    "bytes": 263059,
+    "sha256": "61e0b91937404cde4a47f3059c8d3319eb4da696fff115f3109517ba1cc220dd"
+  }
+]

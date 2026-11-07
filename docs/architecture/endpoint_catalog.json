@@ -1,0 +1,872 @@
+{
+  "design_version": "2",
+  "checked_on": "2026-10-24",
+  "base_path": "/api/v1",
+  "status": "proposed_not_implemented",
+  "format_note": "Design catalog, not an OpenAPI schema. Types, null behavior, status codes and query semantics are specified in API.md. Question mark denotes optional input.",
+  "endpoints": [
+    {
+      "section": 1,
+      "method": "GET",
+      "path": "/catalog",
+      "admin": false,
+      "reads": [
+        "sources",
+        "metric_definitions",
+        "ingestion_feeds",
+        "feed_sources",
+        "source_availability",
+        "release_aliases",
+        "data_releases",
+        "grids"
+      ],
+      "writes": [],
+      "inputs": [
+        "scope_key?"
+      ],
+      "response_fields": [
+        "sources",
+        "metrics",
+        "release_aliases",
+        "limits",
+        "verified_at"
+      ],
+      "async": false,
+      "contract_reference": "API.md section 1"
+    },
+    {
+      "section": 2,
+      "method": "GET",
+      "path": "/sources/{source_id}/availability",
+      "admin": false,
+      "reads": [
+        "source_availability",
+        "feed_sources",
+        "ingestion_subscriptions",
+        "fetch_runs",
+        "ingestion_checkpoints",
+        "ingestion_gaps",
+        "release_aliases",
+        "data_releases"
+      ],
+      "writes": [],
+      "inputs": [
+        "source_id",
+        "scope_key",
+        "start?",
+        "end_exclusive?"
+      ],
+      "response_fields": [
+        "provider_status",
+        "last_attempt_at",
+        "last_success_at",
+        "queried_through",
+        "latest_observation_at",
+        "published_at",
+        "next_check_at",
+        "stale",
+        "gaps"
+      ],
+      "async": false,
+      "contract_reference": "API.md section 2"
+    },
+    {
+      "section": 3,
+      "method": "GET",
+      "path": "/releases/{release_id}",
+      "admin": false,
+      "reads": [
+        "data_releases",
+        "release_partitions",
+        "data_partitions",
+        "release_assets",
+        "sources",
+        "release_changes"
+      ],
+      "writes": [],
+      "inputs": [
+        "release_id"
+      ],
+      "response_fields": [
+        "id",
+        "dataset_kind",
+        "stream",
+        "scope_key",
+        "parent_release_id",
+        "published_at",
+        "observation_cutoff",
+        "code_version",
+        "partitions",
+        "validation",
+        "changes"
+      ],
+      "async": false,
+      "contract_reference": "API.md section 3"
+    },
+    {
+      "section": 4,
+      "method": "GET",
+      "path": "/updates",
+      "admin": false,
+      "reads": [
+        "release_aliases",
+        "data_releases",
+        "release_changes"
+      ],
+      "writes": [],
+      "inputs": [
+        "scope_key",
+        "after_release_id?",
+        "aliases?"
+      ],
+      "response_fields": [
+        "current",
+        "has_updates",
+        "changes",
+        "checked_at"
+      ],
+      "async": false,
+      "contract_reference": "API.md section 4"
+    },
+    {
+      "section": 5,
+      "method": "POST",
+      "path": "/areas",
+      "admin": false,
+      "reads": [
+        "areas"
+      ],
+      "writes": [
+        "areas"
+      ],
+      "inputs": [
+        "name",
+        "geometry",
+        "display_timezone"
+      ],
+      "response_fields": [
+        "area_id",
+        "name",
+        "geometry",
+        "bbox",
+        "geometry_sha256",
+        "version",
+        "display_timezone",
+        "geometric_area_km2"
+      ],
+      "async": false,
+      "contract_reference": "API.md section 5"
+    },
+    {
+      "section": 6,
+      "method": "GET",
+      "path": "/areas/{area_id}",
+      "admin": false,
+      "reads": [
+        "areas",
+        "area_cells",
+        "grids",
+        "grid_cells"
+      ],
+      "writes": [],
+      "inputs": [
+        "area_id",
+        "grid_id?"
+      ],
+      "response_fields": [
+        "area_id",
+        "geometry",
+        "provenance",
+        "weights_status",
+        "grid_summaries"
+      ],
+      "async": false,
+      "contract_reference": "API.md section 6"
+    },
+    {
+      "section": 7,
+      "method": "POST",
+      "path": "/analyses",
+      "admin": false,
+      "reads": [
+        "areas",
+        "metric_definitions",
+        "sources",
+        "grids",
+        "release_aliases",
+        "data_releases",
+        "release_partitions",
+        "data_partitions"
+      ],
+      "writes": [
+        "analyses",
+        "analysis_components",
+        "api_jobs",
+        "outbox_events"
+      ],
+      "inputs": [
+        "area_id",
+        "start_date",
+        "end_date_exclusive",
+        "time_basis",
+        "metric_key",
+        "source_ids",
+        "data_mode",
+        "grid_id?",
+        "satellite_release_id?",
+        "baseline_spec?",
+        "weather?",
+        "reports?"
+      ],
+      "response_fields": [
+        "analysis_id",
+        "job_id",
+        "status",
+        "resolved_releases",
+        "selected_window",
+        "metric",
+        "component_statuses",
+        "links"
+      ],
+      "async": true,
+      "contract_reference": "API.md section 7"
+    },
+    {
+      "section": 8,
+      "method": "GET",
+      "path": "/analyses/{id}",
+      "admin": false,
+      "reads": [
+        "analyses",
+        "analysis_components",
+        "api_jobs",
+        "data_releases",
+        "release_aliases"
+      ],
+      "writes": [],
+      "inputs": [
+        "id"
+      ],
+      "response_fields": [
+        "status",
+        "request",
+        "resolved_releases",
+        "component_statuses",
+        "progress",
+        "newer_release_available",
+        "links"
+      ],
+      "async": false,
+      "contract_reference": "API.md section 8"
+    },
+    {
+      "section": 9,
+      "method": "GET",
+      "path": "/analyses/{id}/summary",
+      "admin": false,
+      "reads": [
+        "analyses",
+        "analysis_components",
+        "calendar_periods",
+        "release_partitions",
+        "data_partitions",
+        "partition_detections",
+        "detections",
+        "weather_summaries",
+        "analysis_event_links"
+      ],
+      "writes": [],
+      "inputs": [
+        "id"
+      ],
+      "response_fields": [
+        "native_detections_by_source",
+        "comparable_response",
+        "coverage",
+        "observed_vs_estimated_share",
+        "weather_status",
+        "report_counts_by_review_status",
+        "limitations",
+        "fact_ids"
+      ],
+      "async": false,
+      "contract_reference": "API.md section 9"
+    },
+    {
+      "section": 10,
+      "method": "GET",
+      "path": "/analyses/{id}/calendar",
+      "admin": false,
+      "reads": [
+        "analyses",
+        "calendar_periods",
+        "release_partitions",
+        "data_partitions",
+        "partition_detections",
+        "detections"
+      ],
+      "writes": [],
+      "inputs": [
+        "id",
+        "resolution",
+        "start?",
+        "end_exclusive?"
+      ],
+      "response_fields": [
+        "periods",
+        "unit",
+        "status",
+        "coverage",
+        "reasons"
+      ],
+      "async": false,
+      "contract_reference": "API.md section 10"
+    },
+    {
+      "section": 11,
+      "method": "GET",
+      "path": "/analyses/{id}/coverage",
+      "admin": false,
+      "reads": [
+        "analyses",
+        "area_cells",
+        "grid_cells",
+        "observations",
+        "daily_activity",
+        "calendar_periods",
+        "release_partitions",
+        "data_partitions"
+      ],
+      "writes": [],
+      "inputs": [
+        "id",
+        "period?",
+        "cell_id?"
+      ],
+      "response_fields": [
+        "eligible_cell_days",
+        "missing_cell_days",
+        "land_summary",
+        "coverage",
+        "ingestion_status",
+        "observation_coverage_status"
+      ],
+      "async": false,
+      "contract_reference": "API.md section 11"
+    },
+    {
+      "section": 12,
+      "method": "GET",
+      "path": "/analyses/{id}/detections",
+      "admin": false,
+      "reads": [
+        "analyses",
+        "areas",
+        "release_partitions",
+        "data_partitions",
+        "partition_detections",
+        "detections",
+        "sources",
+        "assets"
+      ],
+      "writes": [],
+      "inputs": [
+        "id",
+        "bbox?",
+        "start?",
+        "end_exclusive?",
+        "limit?",
+        "cursor?"
+      ],
+      "response_fields": [
+        "features",
+        "next_cursor",
+        "returned",
+        "truncated",
+        "count_scope"
+      ],
+      "async": false,
+      "contract_reference": "API.md section 12"
+    },
+    {
+      "section": 13,
+      "method": "GET",
+      "path": "/analyses/{id}/tiles/{layer}/{z}/{x}/{y}.mvt",
+      "admin": false,
+      "reads": [
+        "analyses",
+        "release_partitions",
+        "data_partitions",
+        "partition_detections",
+        "detections",
+        "grid_cells",
+        "daily_activity",
+        "observations"
+      ],
+      "writes": [],
+      "inputs": [
+        "id",
+        "layer",
+        "z",
+        "x",
+        "y",
+        "period?"
+      ],
+      "response_fields": [
+        "binary_vector_tile"
+      ],
+      "async": false,
+      "contract_reference": "API.md section 13"
+    },
+    {
+      "section": 14,
+      "method": "GET",
+      "path": "/analyses/{id}/cells/{cell_id}",
+      "admin": false,
+      "reads": [
+        "analyses",
+        "area_cells",
+        "grid_cells",
+        "observations",
+        "observation_assets",
+        "assets",
+        "daily_activity",
+        "predictions",
+        "model_versions",
+        "matched_pairs"
+      ],
+      "writes": [],
+      "inputs": [
+        "id",
+        "cell_id",
+        "reporting_date_or_interval"
+      ],
+      "response_fields": [
+        "geometry",
+        "land_weight",
+        "passes",
+        "selected_pass",
+        "prediction",
+        "exclusions",
+        "evidence"
+      ],
+      "async": false,
+      "contract_reference": "API.md section 14"
+    },
+    {
+      "section": 15,
+      "method": "GET",
+      "path": "/analyses/{id}/comparison",
+      "admin": false,
+      "reads": [
+        "analyses",
+        "release_partitions",
+        "data_partitions",
+        "partition_detections",
+        "detections",
+        "matched_pairs",
+        "evaluations",
+        "model_versions",
+        "daily_activity",
+        "calendar_periods"
+      ],
+      "writes": [],
+      "inputs": [
+        "id",
+        "view",
+        "resolution"
+      ],
+      "response_fields": [
+        "unit",
+        "support_definition",
+        "series",
+        "sample_counts",
+        "baseline_metrics",
+        "model_metrics",
+        "experiment_id",
+        "limitations"
+      ],
+      "async": false,
+      "contract_reference": "API.md section 15"
+    },
+    {
+      "section": 16,
+      "method": "GET",
+      "path": "/analyses/{id}/weather",
+      "admin": false,
+      "reads": [
+        "analyses",
+        "analysis_components",
+        "release_partitions",
+        "data_partitions",
+        "weather_values",
+        "weather_locations",
+        "weather_summaries"
+      ],
+      "writes": [],
+      "inputs": [
+        "id",
+        "variables?",
+        "resolution",
+        "context"
+      ],
+      "response_fields": [
+        "series",
+        "evidence_ids",
+        "status",
+        "reasons"
+      ],
+      "async": false,
+      "contract_reference": "API.md section 16"
+    },
+    {
+      "section": 17,
+      "method": "GET",
+      "path": "/analyses/{id}/reports",
+      "admin": false,
+      "reads": [
+        "analyses",
+        "analysis_components",
+        "release_partitions",
+        "data_partitions",
+        "news_reports",
+        "reported_events",
+        "analysis_event_links"
+      ],
+      "writes": [],
+      "inputs": [
+        "id",
+        "relation?",
+        "review_status?",
+        "cursor?",
+        "limit?"
+      ],
+      "response_fields": [
+        "reports",
+        "next_cursor",
+        "inventory_status"
+      ],
+      "async": false,
+      "contract_reference": "API.md section 17"
+    },
+    {
+      "section": 18,
+      "method": "GET",
+      "path": "/analyses/{id}/provenance",
+      "admin": false,
+      "reads": [
+        "analyses",
+        "analysis_components",
+        "data_releases",
+        "release_partitions",
+        "data_partitions",
+        "release_assets",
+        "assets",
+        "model_versions",
+        "evaluations",
+        "evidence_snapshots"
+      ],
+      "writes": [],
+      "inputs": [
+        "id",
+        "fact_id?",
+        "cell_id?",
+        "period?",
+        "cursor?"
+      ],
+      "response_fields": [
+        "methods",
+        "sources",
+        "input_hashes",
+        "releases",
+        "citations",
+        "links"
+      ],
+      "async": false,
+      "contract_reference": "API.md section 18"
+    },
+    {
+      "section": 19,
+      "method": "POST",
+      "path": "/analyses/{id}/explanations",
+      "admin": false,
+      "reads": [
+        "analyses",
+        "analysis_components",
+        "calendar_periods",
+        "weather_summaries",
+        "analysis_event_links",
+        "evidence_snapshots"
+      ],
+      "writes": [
+        "evidence_snapshots",
+        "ai_explanations",
+        "api_jobs",
+        "outbox_events"
+      ],
+      "inputs": [
+        "id",
+        "language",
+        "question?"
+      ],
+      "response_fields": [
+        "explanation_id",
+        "job_id",
+        "status",
+        "links"
+      ],
+      "async": true,
+      "contract_reference": "API.md section 19"
+    },
+    {
+      "section": 20,
+      "method": "GET",
+      "path": "/explanations/{id}",
+      "admin": false,
+      "reads": [
+        "ai_explanations",
+        "evidence_snapshots",
+        "analyses"
+      ],
+      "writes": [],
+      "inputs": [
+        "id"
+      ],
+      "response_fields": [
+        "status",
+        "language",
+        "output",
+        "evidence_ids",
+        "citations",
+        "snapshot_hash",
+        "model_id",
+        "prompt_version",
+        "generated_at"
+      ],
+      "async": false,
+      "contract_reference": "API.md section 20"
+    },
+    {
+      "section": 21,
+      "method": "POST",
+      "path": "/analyses/{id}/exports",
+      "admin": false,
+      "reads": [
+        "analyses",
+        "analysis_components",
+        "data_releases",
+        "release_partitions",
+        "data_partitions"
+      ],
+      "writes": [
+        "api_jobs",
+        "outbox_events"
+      ],
+      "inputs": [
+        "id",
+        "format",
+        "content",
+        "options?"
+      ],
+      "response_fields": [
+        "job_id",
+        "status_url"
+      ],
+      "async": true,
+      "contract_reference": "API.md section 21"
+    },
+    {
+      "section": 22,
+      "method": "GET",
+      "path": "/jobs/{id}",
+      "admin": false,
+      "reads": [
+        "api_jobs",
+        "analyses",
+        "ai_explanations"
+      ],
+      "writes": [],
+      "inputs": [
+        "id"
+      ],
+      "response_fields": [
+        "kind",
+        "status",
+        "stage",
+        "progress",
+        "attempt",
+        "error",
+        "links",
+        "expires_at"
+      ],
+      "async": false,
+      "contract_reference": "API.md section 22"
+    },
+    {
+      "section": 23,
+      "method": "GET",
+      "path": "/jobs/{id}/download",
+      "admin": false,
+      "reads": [
+        "api_jobs"
+      ],
+      "writes": [],
+      "inputs": [
+        "id"
+      ],
+      "response_fields": [
+        "binary_or_signed_redirect"
+      ],
+      "async": false,
+      "contract_reference": "API.md section 23"
+    },
+    {
+      "section": 24,
+      "method": "GET",
+      "path": "/admin/ingestion/subscriptions",
+      "admin": true,
+      "reads": [
+        "ingestion_subscriptions",
+        "ingestion_feeds",
+        "feed_sources",
+        "ingestion_checkpoints",
+        "fetch_runs",
+        "ingestion_gaps"
+      ],
+      "writes": [],
+      "inputs": [
+        "scope_key?",
+        "feed_id?",
+        "mode?",
+        "state?",
+        "cursor?"
+      ],
+      "response_fields": [
+        "subscriptions",
+        "next_cursor"
+      ],
+      "async": false,
+      "contract_reference": "API.md section 24"
+    },
+    {
+      "section": 25,
+      "method": "POST",
+      "path": "/admin/ingestion/backfills",
+      "admin": true,
+      "reads": [
+        "ingestion_feeds",
+        "feed_sources",
+        "sources",
+        "source_availability",
+        "assets"
+      ],
+      "writes": [
+        "ingestion_subscriptions",
+        "api_jobs",
+        "outbox_events"
+      ],
+      "inputs": [
+        "feed_id",
+        "area_id",
+        "scope_key",
+        "start",
+        "end_exclusive",
+        "products",
+        "options?",
+        "budget"
+      ],
+      "response_fields": [
+        "job_id",
+        "planned_chunks",
+        "scope",
+        "access_requirements"
+      ],
+      "async": true,
+      "contract_reference": "API.md section 25"
+    },
+    {
+      "section": 26,
+      "method": "POST",
+      "path": "/admin/ingestion/subscriptions/{id}/refresh",
+      "admin": true,
+      "reads": [
+        "ingestion_subscriptions",
+        "ingestion_checkpoints",
+        "ingestion_gaps"
+      ],
+      "writes": [
+        "api_jobs",
+        "outbox_events"
+      ],
+      "inputs": [
+        "id",
+        "mode",
+        "window?",
+        "reason?"
+      ],
+      "response_fields": [
+        "job_id",
+        "status"
+      ],
+      "async": true,
+      "contract_reference": "API.md section 26"
+    },
+    {
+      "section": 27,
+      "method": "GET",
+      "path": "/admin/ingestion/runs/{id}",
+      "admin": true,
+      "reads": [
+        "fetch_runs",
+        "fetch_assets",
+        "assets",
+        "pipeline_runs",
+        "quality_issues"
+      ],
+      "writes": [],
+      "inputs": [
+        "id"
+      ],
+      "response_fields": [
+        "request",
+        "window",
+        "basis",
+        "status",
+        "counts",
+        "hashes",
+        "errors",
+        "outputs",
+        "gate_outcomes"
+      ],
+      "async": false,
+      "contract_reference": "API.md section 27"
+    },
+    {
+      "section": 28,
+      "method": "GET",
+      "path": "/admin/ingestion/gaps",
+      "admin": true,
+      "reads": [
+        "ingestion_gaps",
+        "ingestion_subscriptions",
+        "ingestion_feeds",
+        "fetch_runs"
+      ],
+      "writes": [],
+      "inputs": [
+        "scope_key?",
+        "feed_id?",
+        "status?",
+        "start?",
+        "end_exclusive?",
+        "cursor?"
+      ],
+      "response_fields": [
+        "gaps",
+        "next_cursor"
+      ],
+      "async": false,
+      "contract_reference": "API.md section 28"
+    }
+  ]
+}

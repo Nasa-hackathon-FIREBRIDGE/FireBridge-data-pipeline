@@ -1,0 +1,12 @@
+version: 2
+sources:
+  - name: serving
+    schema: serving
+    tables:
+      - name: analytics_inputs
+      - name: analytics_builds
+      - name: sources
+      - name: partitions
+      - name: detections
+      - name: weather
+      - name: reports
