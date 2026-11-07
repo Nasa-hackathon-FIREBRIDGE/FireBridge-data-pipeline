@@ -1,0 +1,10 @@
+{
+  "restore": "passed",
+  "database": "firebridge_restore_test_990c8c248450",
+  "verified_objects": 15,
+  "counts": {
+    "detections": 4,
+    "source_releases": 4,
+    "analytics_versions": 1
+  }
+}

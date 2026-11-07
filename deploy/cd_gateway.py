@@ -132,9 +132,9 @@ def pause_and_drain(release):
         deadline=time.monotonic()+600
         while True:
             count=stack(release,'exec','-T','airflow-db','psql','-U','airflow','-d','airflow','-At','-c',
-                "SELECT count(*) FROM dag_run WHERE state IN ('running','queued')").strip()
+                "SELECT count(*) FROM task_instance WHERE state IN ('running','queued','restarting')").strip()
             if count=='0':return enabled
-            if time.monotonic()>deadline:raise RuntimeError('Active workflows did not drain; retry after they finish')
+            if time.monotonic()>deadline:raise RuntimeError('Executing tasks did not drain; retry after they finish')
             time.sleep(10)
     except Exception:
         for dag in enabled:api('PATCH','/api/v2/dags/'+dag,{'is_paused':False})

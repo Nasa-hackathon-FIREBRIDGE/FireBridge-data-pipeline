@@ -1,0 +1,26 @@
+{
+  "verification_date": "2026-11-03",
+  "full_history_download_started": false,
+  "full_history_airflow_run_count": 0,
+  "full_history_data_directory_created": false,
+  "tests": {
+    "passed": 57,
+    "failed": 0,
+    "duration_seconds": 24.03,
+    "log": "/tmp/firebridge-history-tests-final.log",
+    "provider_responses": "synthetic fixtures and HTTP mock transport",
+    "database": "isolated disposable PostgreSQL test database",
+    "dbt": "real local dbt integration checks"
+  },
+  "airflow": {
+    "parsed_workflows": 6,
+    "import_errors": 0,
+    "validation_container_network": "none",
+    "log": "/tmp/firebridge-history-dags-final.log"
+  },
+  "shell_validation": "POSIX shell syntax passed; launcher default and skip-download paths exercised with stubbed executables",
+  "running_services_rebuilt_or_restarted": false,
+  "live_acquisition_validation": "Not executed. The user explicitly reserved starting the download for their own shell invocation.",
+  "startup_command": "./start_local.sh",
+  "status_command": "./history_status.sh"
+}

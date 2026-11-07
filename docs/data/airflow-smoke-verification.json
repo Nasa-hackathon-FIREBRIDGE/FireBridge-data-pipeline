@@ -1,0 +1,24 @@
+{
+  "checked_at": "2026-11-02T13:07:46.306193+00:00",
+  "synthetic": true,
+  "provider_calls": 0,
+  "runs": {
+    "firebridge_ingestion": {
+      "state": "success",
+      "run_id": "manual__validation_5593a4c058c0489aa56861b749d398fb"
+    },
+    "firebridge_analytics": {
+      "state": "success",
+      "run_id": "manual__validation_b494690e11b94d0fafabce8730075588"
+    },
+    "firebridge_archive_import": {
+      "state": "success",
+      "run_id": "manual__validation_3390812da862405ab2b177c371e9ba2d"
+    },
+    "firebridge_health": {
+      "state": "success",
+      "run_id": "manual__validation_88479cf6b9084880ae726c49d1d3a4c0"
+    }
+  },
+  "published_detection_count": 2
+}

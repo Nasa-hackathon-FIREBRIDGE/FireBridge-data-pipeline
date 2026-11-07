@@ -1,0 +1,67 @@
+{
+  "verified_at_utc": "2026-11-06T20:22:23.429854+00:00",
+  "server": "13.140.218.234",
+  "provider_plan": "Contabo Cloud VPS Plus 6",
+  "detected_os": "Ubuntu 24.04.5 LTS",
+  "cpu_count": 6,
+  "ordinary_admin": "dataadmin",
+  "updates_installed": true,
+  "reboot_required": false,
+  "ssh_password_authentication": false,
+  "ssh_keyboard_interactive": false,
+  "admin_key_login_verified": true,
+  "root_key_login_temporarily_retained": true,
+  "ssh_rollback_cancelled_after_fresh_login_tests": true,
+  "sudo_and_root_password_rotation": "awaiting_user_private_terminal_step",
+  "ufw": "active; default deny incoming; SSH allowed IPv4 and IPv6",
+  "fail2ban_sshd_jail": "active with systemd journal and UFW action",
+  "automatic_security_updates": true,
+  "automatic_reboot": false,
+  "apparmor": "active",
+  "time_synchronized": true,
+  "docker_engine": "29.9.3",
+  "docker_compose": "v5.7.0",
+  "docker_default_logging": "local; 20 MiB x 3 per container",
+  "journald_disk_limit_mib": 256,
+  "project_containers_running": false,
+  "nasa_downloads_started_on_vps": false,
+  "external_port_check": {
+    "reachable": [
+      22
+    ],
+    "not_reachable": [
+      80,
+      443,
+      2375,
+      2376,
+      4213,
+      5432,
+      55432,
+      8080,
+      8082
+    ],
+    "scope": "TCP connections from this laptop only; not a complete port scan or IPv6 external test"
+  },
+  "contabo_small_profile": {
+    "long_running_memory_ceiling_gib": 9.5,
+    "airflow_parallelism": 2,
+    "ingestion_slots": 1,
+    "dbt_threads": 1,
+    "published_ports": "loopback only; validated but not deployed"
+  },
+  "tests": {
+    "full_regression_passed": 63,
+    "isolated_fixture_database_removed": true,
+    "final_security_policy_tests_passed": 7
+  },
+  "pending_external_controls": [
+    "Contabo network firewall",
+    "Contabo account 2FA and recovery verification",
+    "off-site backup destination and restore rehearsal",
+    "external alert delivery"
+  ],
+  "raw_audits": [
+    "/tmp/firebridge-vps-before.json",
+    "/tmp/firebridge-vps-after.json"
+  ]
+}

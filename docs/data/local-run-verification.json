@@ -1,0 +1,124 @@
+{
+  "checked_at": "2026-11-02T18:41:04.333461+00:00",
+  "launcher": "./start_local.sh",
+  "initial_run": "passed",
+  "repeat_run": "passed",
+  "repeat_preserved_all_parquet_file_sizes_and_mtimes": true,
+  "parquet_files": 11,
+  "parquet_bytes": 3230164957,
+  "all_archives_loaded": {
+    "loaded_at": "2026-11-02T18:39:29.099769+00:00",
+    "source_rows": 153352272,
+    "archive_files": 10,
+    "additional_audited_modis": true,
+    "satellites": [
+      {
+        "satellite": "Aqua",
+        "instrument": "MODIS",
+        "processing_stream": "standard",
+        "source_rows": 5984900,
+        "first_observed_date": "2024-01-17",
+        "last_observed_date": "2026-01-01",
+        "archives": 2,
+        "invalid_frp_rows": 1
+      },
+      {
+        "satellite": "L8",
+        "instrument": "OLI",
+        "processing_stream": "NRT",
+        "source_rows": 1482285,
+        "first_observed_date": "2024-01-01",
+        "last_observed_date": "2026-01-01",
+        "archives": 2,
+        "invalid_frp_rows": 0
+      },
+      {
+        "satellite": "L9",
+        "instrument": "OLI-2",
+        "processing_stream": "NRT",
+        "source_rows": 1752986,
+        "first_observed_date": "2024-01-01",
+        "last_observed_date": "2026-01-01",
+        "archives": 2,
+        "invalid_frp_rows": 0
+      },
+      {
+        "satellite": "N20",
+        "instrument": "VIIRS",
+        "processing_stream": "standard",
+        "source_rows": 62592682,
+        "first_observed_date": "2023-01-01",
+        "last_observed_date": "2026-01-01",
+        "archives": 3,
+        "invalid_frp_rows": 0
+      },
+      {
+        "satellite": "N21",
+        "instrument": "VIIRS",
+        "processing_stream": "NRT",
+        "source_rows": 39265930,
+        "first_observed_date": "2024-01-01",
+        "last_observed_date": "2026-01-01",
+        "archives": 2,
+        "invalid_frp_rows": 46
+      },
+      {
+        "satellite": "SNPP",
+        "instrument": "VIIRS",
+        "processing_stream": "standard",
+        "source_rows": 39666971,
+        "first_observed_date": "2024-01-01",
+        "last_observed_date": "2026-01-01",
+        "archives": 2,
+        "invalid_frp_rows": 0
+      },
+      {
+        "satellite": "Terra",
+        "instrument": "MODIS",
+        "processing_stream": "standard",
+        "source_rows": 2606518,
+        "first_observed_date": "2024-01-17",
+        "last_observed_date": "2026-01-01",
+        "archives": 2,
+        "invalid_frp_rows": 0
+      }
+    ],
+    "overlapping_source_days": 40,
+    "semantics": "All source rows retained. Counts include duplicates and overlapping downloads; not unique detections or fire incidents.",
+    "storage": "Parquet + DuckDB; separate from the validated PostgreSQL serving releases."
+  },
+  "airflow": {
+    "archive_run": {
+      "dag": "firebridge_local_archive_lake",
+      "run_id": "manual__local_start_d8f5b25a83c74dfd8a700c636b5ec180",
+      "state": "success"
+    },
+    "recurring_workflows": {
+      "firebridge_ingestion": {
+        "enabled": true,
+        "run_id": "manual__local_start_b58a7f97ab4940c39feddbbdb473c8b6"
+      },
+      "firebridge_analytics": {
+        "enabled": true,
+        "run_id": "manual__local_start_4df0911d634a425e87ca37cca33a4f5d"
+      },
+      "firebridge_health": {
+        "enabled": true,
+        "run_id": "manual__local_start_9b89a32e5f7547e68e5872295a1f6d7e"
+      }
+    }
+  },
+  "tests": {
+    "full_suite_passed": 41,
+    "archive_tests_passed_after_instrument_label_fix": 3
+  },
+  "urls": {
+    "archives": "http://localhost:4213",
+    "postgresql": "http://localhost:8082",
+    "airflow": "http://localhost:8080"
+  },
+  "all_urls_http_200": true,
+  "listeners": "127.0.0.1 only",
+  "provider_subscriptions_enabled": 0,
+  "note": "Full downloaded point archives are in Parquet/DuckDB. PostgreSQL retains validated project scopes. Raw counts include source overlaps and duplicates."
+}

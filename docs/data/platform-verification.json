@@ -1,0 +1,41 @@
+{
+  "checked_at": "2026-11-02T13:00:14.245199+00:00",
+  "external_provider_calls": 0,
+  "analytics": [
+    {
+      "scope": "california-demo",
+      "build_id": "7896be72-d4d4-47d8-a7c4-5613d61ef8df",
+      "input_releases": {
+        "best_available": "5389cef8-b1e5-402b-bab5-b4d831d44eca"
+      },
+      "summary_rows": 734,
+      "native_detections": 12057,
+      "dbt_nodes_passed": 18
+    },
+    {
+      "scope": "global",
+      "build_id": "61300153-804b-429c-9b52-7c736c31a18d",
+      "input_releases": {
+        "best_available": "47f42adc-cde8-442b-9ab0-e99ad8306cf6"
+      },
+      "summary_rows": 734,
+      "native_detections": 4876343,
+      "dbt_nodes_passed": 18
+    },
+    {
+      "scope": "morocco-pilot",
+      "build_id": "d4260bb9-8b5e-45e2-9fe5-ec53d6c5e6c4",
+      "input_releases": {
+        "best_available": "80376942-ca13-45f0-a5ee-4a310bae9e37"
+      },
+      "summary_rows": 1835,
+      "native_detections": 1034,
+      "dbt_nodes_passed": 18
+    }
+  ],
+  "orchestrator": "local",
+  "enabled_subscriptions": 0,
+  "migration_count": 10,
+  "serving_views": 26,
+  "permission_checks": "Reader and transform roles can read serving results; private source access and permanent analytic writes denied"
+}

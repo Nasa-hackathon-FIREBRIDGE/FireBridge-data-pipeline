@@ -1,0 +1,1906 @@
+[
+  {
+    "table_name": "analytics_builds",
+    "column_name": "id",
+    "data_type": "uuid",
+    "udt_name": "uuid",
+    "ordinal_position": 1
+  },
+  {
+    "table_name": "analytics_builds",
+    "column_name": "scope_key",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 2
+  },
+  {
+    "table_name": "analytics_builds",
+    "column_name": "signature",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 3
+  },
+  {
+    "table_name": "analytics_builds",
+    "column_name": "model_sha256",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 4
+  },
+  {
+    "table_name": "analytics_builds",
+    "column_name": "status",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 5
+  },
+  {
+    "table_name": "analytics_builds",
+    "column_name": "input_releases",
+    "data_type": "jsonb",
+    "udt_name": "jsonb",
+    "ordinal_position": 6
+  },
+  {
+    "table_name": "analytics_builds",
+    "column_name": "started_at",
+    "data_type": "timestamp with time zone",
+    "udt_name": "timestamptz",
+    "ordinal_position": 7
+  },
+  {
+    "table_name": "analytics_builds",
+    "column_name": "finished_at",
+    "data_type": "timestamp with time zone",
+    "udt_name": "timestamptz",
+    "ordinal_position": 8
+  },
+  {
+    "table_name": "analytics_builds",
+    "column_name": "error_code",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 9
+  },
+  {
+    "table_name": "analytics_builds",
+    "column_name": "artifacts_uri",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 10
+  },
+  {
+    "table_name": "analytics_inputs",
+    "column_name": "build_id",
+    "data_type": "uuid",
+    "udt_name": "uuid",
+    "ordinal_position": 1
+  },
+  {
+    "table_name": "analytics_inputs",
+    "column_name": "alias",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 2
+  },
+  {
+    "table_name": "analytics_inputs",
+    "column_name": "release_id",
+    "data_type": "uuid",
+    "udt_name": "uuid",
+    "ordinal_position": 3
+  },
+  {
+    "table_name": "area_daily_context",
+    "column_name": "build_id",
+    "data_type": "uuid",
+    "udt_name": "uuid",
+    "ordinal_position": 1
+  },
+  {
+    "table_name": "area_daily_context",
+    "column_name": "scope_key",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 2
+  },
+  {
+    "table_name": "area_daily_context",
+    "column_name": "date_utc",
+    "data_type": "date",
+    "udt_name": "date",
+    "ordinal_position": 3
+  },
+  {
+    "table_name": "area_daily_context",
+    "column_name": "detections_by_source",
+    "data_type": "jsonb",
+    "udt_name": "jsonb",
+    "ordinal_position": 4
+  },
+  {
+    "table_name": "area_daily_context",
+    "column_name": "query_coverage",
+    "data_type": "jsonb",
+    "udt_name": "jsonb",
+    "ordinal_position": 5
+  },
+  {
+    "table_name": "area_daily_context",
+    "column_name": "weather_samples",
+    "data_type": "jsonb",
+    "udt_name": "jsonb",
+    "ordinal_position": 6
+  },
+  {
+    "table_name": "area_daily_context",
+    "column_name": "reports",
+    "data_type": "jsonb",
+    "udt_name": "jsonb",
+    "ordinal_position": 7
+  },
+  {
+    "table_name": "areas",
+    "column_name": "id",
+    "data_type": "uuid",
+    "udt_name": "uuid",
+    "ordinal_position": 1
+  },
+  {
+    "table_name": "areas",
+    "column_name": "name",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 2
+  },
+  {
+    "table_name": "areas",
+    "column_name": "version",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 3
+  },
+  {
+    "table_name": "areas",
+    "column_name": "geometry",
+    "data_type": "jsonb",
+    "udt_name": "jsonb",
+    "ordinal_position": 4
+  },
+  {
+    "table_name": "areas",
+    "column_name": "geometry_sha256",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 5
+  },
+  {
+    "table_name": "areas",
+    "column_name": "display_timezone",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 6
+  },
+  {
+    "table_name": "areas",
+    "column_name": "provenance",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 7
+  },
+  {
+    "table_name": "asset_provenance",
+    "column_name": "id",
+    "data_type": "uuid",
+    "udt_name": "uuid",
+    "ordinal_position": 1
+  },
+  {
+    "table_name": "asset_provenance",
+    "column_name": "source_id",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 2
+  },
+  {
+    "table_name": "asset_provenance",
+    "column_name": "native_key",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 3
+  },
+  {
+    "table_name": "asset_provenance",
+    "column_name": "revision",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 4
+  },
+  {
+    "table_name": "asset_provenance",
+    "column_name": "source_url",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 5
+  },
+  {
+    "table_name": "asset_provenance",
+    "column_name": "sha256",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 6
+  },
+  {
+    "table_name": "asset_provenance",
+    "column_name": "byte_size",
+    "data_type": "bigint",
+    "udt_name": "int8",
+    "ordinal_position": 7
+  },
+  {
+    "table_name": "asset_provenance",
+    "column_name": "time_start",
+    "data_type": "timestamp with time zone",
+    "udt_name": "timestamptz",
+    "ordinal_position": 8
+  },
+  {
+    "table_name": "asset_provenance",
+    "column_name": "time_end",
+    "data_type": "timestamp with time zone",
+    "udt_name": "timestamptz",
+    "ordinal_position": 9
+  },
+  {
+    "table_name": "asset_provenance",
+    "column_name": "retrieved_at",
+    "data_type": "timestamp with time zone",
+    "udt_name": "timestamptz",
+    "ordinal_position": 10
+  },
+  {
+    "table_name": "asset_provenance",
+    "column_name": "validation_status",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 11
+  },
+  {
+    "table_name": "asset_provenance",
+    "column_name": "metadata",
+    "data_type": "jsonb",
+    "udt_name": "jsonb",
+    "ordinal_position": 12
+  },
+  {
+    "table_name": "daily_detections",
+    "column_name": "build_id",
+    "data_type": "uuid",
+    "udt_name": "uuid",
+    "ordinal_position": 1
+  },
+  {
+    "table_name": "daily_detections",
+    "column_name": "scope_key",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 2
+  },
+  {
+    "table_name": "daily_detections",
+    "column_name": "date_utc",
+    "data_type": "date",
+    "udt_name": "date",
+    "ordinal_position": 3
+  },
+  {
+    "table_name": "daily_detections",
+    "column_name": "source_id",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 4
+  },
+  {
+    "table_name": "daily_detections",
+    "column_name": "platform",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 5
+  },
+  {
+    "table_name": "daily_detections",
+    "column_name": "processing_stream",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 6
+  },
+  {
+    "table_name": "daily_detections",
+    "column_name": "satellite_release_id",
+    "data_type": "uuid",
+    "udt_name": "uuid",
+    "ordinal_position": 7
+  },
+  {
+    "table_name": "daily_detections",
+    "column_name": "detection_count",
+    "data_type": "bigint",
+    "udt_name": "int8",
+    "ordinal_position": 8
+  },
+  {
+    "table_name": "daily_detections",
+    "column_name": "frp_sample_count",
+    "data_type": "bigint",
+    "udt_name": "int8",
+    "ordinal_position": 9
+  },
+  {
+    "table_name": "daily_detections",
+    "column_name": "frp_mean_mw",
+    "data_type": "double precision",
+    "udt_name": "float8",
+    "ordinal_position": 10
+  },
+  {
+    "table_name": "daily_detections",
+    "column_name": "frp_max_mw",
+    "data_type": "double precision",
+    "udt_name": "float8",
+    "ordinal_position": 11
+  },
+  {
+    "table_name": "daily_reports",
+    "column_name": "build_id",
+    "data_type": "uuid",
+    "udt_name": "uuid",
+    "ordinal_position": 1
+  },
+  {
+    "table_name": "daily_reports",
+    "column_name": "scope_key",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 2
+  },
+  {
+    "table_name": "daily_reports",
+    "column_name": "date_utc",
+    "data_type": "date",
+    "udt_name": "date",
+    "ordinal_position": 3
+  },
+  {
+    "table_name": "daily_reports",
+    "column_name": "reports_release_id",
+    "data_type": "uuid",
+    "udt_name": "uuid",
+    "ordinal_position": 4
+  },
+  {
+    "table_name": "daily_reports",
+    "column_name": "article_count",
+    "data_type": "bigint",
+    "udt_name": "int8",
+    "ordinal_position": 5
+  },
+  {
+    "table_name": "daily_reports",
+    "column_name": "reviewed_count",
+    "data_type": "bigint",
+    "udt_name": "int8",
+    "ordinal_position": 6
+  },
+  {
+    "table_name": "daily_reports",
+    "column_name": "articles",
+    "data_type": "jsonb",
+    "udt_name": "jsonb",
+    "ordinal_position": 7
+  },
+  {
+    "table_name": "daily_weather",
+    "column_name": "build_id",
+    "data_type": "uuid",
+    "udt_name": "uuid",
+    "ordinal_position": 1
+  },
+  {
+    "table_name": "daily_weather",
+    "column_name": "scope_key",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 2
+  },
+  {
+    "table_name": "daily_weather",
+    "column_name": "date_utc",
+    "data_type": "date",
+    "udt_name": "date",
+    "ordinal_position": 3
+  },
+  {
+    "table_name": "daily_weather",
+    "column_name": "location_id",
+    "data_type": "uuid",
+    "udt_name": "uuid",
+    "ordinal_position": 4
+  },
+  {
+    "table_name": "daily_weather",
+    "column_name": "source_id",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 5
+  },
+  {
+    "table_name": "daily_weather",
+    "column_name": "weather_release_id",
+    "data_type": "uuid",
+    "udt_name": "uuid",
+    "ordinal_position": 6
+  },
+  {
+    "table_name": "daily_weather",
+    "column_name": "data_kind",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 7
+  },
+  {
+    "table_name": "daily_weather",
+    "column_name": "latitude",
+    "data_type": "double precision",
+    "udt_name": "float8",
+    "ordinal_position": 8
+  },
+  {
+    "table_name": "daily_weather",
+    "column_name": "longitude",
+    "data_type": "double precision",
+    "udt_name": "float8",
+    "ordinal_position": 9
+  },
+  {
+    "table_name": "daily_weather",
+    "column_name": "variable",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 10
+  },
+  {
+    "table_name": "daily_weather",
+    "column_name": "unit",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 11
+  },
+  {
+    "table_name": "daily_weather",
+    "column_name": "aggregation",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 12
+  },
+  {
+    "table_name": "daily_weather",
+    "column_name": "sample_count",
+    "data_type": "bigint",
+    "udt_name": "int8",
+    "ordinal_position": 13
+  },
+  {
+    "table_name": "daily_weather",
+    "column_name": "valid_sample_count",
+    "data_type": "bigint",
+    "udt_name": "int8",
+    "ordinal_position": 14
+  },
+  {
+    "table_name": "daily_weather",
+    "column_name": "value",
+    "data_type": "double precision",
+    "udt_name": "float8",
+    "ordinal_position": 15
+  },
+  {
+    "table_name": "daily_weather",
+    "column_name": "complete_day",
+    "data_type": "boolean",
+    "udt_name": "bool",
+    "ordinal_position": 16
+  },
+  {
+    "table_name": "detections",
+    "column_name": "release_id",
+    "data_type": "uuid",
+    "udt_name": "uuid",
+    "ordinal_position": 1
+  },
+  {
+    "table_name": "detections",
+    "column_name": "scope_key",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 2
+  },
+  {
+    "table_name": "detections",
+    "column_name": "id",
+    "data_type": "bigint",
+    "udt_name": "int8",
+    "ordinal_position": 3
+  },
+  {
+    "table_name": "detections",
+    "column_name": "source_id",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 4
+  },
+  {
+    "table_name": "detections",
+    "column_name": "acquired_at",
+    "data_type": "timestamp with time zone",
+    "udt_name": "timestamptz",
+    "ordinal_position": 5
+  },
+  {
+    "table_name": "detections",
+    "column_name": "geom",
+    "data_type": "USER-DEFINED",
+    "udt_name": "geometry",
+    "ordinal_position": 6
+  },
+  {
+    "table_name": "detections",
+    "column_name": "longitude",
+    "data_type": "double precision",
+    "udt_name": "float8",
+    "ordinal_position": 7
+  },
+  {
+    "table_name": "detections",
+    "column_name": "latitude",
+    "data_type": "double precision",
+    "udt_name": "float8",
+    "ordinal_position": 8
+  },
+  {
+    "table_name": "detections",
+    "column_name": "confidence_raw",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 9
+  },
+  {
+    "table_name": "detections",
+    "column_name": "confidence_scheme",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 10
+  },
+  {
+    "table_name": "detections",
+    "column_name": "type_raw",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 11
+  },
+  {
+    "table_name": "detections",
+    "column_name": "day_night",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 12
+  },
+  {
+    "table_name": "detections",
+    "column_name": "frp_mw",
+    "data_type": "double precision",
+    "udt_name": "float8",
+    "ordinal_position": 13
+  },
+  {
+    "table_name": "detections",
+    "column_name": "processing_level",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 14
+  },
+  {
+    "table_name": "detections",
+    "column_name": "brightness_bands",
+    "data_type": "jsonb",
+    "udt_name": "jsonb",
+    "ordinal_position": 15
+  },
+  {
+    "table_name": "detections",
+    "column_name": "scan_km",
+    "data_type": "double precision",
+    "udt_name": "float8",
+    "ordinal_position": 16
+  },
+  {
+    "table_name": "detections",
+    "column_name": "track_km",
+    "data_type": "double precision",
+    "udt_name": "float8",
+    "ordinal_position": 17
+  },
+  {
+    "table_name": "detections",
+    "column_name": "cross_track_sample",
+    "data_type": "integer",
+    "udt_name": "int4",
+    "ordinal_position": 18
+  },
+  {
+    "table_name": "detections",
+    "column_name": "asset_id",
+    "data_type": "uuid",
+    "udt_name": "uuid",
+    "ordinal_position": 19
+  },
+  {
+    "table_name": "detections",
+    "column_name": "record_sha256",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 20
+  },
+  {
+    "table_name": "detections",
+    "column_name": "support_spec",
+    "data_type": "jsonb",
+    "udt_name": "jsonb",
+    "ordinal_position": 21
+  },
+  {
+    "table_name": "ingestion_health",
+    "column_name": "id",
+    "data_type": "uuid",
+    "udt_name": "uuid",
+    "ordinal_position": 1
+  },
+  {
+    "table_name": "ingestion_health",
+    "column_name": "feed_id",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 2
+  },
+  {
+    "table_name": "ingestion_health",
+    "column_name": "scope_key",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 3
+  },
+  {
+    "table_name": "ingestion_health",
+    "column_name": "mode",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 4
+  },
+  {
+    "table_name": "ingestion_health",
+    "column_name": "enabled",
+    "data_type": "boolean",
+    "udt_name": "bool",
+    "ordinal_position": 5
+  },
+  {
+    "table_name": "ingestion_health",
+    "column_name": "next_due_at",
+    "data_type": "timestamp with time zone",
+    "udt_name": "timestamptz",
+    "ordinal_position": 6
+  },
+  {
+    "table_name": "ingestion_health",
+    "column_name": "queried_through",
+    "data_type": "timestamp with time zone",
+    "udt_name": "timestamptz",
+    "ordinal_position": 7
+  },
+  {
+    "table_name": "ingestion_health",
+    "column_name": "last_success_at",
+    "data_type": "timestamp with time zone",
+    "udt_name": "timestamptz",
+    "ordinal_position": 8
+  },
+  {
+    "table_name": "ingestion_health",
+    "column_name": "open_gaps",
+    "data_type": "bigint",
+    "udt_name": "int8",
+    "ordinal_position": 9
+  },
+  {
+    "table_name": "ingestion_health",
+    "column_name": "last_attempt_at",
+    "data_type": "timestamp with time zone",
+    "udt_name": "timestamptz",
+    "ordinal_position": 10
+  },
+  {
+    "table_name": "latest_analytics",
+    "column_name": "scope_key",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 1
+  },
+  {
+    "table_name": "latest_analytics",
+    "column_name": "build_id",
+    "data_type": "uuid",
+    "udt_name": "uuid",
+    "ordinal_position": 2
+  },
+  {
+    "table_name": "latest_analytics",
+    "column_name": "published_at",
+    "data_type": "timestamp with time zone",
+    "udt_name": "timestamptz",
+    "ordinal_position": 3
+  },
+  {
+    "table_name": "latest_analytics",
+    "column_name": "input_releases",
+    "data_type": "jsonb",
+    "udt_name": "jsonb",
+    "ordinal_position": 4
+  },
+  {
+    "table_name": "latest_analytics",
+    "column_name": "model_sha256",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 5
+  },
+  {
+    "table_name": "latest_analytics",
+    "column_name": "finished_at",
+    "data_type": "timestamp with time zone",
+    "udt_name": "timestamptz",
+    "ordinal_position": 6
+  },
+  {
+    "table_name": "latest_releases",
+    "column_name": "alias",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 1
+  },
+  {
+    "table_name": "latest_releases",
+    "column_name": "scope_key",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 2
+  },
+  {
+    "table_name": "latest_releases",
+    "column_name": "release_id",
+    "data_type": "uuid",
+    "udt_name": "uuid",
+    "ordinal_position": 3
+  },
+  {
+    "table_name": "latest_releases",
+    "column_name": "generation",
+    "data_type": "bigint",
+    "udt_name": "int8",
+    "ordinal_position": 4
+  },
+  {
+    "table_name": "latest_releases",
+    "column_name": "updated_at",
+    "data_type": "timestamp with time zone",
+    "udt_name": "timestamptz",
+    "ordinal_position": 5
+  },
+  {
+    "table_name": "latest_releases",
+    "column_name": "dataset_kind",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 6
+  },
+  {
+    "table_name": "latest_releases",
+    "column_name": "stream",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 7
+  },
+  {
+    "table_name": "latest_releases",
+    "column_name": "observation_cutoff",
+    "data_type": "timestamp with time zone",
+    "udt_name": "timestamptz",
+    "ordinal_position": 8
+  },
+  {
+    "table_name": "latest_releases",
+    "column_name": "published_at",
+    "data_type": "timestamp with time zone",
+    "udt_name": "timestamptz",
+    "ordinal_position": 9
+  },
+  {
+    "table_name": "partitions",
+    "column_name": "release_id",
+    "data_type": "uuid",
+    "udt_name": "uuid",
+    "ordinal_position": 1
+  },
+  {
+    "table_name": "partitions",
+    "column_name": "partition_id",
+    "data_type": "uuid",
+    "udt_name": "uuid",
+    "ordinal_position": 2
+  },
+  {
+    "table_name": "partitions",
+    "column_name": "kind",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 3
+  },
+  {
+    "table_name": "partitions",
+    "column_name": "series_key",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 4
+  },
+  {
+    "table_name": "partitions",
+    "column_name": "partition_key",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 5
+  },
+  {
+    "table_name": "partitions",
+    "column_name": "support_spec",
+    "data_type": "jsonb",
+    "udt_name": "jsonb",
+    "ordinal_position": 6
+  },
+  {
+    "table_name": "partitions",
+    "column_name": "row_count",
+    "data_type": "bigint",
+    "udt_name": "int8",
+    "ordinal_position": 7
+  },
+  {
+    "table_name": "partitions",
+    "column_name": "serving_complete",
+    "data_type": "boolean",
+    "udt_name": "bool",
+    "ordinal_position": 8
+  },
+  {
+    "table_name": "partitions",
+    "column_name": "validation_status",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 9
+  },
+  {
+    "table_name": "partitions",
+    "column_name": "sha256",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 10
+  },
+  {
+    "table_name": "query_coverage",
+    "column_name": "build_id",
+    "data_type": "uuid",
+    "udt_name": "uuid",
+    "ordinal_position": 1
+  },
+  {
+    "table_name": "query_coverage",
+    "column_name": "scope_key",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 2
+  },
+  {
+    "table_name": "query_coverage",
+    "column_name": "date_utc",
+    "data_type": "date",
+    "udt_name": "date",
+    "ordinal_position": 3
+  },
+  {
+    "table_name": "query_coverage",
+    "column_name": "source_family",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 4
+  },
+  {
+    "table_name": "query_coverage",
+    "column_name": "platform",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 5
+  },
+  {
+    "table_name": "query_coverage",
+    "column_name": "source_id",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 6
+  },
+  {
+    "table_name": "query_coverage",
+    "column_name": "satellite_release_id",
+    "data_type": "uuid",
+    "udt_name": "uuid",
+    "ordinal_position": 7
+  },
+  {
+    "table_name": "query_coverage",
+    "column_name": "query_status",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 8
+  },
+  {
+    "table_name": "query_coverage",
+    "column_name": "period_state",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 9
+  },
+  {
+    "table_name": "query_coverage",
+    "column_name": "detection_count",
+    "data_type": "bigint",
+    "udt_name": "int8",
+    "ordinal_position": 10
+  },
+  {
+    "table_name": "query_coverage",
+    "column_name": "observation_coverage",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 11
+  },
+  {
+    "table_name": "release_changes",
+    "column_name": "id",
+    "data_type": "uuid",
+    "udt_name": "uuid",
+    "ordinal_position": 1
+  },
+  {
+    "table_name": "release_changes",
+    "column_name": "from_release_id",
+    "data_type": "uuid",
+    "udt_name": "uuid",
+    "ordinal_position": 2
+  },
+  {
+    "table_name": "release_changes",
+    "column_name": "to_release_id",
+    "data_type": "uuid",
+    "udt_name": "uuid",
+    "ordinal_position": 3
+  },
+  {
+    "table_name": "release_changes",
+    "column_name": "series_key",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 4
+  },
+  {
+    "table_name": "release_changes",
+    "column_name": "affected_start",
+    "data_type": "timestamp with time zone",
+    "udt_name": "timestamptz",
+    "ordinal_position": 5
+  },
+  {
+    "table_name": "release_changes",
+    "column_name": "affected_end_exclusive",
+    "data_type": "timestamp with time zone",
+    "udt_name": "timestamptz",
+    "ordinal_position": 6
+  },
+  {
+    "table_name": "release_changes",
+    "column_name": "reason",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 7
+  },
+  {
+    "table_name": "release_changes",
+    "column_name": "created_at",
+    "data_type": "timestamp with time zone",
+    "udt_name": "timestamptz",
+    "ordinal_position": 8
+  },
+  {
+    "table_name": "release_events",
+    "column_name": "id",
+    "data_type": "uuid",
+    "udt_name": "uuid",
+    "ordinal_position": 1
+  },
+  {
+    "table_name": "release_events",
+    "column_name": "release_id",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 2
+  },
+  {
+    "table_name": "release_events",
+    "column_name": "payload",
+    "data_type": "jsonb",
+    "udt_name": "jsonb",
+    "ordinal_position": 3
+  },
+  {
+    "table_name": "release_events",
+    "column_name": "created_at",
+    "data_type": "timestamp with time zone",
+    "udt_name": "timestamptz",
+    "ordinal_position": 4
+  },
+  {
+    "table_name": "releases",
+    "column_name": "id",
+    "data_type": "uuid",
+    "udt_name": "uuid",
+    "ordinal_position": 1
+  },
+  {
+    "table_name": "releases",
+    "column_name": "name",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 2
+  },
+  {
+    "table_name": "releases",
+    "column_name": "status",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 3
+  },
+  {
+    "table_name": "releases",
+    "column_name": "stream",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 4
+  },
+  {
+    "table_name": "releases",
+    "column_name": "dataset_kind",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 5
+  },
+  {
+    "table_name": "releases",
+    "column_name": "scope_key",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 6
+  },
+  {
+    "table_name": "releases",
+    "column_name": "parent_release_id",
+    "data_type": "uuid",
+    "udt_name": "uuid",
+    "ordinal_position": 7
+  },
+  {
+    "table_name": "releases",
+    "column_name": "observation_cutoff",
+    "data_type": "timestamp with time zone",
+    "udt_name": "timestamptz",
+    "ordinal_position": 8
+  },
+  {
+    "table_name": "releases",
+    "column_name": "created_at",
+    "data_type": "timestamp with time zone",
+    "udt_name": "timestamptz",
+    "ordinal_position": 9
+  },
+  {
+    "table_name": "releases",
+    "column_name": "published_at",
+    "data_type": "timestamp with time zone",
+    "udt_name": "timestamptz",
+    "ordinal_position": 10
+  },
+  {
+    "table_name": "releases",
+    "column_name": "config",
+    "data_type": "jsonb",
+    "udt_name": "jsonb",
+    "ordinal_position": 11
+  },
+  {
+    "table_name": "releases",
+    "column_name": "code_version",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 12
+  },
+  {
+    "table_name": "reported_events",
+    "column_name": "id",
+    "data_type": "uuid",
+    "udt_name": "uuid",
+    "ordinal_position": 1
+  },
+  {
+    "table_name": "reported_events",
+    "column_name": "report_id",
+    "data_type": "uuid",
+    "udt_name": "uuid",
+    "ordinal_position": 2
+  },
+  {
+    "table_name": "reported_events",
+    "column_name": "claim_index",
+    "data_type": "integer",
+    "udt_name": "int4",
+    "ordinal_position": 3
+  },
+  {
+    "table_name": "reported_events",
+    "column_name": "event_start",
+    "data_type": "date",
+    "udt_name": "date",
+    "ordinal_position": 4
+  },
+  {
+    "table_name": "reported_events",
+    "column_name": "event_end_exclusive",
+    "data_type": "date",
+    "udt_name": "date",
+    "ordinal_position": 5
+  },
+  {
+    "table_name": "reported_events",
+    "column_name": "date_precision",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 6
+  },
+  {
+    "table_name": "reported_events",
+    "column_name": "place_text",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 7
+  },
+  {
+    "table_name": "reported_events",
+    "column_name": "location",
+    "data_type": "USER-DEFINED",
+    "udt_name": "geometry",
+    "ordinal_position": 8
+  },
+  {
+    "table_name": "reported_events",
+    "column_name": "location_precision",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 9
+  },
+  {
+    "table_name": "reported_events",
+    "column_name": "location_uncertainty_m",
+    "data_type": "double precision",
+    "udt_name": "float8",
+    "ordinal_position": 10
+  },
+  {
+    "table_name": "reported_events",
+    "column_name": "geocoding_method",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 11
+  },
+  {
+    "table_name": "reported_events",
+    "column_name": "event_cluster_key",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 12
+  },
+  {
+    "table_name": "reported_events",
+    "column_name": "reported_event_type",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 13
+  },
+  {
+    "table_name": "reported_events",
+    "column_name": "reported_burned_area_ha",
+    "data_type": "double precision",
+    "udt_name": "float8",
+    "ordinal_position": 14
+  },
+  {
+    "table_name": "reported_events",
+    "column_name": "reported_cause",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 15
+  },
+  {
+    "table_name": "reported_events",
+    "column_name": "claim_summary",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 16
+  },
+  {
+    "table_name": "reported_events",
+    "column_name": "review_status",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 17
+  },
+  {
+    "table_name": "reported_events",
+    "column_name": "reviewed_by",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 18
+  },
+  {
+    "table_name": "reported_events",
+    "column_name": "reviewed_at",
+    "data_type": "timestamp with time zone",
+    "udt_name": "timestamptz",
+    "ordinal_position": 19
+  },
+  {
+    "table_name": "reports",
+    "column_name": "release_id",
+    "data_type": "uuid",
+    "udt_name": "uuid",
+    "ordinal_position": 1
+  },
+  {
+    "table_name": "reports",
+    "column_name": "id",
+    "data_type": "uuid",
+    "udt_name": "uuid",
+    "ordinal_position": 2
+  },
+  {
+    "table_name": "reports",
+    "column_name": "canonical_url",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 3
+  },
+  {
+    "table_name": "reports",
+    "column_name": "title",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 4
+  },
+  {
+    "table_name": "reports",
+    "column_name": "publisher",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 5
+  },
+  {
+    "table_name": "reports",
+    "column_name": "language",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 6
+  },
+  {
+    "table_name": "reports",
+    "column_name": "published_at",
+    "data_type": "timestamp with time zone",
+    "udt_name": "timestamptz",
+    "ordinal_position": 7
+  },
+  {
+    "table_name": "reports",
+    "column_name": "publication_precision",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 8
+  },
+  {
+    "table_name": "reports",
+    "column_name": "summary",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 9
+  },
+  {
+    "table_name": "reports",
+    "column_name": "source_lineage",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 10
+  },
+  {
+    "table_name": "reports",
+    "column_name": "review_status",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 11
+  },
+  {
+    "table_name": "reports",
+    "column_name": "original_reporting_url",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 12
+  },
+  {
+    "table_name": "reports",
+    "column_name": "syndication_group",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 13
+  },
+  {
+    "table_name": "reports",
+    "column_name": "content_sha256",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 14
+  },
+  {
+    "table_name": "reports",
+    "column_name": "asset_id",
+    "data_type": "uuid",
+    "udt_name": "uuid",
+    "ordinal_position": 15
+  },
+  {
+    "table_name": "science_inventory",
+    "column_name": "id",
+    "data_type": "uuid",
+    "udt_name": "uuid",
+    "ordinal_position": 1
+  },
+  {
+    "table_name": "science_inventory",
+    "column_name": "collection_concept_id",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 2
+  },
+  {
+    "table_name": "science_inventory",
+    "column_name": "concept_id",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 3
+  },
+  {
+    "table_name": "science_inventory",
+    "column_name": "revision_key",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 4
+  },
+  {
+    "table_name": "science_inventory",
+    "column_name": "asset_id",
+    "data_type": "uuid",
+    "udt_name": "uuid",
+    "ordinal_position": 5
+  },
+  {
+    "table_name": "science_inventory",
+    "column_name": "time_start",
+    "data_type": "timestamp with time zone",
+    "udt_name": "timestamptz",
+    "ordinal_position": 6
+  },
+  {
+    "table_name": "science_inventory",
+    "column_name": "time_end",
+    "data_type": "timestamp with time zone",
+    "udt_name": "timestamptz",
+    "ordinal_position": 7
+  },
+  {
+    "table_name": "science_inventory",
+    "column_name": "updated_at",
+    "data_type": "timestamp with time zone",
+    "udt_name": "timestamptz",
+    "ordinal_position": 8
+  },
+  {
+    "table_name": "science_inventory",
+    "column_name": "status",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 9
+  },
+  {
+    "table_name": "scopes",
+    "column_name": "scope_key",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 1
+  },
+  {
+    "table_name": "scopes",
+    "column_name": "area_id",
+    "data_type": "uuid",
+    "udt_name": "uuid",
+    "ordinal_position": 2
+  },
+  {
+    "table_name": "scopes",
+    "column_name": "geometry_sha256",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 3
+  },
+  {
+    "table_name": "scopes",
+    "column_name": "geometry",
+    "data_type": "jsonb",
+    "udt_name": "jsonb",
+    "ordinal_position": 4
+  },
+  {
+    "table_name": "source_availability",
+    "column_name": "feed_id",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 1
+  },
+  {
+    "table_name": "source_availability",
+    "column_name": "source_id",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 2
+  },
+  {
+    "table_name": "source_availability",
+    "column_name": "checked_at",
+    "data_type": "timestamp with time zone",
+    "udt_name": "timestamptz",
+    "ordinal_position": 3
+  },
+  {
+    "table_name": "source_availability",
+    "column_name": "available_start",
+    "data_type": "timestamp with time zone",
+    "udt_name": "timestamptz",
+    "ordinal_position": 4
+  },
+  {
+    "table_name": "source_availability",
+    "column_name": "available_end_exclusive",
+    "data_type": "timestamp with time zone",
+    "udt_name": "timestamptz",
+    "ordinal_position": 5
+  },
+  {
+    "table_name": "source_availability",
+    "column_name": "status",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 6
+  },
+  {
+    "table_name": "source_availability",
+    "column_name": "evidence_asset_id",
+    "data_type": "uuid",
+    "udt_name": "uuid",
+    "ordinal_position": 7
+  },
+  {
+    "table_name": "source_availability",
+    "column_name": "detail",
+    "data_type": "jsonb",
+    "udt_name": "jsonb",
+    "ordinal_position": 8
+  },
+  {
+    "table_name": "sources",
+    "column_name": "id",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 1
+  },
+  {
+    "table_name": "sources",
+    "column_name": "name",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 2
+  },
+  {
+    "table_name": "sources",
+    "column_name": "provider",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 3
+  },
+  {
+    "table_name": "sources",
+    "column_name": "kind",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 4
+  },
+  {
+    "table_name": "sources",
+    "column_name": "platform",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 5
+  },
+  {
+    "table_name": "sources",
+    "column_name": "instrument",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 6
+  },
+  {
+    "table_name": "sources",
+    "column_name": "product",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 7
+  },
+  {
+    "table_name": "sources",
+    "column_name": "collection",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 8
+  },
+  {
+    "table_name": "sources",
+    "column_name": "processing_stream",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 9
+  },
+  {
+    "table_name": "sources",
+    "column_name": "documentation_url",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 10
+  },
+  {
+    "table_name": "sources",
+    "column_name": "citation",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 11
+  },
+  {
+    "table_name": "sources",
+    "column_name": "license_info",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 12
+  },
+  {
+    "table_name": "sources",
+    "column_name": "native_resolution_m",
+    "data_type": "double precision",
+    "udt_name": "float8",
+    "ordinal_position": 13
+  },
+  {
+    "table_name": "sources",
+    "column_name": "metadata",
+    "data_type": "jsonb",
+    "udt_name": "jsonb",
+    "ordinal_position": 14
+  },
+  {
+    "table_name": "subscription_planning",
+    "column_name": "id",
+    "data_type": "uuid",
+    "udt_name": "uuid",
+    "ordinal_position": 1
+  },
+  {
+    "table_name": "subscription_planning",
+    "column_name": "feed_id",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 2
+  },
+  {
+    "table_name": "subscription_planning",
+    "column_name": "scope_key",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 3
+  },
+  {
+    "table_name": "subscription_planning",
+    "column_name": "mode",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 4
+  },
+  {
+    "table_name": "subscription_planning",
+    "column_name": "enabled",
+    "data_type": "boolean",
+    "udt_name": "bool",
+    "ordinal_position": 5
+  },
+  {
+    "table_name": "subscription_planning",
+    "column_name": "planning_complete",
+    "data_type": "boolean",
+    "udt_name": "bool",
+    "ordinal_position": 6
+  },
+  {
+    "table_name": "subscription_planning",
+    "column_name": "history_start",
+    "data_type": "timestamp with time zone",
+    "udt_name": "timestamptz",
+    "ordinal_position": 7
+  },
+  {
+    "table_name": "subscription_planning",
+    "column_name": "fixed_end_exclusive",
+    "data_type": "timestamp with time zone",
+    "udt_name": "timestamptz",
+    "ordinal_position": 8
+  },
+  {
+    "table_name": "task_health",
+    "column_name": "id",
+    "data_type": "uuid",
+    "udt_name": "uuid",
+    "ordinal_position": 1
+  },
+  {
+    "table_name": "task_health",
+    "column_name": "subscription_id",
+    "data_type": "uuid",
+    "udt_name": "uuid",
+    "ordinal_position": 2
+  },
+  {
+    "table_name": "task_health",
+    "column_name": "kind",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 3
+  },
+  {
+    "table_name": "task_health",
+    "column_name": "orchestrator",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 4
+  },
+  {
+    "table_name": "task_health",
+    "column_name": "status",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 5
+  },
+  {
+    "table_name": "task_health",
+    "column_name": "attempt",
+    "data_type": "integer",
+    "udt_name": "int4",
+    "ordinal_position": 6
+  },
+  {
+    "table_name": "task_health",
+    "column_name": "error_code",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 7
+  },
+  {
+    "table_name": "task_health",
+    "column_name": "created_at",
+    "data_type": "timestamp with time zone",
+    "udt_name": "timestamptz",
+    "ordinal_position": 8
+  },
+  {
+    "table_name": "task_health",
+    "column_name": "completed_at",
+    "data_type": "timestamp with time zone",
+    "udt_name": "timestamptz",
+    "ordinal_position": 9
+  },
+  {
+    "table_name": "weather",
+    "column_name": "release_id",
+    "data_type": "uuid",
+    "udt_name": "uuid",
+    "ordinal_position": 1
+  },
+  {
+    "table_name": "weather",
+    "column_name": "id",
+    "data_type": "bigint",
+    "udt_name": "int8",
+    "ordinal_position": 2
+  },
+  {
+    "table_name": "weather",
+    "column_name": "source_id",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 3
+  },
+  {
+    "table_name": "weather",
+    "column_name": "variable",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 4
+  },
+  {
+    "table_name": "weather",
+    "column_name": "unit",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 5
+  },
+  {
+    "table_name": "weather",
+    "column_name": "valid_start",
+    "data_type": "timestamp with time zone",
+    "udt_name": "timestamptz",
+    "ordinal_position": 6
+  },
+  {
+    "table_name": "weather",
+    "column_name": "valid_end",
+    "data_type": "timestamp with time zone",
+    "udt_name": "timestamptz",
+    "ordinal_position": 7
+  },
+  {
+    "table_name": "weather",
+    "column_name": "issued_at",
+    "data_type": "timestamp with time zone",
+    "udt_name": "timestamptz",
+    "ordinal_position": 8
+  },
+  {
+    "table_name": "weather",
+    "column_name": "available_at",
+    "data_type": "timestamp with time zone",
+    "udt_name": "timestamptz",
+    "ordinal_position": 9
+  },
+  {
+    "table_name": "weather",
+    "column_name": "data_kind",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 10
+  },
+  {
+    "table_name": "weather",
+    "column_name": "statistic",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 11
+  },
+  {
+    "table_name": "weather",
+    "column_name": "value",
+    "data_type": "double precision",
+    "udt_name": "float8",
+    "ordinal_position": 12
+  },
+  {
+    "table_name": "weather",
+    "column_name": "quality_status",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 13
+  },
+  {
+    "table_name": "weather",
+    "column_name": "asset_id",
+    "data_type": "uuid",
+    "udt_name": "uuid",
+    "ordinal_position": 14
+  },
+  {
+    "table_name": "weather",
+    "column_name": "derivation",
+    "data_type": "jsonb",
+    "udt_name": "jsonb",
+    "ordinal_position": 15
+  },
+  {
+    "table_name": "weather",
+    "column_name": "support_kind",
+    "data_type": "text",
+    "udt_name": "text",
+    "ordinal_position": 16
+  },
+  {
+    "table_name": "weather",
+    "column_name": "geom",
+    "data_type": "USER-DEFINED",
+    "udt_name": "geometry",
+    "ordinal_position": 17
+  },
+  {
+    "table_name": "weather",
+    "column_name": "longitude",
+    "data_type": "double precision",
+    "udt_name": "float8",
+    "ordinal_position": 18
+  },
+  {
+    "table_name": "weather",
+    "column_name": "latitude",
+    "data_type": "double precision",
+    "udt_name": "float8",
+    "ordinal_position": 19
+  },
+  {
+    "table_name": "weather",
+    "column_name": "location_metadata",
+    "data_type": "jsonb",
+    "udt_name": "jsonb",
+    "ordinal_position": 20
+  },
+  {
+    "table_name": "weather",
+    "column_name": "support_spec",
+    "data_type": "jsonb",
+    "udt_name": "jsonb",
+    "ordinal_position": 21
+  },
+  {
+    "table_name": "weather",
+    "column_name": "location_id",
+    "data_type": "uuid",
+    "udt_name": "uuid",
+    "ordinal_position": 22
+  }
+]

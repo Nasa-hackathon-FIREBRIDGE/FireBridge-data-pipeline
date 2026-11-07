@@ -1,0 +1,192 @@
+{
+  "checked_at": "2026-11-02T12:57:58.787329+00:00",
+  "external_provider_calls": 0,
+  "database": {
+    "postgres": "PostgreSQL 16.9 (Debian 16.9-1.pgdg110+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 10.2.1-6) 10.2.1 20210110, 64-bit",
+    "postgis": "3.5.2"
+  },
+  "migrations": [
+    {
+      "name": "001_initial.sql",
+      "sha256": "71a82852a02eb938de0d392730e5875a14e978357565a285663f14aaae789ad3"
+    },
+    {
+      "name": "002_pipeline_runtime.sql",
+      "sha256": "a63d7ad099ea2fef35df07f3ae80acfb7afc6c61a9864fd0bfb6367be0bb48b0"
+    },
+    {
+      "name": "003_publication_heads.sql",
+      "sha256": "99db560a3fbcf98c8c8d2265beed5b7e4990a73c372086bf8bd1e2d41a57ba85"
+    },
+    {
+      "name": "004_science_inventory.sql",
+      "sha256": "44f0076094d6b8fcfa1518532c5f7e5725dd9a58289c21f0c33fdb2c51b469d3"
+    },
+    {
+      "name": "005_news_tasks.sql",
+      "sha256": "1bc209df36c3c405d2e2b7bd0e1934214200a259a94a196eb29d3b6d946faef8"
+    },
+    {
+      "name": "006_serving_weather_location.sql",
+      "sha256": "46238e7669bff9a8cddb319cc5fa5493c94545c6e18b3f2eea5d8530421dc033"
+    },
+    {
+      "name": "007_registered_scopes.sql",
+      "sha256": "92f3c5aa06ee9c681f6df7578b3e1370ddf4995468179a11cff7e5e64dc1e2ac"
+    },
+    {
+      "name": "008_portable_object_uris.sql",
+      "sha256": "0b67b9126fa1b813a769876183e70166ec2605d375280a6f72e90e3ffd6a7b0a"
+    },
+    {
+      "name": "009_analytics_orchestration.sql",
+      "sha256": "108e103a807662c0f9c9ae91463b4ba03517f1f7bb952adb55713e322a232056"
+    },
+    {
+      "name": "010_backfill_planning.sql",
+      "sha256": "dee2d58b35bd88e7588aa76cedcd1969c1d7986810950736014d5de8ba83e20f"
+    }
+  ],
+  "table_count": 59,
+  "view_count": 26,
+  "releases": [
+    {
+      "alias": "best_available",
+      "scope_key": "california-demo",
+      "release_id": "5389cef8-b1e5-402b-bab5-b4d831d44eca",
+      "partitions": 734,
+      "rows": 12057,
+      "by_source": [
+        {
+          "source_id": "landsat8-c1-nrt",
+          "n": 4943
+        },
+        {
+          "source_id": "landsat9-c1-nrt",
+          "n": 7114
+        }
+      ]
+    },
+    {
+      "alias": "nrt_only",
+      "scope_key": "california-demo",
+      "release_id": "35d07bce-cb90-43dd-bf97-5d2405d60cbd",
+      "partitions": 734,
+      "rows": 12057,
+      "by_source": [
+        {
+          "source_id": "landsat8-c1-nrt",
+          "n": 4943
+        },
+        {
+          "source_id": "landsat9-c1-nrt",
+          "n": 7114
+        }
+      ]
+    },
+    {
+      "alias": "best_available",
+      "scope_key": "global",
+      "release_id": "47f42adc-cde8-442b-9ab0-e99ad8306cf6",
+      "partitions": 734,
+      "rows": 4876343,
+      "by_source": [
+        {
+          "source_id": "modis-aqua-c61-standard",
+          "n": 3347476
+        },
+        {
+          "source_id": "modis-terra-c61-standard",
+          "n": 1528867
+        }
+      ]
+    },
+    {
+      "alias": "standard_only",
+      "scope_key": "global",
+      "release_id": "6618c5ba-1847-4271-a416-8fccfa3578ba",
+      "partitions": 734,
+      "rows": 4876343,
+      "by_source": [
+        {
+          "source_id": "modis-aqua-c61-standard",
+          "n": 3347476
+        },
+        {
+          "source_id": "modis-terra-c61-standard",
+          "n": 1528867
+        }
+      ]
+    },
+    {
+      "alias": "best_available",
+      "scope_key": "morocco-pilot",
+      "release_id": "80376942-ca13-45f0-a5ee-4a310bae9e37",
+      "partitions": 1835,
+      "rows": 1034,
+      "by_source": [
+        {
+          "source_id": "modis-aqua-c61-standard",
+          "n": 35
+        },
+        {
+          "source_id": "modis-terra-c61-standard",
+          "n": 22
+        },
+        {
+          "source_id": "viirs-noaa20-c2-standard",
+          "n": 342
+        },
+        {
+          "source_id": "viirs-noaa21-c2-nrt",
+          "n": 324
+        },
+        {
+          "source_id": "viirs-snpp-c2-standard",
+          "n": 311
+        }
+      ]
+    },
+    {
+      "alias": "nrt_only",
+      "scope_key": "morocco-pilot",
+      "release_id": "59cd4769-7f42-43a6-8cea-fb10666f1088",
+      "partitions": 367,
+      "rows": 324,
+      "by_source": [
+        {
+          "source_id": "viirs-noaa21-c2-nrt",
+          "n": 324
+        }
+      ]
+    },
+    {
+      "alias": "standard_only",
+      "scope_key": "morocco-pilot",
+      "release_id": "0749262f-ea25-4446-8e04-79af6b041383",
+      "partitions": 1468,
+      "rows": 710,
+      "by_source": [
+        {
+          "source_id": "modis-aqua-c61-standard",
+          "n": 35
+        },
+        {
+          "source_id": "modis-terra-c61-standard",
+          "n": 22
+        },
+        {
+          "source_id": "viirs-noaa20-c2-standard",
+          "n": 342
+        },
+        {
+          "source_id": "viirs-snpp-c2-standard",
+          "n": 311
+        }
+      ]
+    }
+  ],
+  "enabled_subscriptions": 0,
+  "queued_tasks": 0,
+  "reader_contract": "all six query templates prepared; pilot query verified; operational tables denied"
+}

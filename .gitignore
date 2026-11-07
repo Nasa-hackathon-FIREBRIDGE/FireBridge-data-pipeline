@@ -27,5 +27,5 @@ deploy/release-image
 .deploy/
 .tools/
 .chart-data-*/
-data/
+/data/
 node_modules
