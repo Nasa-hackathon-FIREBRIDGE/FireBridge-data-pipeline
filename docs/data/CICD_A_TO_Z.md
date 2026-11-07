@@ -122,6 +122,20 @@ Configure these settings:
 | `production` environment secret | `DEPLOY_SSH_KEY` | Contents of `.deploy/github_actions` |
 | `production` environment secret | `DEPLOY_KNOWN_HOSTS` | Contents of `.deploy/known_hosts` |
 
+After CLI login, the provided helper configures the environment, its `main` branch rule, host variable and encrypted secrets directly from the local files:
+
+```bash
+python3 scripts/configure_github.py --host YOUR_VPS_IP
+```
+
+This leaves a new deployment switch disabled while configuration is checked. To enable it and run the first pipeline once ready:
+
+```bash
+python3 scripts/configure_github.py --host YOUR_VPS_IP --enable --trigger
+```
+
+The helper requires repository administrator access. It preserves existing environment review protections, and stops for review if an existing environment has an incompatible branch-policy mode.
+
 The private deployment key stays out of chat and terminal output. Using the CLI, upload it directly from the file:
 
 ```bash
