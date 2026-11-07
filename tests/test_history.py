@@ -1,6 +1,7 @@
 from dataclasses import replace
 from datetime import date, timedelta
 import gzip
+import hashlib
 import json
 from pathlib import Path
 import os
@@ -28,6 +29,7 @@ def available():
 
 HEADER = 'latitude,longitude,acq_date,acq_time,satellite,confidence,daynight,frp\n'
 BODY = (HEADER+'35,-5,2024-01-01,15,T,80,D,-999\n').encode()
+LANDSAT_HEADER = b'latitude,longitude,path,row,scan,track,acq_date,acq_time,satellite,confidence,daynight'
 
 
 def request():
@@ -94,7 +96,7 @@ def test_initialization_is_offline_and_catalog_sees_only_committed_windows(tmp_p
 
 @pytest.mark.parametrize('body', [b'<html>error</html>', BODY.replace(b'35,-5',b'95,-5'),
     BODY.replace(b'2024-01-01',b'2023-01-01'), BODY.replace(b',T,',b',N20,'),
-    BODY.replace(b',15,',b',2400,'), BODY+b'broken,truncated\n'])
+    BODY.replace(b',15,',b',2400,'), BODY+b'broken,truncated\n', BODY+b'broken,truncated'])
 def test_bad_response_cannot_publish_a_window(tmp_path,body):
     root=tmp_path/'history'
     initialize(root)
@@ -111,6 +113,49 @@ def test_header_only_is_a_valid_empty_response_and_disk_floor_blocks(tmp_path):
     assert receipt['rows']==0
     with pytest.raises(FetchError,match='disk_reserve_reached'):
         validate_and_store(root,request(),BODY,reserve_bytes=10**20)
+
+
+@pytest.mark.parametrize('body,rows,feed', [
+    (HEADER.encode().rstrip(b'\n'),0,'MODIS_SP'),
+    (LANDSAT_HEADER,0,'LANDSAT_NRT'),
+    (b'\xef\xbb\xbf'+LANDSAT_HEADER,0,'LANDSAT_NRT'),
+    (BODY.rstrip(b'\n'),1,'MODIS_SP'),
+])
+def test_csv_without_final_newline_preserves_original_bytes(tmp_path,body,rows,feed):
+    root=tmp_path/'history'
+    initialize(root)
+    window=dict(request(),feed=feed,id=request()['id'].replace('MODIS_SP',feed))
+    receipt=validate_and_store(root,window,body,reserve_bytes=0)
+    assert receipt['rows']==rows
+    assert gzip.decompress((root/'raw'/(window['id']+'.csv.gz')).read_bytes())==body
+    assert receipt['uncompressed_csv_sha256']==hashlib.sha256(body).hexdigest()
+    with duckdb.connect() as db:
+        assert db.execute('SELECT count(*) FROM read_parquet(?)',[str(root/'parquet'/(window['id']+'.parquet'))]).fetchone()[0]==rows
+
+
+def test_failed_empty_landsat_window_can_resume_as_complete(tmp_path,monkeypatch):
+    root=tmp_path/'history'
+    initialize(root)
+    window=dict(id='LANDSAT_NRT_2022-11-17_2022-11-22',feed='LANDSAT_NRT',
+        start='2022-11-17',end_exclusive='2022-11-22')
+    with ledger(root) as conn:
+        conn.execute('''INSERT INTO requests(id,feed,start,end_exclusive,priority,status,error_code,attempts)
+            VALUES (:id,:feed,:start,:end_exclusive,0,'failed','invalid_firms_payload',1)''',window)
+        conn.commit()
+    (root/'plan.json').write_text(json.dumps({'provider_gaps':[]}))
+    calls=[]
+    def fetch(*args,**kwargs):
+        calls.append(1)
+        return LANDSAT_HEADER,{}
+    monkeypatch.setattr('firebridge.history.get',fetch)
+    result=run(Settings('unused',tmp_path,firms_key='fixture-secret'),root=root,reserve_bytes=0)
+    assert result['state']=='complete' and result['completed_windows']==1
+    assert result['failed_windows']==0 and result['downloaded_source_rows']==0
+    with ledger(root) as conn:
+        row=conn.execute('SELECT status,rows,attempts,error_code FROM requests').fetchone()
+        assert tuple(row)==('complete',0,2,None)
+    run(Settings('unused',tmp_path,firms_key='fixture-secret'),root=root,reserve_bytes=0)
+    assert len(calls)==1
 
 
 def test_run_resumes_without_redownloading_completed_windows(tmp_path,monkeypatch):

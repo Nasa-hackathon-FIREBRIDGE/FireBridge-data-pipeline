@@ -182,7 +182,11 @@ def validate_and_store(root, request, body, *, reserve_bytes=8*GIB):
     header = next(csv.reader(io.StringIO(body.partition(b'\n')[0].decode('utf-8-sig')))) if body else []
     if not BASE <= set(header) or len(set(header)) != len(header) or set(header) - set(FIELDS):
         raise ValueError('invalid_or_changed_csv_schema')
-    table = pacsv.read_csv(io.BytesIO(body), convert_options=pacsv.ConvertOptions(
+    # FIRMS can return a valid header-only CSV without a final newline.
+    # Arrow needs the terminator to infer this zero-row schema. Normalize only
+    # the parser input; the original bytes are still retained and checksummed.
+    parse_body = body if body.endswith((b'\n', b'\r')) else body + b'\n'
+    table = pacsv.read_csv(io.BytesIO(parse_body), convert_options=pacsv.ConvertOptions(
         column_types={c: pa.string() for c in header}, strings_can_be_null=False))
     for column, maximum in [('latitude', 90), ('longitude', 180)]:
         values = pc.cast(table[column], pa.float64())
