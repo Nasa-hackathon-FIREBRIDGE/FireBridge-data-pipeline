@@ -29,6 +29,7 @@ from .util import canonical, digest, now, uid, utc
 ENGINE = 'archive-selection-v1'
 STAGE = 'archive-selection'
 _verified_files = {}
+_catalog_cache = {}
 AREA_SQL = """CASE WHEN ST_XMax(a.geom)-ST_XMin(a.geom)>=359.999
  AND ST_YMax(a.geom)-ST_YMin(a.geom)>=179.999 THEN a.geom
  WHEN ST_XMax(a.geom)-ST_XMin(a.geom)>180 THEN
@@ -117,15 +118,21 @@ def publish_catalog(settings, scope='global'):
     return {'catalog_id':str(rid),'signature':signature,'windows':len(windows),'provider_calls':0}
 
 
-def catalog(settings, release_id):
+def catalog(settings, release_id, *, with_checksum=False):
     with connect(settings) as db:
         r=db.execute("SELECT * FROM data_releases WHERE id=%s AND status='published' AND config->>'engine'=%s",(release_id,ENGINE)).fetchone()
     if not r:raise ValueError('Unknown immutable archive catalog')
     path=Store(settings.data_dir).resolve(r['manifest_uri'])
-    if sha256(path)!=r['config']['manifest_sha256']:raise ValueError('Archive manifest checksum mismatch')
-    value=json.loads(path.read_text())
-    if value['method_sha256']!=method_sha():raise ValueError('Archive catalog uses a different normalizer; publish the current catalog')
-    return value
+    expected=r['config']['manifest_sha256'];stat=path.stat();method=method_sha()
+    key=(str(path),stat.st_size,stat.st_mtime_ns,expected,method)
+    if key not in _catalog_cache:
+        verify_immutable(path,expected)
+        value=json.loads(path.read_text())
+        if value['method_sha256']!=method:raise ValueError('Archive catalog uses a different normalizer; publish the current catalog')
+        if len(_catalog_cache)>=2:_catalog_cache.clear()
+        _catalog_cache[key]=value
+    value=_catalog_cache[key]
+    return (value,expected) if with_checksum else value
 
 
 def submit(settings, analysis_id):
@@ -185,7 +192,7 @@ def prepare(settings,run_id,*,max_selected=1_000_000,reserve_bytes=16*GIB,databa
             if job['status'] not in ('queued','running'):return status(settings,run_id)
             db.execute("UPDATE pipeline_runs SET status='running',started_at=now(),error_code=NULL WHERE id=%s",(run_id,))
         try:
-            spec=job['config'];manifest=catalog(settings,spec['catalog_id'])
+            spec=job['config'];manifest,manifest_checksum=catalog(settings,spec['catalog_id'],with_checksum=True)
             windows=[w for w in manifest['windows'] if w['start']<spec['end_exclusive'] and w['end_exclusive']>spec['start'] and FEEDS[w['feed']][1]=='standard' and w['sources']]
             support=intervals(windows,spec['start'],spec['end_exclusive'])
             if not support:raise ValueError('No archived standard records support this interval')
@@ -240,7 +247,7 @@ def prepare(settings,run_id,*,max_selected=1_000_000,reserve_bytes=16*GIB,databa
                 partitions=[]
                 with connect(settings) as sql:
                     for source,ranges in sorted(support.items()):
-                        obj=store.json({'catalog_id':spec['catalog_id'],'manifest_sha256':digest(manifest),
+                        obj=store.json({'catalog_id':spec['catalog_id'],'manifest_sha256':manifest_checksum,
                           'selection':spec,'source_id':source,'inputs':[{'id':w['id'],'parquet_sha256':w['parquet_sha256']} for w in windows if source in w['sources']]})
                         aid=asset(sql,obj,source,job['idempotency_key'],'NASA FIRMS historical selection input manifest',{'engine':ENGINE,'raw_frp_policy':'invalid becomes flagged NULL'})
                         for left,right in ranges:
