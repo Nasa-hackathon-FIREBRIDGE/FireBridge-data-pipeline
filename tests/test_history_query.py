@@ -62,9 +62,10 @@ def test_query_prunes_area_deduplicates_preserves_frp_and_is_reusable(database,t
 
 
 @pytest.mark.integration
-def test_zero_result_retains_verified_inventory(database,tmp_path):
+@pytest.mark.parametrize('indexed',[False,True])
+def test_zero_result_retains_verified_inventory(database,tmp_path,indexed):
     settings=replace(database,data_dir=tmp_path)
-    analysis,_,_=request(settings,bbox=(0,0,1,1))
+    analysis,_,_=request(settings,bbox=(0,0,1,1),indexed=indexed)
     job=submit(settings,analysis);result=prepare(settings,job['job_id'],reserve_bytes=0)
     assert result['result']['selected_rows']==0
     with connect(settings) as db:
@@ -93,13 +94,19 @@ def test_corruption_and_size_limits_cannot_publish_partial_result(database,tmp_p
 
 
 @pytest.mark.integration
-def test_changed_input_fails_closed_before_publication(database,tmp_path):
+@pytest.mark.parametrize('indexed',[False,True])
+def test_changed_input_fails_closed_before_publication(database,tmp_path,indexed):
     settings=replace(database,data_dir=tmp_path)
-    analysis,root,_=request(settings)
+    analysis,root,_=request(settings,indexed=indexed)
     job=submit(settings,analysis)
     # The directory also contains _empty.parquet for schema discovery. Mutate
     # the actual catalog input, regardless of filesystem directory order.
     target=root/'parquet'/'VIIRS_NOAA20_SP_2024-01-01_2024-01-03.parquet'
+    if indexed:
+        from firebridge.history_index import descriptor
+        from firebridge.history_serving import inventory
+        value=descriptor(settings,inventory(root)[0])
+        target=tmp_path/'history-index'/value['shards'][0]['path']
     target.write_bytes(b'changed')
     with pytest.raises(ValueError,match='checksum'):prepare(settings,job['job_id'],reserve_bytes=0)
     assert status(settings,job['job_id'])['status']=='failed'
