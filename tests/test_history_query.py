@@ -90,6 +90,9 @@ def test_changed_input_fails_closed_before_publication(database,tmp_path):
     settings=replace(database,data_dir=tmp_path)
     analysis,root,_=request(settings)
     job=submit(settings,analysis)
-    next((root/'parquet').glob('*.parquet')).write_bytes(b'changed')
+    # The directory also contains _empty.parquet for schema discovery. Mutate
+    # the actual catalog input, regardless of filesystem directory order.
+    target=root/'parquet'/'VIIRS_NOAA20_SP_2024-01-01_2024-01-03.parquet'
+    target.write_bytes(b'changed')
     with pytest.raises(ValueError,match='checksum'):prepare(settings,job['job_id'],reserve_bytes=0)
     assert status(settings,job['job_id'])['status']=='failed'
