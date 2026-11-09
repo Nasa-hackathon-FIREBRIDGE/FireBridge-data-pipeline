@@ -55,6 +55,7 @@ services:
     volumes:
       - ./data/platform:/data
       - ./data/platform/lake/history:/data/lake/history:ro
+      - ./data/platform/history-index:/data/history-index:ro
     networks:
       default:
         aliases: [firebridge-history]

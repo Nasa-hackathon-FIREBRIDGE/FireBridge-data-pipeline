@@ -12,11 +12,15 @@ from firebridge.util import digest
 from test_history_serving import window,HEADER
 
 
-def request(settings,*,bbox=(-6,34,-4,36),start='2024-01-01',end='2024-01-03',geometry=None):
+def request(settings,*,bbox=(-6,34,-4,36),start='2024-01-01',end='2024-01-03',geometry=None,indexed=False):
     root=window(settings,HEADER+'35,-5,2024-01-01,1200,N20,n,D,2,-999\n'*2+
       '35,-5,2024-01-02,0000,N20,h,N,2,12\n'+
       '35,20,2024-01-01,1200,N20,n,D,2,9\n')
-    audit(settings);catalog=publish_catalog(settings)
+    audit(settings)
+    if indexed:
+        from firebridge.history_index import build
+        build(settings,reserve_bytes=0)
+    catalog=publish_catalog(settings)
     aid=uuid4();analysis=uuid4()
     with connect(settings) as db:
         source=area(db,'test-aoi-'+str(aid),bbox)
@@ -35,14 +39,16 @@ def request(settings,*,bbox=(-6,34,-4,36),start='2024-01-01',end='2024-01-03',ge
 
 
 @pytest.mark.integration
-def test_query_prunes_area_deduplicates_preserves_frp_and_is_reusable(database,tmp_path):
+@pytest.mark.parametrize('indexed',[False,True])
+def test_query_prunes_area_deduplicates_preserves_frp_and_is_reusable(database,tmp_path,indexed):
     settings=replace(database,data_dir=tmp_path)
-    analysis,root,catalog=request(settings)
+    analysis,root,catalog=request(settings,indexed=indexed)
     first=submit(settings,analysis)
     assert first['status']=='queued'
     result=prepare(settings,first['job_id'],reserve_bytes=0)
     assert result['status']=='succeeded' and result['result']['selected_rows']==2
     assert result['result']['duplicate_rows']==1 and result['result']['provider_calls']==0
+    assert result['result']['indexed_windows']==int(indexed)
     assert submit(settings,analysis)==result
     assert prepare(settings,first['job_id'],reserve_bytes=0)==result
     with connect(settings) as db:
@@ -66,9 +72,10 @@ def test_zero_result_retains_verified_inventory(database,tmp_path):
 
 
 @pytest.mark.integration
-def test_exact_polygon_hole_excludes_points_inside_bbox(database,tmp_path):
+@pytest.mark.parametrize('indexed',[False,True])
+def test_exact_polygon_hole_excludes_points_inside_bbox(database,tmp_path,indexed):
     settings=replace(database,data_dir=tmp_path)
-    analysis,_,_=request(settings,geometry='POLYGON((-6 34,-4 34,-4 36,-6 36,-6 34),(-5.5 34.5,-5.5 35.5,-4.5 35.5,-4.5 34.5,-5.5 34.5))')
+    analysis,_,_=request(settings,geometry='POLYGON((-6 34,-4 34,-4 36,-6 36,-6 34),(-5.5 34.5,-5.5 35.5,-4.5 35.5,-4.5 34.5,-5.5 34.5))',indexed=indexed)
     result=prepare(settings,submit(settings,analysis)['job_id'],reserve_bytes=0)
     assert result['result']['selected_rows']==0
 

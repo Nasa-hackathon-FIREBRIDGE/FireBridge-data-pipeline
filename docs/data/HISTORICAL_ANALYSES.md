@@ -44,6 +44,37 @@ ready. Completed analyses are not repinned by later archive publications.
 
 ## Configure and deploy
 
+Build the spatial serving index once after auditing acquired history. In Airflow,
+trigger `firebridge_history_index` with `{}` to cover all available standard
+history. It resumes already verified windows and publishes the catalog after the
+batch succeeds. Optional `start`/`end` bounds and `max_windows` allow bounded
+batches. These are local data operations with no provider requests.
+
+The equivalent server commands are:
+
+```bash
+cd /opt/firebridge/current
+sh scripts/stack.sh exec -T airflow-scheduler firebridge index-history
+sh scripts/stack.sh exec -T airflow-scheduler firebridge publish-history-catalog --scope global
+```
+
+Each five-day window is copied into immutable regional Parquet shards. Native
+strings, duplicate records and row identifiers remain unchanged. Typed coordinates
+and spatial ordering let DuckDB prune row groups. Publication requires full exact
+row comparison against the audited input, including the typed index coordinates.
+The catalog pins each shard hash and its original source hash. Requests verify
+only shards overlapping the saved geometry's bounding box, then apply the same
+exact PostGIS polygon and normalization rules. Missing indexes use the verified
+raw path. Old saved analyses retain their pinned releases.
+
+Index construction uses up to two workers, each with one CPU thread, 768 MiB of
+DuckDB memory and at most 2 GiB of temporary spill, plus a 16 GiB free-disk reserve.
+Use `index-history --workers 1` on a smaller host. It consumes additional disk
+for derived copies; progress records actual retained bytes in
+`/data/history-index/progress.json`. Build it after new archive batches as well.
+The history service mounts the published index read-only. Indexing never runs in
+the public request path.
+
 The existing data-platform image contains `history-api`. It has no public port,
 uses Docker's private data network as `http://firebridge-history:8090`, and mounts
 the source history directory read-only. It receives no NASA provider credentials.

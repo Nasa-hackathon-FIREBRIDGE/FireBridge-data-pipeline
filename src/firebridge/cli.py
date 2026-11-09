@@ -66,8 +66,14 @@ def main():
     p.add_argument('--request-id',action='append');p.add_argument('--database-budget-gib',type=int,default=100)
     p=commands.add_parser('publish-history-catalog',help='Publish verified archive metadata for selective historical analyses; no bulk point import')
     p.add_argument('--scope',default='global')
+    p=commands.add_parser('index-history',help='Build exact lossless spatial query copies from audited local history; no provider calls')
+    p.add_argument('--start');p.add_argument('--end');p.add_argument('--max-windows',type=int)
+    p.add_argument('--workers',type=int,choices=[1,2],default=2)
     args=parser.parse_args();settings=Settings.load();result=None
-    if args.command=='publish-history-catalog':
+    if args.command=='index-history':
+        from .history_index import build
+        result=build(settings,start=args.start,end=args.end,max_windows=args.max_windows,workers=args.workers)
+    elif args.command=='publish-history-catalog':
         from .history_query import publish_catalog
         result=publish_catalog(settings,args.scope)
     elif args.command=='init':

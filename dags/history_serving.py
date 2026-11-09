@@ -31,6 +31,27 @@ def history_audit():
     audit_archive()
 
 
+@dag(dag_id='firebridge_history_index',schedule=None,start_date=START,catchup=False,
+     max_active_runs=1,is_paused_upon_creation=True,tags=['firebridge','history','performance'],
+     doc_md='Build resumable lossless spatial Parquet indexes from the audited local archive, then publish the catalog. No provider requests or bulk PostgreSQL import. Conf: start/end (optional exclusive ISO bounds), max_windows (optional 1–10000), scope (default global). Existing snapshots remain pinned. Memory/spill and free-disk reserves are enforced.')
+def history_index():
+    @task(pool='firebridge_ingestion',execution_timeout=timedelta(hours=8),retries=0)
+    def build_spatial_copies():
+        from airflow.sdk import get_current_context
+        from firebridge.config import Settings
+        from firebridge.history_index import build
+        conf=dict(get_current_context()['dag_run'].conf or {})
+        if set(conf)-{'start','end','max_windows','scope'}:raise ValueError('Unknown spatial index configuration')
+        scope=conf.pop('scope','global');settings=Settings.load()
+        return {'scope':scope,'index':build(settings,reserve_bytes=reserve_bytes(settings),**conf)}
+    @task(pool='firebridge_ingestion',execution_timeout=timedelta(minutes=15),retries=0)
+    def publish_index_catalog(result):
+        from firebridge.config import Settings
+        from firebridge.history_query import publish_catalog
+        return publish_catalog(Settings.load(),result['scope'])
+    publish_index_catalog(build_spatial_copies())
+
+
 @dag(dag_id='firebridge_history_benchmark',schedule=None,start_date=START,catchup=False,
      max_active_runs=1,is_paused_upon_creation=True,tags=['firebridge','history','benchmark'],
      doc_md='Requires a successful current history audit. Loads a representative real window per available feed into an isolated temporary PostgreSQL database, measures storage, indexes and query performance, saves /data/history-serving/benchmark.json, then removes only its own database/files. Main releases stay unchanged.')
@@ -70,5 +91,6 @@ def history_load():
 
 
 history_audit()
+history_index()
 history_benchmark()
 history_load()

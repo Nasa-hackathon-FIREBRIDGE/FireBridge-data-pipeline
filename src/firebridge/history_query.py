@@ -20,6 +20,7 @@ from psycopg.types.json import Jsonb
 from .catalog import FEEDS, source_id
 from .db import connect
 from .history_serving import inventory, native_row, _space, GIB
+from .history_index import descriptor, selection_sql, selected_shards
 from .lake import sha256
 from .publish import stream_detection_partition, publish
 from .store import Store, asset
@@ -38,7 +39,7 @@ AREA_SQL = """CASE WHEN ST_XMax(a.geom)-ST_XMin(a.geom)>=359.999
 
 def method_sha():
     root=Path(__file__).parent
-    return digest([ENGINE,*(sha256(root/p) for p in ('normalize.py','history_serving.py','history_query.py'))])
+    return digest([ENGINE,*(sha256(root/p) for p in ('normalize.py','history_serving.py','history_query.py','history_index.py'))])
 
 
 def verify_immutable(path, expected):
@@ -86,8 +87,11 @@ def publish_catalog(settings, scope='global'):
         q=verified[r['id']]
         if q['status']!='verified' or q.get('invalid_native_rows'):raise ValueError('Archive has unresolved native blockers')
         receipt=json.loads((root/'receipts'/(r['id']+'.json')).read_text())
-        windows.append({**r,'sources':window_sources(q),'native_columns':receipt['native_columns']})
-    signature=digest([ENGINE,audit['inventory_sha256'],method_sha()])
+        indexed=descriptor(settings,r)
+        windows.append({**r,'sources':window_sources(q),'native_columns':receipt['native_columns'],
+          **({'query_index':indexed} if indexed else {})})
+    signature=digest([ENGINE,audit['inventory_sha256'],method_sha(),
+      [(w['id'],digest(w['query_index'])) for w in windows if 'query_index' in w]])
     rid=uid(['archive-catalog',scope,signature]);store=Store(settings.data_dir)
     manifest={'engine':ENGINE,'signature':signature,'method_sha256':method_sha(),'windows':windows}
     obj=store.json(manifest)
@@ -190,20 +194,28 @@ def prepare(settings,run_id,*,max_selected=1_000_000,reserve_bytes=16*GIB,databa
                   SELECT geometry_sha256,ST_XMin(geom) w,ST_YMin(geom) s,ST_XMax(geom) e,ST_YMax(geom) n FROM selected""",(spec['area_id'],)).fetchone()
             if not area or area['geometry_sha256']!=spec['geometry_sha256']:raise ValueError('Area revision changed')
             bbox=[area[k] for k in ('w','s','e','n')];_space(settings,reserve_bytes,database_budget)
-            paths=[];by_path={};checked_bytes=0
+            indexed=[];raw_paths=[];by_path={};checked_bytes=0;indexed_count=0
             for w in windows:
-                path=root/'parquet'/(w['id']+'.parquet')
-                if not path.resolve().is_relative_to(root.resolve()):raise ValueError('Archive path escapes root')
-                verify_immutable(path,w['parquet_sha256'])
-                paths.append(str(path));by_path[str(path)]=w;checked_bytes+=path.stat().st_size
+                if 'query_index' in w:
+                    q=w['query_index'];base=settings.data_dir/'history-index'
+                    if q['source_sha256']!=w['parquet_sha256'] or q['rows']!=w['rows'] or not q['lossless_verified']:
+                        raise ValueError('Pinned index does not match source')
+                    inputs=[(base/item['path'],item['sha256']) for item in selected_shards(q,bbox)]
+                    indexed_count+=1
+                else:
+                    base=root;inputs=[(root/'parquet'/(w['id']+'.parquet'),w['parquet_sha256'])]
+                for path,expected in inputs:
+                    if not path.resolve().is_relative_to(base.resolve()):raise ValueError('Archive path escapes root')
+                    verify_immutable(path,expected)
+                    (indexed if 'query_index' in w else raw_paths).append(str(path))
+                    by_path[str(path)]=w;checked_bytes+=path.stat().st_size
             temp_root=settings.data_dir/'history-query';temp_root.mkdir(exist_ok=True)
             scope='hist-'+job['idempotency_key'][:40]
             with tempfile.TemporaryDirectory(prefix='query-',dir=temp_root) as temporary,sqlite3.connect(Path(temporary)/'selected.sqlite3') as spool,duckdb.connect(config={'threads':2,'memory_limit':'512MB','temp_directory':temporary,'max_temp_directory_size':'512MB'}) as db:
                 spool.execute('PRAGMA journal_mode=OFF');spool.execute('PRAGMA cache_size=-16384')
                 spool.execute('CREATE TABLE rows(source TEXT,day TEXT,sha TEXT,body TEXT,PRIMARY KEY(source,day,sha)) WITHOUT ROWID')
-                cursor=db.execute("""SELECT * FROM read_parquet(?,filename=true) WHERE acq_date>=? AND acq_date<?
-                  AND try_cast(longitude AS DOUBLE) BETWEEN ? AND ? AND try_cast(latitude AS DOUBLE) BETWEEN ? AND ?""",
-                  [paths,spec['start'],spec['end_exclusive'],bbox[0],bbox[2],bbox[1],bbox[3]])
+                query,parameters=selection_sql(indexed,raw_paths,bbox,spec['start'],spec['end_exclusive'])
+                cursor=db.execute(query,parameters)
                 columns=[c[0] for c in cursor.description];candidates=0;invalid_frp=0
                 with connect(settings) as spatial:
                     while batch:=cursor.fetchmany(2048):
@@ -245,6 +257,7 @@ def prepare(settings,run_id,*,max_selected=1_000_000,reserve_bytes=16*GIB,databa
                         'start':spec['start'],'end_exclusive':spec['end_exclusive'],'source_ids':sorted(support)}),list(releases.values())))
                     result={**spec,'release_id':rid,'selection_key':job['idempotency_key'],'source_ids':sorted(support),
                       'selected_rows':count,'duplicate_rows':candidates-count,'invalid_frp_rows':invalid_frp,'input_windows':len(windows),
+                      'indexed_windows':indexed_count,'raw_windows':len(raw_paths),'read_files':len(indexed)+len(raw_paths),
                       'verified_input_bytes':checked_bytes,'elapsed_seconds':round(time.monotonic()-started,3),'provider_calls':0}
                     receipt=store.json(result)
                     sql.execute("UPDATE pipeline_runs SET status='succeeded',finished_at=now(),release_id=%s,output_manifest_uri=%s WHERE id=%s",(rid,receipt.uri,run_id))
