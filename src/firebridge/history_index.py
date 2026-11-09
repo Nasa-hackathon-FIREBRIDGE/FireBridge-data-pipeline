@@ -6,6 +6,8 @@ import json
 import math
 from pathlib import Path
 import shutil
+import pyarrow as pa
+import pyarrow.dataset as ds
 import pyarrow.parquet as pq
 import tempfile
 import time
@@ -176,3 +178,26 @@ def selection_sql(indexed,raw,bbox,start,end):
     if not queries:
         return 'SELECT '+','.join('CAST(NULL AS '+('BIGINT' if c=='_source_row' else 'VARCHAR')+') AS "'+c+'"' for c in [*RAW_SCHEMA.names,'filename'])+' WHERE FALSE',{}
     return ' UNION ALL '.join(queries),params
+
+
+def selected_batches(indexed,raw,bbox,start,end,temporary):
+    """Bounded streaming: Arrow avoids SQL/file-binding overhead for tiny shards."""
+    if indexed:
+        pa.set_cpu_count(2);pa.set_io_thread_count(2)
+        condition=(ds.field('acq_date')>=start) & (ds.field('acq_date')<end)
+        condition=condition & ds.field('_geo_cell').isin(cells(bbox))
+        condition=condition & (ds.field('_geo_lon')>=bbox[0]) & (ds.field('_geo_lon')<=bbox[2])
+        condition=condition & (ds.field('_geo_lat')>=bbox[1]) & (ds.field('_geo_lat')<=bbox[3])
+        scanner=ds.dataset(indexed,format='parquet',partitioning=None).scanner(
+          columns=[*RAW_SCHEMA.names,'__filename'],filter=condition,batch_size=2048,
+          batch_readahead=1,fragment_readahead=2,use_threads=True)
+        for batch in scanner.to_batches():
+            if not batch.num_rows:continue
+            rows=batch.to_pylist()
+            for row in rows:row['filename']=row.pop('__filename')
+            yield rows
+    if raw:
+        with duckdb.connect(config={'threads':2,'memory_limit':'512MB','temp_directory':temporary,'max_temp_directory_size':'512MB'}) as db:
+            query,args=selection_sql([],raw,bbox,start,end);cursor=db.execute(query,args)
+            columns=[c[0] for c in cursor.description]
+            while batch:=cursor.fetchmany(2048):yield [dict(zip(columns,row)) for row in batch]

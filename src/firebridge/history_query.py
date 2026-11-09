@@ -5,7 +5,7 @@ and an advisory lock make work durable and idempotent across process restarts.
 No provider/network acquisition and no global-history PostgreSQL import.
 """
 from collections import defaultdict
-from contextlib import contextmanager
+from contextlib import contextmanager, closing
 from datetime import timedelta
 import hashlib
 import json
@@ -20,7 +20,7 @@ from psycopg.types.json import Jsonb
 from .catalog import FEEDS, source_id
 from .db import connect
 from .history_serving import inventory, native_row, _space, GIB
-from .history_index import descriptor, selection_sql, selected_shards
+from .history_index import descriptor, selected_batches, selected_shards
 from .lake import sha256
 from .publish import stream_detection_partition, publish
 from .store import Store, asset
@@ -218,17 +218,14 @@ def prepare(settings,run_id,*,max_selected=1_000_000,reserve_bytes=16*GIB,databa
                     by_path[str(path)]=w;checked_bytes+=path.stat().st_size
             temp_root=settings.data_dir/'history-query';temp_root.mkdir(exist_ok=True)
             scope='hist-'+job['idempotency_key'][:40]
-            with tempfile.TemporaryDirectory(prefix='query-',dir=temp_root) as temporary,sqlite3.connect(Path(temporary)/'selected.sqlite3') as spool,duckdb.connect(config={'threads':2,'memory_limit':'512MB','temp_directory':temporary,'max_temp_directory_size':'512MB'}) as db:
+            with tempfile.TemporaryDirectory(prefix='query-',dir=temp_root) as temporary,sqlite3.connect(Path(temporary)/'selected.sqlite3') as spool,closing(selected_batches(indexed,raw_paths,bbox,spec['start'],spec['end_exclusive'],temporary)) as batches:
                 spool.execute('PRAGMA journal_mode=OFF');spool.execute('PRAGMA cache_size=-16384')
                 spool.execute('CREATE TABLE rows(source TEXT,day TEXT,sha TEXT,body TEXT,PRIMARY KEY(source,day,sha)) WITHOUT ROWID')
-                query,parameters=selection_sql(indexed,raw_paths,bbox,spec['start'],spec['end_exclusive'])
-                cursor=db.execute(query,parameters)
-                columns=[c[0] for c in cursor.description];candidates=0;invalid_frp=0
+                candidates=0;invalid_frp=0
                 with connect(settings) as spatial:
-                    while batch:=cursor.fetchmany(2048):
+                    for raw in batches:
                         if time.monotonic()-started>timeout_seconds:raise RuntimeError('history_query_timeout')
                         _space(settings,reserve_bytes,database_budget)
-                        raw=[dict(zip(columns,row)) for row in batch]
                         keep=spatial.execute(f"""SELECT p.ordinality FROM areas a CROSS JOIN
                           unnest(%s::float8[],%s::float8[]) WITH ORDINALITY p(lon,lat,ordinality)
                           WHERE a.id=%s AND ST_Covers({AREA_SQL},ST_SetSRID(ST_MakePoint(p.lon,p.lat),4326))""",

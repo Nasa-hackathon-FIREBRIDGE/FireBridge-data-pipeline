@@ -1,8 +1,8 @@
 # Serve historical analyses without loading the world archive into PostgreSQL
 
 The archive remains the complete immutable gzip/Parquet inventory. A historical
-request is prepared asynchronously: DuckDB prunes the file inventory by dates,
-filters the requested bounding box, then PostGIS applies the exact saved polygon
+request is prepared asynchronously: Arrow prunes indexed files and row groups by
+dates and coordinates (DuckDB handles the raw fallback), then PostGIS applies the exact saved polygon
 (including holes and the same antimeridian rules as the webapp). Only selected
 records go through the existing canonical native normalizer and publisher.
 
@@ -60,7 +60,7 @@ sh scripts/stack.sh exec -T airflow-scheduler firebridge publish-history-catalog
 
 Each five-day window is copied into immutable regional Parquet shards. Native
 strings, duplicate records and row identifiers remain unchanged. Typed coordinates
-and spatial ordering let DuckDB prune row groups. Publication requires full exact
+and spatial ordering let the bounded Arrow reader prune row groups. Publication requires full exact
 row comparison against the audited input, including the typed index coordinates.
 The catalog pins each shard hash and its original source hash. Requests verify
 only shards overlapping the saved geometry's bounding box, then apply the same
@@ -79,8 +79,10 @@ The existing data-platform image contains `history-api`. It has no public port,
 uses Docker's private data network as `http://firebridge-history:8090`, and mounts
 the source history directory read-only. It receives no NASA provider credentials.
 Its container is read-only outside persistent data and a small temporary mount.
-The default CPU/memory ceilings are 2 CPUs and 1536 MiB; DuckDB uses two threads
-and a 512 MiB memory budget. Heavy preparations run one at a time.
+The default CPU/memory ceilings are 2 CPUs and 1536 MiB. Indexed reads use two
+Arrow CPU/I/O threads, 2048-row batches and bounded fragment read-ahead. The raw
+fallback uses two DuckDB threads and a 512 MiB memory budget. Heavy preparations
+run one at a time.
 
 After the data-platform deployment and a successful archive audit, publish the
 catalog metadata once:
