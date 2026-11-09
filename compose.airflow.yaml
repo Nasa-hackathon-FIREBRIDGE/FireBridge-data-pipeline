@@ -43,6 +43,38 @@ x-airflow-common: &airflow-common
     options: {max-size: '20m', max-file: '3'}
 
 services:
+  history-api:
+    image: firebridge-airflow:3.3.2-v1
+    user: ${AIRFLOW_UID:-50000}:0
+    entrypoint: [python, -m, firebridge.history_api]
+    environment:
+      DATABASE_URL: postgresql://firebridge:${FIREBRIDGE_DB_PASSWORD}@db:5432/firebridge
+      FIREBRIDGE_DATA_DIR: /data
+      FIREBRIDGE_HISTORY_TOKEN: ${FIREBRIDGE_HISTORY_TOKEN:-}
+      PYTHONDONTWRITEBYTECODE: '1'
+    volumes:
+      - ./data/platform:/data
+      - ./data/platform/lake/history:/data/lake/history:ro
+    networks:
+      default:
+        aliases: [firebridge-history]
+    read_only: true
+    tmpfs: ['/tmp:size=64m,mode=1777']
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    restart: unless-stopped
+    mem_limit: 1536m
+    cpus: 2
+    healthcheck:
+      test: [CMD, python, -c, "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8090/health',timeout=3)"]
+      interval: 15s
+      timeout: 5s
+      retries: 8
+    depends_on:
+      db: {condition: service_healthy}
+    logging:
+      driver: json-file
+      options: {max-size: '10m', max-file: '3'}
   db:
     mem_limit: 6g
     cpus: 4
@@ -116,6 +148,7 @@ services:
     depends_on:
       airflow-api: {condition: service_healthy}
       db: {condition: service_healthy}
+      history-api: {condition: service_healthy}
     mem_limit: 10g
     cpus: 6
   airflow-dag-processor:

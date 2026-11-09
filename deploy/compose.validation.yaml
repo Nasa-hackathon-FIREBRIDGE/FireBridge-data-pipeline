@@ -1,5 +1,8 @@
 # Explicitly isolated smoke environment. Never use this override on the live stack.
 services:
+  history-api:
+    volumes: !override
+      - ./data/platform-validation:/data
   db:
     cpus: 1
     mem_limit: 1536m

@@ -129,6 +129,10 @@ remain pinned to their original releases; request a new analysis for new release
 
 ## What comes after preparation
 
+For automatic user-selected historical areas/dates, use the selective serving
+path described in [HISTORICAL_ANALYSES.md](HISTORICAL_ANALYSES.md). It filters the
+archive first and publishes only the requested area into a bounded PostGIS cache.
+
 Choose a serving retention/capacity plan from the measured report. A practical
 option is the complete Parquet archive for historical research and a measured
 recent subset in PostgreSQL. Full native-history serving may need more storage,

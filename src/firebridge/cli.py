@@ -64,8 +64,13 @@ def main():
     p.add_argument('--scope',default='global');p.add_argument('--bbox',type=bbox,default=[-180,-90,180,90])
     p.add_argument('--max-windows',type=int,default=3);p.add_argument('--max-rows-per-window',type=int,default=2_000_000)
     p.add_argument('--request-id',action='append');p.add_argument('--database-budget-gib',type=int,default=100)
+    p=commands.add_parser('publish-history-catalog',help='Publish verified archive metadata for selective historical analyses; no bulk point import')
+    p.add_argument('--scope',default='global')
     args=parser.parse_args();settings=Settings.load();result=None
-    if args.command=='init':
+    if args.command=='publish-history-catalog':
+        from .history_query import publish_catalog
+        result=publish_catalog(settings,args.scope)
+    elif args.command=='init':
         migrate(settings);seed(settings);result={'database':'initialized','provider_calls':0}
     elif args.command=='status':
         with connect(settings) as conn:

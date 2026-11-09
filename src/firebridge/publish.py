@@ -38,18 +38,21 @@ def detection_partition(conn, settings, run_id, asset_id, source, day, scope, bb
     return _load_detection_partition(conn,run_id,asset_id,source,day,scope,support,obj,len(ordered),ordered)
 
 
-def stream_detection_partition(conn,settings,run_id,asset_id,source,day,scope,bbox,rows,count,*,fetched_at,provider_footprint=None):
+def stream_detection_partition(conn,settings,run_id,asset_id,source,day,scope,bbox,rows,count,*,fetched_at,provider_footprint=None,end_exclusive=None,area_id=None,inventory_complete=False):
     """Replay a disk-sorted, unique row factory without materializing a whole day.
 
     Its canonical object is byte-identical to detection_partition for identical
     observations/support. The caller validates the whole input before this step.
     """
-    day=utc(day);end=day+timedelta(days=1)
+    day=utc(day);end=utc(end_exclusive) if end_exclusive else day+timedelta(days=1)
+    if end<=day:raise ValueError('Invalid partition interval')
     support={"scope_key":scope,"bbox":bbox,"source_id":source,"start":day.isoformat(),
       "end_exclusive":end.isoformat(),"processing_stream":source.rsplit('-',1)[-1],
       "query_complete":True,"observation_coverage":"unknown",
       "period_state":"closed" if end<=fetched_at else "open"}
     if provider_footprint:support['provider_footprint']=provider_footprint
+    if area_id:
+        support.update(area_id=str(area_id),inventory_complete=inventory_complete,source_ids=[source])
     def chunks():
         yield b'{"records":['
         previous=None;seen=0

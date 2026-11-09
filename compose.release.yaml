@@ -3,6 +3,7 @@ x-release: &release
   image: ${FIREBRIDGE_RELEASE_IMAGE:?Missing verified release image}
   build: !reset null
 services:
+  history-api: *release
   airflow-init: *release
   airflow-permissions: *release
   airflow-api: *release
