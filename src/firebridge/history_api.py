@@ -6,17 +6,20 @@ import logging
 import os
 import signal
 import threading
+import time
 from uuid import UUID
 
 from .config import Settings
 from .db import connect
-from .history_query import STAGE, prepare, status, submit
+from .history_query import STAGE, prepare, status, submit, catalog
 
 
 def serve(settings, host='0.0.0.0', port=8090):
     token=os.environ.get('FIREBRIDGE_HISTORY_TOKEN','')
     stop=threading.Event();wake=threading.Event()
+    cache_state={'catalog_id':None}
     def work():
+        last_warm=0
         while not stop.is_set():
             try:
                 with connect(settings) as db:
@@ -24,6 +27,17 @@ def serve(settings, host='0.0.0.0', port=8090):
                 if row:
                     result=prepare(settings,str(row['id']),max_selected=int(os.environ.get('FIREBRIDGE_HISTORY_MAX_ROWS','1000000')))
                     if result:continue
+                elif time.monotonic()-last_warm>=15:
+                    last_warm=time.monotonic()
+                    with connect(settings) as db:
+                        current=db.execute("SELECT release_id FROM release_aliases WHERE alias='historical_archive' AND scope_key='global'").fetchone()
+                    if current:
+                        try:
+                            # Shared immutable metadata is ready before a user
+                            # chooses an uncached area; no area result is prepared.
+                            catalog(settings,str(current['release_id']))
+                            cache_state['catalog_id']=str(current['release_id'])
+                        except ValueError:cache_state['catalog_id']=None
             except Exception as exc:
                 logging.error('Historical worker operation failed: %s',type(exc).__name__)
             wake.wait(2);wake.clear()
@@ -42,7 +56,7 @@ def serve(settings, host='0.0.0.0', port=8090):
             if self.path=='/health':
                 try:
                     with connect(settings) as db:db.execute('SELECT 1')
-                    return self.reply(200,{'status':'healthy'})
+                    return self.reply(200,{'status':'healthy',**cache_state})
                 except Exception:return self.reply(503,{'status':'unhealthy'})
             if not self.authorized():return self.reply(401,{'error':'unauthorized'})
             try:
