@@ -19,7 +19,8 @@ for feed,(platforms,stream) in FEEDS.items():
         confidence='80' if platform in ('Terra','Aqua') else ('H' if platform.startswith('L') else 'n')
         version='61.03' if platform in ('Terra','Aqua') else ('' if platform.startswith('L') else '2')
         if stream=='nrt' and version:version+='NRT'
-        body+=f'35,-5,2024-01-17,1200,{platform},{confidence},D,{version},12\n'
+        longitude=-105 if platform.startswith('L') else -5
+        body+=f'35,{longitude},2024-01-17,1200,{platform},{confidence},D,{version},12\n'
     receipt=validate_and_store(root,req,body.encode(),reserve_bytes=0)
     with ledger(root) as db:
         db.execute('''INSERT OR REPLACE INTO requests(id,feed,start,end_exclusive,priority,status,rows,

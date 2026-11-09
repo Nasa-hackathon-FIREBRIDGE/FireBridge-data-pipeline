@@ -37,6 +37,7 @@ def test_audit_is_offline_checks_all_artifacts_and_detects_later_corruption(tmp_
     first=audit(settings)
     assert first['state']=='passed' and first['source_rows']==1 and first['provider_calls']==0
     assert first['coverage'][0]['invalid_frp_rows']==1
+    assert first['platform_inventory'][0]['satellite']=='N20' and first['platform_inventory'][0]['source_rows']==1
     assert audit(settings)['results']==first['results']
     raw=next((root/'raw').glob('*.gz'));raw.write_bytes(b'corrupt')
     failed=audit(settings)

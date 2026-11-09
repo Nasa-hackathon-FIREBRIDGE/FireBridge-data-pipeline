@@ -79,7 +79,7 @@ def normalize(row, stream, allowed_platforms, *, allow_historical_collections=Fa
         day_night="day" if dn=="D" else "night",frp_mw=number(row.get("frp"),optional=True,minimum=0),
         brightness_bands=bands,scan_km=scan,track_km=track,cross_track_sample=int(sample) if sample is not None else None,
         processing_level=stream,
-        native_fields={k:str(row[k]) for k in ("version","scan","track") if row.get(k) is not None})
+        native_fields={k:str(row[k]) for k in ("version","scan","track",*(("path","row") if instrument not in ('MODIS','VIIRS') else ())) if row.get(k) is not None})
     # Excludes file names and row positions. Retains sample/bands/version/scan semantics.
     result["record_sha256"] = digest({"contract":"native-v1",**result})
     result["native_record_key"] = str(row.get("source_row", result["record_sha256"]))
