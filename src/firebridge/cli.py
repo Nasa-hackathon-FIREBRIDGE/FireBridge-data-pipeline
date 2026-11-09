@@ -55,6 +55,15 @@ def main():
     p.add_argument('--collection',required=True);p.add_argument('--updated-since')
     p=commands.add_parser('import-reports',help='Import dated report metadata and reviewed event claims')
     p.add_argument('--path',required=True);p.add_argument('--scope',default='morocco-pilot')
+    p=commands.add_parser('history-audit',help='Offline checksums, row support, quality and coverage audit')
+    p.add_argument('--refresh',action='store_true')
+    p=commands.add_parser('history-benchmark',help='Load representative real windows into a disposable isolated database')
+    p.add_argument('--max-rows-per-window',type=int,default=1_000_000)
+    p.add_argument('--keep-database',action='store_true')
+    p=commands.add_parser('history-load',help='Resume a bounded batch from existing history files; no provider calls')
+    p.add_argument('--scope',default='global');p.add_argument('--bbox',type=bbox,default=[-180,-90,180,90])
+    p.add_argument('--max-windows',type=int,default=3);p.add_argument('--max-rows-per-window',type=int,default=2_000_000)
+    p.add_argument('--request-id',action='append');p.add_argument('--database-budget-gib',type=int,default=100)
     args=parser.parse_args();settings=Settings.load();result=None
     if args.command=='init':
         migrate(settings);seed(settings);result={'database':'initialized','provider_calls':0}
@@ -124,6 +133,19 @@ def main():
     elif args.command=='import-reports':
         from .reports import import_reports
         result=import_reports(settings,args.path,args.scope)
+    elif args.command=='history-audit':
+        from .history_serving import audit
+        result=audit(settings,refresh=args.refresh)
+        result={k:v for k,v in result.items() if k!='results'}
+        if result['state']!='passed':
+            print(json.dumps(result,indent=2,default=str));sys.exit(1)
+    elif args.command=='history-benchmark':
+        from .history_serving import benchmark
+        result=benchmark(settings,max_rows_per_window=args.max_rows_per_window,keep_database=args.keep_database)
+    elif args.command=='history-load':
+        from .history_serving import load,GIB
+        result=load(settings,scope=args.scope,bbox=args.bbox,max_windows=args.max_windows,
+          max_rows_per_window=args.max_rows_per_window,request_ids=args.request_id,max_database_bytes=args.database_budget_gib*GIB)
     if result is not None:print(json.dumps(result,indent=2,default=str,allow_nan=False))
 
 

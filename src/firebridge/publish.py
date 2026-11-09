@@ -35,6 +35,41 @@ def detection_partition(conn, settings, run_id, asset_id, source, day, scope, bb
     # Acquisition rows are authoritative for this exact day and rectangular scope.
     obj = Store(settings.data_dir).json({"schema":"detections-v1","support":support,
                                        "records":[{k:v for k,v in r.items() if k!='native_record_key'} for r in ordered]})
+    return _load_detection_partition(conn,run_id,asset_id,source,day,scope,support,obj,len(ordered),ordered)
+
+
+def stream_detection_partition(conn,settings,run_id,asset_id,source,day,scope,bbox,rows,count,*,fetched_at,provider_footprint=None):
+    """Replay a disk-sorted, unique row factory without materializing a whole day.
+
+    Its canonical object is byte-identical to detection_partition for identical
+    observations/support. The caller validates the whole input before this step.
+    """
+    day=utc(day);end=day+timedelta(days=1)
+    support={"scope_key":scope,"bbox":bbox,"source_id":source,"start":day.isoformat(),
+      "end_exclusive":end.isoformat(),"processing_stream":source.rsplit('-',1)[-1],
+      "query_complete":True,"observation_coverage":"unknown",
+      "period_state":"closed" if end<=fetched_at else "open"}
+    if provider_footprint:support['provider_footprint']=provider_footprint
+    def chunks():
+        yield b'{"records":['
+        previous=None;seen=0
+        for r in rows():
+            sha=r['record_sha256']
+            if previous is not None and sha<=previous:raise ValueError('Unsorted or duplicate spool')
+            if r['source_id']!=source or not day<=r['acquired_at']<end:
+                raise ValueError('Spool outside partition support')
+            w,s,e,n=bbox
+            if not w<=r['longitude']<=e or not s<=r['latitude']<=n:raise ValueError('Spool outside bbox')
+            yield ((',' if seen else '')+canonical({k:v for k,v in r.items() if k!='native_record_key'})).encode()
+            previous=sha;seen+=1
+        if seen!=count:raise ValueError('Spool count changed')
+        yield ('],"schema":"detections-v1","support":'+canonical(support)+'}').encode()
+    obj=Store(settings.data_dir).put(chunks(),'.json')
+    return _load_detection_partition(conn,run_id,asset_id,source,day,scope,support,obj,count,rows())
+
+
+def _load_detection_partition(conn,run_id,asset_id,source,day,scope,support,obj,count,ordered):
+    stream=source.rsplit('-',1)[-1]
     series = f"detections:{source}:{scope}"
     key = day.date().isoformat()
     partition_id = uid([series,key,obj.sha256])
@@ -43,7 +78,7 @@ def detection_partition(conn, settings, run_id, asset_id, source, day, scope, bb
     conn.execute("""INSERT INTO data_partitions(id,pipeline_run_id,kind,series_key,partition_key,support_spec,storage_uri,
       sha256,input_manifest_uri,schema_version,row_count,serving_complete,validation_status)
       VALUES (%s,%s,'detections',%s,%s,%s,%s,%s,%s,'native-v1',%s,true,'validated')""",
-      (partition_id,run_id,series,key,Jsonb(support),obj.uri,obj.sha256,str(asset_id),len(ordered)))
+      (partition_id,run_id,series,key,Jsonb(support),obj.uri,obj.sha256,str(asset_id),count))
     conn.execute("INSERT INTO partition_assets VALUES (%s,%s)", (partition_id,asset_id))
     conn.execute("""CREATE TEMP TABLE IF NOT EXISTS stage_detections (
       source_id text, record_sha256 text, acquired_at timestamptz, lon float8, lat float8,

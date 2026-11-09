@@ -2,6 +2,11 @@
 
 **For the Airflow + dbt server deployment, start with [DEPLOYMENT.md](DEPLOYMENT.md).** This page documents the ingestion adapters and their subscription rules. The legacy `firebridge worker` commands below apply only when the database's orchestration owner is `local`; they are rejected when Airflow owns ingestion. Analytical models and versioned outputs are explained in [ANALYTICS.md](ANALYTICS.md).
 
+**After the full-history download finishes:** follow [HISTORY_SERVING.md](HISTORY_SERVING.md)
+to audit the files, benchmark real imports in an isolated database, then publish
+bounded, resumable batches after reviewing storage capacity. The download DAG
+does not populate PostgreSQL or enable ongoing provider subscriptions.
+
 All commands run from the project root. Internal date intervals are **start inclusive, end exclusive, UTC**. January 17, 2024 through January 17, 2025 inclusive is `--start 2024-01-17 --end 2025-01-18`.
 
 ## 1. Local setup

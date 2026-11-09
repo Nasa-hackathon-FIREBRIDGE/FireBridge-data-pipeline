@@ -71,6 +71,11 @@ trigger('firebridge_archive_import',{'path':'synthetic-modis.csv','format':'firm
  'scope':'validation-smoke','bbox':[-6,34,-4,36],'start':'2024-01-17','end':'2024-01-20',
  'coverage_start':'2024-01-17','coverage_end':'2024-01-20'})
 assert sql("SELECT count(*) FROM serving.query_coverage c JOIN serving.latest_analytics l ON l.build_id=c.build_id WHERE l.scope_key='validation-smoke' AND query_status='missing'")=='0'
+subprocess.run(stack+['-e','FIREBRIDGE_VALIDATION=isolated-firebridge-validation','airflow-scheduler','python','/opt/firebridge/deploy/seed_history_validation.py'],check=True)
+trigger('firebridge_history_audit')
+trigger('firebridge_history_benchmark')
+trigger('firebridge_history_load',{'scope':'validation-smoke','bbox':[-6,34,-4,36],
+ 'max_windows':1,'request_ids':['VIIRS_NOAA20_SP_2024-01-17_2024-01-20']})
 trigger('firebridge_health')
 assert sql('SELECT count(*) FROM firebridge.fetch_runs')=='0'
 receipt={'checked_at':datetime.now(timezone.utc).isoformat(),'synthetic':True,'provider_calls':0,'runs':out,

@@ -6,6 +6,11 @@
 
 **Run everything locally:** `./start_local.sh` starts Airflow, the existing database, local archive import, two SQL browsers, and a resumable **full-history NASA FIRMS download** for all project satellite groups. Use `./start_local.sh --skip-download` to launch without starting that download. See [FULL_HISTORY.md](docs/data/FULL_HISTORY.md) for date coverage and download progress, and [LOCAL_RUN.md](docs/data/LOCAL_RUN.md) for the local services. The full history is acquired into Parquet/DuckDB; PostgreSQL serves the existing validated project scopes.
 
+**After downloading:** [HISTORY_SERVING.md](docs/data/HISTORY_SERVING.md) describes
+the offline audit, isolated real-data storage benchmark, and bounded resumable
+PostgreSQL publication. On a deployed server, `sh scripts/prepare_history.sh`
+runs the audit and benchmark through Airflow without starting more downloads.
+
 **Airflow + dbt deployment:** follow [the Hetzner VPS setup guide](docs/data/DEPLOYMENT.md), then [the analytical model guide](docs/data/ANALYTICS.md). The stack includes scheduled ingestion, manual historical imports, tested analytical builds, immutable publication, private Airflow access, backup scripts and recovery checks. The Node.js team continues to own the application API. Live provider subscriptions are enabled deliberately after validation.
 
 The implemented Python data layer is documented in [docs/data/README.md](docs/data/README.md). Start with the [operations guide](docs/data/OPERATIONS.md) and give the [database handoff](docs/data/NODE_HANDOFF.md) to the **Node.js backend team**. This repository owns PostgreSQL/PostGIS, historical ingestion, validation, durable scheduling and versioned publication. It does not implement the HTTP API. Recurring provider subscriptions remain disabled; the full-history download is a separate explicit startup action.

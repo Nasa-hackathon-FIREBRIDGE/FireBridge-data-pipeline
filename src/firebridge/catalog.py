@@ -25,9 +25,9 @@ FEEDS = {
 PILOT_BBOX = [-6.4, 34.5, -4.5, 35.9]
 
 
-def source_id(platform, stream):
-    slug, _, collection, _ = PLATFORMS[platform]
-    return f"{slug}-c{collection}-{stream}"
+def source_id(platform, stream, collection=None):
+    slug, _, default_collection, _ = PLATFORMS[platform]
+    return f"{slug}-c{collection or default_collection}-{stream}"
 
 
 def polygon(bbox):
@@ -68,6 +68,18 @@ def seed(settings):
                     # c1 in these stable internal IDs is a legacy adapter tag, not a claimed NASA collection.
                     conn.execute("UPDATE sources SET collection='not-provided',metadata=metadata || %s WHERE id=%s",
                                  (Jsonb({'collection_status':'not supplied by FIRMS CSV','id_c1_tag':'internal adapter identity, not NASA collection'}),sid))
+        # FIRMS historical MODIS version 6.03 is Collection 6, not Collection 6.1.
+        for platform in ('Terra','Aqua'):
+            for stream in ('standard','nrt'):
+                sid=source_id(platform,stream,'6')
+                slug,instrument,_,resolution=PLATFORMS[platform]
+                conn.execute("""INSERT INTO sources(id,name,provider,kind,platform,instrument,product,collection,
+                  processing_stream,documentation_url,citation,license_info,native_resolution_m,schema_version,metadata)
+                  VALUES (%s,%s,'NASA FIRMS','hotspots',%s,%s,%s,'6',%s,
+                  'https://nasa-gibs.github.io/gibs-api-docs/python-usage/',
+                  'NASA FIRMS / originating science team','NASA open data; retain attribution',%s,'native-v1',%s)
+                  ON CONFLICT DO NOTHING""",(sid,f'{platform} Collection 6 ({stream})',platform,instrument,slug,stream,
+                  resolution,Jsonb({'comparison_family':slug+'-c6','mask_coverage_available':False})))
         for feed, (platforms, stream) in FEEDS.items():
             raw_id = "raw-" + feed.lower()
             conn.execute("""INSERT INTO sources(id,name,provider,kind,product,collection,processing_stream,

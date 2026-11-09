@@ -14,6 +14,7 @@ services:
       AIRFLOW__CORE__PARALLELISM: '2'
       AIRFLOW__CORE__MAX_ACTIVE_TASKS_PER_DAG: '2'
       DBT_THREADS: '1'
+      FIREBRIDGE_VALIDATION: isolated-firebridge-validation
     volumes: !override
       - ./data/platform-validation:/data
       - ./data/imports-validation:/imports:ro

@@ -21,7 +21,7 @@ def number(value, *, optional=False, minimum=None, maximum=None):
     return val
 
 
-def normalize(row, stream, allowed_platforms):
+def normalize(row, stream, allowed_platforms, *, allow_historical_collections=False):
     platform = ALIASES.get(str(row["satellite"]), str(row["satellite"]))
     if platform not in allowed_platforms or platform not in PLATFORMS:
         raise ValueError("Unexpected platform for this feed")
@@ -51,8 +51,11 @@ def normalize(row, stream, allowed_platforms):
         return None  # retained in raw payload, excluded from the NRT product
     if stream == "standard" and "NRT" in upper: raise ValueError("NRT record inside a standard feed")
     collection=upper.replace('NRT','')
-    if collection and instrument=='MODIS' and collection not in ('61','061','6.1','61.03','6.1.03'):
+    modis_c6 = ('6','006','6.0','6.02','6.03')
+    if collection and instrument=='MODIS' and collection not in (*modis_c6,'61','061','6.1','61.03','6.1.03'):
         raise ValueError('Unsupported MODIS collection/version')
+    if instrument=='MODIS' and collection in modis_c6 and not allow_historical_collections:
+        raise ValueError('Historical MODIS Collection 6 requires the history loader')
     if collection and instrument=='VIIRS' and collection not in ('2','02','002','2.0'):
         raise ValueError('Unsupported VIIRS collection/version')
     bands = {}
@@ -70,7 +73,8 @@ def normalize(row, stream, allowed_platforms):
     raw_type = row.get("type")
     raw_type = None if raw_type is None or str(raw_type) in ("", "nan") else format(number(raw_type,minimum=0,maximum=3),"g")
     if raw_type is not None and raw_type not in ("0","1","2","3"): raise ValueError("Invalid type")
-    result = dict(source_id=source_id(platform,stream), acquired_at=acquired,longitude=lon,latitude=lat,
+    native_collection = '6' if instrument=='MODIS' and collection in modis_c6 else None
+    result = dict(source_id=source_id(platform,stream,native_collection), acquired_at=acquired,longitude=lon,latitude=lat,
         confidence_raw=confidence,confidence_scheme=scheme,type_raw=raw_type,
         day_night="day" if dn=="D" else "night",frp_mw=number(row.get("frp"),optional=True,minimum=0),
         brightness_bands=bands,scan_km=scan,track_km=track,cross_track_sample=int(sample) if sample is not None else None,
