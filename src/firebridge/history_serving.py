@@ -284,7 +284,7 @@ def load_window(settings,root,r,scope,bbox,*,reserve_bytes=16*GIB,max_database_b
                             partition_ids.append(str(stream_detection_partition(db,settings,rid,aid,source,day,scope,bbox,rows,count,fetched_at=utc(receipt['completed_at']),provider_footprint=footprint)))
             finally:spool.close()
         with connect(settings) as db:
-            releases=publish(db,settings,partition_ids,scope,reason='history_import',observed_at=utc(receipt['completed_at']))
+            releases=publish(db,settings,partition_ids,scope,reason='new_data',observed_at=utc(receipt['completed_at']))
             result={**spec,**counts,'partition_ids':partition_ids,'releases':releases,'elapsed_seconds':round(time.monotonic()-started,3),'reused':False}
             manifest=store.json(result)
             db.execute("UPDATE pipeline_runs SET status='succeeded',finished_at=now(),output_manifest_uri=%s WHERE id=%s",(manifest.uri,rid))

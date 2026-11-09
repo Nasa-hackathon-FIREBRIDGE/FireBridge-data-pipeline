@@ -161,3 +161,23 @@ def test_landsat_has_separate_scope_and_provider_footprint(database,scope,tmp_pa
         row=db.execute('SELECT support_spec FROM data_partitions WHERE id=%s',(result['results'][0]['partition_ids'][0],)).fetchone()
         assert 'US/Canada' in row['support_spec']['provider_footprint']
         assert not db.execute('SELECT 1 FROM release_aliases WHERE scope_key=%s',(scope,)).fetchone()
+
+
+@pytest.mark.integration
+@pytest.mark.dbt
+def test_all_feed_benchmark_with_real_dbt(database,tmp_path):
+    from firebridge.catalog import FEEDS
+    database=replace(database,data_dir=tmp_path)
+    for feed,(platforms,stream) in FEEDS.items():
+        body=HEADER
+        for platform in platforms:
+            confidence='80' if platform in ('Terra','Aqua') else ('H' if platform.startswith('L') else 'n')
+            version='61.03' if platform in ('Terra','Aqua') else ('' if platform.startswith('L') else '2')
+            if stream=='nrt' and version:version+='NRT'
+            lon=-105 if platform.startswith('L') else -5
+            body+=f'35,{lon},2024-01-01,1200,{platform},{confidence},D,{version},12\n'
+        root=window(database,body,feed=feed)
+    audit(database)
+    result=benchmark(database,root=root,reserve_bytes=0)
+    assert result['state']=='passed' and result['unique_detections']==12
+    assert len(result['analytics']['scopes'])==2
