@@ -5,6 +5,7 @@ and an advisory lock make work durable and idempotent across process restarts.
 No provider/network acquisition and no global-history PostgreSQL import.
 """
 from collections import defaultdict
+from contextlib import contextmanager
 from datetime import timedelta
 import hashlib
 import json
@@ -46,6 +47,18 @@ def verify_immutable(path, expected):
         if sha256(path)!=expected:raise ValueError('Archive file checksum mismatch')
         if len(_verified_files)>5000:_verified_files.clear()
         _verified_files[identity]=True
+
+
+@contextmanager
+def worker_lock(settings):
+    # Release synchronously: closing a TCP connection can finish before the
+    # server has processed its disconnect and released session advisory locks.
+    with connect(settings) as db:
+        db.autocommit=True
+        acquired=db.execute("SELECT pg_try_advisory_lock(hashtextextended('history-query-worker',0)) ok").fetchone()['ok']
+        try:yield acquired
+        finally:
+            if acquired:db.execute("SELECT pg_advisory_unlock(hashtextextended('history-query-worker',0))")
 
 
 def window_sources(record):
@@ -159,9 +172,8 @@ def intervals(windows,start,end):
 def prepare(settings,run_id,*,max_selected=1_000_000,reserve_bytes=16*GIB,database_budget=100*GIB,timeout_seconds=1800):
     """One bounded job; no whole-archive canonicalization or main-scope publication."""
     started=time.monotonic();root=settings.data_dir/'lake/history';store=Store(settings.data_dir)
-    with connect(settings) as lock:
-        lock.autocommit=True
-        if not lock.execute("SELECT pg_try_advisory_lock(hashtextextended('history-query-worker',0)) ok").fetchone()['ok']:return None
+    with worker_lock(settings) as acquired:
+        if not acquired:return None
         with connect(settings) as db:
             job=db.execute('SELECT * FROM pipeline_runs WHERE id=%s AND stage=%s',(run_id,STAGE)).fetchone()
             if not job:raise ValueError('Unknown historical job')
