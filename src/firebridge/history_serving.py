@@ -106,7 +106,10 @@ def quality(root,r,db):
           OR (track IS NOT NULL AND trim(track)<>'' AND (try_cast(track AS DOUBLE) IS NULL OR NOT isfinite(try_cast(track AS DOUBLE)) OR try_cast(track AS DOUBLE)<=0))))) invalid_native_rows
       FROM x''',[str(root/'parquet'/(r['id']+'.parquet')),r['start'],r['end_exclusive'],r['id'],stream,platforms]).fetchone()
     keys=('rows','invalid_support_rows','invalid_frp_rows','first_observation_date','last_observation_date','versions','platforms','invalid_native_rows')
-    return dict(zip(keys,values))
+    result=dict(zip(keys,values))
+    result['versions']=result['versions'] or []
+    result['platforms']=result['platforms'] or []
+    return result
 
 
 def audit(settings,*,root=None,refresh=False):
@@ -151,8 +154,8 @@ def audit(settings,*,root=None,refresh=False):
               'windows':len(spans),'verified_windows':len(subset),'source_rows':sum(r['rows'] for r in subset),
               'invalid_frp_rows':sum(r['invalid_frp_rows'] for r in subset),'empty_windows':sum(r['rows']==0 for r in subset),
               'blocking_native_rows':sum(r['invalid_native_rows'] for r in subset),
-              'platforms':sorted({p for r in subset for p in r['platforms']}),
-              'versions':sorted({v for r in subset for v in r['versions'] if v is not None}),
+              'platforms':sorted({p for r in subset for p in (r['platforms'] or [])}),
+              'versions':sorted({v for r in subset for v in (r['versions'] or []) if v is not None}),
               'gaps':gaps,'overlaps':overlaps,'geography':'US/Canada provider footprint' if feed=='LANDSAT_NRT' else 'world'})
         plan=json.loads((root/'plan.json').read_text()) if (root/'plan.json').exists() else {}
         report={'version':VERSION,'state':'passed' if all(r['status']=='verified' for r in results) and not any(c['overlaps'] for c in coverage) else 'failed',

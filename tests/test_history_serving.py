@@ -61,6 +61,14 @@ def test_audit_reports_required_native_field_blockers(tmp_path):
     assert report['coverage'][0]['blocking_native_rows']==1
 
 
+def test_complete_empty_windows_are_in_the_audit(tmp_path):
+    settings=Settings('unused',tmp_path)
+    window(settings,HEADER)
+    report=audit(settings)
+    assert report['state']=='passed' and report['source_rows']==0
+    assert report['coverage'][0]['empty_windows']==1 and report['coverage'][0]['platforms']==[]
+
+
 @pytest.mark.parametrize('version,collection',[('6.03','c6'),('6.0NRT','c6'),('61.03','c61'),('6.1NRT','c61')])
 def test_modis_collection_identity(version,collection):
     row=dict(satellite='Terra',latitude='35',longitude='-5',acq_date='2024-01-01',acq_time='1200',confidence='80',daynight='D',version=version)
