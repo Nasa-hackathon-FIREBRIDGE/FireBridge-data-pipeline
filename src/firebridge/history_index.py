@@ -191,11 +191,18 @@ def selected_batches(indexed,raw,bbox,start,end,temporary):
         scanner=ds.dataset(indexed,format='parquet',partitioning=None).scanner(
           columns=[*RAW_SCHEMA.names,'__filename'],filter=condition,batch_size=2048,
           batch_readahead=1,fragment_readahead=2,use_threads=True)
+        pending=[]
         for batch in scanner.to_batches():
             if not batch.num_rows:continue
             rows=batch.to_pylist()
             for row in rows:row['filename']=row.pop('__filename')
-            yield rows
+            pending.extend(rows)
+            # Sparse shards can yield only one or two matching records. Keep
+            # database geometry checks and disk-budget checks at the same
+            # bounded batch size as the original raw reader.
+            while len(pending)>=2048:
+                yield pending[:2048];pending=pending[2048:]
+        if pending:yield pending
     if raw:
         with duckdb.connect(config={'threads':2,'memory_limit':'512MB','temp_directory':temporary,'max_temp_directory_size':'512MB'}) as db:
             query,args=selection_sql([],raw,bbox,start,end);cursor=db.execute(query,args)

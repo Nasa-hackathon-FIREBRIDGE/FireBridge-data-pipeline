@@ -3,7 +3,7 @@ import pytest
 
 from firebridge.config import Settings
 from firebridge.history_serving import audit,inventory
-from firebridge.history_index import build,descriptor,selection_sql,cells,validate_copy
+from firebridge.history_index import build,descriptor,selection_sql,cells,validate_copy,selected_batches
 from test_history_serving import window,HEADER
 
 
@@ -60,3 +60,20 @@ def test_explicit_empty_inventory_has_an_empty_valid_index(tmp_path):
     settings,_,record=fixture(tmp_path,HEADER)
     assert build(settings,reserve_bytes=0)['built']==1
     assert descriptor(settings,record)['rows']==0
+
+
+def test_small_fragments_form_bounded_batches_without_losing_rows_or_provenance(tmp_path):
+    import pyarrow as pa
+    import pyarrow.parquet as pq
+    from firebridge.history import RAW_SCHEMA
+    schema=RAW_SCHEMA.append(pa.field('_geo_lon',pa.float64())).append(pa.field('_geo_lat',pa.float64())).append(pa.field('_geo_cell',pa.int32()))
+    paths=[]
+    for fragment in range(14):
+        path=tmp_path/(str(fragment)+'.parquet')
+        rows=[{**dict.fromkeys(RAW_SCHEMA.names), 'latitude':'35','longitude':'-5','acq_date':'2024-01-01',
+          '_source_row':i+2,'_archive':str(fragment),'_geo_lon':-5.,'_geo_lat':35.,'_geo_cell':25*72+35} for i in range(150)]
+        pq.write_table(pa.Table.from_pylist(rows,schema=schema),path);paths.append(str(path))
+    batches=list(selected_batches(paths,[],[-6,34,-4,36],'2024-01-01','2024-01-03',str(tmp_path)))
+    assert [len(batch) for batch in batches]==[2048,52]
+    assert {row['filename'] for batch in batches for row in batch}==set(paths)
+    assert sum(len(batch) for batch in batches)==2100
