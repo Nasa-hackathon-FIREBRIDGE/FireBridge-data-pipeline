@@ -13,7 +13,7 @@ def main():
     with httpx.Client(base_url='http://airflow-api:8080',timeout=30) as client:
         def authenticate():
             auth=client.post('/auth/token',json={'username':os.environ['AIRFLOW_ADMIN_USER'],'password':os.environ['AIRFLOW_ADMIN_PASSWORD']})
-            if auth.status_code!=200:raise RuntimeError('Airflow authentication failed; inspect private configuration')
+            if not auth.is_success:raise RuntimeError('Airflow authentication failed; inspect private configuration')
             client.headers['Authorization']='Bearer '+auth.json()['access_token']
         authenticate()
         def request(method,path,**kwargs):
